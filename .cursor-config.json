@@ -1,0 +1,27 @@
+{
+  "projectDescription": "This is a Next.js project using pnpm as the package manager. The design system is based on modular SCSS (not Tailwind), with BEM methodology for class naming. All components must be responsive and accessible, using semantic HTML. All new styles should be placed in src/styles. Use React and Next.js best practices throughout.",
+  "designSystem": {
+    "primaryStyling": "SCSS modules (no Tailwind)",
+    "classNaming": "BEM methodology",
+    "responsive": true,
+    "accessibility": true,
+    "stylesDirectory": "src/styles",
+    "packageManager": "pnpm"
+  },
+  "conventions": {
+    "componentStructure": "Functional React components, one per file, with related SCSS imported in the component file.",
+    "importSCSS": "Always import the relevant SCSS file at the top of the component.",
+    "noTailwind": true,
+    "noInlineStyles": true,
+    "semanticHTML": true
+  },
+  "aiGuidance": {
+    "alwaysUse": [
+      "pnpm for installs",
+      "SCSS for styling",
+      "BEM for class names",
+      "responsive and accessible design"
+    ],
+    "neverUse": ["Tailwind CSS", "inline styles for main design"]
+  }
+}
