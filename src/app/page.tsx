@@ -1,4 +1,5 @@
 import { siteConfig } from "@/config/site";
+import GlassyInput from "@/components/GlassyInput/GlassyInput";
 import "@/styles/landing.scss";
 
 export default function Home() {
@@ -17,25 +18,15 @@ export default function Home() {
             Unlock a smarter way to study with our AI-driven suite of powerful
             learning tools designed to enhance your academic journey.
           </p>
-          <div className="landing__social-proof">
-            <div className="landing__avatars">
-              {/* Dynamic avatars - replace with real data or images */}
-              <img src="/avatars/avatar1.png" alt="User 1" />
-              <img src="/avatars/avatar2.png" alt="User 2" />
-              <img src="/avatars/avatar3.png" alt="User 3" />
-              <img src="/avatars/avatar4.png" alt="User 4" />
-              <img src="/avatars/avatar5.png" alt="User 5" />
-            </div>
-            <div className="landing__rating">
-              <span className="landing__stars">★★★★★</span>
-              <span className="landing__rating-text">
-                Loved by 100k+ students worldwide
-              </span>
-            </div>
-          </div>
-          <a href="#get-started" className="landing__cta">
-            Get Started Now →
-          </a>
+
+          <GlassyInput
+            type="email"
+            placeholder="Enter your email address"
+            buttonLabel="Request Demo"
+            onButtonClick={() => {
+              /* handle click */
+            }}
+          />
           <div className="landing__stats">
             <div className="landing__stat">
               <span className="landing__stat-value">98%</span>
