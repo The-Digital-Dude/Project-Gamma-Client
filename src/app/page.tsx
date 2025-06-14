@@ -53,7 +53,12 @@ export default function Home() {
         </div>
         <div className="landing__visual">
           {/* Placeholder for hero image/card */}
-          <div className="landing__visual-card"></div>
+          <div className="landing__visual-card">
+            <img
+              src="https://imagedelivery.net/LqiWLm-3MGbYHtFuUbcBtA/189d259c-f35e-4849-da0b-dc9a73374300/public"
+              alt="Clever Class"
+            />
+          </div>
         </div>
       </section>
     </main>
