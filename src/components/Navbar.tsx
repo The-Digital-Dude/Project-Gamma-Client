@@ -1,4 +1,5 @@
 import React from "react";
+import { siteConfig } from "../config/site";
 import "@/styles/navbar.scss";
 
 const Navbar: React.FC = () => {
@@ -7,7 +8,7 @@ const Navbar: React.FC = () => {
       <div className="navbar__container">
         {/* Logo */}
         <div className="navbar__logo">
-          <a href="/">Clever Class</a>
+          <a href="/">{siteConfig.name}</a>
         </div>
         {/* Navigation Links */}
         <ul className="navbar__links">
