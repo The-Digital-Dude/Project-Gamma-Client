@@ -2,12 +2,48 @@
 
 .landing {
   background: linear-gradient(to bottom, #ffffff, #f8fafc);
+  background-color: white;
   min-height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
   padding-top: 64px;
+
+  &__hero-wrapper {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    // Icon pattern as background with reduced opacity using a pseudo-element
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url("/hero-background-pattern.png");
+      background-repeat: repeat;
+      background-size: 220px 220px;
+      background-position: 0 0;
+      opacity: 0.08; // Even more subtle
+      z-index: 1;
+    }
+    // Grayish gradient overlay
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        120deg,
+        rgba(120, 120, 130, 0.07) 0%,
+        rgba(200, 200, 210, 0.04) 100%
+      );
+      z-index: 2;
+      pointer-events: none;
+    }
+  }
 
   &__hero {
     display: flex;
@@ -20,6 +56,7 @@
     gap: 3rem;
     width: 100%;
     box-sizing: border-box;
+    min-height: 100vh; // Ensures vertical centering
 
     @media (max-width: 1024px) {
       padding: 4rem 3rem;
@@ -38,6 +75,15 @@
     }
   }
 
+  &__hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.7);
+    z-index: 0;
+    pointer-events: none;
+  }
+
   &__content {
     flex: 1;
     max-width: 600px;
@@ -45,6 +91,29 @@
     flex-direction: column;
     gap: 1.5rem;
     padding-right: 2rem;
+    position: relative;
+    z-index: 1;
+
+    // Subtle purplish glow effect around the whole content
+    &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(
+        circle,
+        rgba(140, 90, 255, 0.05) 0%,
+        rgba(140, 90, 255, 0.02) 80%,
+        transparent 100%
+      );
+      filter: blur(38px);
+      border-radius: 50%;
+      z-index: 0;
+      pointer-events: none;
+    }
 
     @media (max-width: 900px) {
       padding-right: 0;
@@ -237,6 +306,7 @@
     justify-content: center;
     min-width: 320px;
     position: relative;
+    z-index: 1;
 
     @media (max-width: 900px) {
       min-width: 0;
