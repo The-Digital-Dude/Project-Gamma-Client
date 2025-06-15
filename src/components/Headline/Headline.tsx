@@ -13,9 +13,10 @@ const Headline: React.FC<HeadlineProps> = ({
 }) => {
   return (
     <h1 className="landing__headline">
-      {mainText} <span className="landing__headline--bold">{boldText}</span>{" "}
-      solution to excel <br />
-      <span className="landing__headline--highlight">{highlightText}</span>
+      {mainText} <span className="landing__headline--bold">{boldText}</span>
+      {highlightText && (
+        <span className="landing__headline--highlight"> {highlightText}</span>
+      )}
     </h1>
   );
 };

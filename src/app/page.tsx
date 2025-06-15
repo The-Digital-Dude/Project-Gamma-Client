@@ -67,16 +67,15 @@ export default function Home() {
         <section className="landing__hero">
           <div className="landing__content">
             <Headline
-              mainText="The"
-              boldText="all-in-one"
-              highlightText="in your studies."
+              mainText="Smart Property Checker CRM for"
+              boldText=""
+              highlightText="Modern Managers"
             />
-            <Subtext text="Unlock a smarter way to study with our AI-driven suite of powerful learning tools designed to enhance your academic journey." />
-
+            <Subtext text="Unify landlords, checkers, and properties — all in one intelligent platform. Stay compliant, connected, and in control without the chaos." />
             <GlassyInput
               type="email"
               placeholder="Enter your email address"
-              buttonLabel="Request Demo"
+              buttonLabel="Request a Demo"
               onButtonClick={() => {
                 /* handle click */
               }}
@@ -89,18 +88,6 @@ export default function Home() {
           />
         </section>
       </div>
-
-      <Features
-        title="Powerful Features for Better Learning"
-        subtitle="Discover how our AI-powered tools can help you achieve academic excellence"
-        features={features}
-      />
-
-      <Testimonials
-        title="What Our Users Say"
-        subtitle="Join thousands of successful students who have transformed their learning experience"
-        testimonials={testimonials}
-      />
     </main>
   );
 }
