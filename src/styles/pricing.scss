@@ -1,0 +1,160 @@
+@import "variables";
+
+.pricing-section {
+  padding: 6rem 2rem;
+  background: linear-gradient(to bottom, #f8f9ff, #ffffff);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .pricing-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .pricing-header {
+    text-align: center;
+    margin-bottom: 4rem;
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.125rem;
+      color: #666;
+    }
+  }
+
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+  }
+
+  .pricing-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    &.highlighted {
+      border: 2px solid $primary-color;
+      transform: scale(1.05);
+
+      &::before {
+        content: "Most Popular";
+        position: absolute;
+        top: 1rem;
+        right: -2rem;
+        background: $primary-color;
+        color: white;
+        padding: 0.5rem 3rem;
+        transform: rotate(45deg);
+        font-size: 0.875rem;
+        font-weight: 600;
+      }
+    }
+
+    .card-header {
+      text-align: center;
+      margin-bottom: 2rem;
+
+      h2 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #1a1a1a;
+        margin-bottom: 1rem;
+      }
+
+      .price {
+        .amount {
+          font-size: 3rem;
+          font-weight: 700;
+          color: #1a1a1a;
+        }
+
+        .period {
+          font-size: 1rem;
+          color: #666;
+        }
+      }
+    }
+
+    .features-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 2rem 0;
+      flex-grow: 1;
+
+      li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+        color: #4a4a4a;
+        font-size: 1rem;
+
+        svg {
+          margin-right: 0.75rem;
+          color: $primary-color;
+          flex-shrink: 0;
+        }
+      }
+    }
+
+    .cta-button {
+      background: $primary-color;
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: $border-radius-rounded;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: 100%;
+
+      &:hover {
+        background: $primary-color-hover;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .pricing-section {
+    padding: 4rem 1rem;
+
+    .pricing-header {
+      h1 {
+        font-size: 2rem;
+      }
+    }
+
+    .pricing-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .pricing-card {
+      &.highlighted {
+        transform: none;
+      }
+    }
+  }
+}
