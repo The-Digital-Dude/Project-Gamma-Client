@@ -13,13 +13,13 @@ const Navbar: React.FC = () => {
         {/* Navigation Links */}
         <ul className="navbar__links">
           <li>
-            <a href="#chrome-extension">Chrome Extension</a>
+            <a href="#chrome-extension">Home</a>
           </li>
           <li>
-            <a href="#notebook">Notebook</a>
+            <a href="#notebook">About</a>
           </li>
           <li>
-            <a href="#help-center">Help Center</a>
+            <a href="#help-center">Features</a>
           </li>
           <li>
             <a href="#pricing">Pricing</a>
@@ -31,7 +31,7 @@ const Navbar: React.FC = () => {
             Log in
           </a>
           <a href="#join" className="navbar__join">
-            Join for free
+            Request Demo
           </a>
         </div>
       </div>
