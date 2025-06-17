@@ -1,0 +1,138 @@
+@import "@/styles/variables";
+@import "@/styles/landing";
+
+.about {
+  background: linear-gradient(to bottom, #ffffff, #f8fafc);
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+
+  &__hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12rem 1rem 4rem 1rem;
+    text-align: center;
+
+    background: linear-gradient(
+        135deg,
+        rgba(140, 90, 255, 0.05) 0%,
+        transparent 60%
+      ),
+      radial-gradient(
+        circle at top left,
+        rgba(140, 90, 255, 0.1) 0%,
+        transparent 70%
+      );
+
+    .about__content {
+      max-width: 900px;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+
+  &__section {
+    width: 100%;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__grid {
+    max-width: 1100px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  &__card {
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    background: #ffffff;
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    h2 {
+      font-size: 1.375rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #111;
+    }
+
+    p,
+    ul {
+      font-size: 1.0625rem;
+      line-height: 1.7;
+      color: #444;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+
+      li::before {
+        content: "•";
+        color: #8c5aff;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+      }
+
+      li {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    // Variants
+    &--accent1 {
+      background: #d6e1ff;
+    }
+
+    &--accent2 {
+      background: #fef0d5;
+    }
+
+    &--accent3 {
+      background: #d9f9e0;
+    }
+
+    &--accent4 {
+      background: #fed4e2;
+    }
+
+    &--accent5 {
+      background: #d1e8fe;
+    }
+
+    &--accent6 {
+      background: #fed4f1;
+    }
+  }
+
+  @media (max-width: 768px) {
+    &__hero {
+      padding: 4rem 1rem 3rem 1rem;
+    }
+
+    &__card {
+      h2 {
+        font-size: 1.25rem;
+      }
+    }
+  }
+}

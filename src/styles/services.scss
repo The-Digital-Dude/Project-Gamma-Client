@@ -4,7 +4,6 @@
   background: linear-gradient(to bottom, #ffffff, #f8fafc);
   min-height: 100vh;
   width: 100%;
-  padding-top: 64px;
 
   &__hero {
     padding: 4rem 2rem 2rem;
@@ -249,5 +248,103 @@
       transform: translateY(-2px) scale(1.04);
       box-shadow: 0 8px 24px rgba($primary-color, 0.22);
     }
+  }
+
+  &__eyebrow {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: $primary-color;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.5rem;
+  }
+
+  &__grid-section {
+    padding: 2rem 2rem 0 2rem;
+
+    @media (max-width: 768px) {
+      padding: 1.5rem 1rem 0 1rem;
+    }
+  }
+
+  &__grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 1rem;
+
+    @media (max-width: 600px) {
+      gap: 1.25rem;
+    }
+  }
+
+  &__card-small {
+    position: relative;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 1.75rem;
+    padding: 2.5rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+    }
+  }
+
+  &__card-icon-wrapper {
+    width: 64px;
+    height: 64px;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+
+    img {
+      width: 36px;
+      height: 36px;
+      object-fit: contain;
+    }
+  }
+
+  &__card-small-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #18181b;
+    margin-bottom: 0.75rem;
+  }
+
+  &__card-small-description {
+    font-size: 1.05rem;
+    color: #52525b;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+
+  &__card-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    li {
+      font-size: 1rem;
+      color: #444;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+  }
+
+  &__check-icon {
+    flex-shrink: 0;
+    font-size: 1.1rem;
   }
 }
