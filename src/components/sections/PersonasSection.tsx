@@ -23,9 +23,23 @@ const personas = [
   },
 ];
 
+const backgroundIcons = [MdApartment, MdChecklist, MdHome, MdStar];
+
 export default function PersonasSection() {
   return (
     <div className="landing__personas-wrapper">
+      <div className="background-icons">
+        {Array.from({ length: 256 }).map((_, index) => {
+          const IconComponent = backgroundIcons[index % backgroundIcons.length];
+          const rotation = Math.floor(Math.random() * 4) * 90;
+          return (
+            <IconComponent
+              key={index}
+              style={{ "--rotation": `${rotation}deg` } as React.CSSProperties}
+            />
+          );
+        })}
+      </div>
       <section className="landing__personas-section">
         <div className="landing__personas-header">
           <div className="landing__personas-pill">Pricing</div>
