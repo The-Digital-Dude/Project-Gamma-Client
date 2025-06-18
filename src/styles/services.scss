@@ -16,11 +16,6 @@
     }
   }
 
-  &__header {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-
   &__title {
     font-size: clamp(2.5rem, 6vw, 3.5rem);
     font-weight: 700;
@@ -77,12 +72,6 @@
     border-radius: 32px;
     padding: 3.5rem 3rem;
     transition: all 0.3s ease;
-
-    &:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(31, 38, 135, 0.12),
-        0 8px 24px rgba(0, 0, 0, 0.08);
-    }
 
     &--reverse {
       flex-direction: row-reverse;
@@ -243,11 +232,6 @@
     border: none;
     transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
     cursor: pointer;
-    &:hover {
-      background: $primary-color-hover;
-      transform: translateY(-2px) scale(1.04);
-      box-shadow: 0 8px 24px rgba($primary-color, 0.22);
-    }
   }
 
   &__eyebrow {
@@ -290,11 +274,6 @@
     flex-direction: column;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-    &:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
-    }
   }
 
   &__card-icon-wrapper {

@@ -143,10 +143,10 @@ const ServicesPage: React.FC = () => {
         </section>
 
         <CTA
-          title="Ready to boost your growth?"
+          title="Ready To Boost Your Growth"
           subtitle="Get in touch with our experts and start scaling your business today."
           buttonLabel="Get in Touch"
-          highlightText="today"
+          highlightText="Today?"
           onButtonClick={() => {
             console.log("cta click");
           }}
