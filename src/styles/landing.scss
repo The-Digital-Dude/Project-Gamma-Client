@@ -25,7 +25,6 @@
       );
     position: relative;
     overflow: hidden;
-    padding: 3rem 0;
 
     .background-icons {
       position: absolute;
@@ -421,9 +420,10 @@
 
 // Personas Section
 .landing__personas-section {
+  border-top: 2px solid rgba(0, 0, 0, 0.08);
   max-width: 1600px;
   margin: 0 auto;
-  padding: 6rem 3rem 4rem 3rem;
+  padding: 6rem 3rem 6rem 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -438,8 +438,11 @@
 
 .landing__personas-pill {
   display: inline-block;
-  background: $primary-color;
-  color: white;
+  border: 1px solid $primary-color;
+  background-color: rgba(212, 183, 246, 0.143);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  color: $primary-color;
   font-size: 0.875rem;
   font-weight: 600;
   padding: 0.5rem 1.25rem;

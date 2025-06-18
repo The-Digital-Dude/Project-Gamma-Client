@@ -1,0 +1,51 @@
+.content {
+  max-width: 600px;
+}
+
+.eyebrow {
+  font-size: var(--font-sm);
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-md);
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+.description {
+  font-size: var(--font-sm);
+  line-height: 1.6;
+  color: var(--text-tertiary);
+  margin-bottom: var(--space-lg);
+  max-width: 540px;
+}
+
+.ctaWrapper {
+  margin-top: 0;
+  margin-bottom: var(--space-md);
+}
+
+@media (max-width: 1024px) {
+  .content {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .description {
+    font-size: var(--font-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .button {
+    width: 100%;
+    justify-content: center;
+  }
+}

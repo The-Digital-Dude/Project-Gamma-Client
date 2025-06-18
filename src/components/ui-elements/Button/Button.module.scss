@@ -1,0 +1,60 @@
+.button {
+  display: inline-block;
+  background-color: var(--brand-purple);
+  color: #fff;
+  background-image: linear-gradient(#ffffff1a, #fff0);
+  border-radius: 100px;
+  padding: 12px 24px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+  -webkit-user-select: none;
+  user-select: none;
+  text-decoration: none;
+  box-shadow: 0px 24px 22px rgba(23, 6, 100, 0.0372022),
+    0px 8.5846px 8.03036px rgba(23, 6, 100, 0.0532451),
+    0px 4.77692px 3.89859px rgba(23, 6, 100, 0.0667549),
+    0px 2.63479px 1.91116px rgba(23, 6, 100, 0.0827978),
+    0px 1.15891px 0.755676px rgba(23, 6, 100, 0.12);
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+
+  &.outline {
+    background-color: transparent;
+    border: 1px solid var(--brand-purple);
+    color: var(--brand-purple);
+    background-image: none;
+    box-shadow: none;
+
+    &:hover {
+      background-color: var(--brand-purple);
+      color: #fff;
+      opacity: 1;
+    }
+  }
+
+  &.small {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  &.large {
+    padding: 16px 32px;
+    font-size: 18px;
+  }
+
+  &.fullWidth {
+    width: 100%;
+    text-align: center;
+  }
+
+  &.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
