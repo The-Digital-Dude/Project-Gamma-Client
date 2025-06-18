@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Benefits.module.scss";
+import Heading from "@/components/ui-elements/Heading/Heading";
 
 const Benefits = () => {
   const benefits = [
@@ -162,12 +163,7 @@ const Benefits = () => {
     <section className={styles.benefits}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <h2 className={styles.title}>Our benefits</h2>
-          <p className={styles.subtitle}>
-            We aim to provide generous benefits to our team. The following
-            benefits are for US employees; we provide comparable benefits
-            outside the US.
-          </p>
+          <Heading title="Our benefits" subtitle="For You" size="md" />
         </div>
         <div className={styles.grid}>
           {benefits.map((benefit, index) => (

@@ -1,0 +1,117 @@
+@import "@/styles/variables";
+
+.heading {
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.15;
+  margin-bottom: var(--space-md);
+  letter-spacing: -0.02em;
+
+  .subHeading {
+    display: block;
+    margin-top: var(--space-xs);
+    color: var(--brand-purple);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+  }
+}
+
+// Large size
+.lg {
+  font-size: var(--font-5xl);
+
+  .subHeading {
+    font-size: var(--font-xl);
+  }
+
+  @media (max-width: 1200px) {
+    font-size: var(--font-4xl);
+
+    .subHeading {
+      font-size: var(--font-lg);
+    }
+  }
+
+  @media (max-width: 768px) {
+    font-size: var(--font-3xl);
+
+    .subHeading {
+      font-size: var(--font-md);
+    }
+  }
+
+  @media (max-width: 480px) {
+    font-size: var(--font-2xl);
+
+    .subHeading {
+      font-size: var(--font-sm);
+    }
+  }
+}
+
+// Medium size
+.md {
+  font-size: var(--font-4xl);
+
+  .subHeading {
+    font-size: var(--font-lg);
+  }
+
+  @media (max-width: 1200px) {
+    font-size: var(--font-3xl);
+
+    .subHeading {
+      font-size: var(--font-md);
+    }
+  }
+
+  @media (max-width: 768px) {
+    font-size: var(--font-2xl);
+
+    .subHeading {
+      font-size: var(--font-sm);
+    }
+  }
+
+  @media (max-width: 480px) {
+    font-size: var(--font-xl);
+
+    .subHeading {
+      font-size: var(--font-xs);
+    }
+  }
+}
+
+// Small size
+.sm {
+  font-size: var(--font-3xl);
+
+  .subHeading {
+    font-size: var(--font-md);
+  }
+
+  @media (max-width: 1200px) {
+    font-size: var(--font-2xl);
+
+    .subHeading {
+      font-size: var(--font-sm);
+    }
+  }
+
+  @media (max-width: 768px) {
+    font-size: var(--font-xl);
+
+    .subHeading {
+      font-size: var(--font-xs);
+    }
+  }
+
+  @media (max-width: 480px) {
+    font-size: var(--font-lg);
+
+    .subHeading {
+      font-size: var(--font-xs);
+    }
+  }
+}

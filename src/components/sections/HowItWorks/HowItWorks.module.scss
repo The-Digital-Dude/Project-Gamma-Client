@@ -1,7 +1,7 @@
-@import "../../../styles/variables";
+@import "@/styles/variables";
 
 .howItWorks {
-  padding: 8rem 0;
+  padding: var(--section-padding-2xl) 0;
   position: relative;
   overflow: hidden;
 
@@ -15,7 +15,7 @@
     bottom: 0;
     background: linear-gradient(
       135deg,
-      rgba(123, 97, 255, 0.03) 0%,
+      var(--brand-purple-light) 0%,
       rgba(99, 102, 241, 0.02) 25%,
       rgba(168, 85, 247, 0.03) 50%,
       rgba(236, 72, 153, 0.02) 75%,
@@ -29,26 +29,26 @@
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 var(--space-lg);
   position: relative;
   z-index: 1;
-  border-radius: 24px;
+  border-radius: var(--border-radius-lg);
 
   @media (max-width: 768px) {
-    padding: 0 1rem;
+    padding: 0 var(--space-md);
   }
 }
 
 .content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  gap: var(--space-2xl);
   align-items: center;
-  margin-bottom: 4rem;
+  margin-bottom: var(--space-2xl);
 
   @media (max-width: 968px) {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: var(--space-xl);
     text-align: center;
   }
 }
@@ -56,12 +56,12 @@
 .textSection {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: var(--space-md);
 }
 
 .subtitle {
-  color: $primary-color;
-  font-size: 1.1rem;
+  color: var(--brand-purple);
+  font-size: var(--font-md);
   font-weight: 600;
   margin: 0;
   text-transform: uppercase;
@@ -69,30 +69,30 @@
 }
 
 .title {
-  font-size: 3.5rem;
+  font-size: var(--font-5xl);
   font-weight: 800;
   line-height: 1.1;
-  color: #1a1a1a;
+  color: var(--text-primary);
   margin: 0;
 
   @media (max-width: 768px) {
-    font-size: 2.5rem;
+    font-size: var(--font-4xl);
   }
 
   @media (max-width: 480px) {
-    font-size: 2rem;
+    font-size: var(--font-3xl);
   }
 }
 
 .titleSecondary {
-  color: #666;
+  color: var(--text-secondary);
   font-weight: 400;
 }
 
 .description {
-  font-size: 1.25rem;
+  font-size: var(--font-lg);
   line-height: 1.6;
-  color: #666;
+  color: var(--text-secondary);
   margin: 0;
   max-width: 480px;
 
@@ -101,23 +101,23 @@
   }
 
   @media (max-width: 768px) {
-    font-size: 1.1rem;
+    font-size: var(--font-md);
   }
 }
 
 .ctaButton {
   display: inline-flex;
   align-items: center;
-  background: $primary-color;
+  background: var(--brand-purple);
   color: white;
   font-weight: 700;
-  font-size: 1.1rem;
-  padding: 1rem 2.5rem;
-  border-radius: $border-radius-rounded;
+  font-size: var(--font-md);
+  padding: var(--space-md) var(--space-xl);
+  border-radius: var(--border-radius-full);
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(123, 97, 255, 0.2);
+  box-shadow: var(--shadow-md);
   max-width: fit-content;
   white-space: nowrap;
 
@@ -126,9 +126,9 @@
   }
 
   &:hover {
-    background: $primary-color-hover;
-    box-shadow: 0 6px 16px rgba(123, 97, 255, 0.3);
-    transform: translateY(-1px);
+    background: var(--brand-purple-hover);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
   }
 
   &:active {
@@ -145,10 +145,10 @@
 
 .ssoMockup {
   background: rgba(255, 255, 255, 0.9);
-  border-radius: 16px;
-  padding: 2rem;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 8px 32px rgba(123, 97, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-color);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   max-width: 380px;
@@ -172,43 +172,31 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 2rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .mockupTitle {
-  font-size: 1.25rem;
+  font-size: var(--font-lg);
   font-weight: 600;
-  color: #1a1a1a;
+  color: var(--text-primary);
 }
 
 .mockupLogo {
-  width: 40px;
-  height: 40px;
+  width: var(--space-2xl);
+  height: var(--space-2xl);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .logoIcon {
-  width: 32px;
-  height: 32px;
-  background: $primary-color;
-  border-radius: 8px;
+  width: var(--space-xl);
+  height: var(--space-xl);
+  background: var(--brand-purple);
+  border-radius: var(--border-radius-md);
   position: relative;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 16px;
-    height: 16px;
-    background: white;
-    border-radius: 4px;
-  }
 }
 
 .mockupContent {

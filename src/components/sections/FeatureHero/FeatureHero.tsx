@@ -9,7 +9,7 @@ const FeatureHero = () => {
         <SectionContent
           eyebrow="The all-in-one solution"
           title="Enterprise SSO"
-          subtitle="(and a whole lot more)"
+          subtitle="and a whole lot more"
           description="WorkOS is a set of building blocks for quickly adding enterprise features to your app. You'll be shipping quickly with a market-proven solution for your customers."
           ctaText="Add Single Sign-On to your app"
           ctaLink="/docs/sso/guide"

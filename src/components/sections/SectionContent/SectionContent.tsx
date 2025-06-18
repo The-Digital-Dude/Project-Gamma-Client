@@ -1,5 +1,6 @@
-import Link from "next/link";
 import styles from "./SectionContent.module.scss";
+import { Button } from "@/components/ui-elements/Button/Button";
+import Heading from "@/components/ui-elements/Heading/Heading";
 
 interface SectionContentProps {
   eyebrow: string;
@@ -21,16 +22,10 @@ const SectionContent = ({
   return (
     <div className={styles.content}>
       <h2 className={styles.eyebrow}>{eyebrow}</h2>
-      <h1 className={styles.heading}>
-        {title}
-        <br />
-        <span className={styles.subHeading}>{subtitle}</span>
-      </h1>
+      <Heading title={title} subtitle={subtitle} />
       <p className={styles.description}>{description}</p>
       <div className={styles.ctaWrapper}>
-        <Link href={ctaLink} className={styles.button}>
-          {ctaText}
-        </Link>
+        <Button href={ctaLink}>{ctaText}</Button>
       </div>
     </div>
   );
