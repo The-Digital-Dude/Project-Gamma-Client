@@ -25,3 +25,36 @@ body {
   color: var(--foreground);
   font-family: "DM Sans", Arial, Helvetica, sans-serif;
 }
+
+
+.accent-background--1 {
+  background: #fff9f0;
+}
+
+.accent-background--2 {
+  background: #f0f8ff;
+}
+
+.accent-background--3 {
+  background: #faf0fa;
+}
+
+.accent-background--4 {
+  background: #f8f5ff;
+}
+
+.accent-border--1 {
+  border: 1px solid rgba(253, 230, 161, 0.548);
+}
+
+.accent-border--2 {
+  border: 1px solid rgba(141, 209, 255, 0.534);
+}
+
+.accent-border--3 {
+  border: 1px solid rgba(198, 169, 255, 0.555);
+}
+
+.accent-border--4 {
+  border: 1px solid #d1bdff91;
+}

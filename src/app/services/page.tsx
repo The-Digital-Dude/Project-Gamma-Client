@@ -13,6 +13,7 @@ import {
   MdGroups,
 } from "react-icons/md";
 import { IconType } from "react-icons";
+import PillText from "@/components/PillText/PillText";
 
 const ServicesPage: React.FC = () => {
   interface Service {
@@ -100,7 +101,7 @@ const ServicesPage: React.FC = () => {
       </div>
       <section className="services">
         <section className="services__hero">
-          <p className="services__eyebrow">Our Services</p>
+          <PillText text="Our Services" />
           <h1 className="services__title">High-impact marketing services</h1>
         </section>
 
@@ -150,6 +151,7 @@ const ServicesPage: React.FC = () => {
           onButtonClick={() => {
             console.log("cta click");
           }}
+          className="bg-white"
         />
       </section>
     </main>

@@ -58,13 +58,19 @@ const Pricing = () => {
           {plans.map((plan, index) => (
             <div
               key={index}
-              className={`pricing-card ${
-                plan.highlighted ? "highlighted" : ""
+              className={`pricing-card${
+                plan.highlighted ? " highlighted" : ""
               }`}
             >
+              {plan.highlighted && (
+                <div className="popular-ribbon">Most Popular</div>
+                // <p className="m-plans__ribbon">
+                //   <span>Recommended</span>
+                // </p>
+              )}
               <div className="card-header">
-                <h2>{plan.name}</h2>
-                <div className="price">
+                <h2 className="plan-name">{plan.name}</h2>
+                <div className="price-row">
                   <span className="amount">{plan.price}</span>
                   <span className="period">/{plan.period}</span>
                 </div>
@@ -72,20 +78,22 @@ const Pricing = () => {
 
               <ul className="features-list">
                 {plan.features.map((feature, idx) => (
-                  <li key={idx}>
-                    <svg
-                      width="20"
-                      height="20"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M8 15L3 10L4.41 8.59L8 12.17L15.59 4.58L17 6L8 15Z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                    {feature}
+                  <li key={idx} className="feature-item">
+                    <span className="feature-icon">
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M8 15L3 10L4.41 8.59L8 12.17L15.59 4.58L17 6L8 15Z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </span>
+                    <span className="feature-text">{feature}</span>
                   </li>
                 ))}
               </ul>

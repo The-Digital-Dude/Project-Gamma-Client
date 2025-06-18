@@ -16,13 +16,13 @@ const Navbar: React.FC = () => {
             <a href="#chrome-extension">Home</a>
           </li>
           <li>
-            <a href="#notebook">About</a>
+            <a href="/about">About</a>
           </li>
           <li>
-            <a href="#help-center">Features</a>
+            <a href="/services">Services</a>
           </li>
           <li>
-            <a href="#pricing">Pricing</a>
+            <a href="/pricing">Pricing</a>
           </li>
         </ul>
         {/* Action Buttons */}
