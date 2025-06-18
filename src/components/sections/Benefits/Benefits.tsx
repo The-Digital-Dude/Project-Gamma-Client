@@ -47,7 +47,7 @@ const Benefits = () => {
       ),
       title: "Retirement & 401k",
       description:
-        "WorkOS provides a 3% match of your 401k contributions to help you save for retirement.",
+        "WorkOS provides a 3% match of your 401k contributions to help you save for retirement. Isn't that great?",
     },
     {
       icon: (

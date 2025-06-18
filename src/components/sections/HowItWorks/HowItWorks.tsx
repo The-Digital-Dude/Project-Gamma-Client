@@ -1,5 +1,7 @@
 import React from "react";
 import styles from "./HowItWorks.module.scss";
+import SectionContent from "../SectionContent/SectionContent";
+import FeatureGrid from "../FeatureGrid/FeatureGrid";
 import {
   FaMicrochip,
   FaUsers,
@@ -63,24 +65,14 @@ const HowItWorks = () => {
     <section className={styles.howItWorks}>
       <div className={styles.container}>
         <div className={styles.content}>
-          <div className={styles.textSection}>
-            <p className={styles.subtitle}>The all-in-one solution</p>
-            <h2 className={styles.title}>
-              Enterprise SSO
-              <br />
-              <span className={styles.titleSecondary}>
-                (and a whole lot more)
-              </span>
-            </h2>
-            <p className={styles.description}>
-              WorkOS is a set of building blocks for quickly adding enterprise
-              features to your app. You'll be shipping quickly with a
-              market-proven solution for your customers.
-            </p>
-            <button className={styles.ctaButton}>
-              Add Single Sign-On to your app
-            </button>
-          </div>
+          <SectionContent
+            eyebrow="The all-in-one solution"
+            title="Enterprise SSO"
+            subtitle="(and a whole lot more)"
+            description="WorkOS is a set of building blocks for quickly adding enterprise features to your app. You'll be shipping quickly with a market-proven solution for your customers."
+            ctaText="Add Single Sign-On to your app"
+            ctaLink="/docs/sso/guide"
+          />
           <div className={styles.visualSection}>
             <div className={styles.ssoMockup}>
               <div className={styles.mockupHeader}>
@@ -117,24 +109,7 @@ const HowItWorks = () => {
             </div>
           </div>
         </div>
-        <div className={styles.featuresGrid}>
-          {features.map((feature, index) => (
-            <div key={index} className={styles.featureCard}>
-              <div
-                className={styles.featureIcon}
-                style={{ background: feature.gradient }}
-              >
-                {feature.icon}
-              </div>
-              <div className={styles.featureContent}>
-                <h3 className={styles.featureTitle}>{feature.title}</h3>
-                <p className={styles.featureDescription}>
-                  {feature.description}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
+        <FeatureGrid />
       </div>
     </section>
   );
