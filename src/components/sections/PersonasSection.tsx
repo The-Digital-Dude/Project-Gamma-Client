@@ -42,10 +42,12 @@ export default function PersonasSection() {
       </div>
       <section className="landing__personas-section">
         <div className="landing__personas-header">
-          <div className="landing__personas-pill">Pricing</div>
+          <div className="landing__personas-pill">Who is it for?</div>
           <h2 className="landing__personas-title">
-            Choose the best plan{" "}
-            <span className="landing__personas-title--highlight">for you</span>
+            Smart Solutions for{" "}
+            <span className="landing__personas-title--highlight">
+              You and Your Team
+            </span>
           </h2>
           <p className="landing__personas-subtitle">
             Built for Property Managers, Checkers & Landlords.

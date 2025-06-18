@@ -1,0 +1,122 @@
+@import "../../styles/variables";
+
+.footer {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  display: block;
+  color: var(--foreground-light-3);
+  background-color: #f9f9fb;
+  padding-top: 66px;
+  padding-bottom: 24px;
+}
+
+.pagepadding {
+  padding-left: var(--page-padding);
+  padding-right: var(--page-padding);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.footermenu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 48px;
+  margin-bottom: 64px;
+}
+
+.footerlogolink {
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    color: var(--brand-purple);
+  }
+}
+
+.footermenucell {
+  > div:first-child {
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 16px;
+  }
+}
+
+.footerlink {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  margin-bottom: 12px;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: var(--brand-purple);
+  }
+}
+
+.footerbottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+}
+
+.footercopyright {
+  color: var(--foreground-light-3);
+}
+
+.footersocial {
+  display: flex;
+  gap: 16px;
+}
+
+.footersociallink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: var(--brand-purple);
+  }
+}
+
+.iconembed {
+  display: inline-block;
+  line-height: 0;
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .footer {
+    padding-top: 48px;
+  }
+
+  .footermenu {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  .footerbottom {
+    flex-direction: column;
+    gap: 24px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footermenu {
+    grid-template-columns: 1fr;
+  }
+}

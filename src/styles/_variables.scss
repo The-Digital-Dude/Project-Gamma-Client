@@ -1,3 +1,40 @@
 $primary-color: #7b61ff;
 $primary-color-hover: darken($primary-color, 7%);
 $border-radius-rounded: 999px;
+
+:root {
+  // Colors
+  --black: #29363d;
+  --black-dark: #030628;
+  --brand-purple: #6363f1;
+  --brand-3: #d8d9fa;
+  --dark-accent: #23f0c3;
+
+  // Foreground colors
+  --foreground-light-2: #656b8a;
+  --foreground-light-3: #8f96bd;
+  --foreground-dark-2: #c5cae8;
+  --foreground-dark-3: #878ca6;
+
+  // Background colors
+  --section-light: #f9f9fb;
+  --cool-gray: #eceff1;
+
+  // Border colors
+  --border-color: #e8eaed;
+  --border-dark: #2b335a;
+
+  // Spacing
+  --page-padding: 56px;
+
+  // UI Elements
+  --um-cta-radius: 100px;
+  --um-text-primary: #2b333b;
+  --um-input-border: #dddde3;
+  --um-input-bg: #f9f9fb;
+  --um-input-border-active: #b9bbc6;
+  --um-input-bg-active: white;
+  --um-text-secondary: #60646c;
+  --um-color-swatch-border: #0000301a;
+  --um-cta-accent: #d1d1ff;
+}
