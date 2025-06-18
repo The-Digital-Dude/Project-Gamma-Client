@@ -9,6 +9,10 @@ interface SectionContentProps {
   description: string;
   ctaText: string;
   ctaLink: string;
+  buttonVariant?: "default" | "outline";
+  eyebrowColor?: string;
+  titleColor?: string;
+  subtitleColor?: string;
 }
 
 const SectionContent = ({
@@ -18,14 +22,27 @@ const SectionContent = ({
   description,
   ctaText,
   ctaLink,
+  buttonVariant = "default",
+  eyebrowColor = "var(--text-secondary)",
+  titleColor = "var(--brand-purple)",
+  subtitleColor = "var(--text-primary)",
 }: SectionContentProps) => {
   return (
     <div className={styles.content}>
-      <h2 className={styles.eyebrow}>{eyebrow}</h2>
-      <Heading title={title} subtitle={subtitle} />
+      <h2 className={styles.eyebrow} style={{ color: eyebrowColor }}>
+        {eyebrow}
+      </h2>
+      <Heading
+        title={title}
+        subtitle={subtitle}
+        titleColor={titleColor}
+        subtitleColor={subtitleColor}
+      />
       <p className={styles.description}>{description}</p>
       <div className={styles.ctaWrapper}>
-        <Button href={ctaLink}>{ctaText}</Button>
+        <Button href={ctaLink} variant={buttonVariant}>
+          {ctaText}
+        </Button>
       </div>
     </div>
   );

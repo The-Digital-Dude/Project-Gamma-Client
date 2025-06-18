@@ -26,13 +26,15 @@
 
   &.outline {
     background-color: transparent;
-    border: 1px solid var(--border-color);
-    color: var(--black);
+    border: 1px solid var(--brand-purple);
+    color: var(--brand-purple);
     background-image: none;
     box-shadow: none;
 
     &:hover {
-      background-color: var(--section-light);
+      background-color: var(--brand-purple);
+      color: #fff;
+      opacity: 1;
     }
   }
 

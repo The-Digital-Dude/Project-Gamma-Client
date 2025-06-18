@@ -14,6 +14,14 @@
   grid-template-columns: 1fr 1fr;
   gap: var(--space-2xl);
   align-items: center;
+
+  &.contentRight {
+    direction: rtl;
+
+    > * {
+      direction: ltr;
+    }
+  }
 }
 
 .content {
@@ -61,6 +69,10 @@
     grid-template-columns: 1fr;
     gap: var(--space-xl);
     padding: 0 var(--space-md);
+
+    &.contentRight {
+      direction: ltr;
+    }
   }
 
   .title {

@@ -2,7 +2,7 @@
 
 .heading {
   font-weight: 800;
-  color: var(--text-primary);
+  color: var(--brand-purple);
   line-height: 1.15;
   margin-bottom: var(--space-md);
   letter-spacing: -0.02em;
@@ -10,7 +10,7 @@
   .subHeading {
     display: block;
     margin-top: var(--space-xs);
-    color: var(--brand-purple);
+    color: var(--text-primary);
     font-weight: 600;
     line-height: 1.2;
     letter-spacing: -0.025em;
