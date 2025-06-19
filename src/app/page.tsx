@@ -24,12 +24,10 @@ export default function Home() {
         contentPosition="right"
         buttonVariant="outline"
         eyebrowColor="var(--text-tertiary)"
-        titleColor="var(--brand-purple)"
-        subtitleColor="var(--black-dark)"
       />
       <FeatureHero
         eyebrow="Powerful Directory Sync"
-        title="Directory Sync"
+        title="Directory Sync In Minutes"
         subtitle="Automated User Management"
         description="Automatically sync user accounts and groups from any identity provider. Keep your user directory up-to-date without manual intervention."
         ctaText="Learn About Directory Sync"
@@ -39,8 +37,6 @@ export default function Home() {
         contentPosition="left"
         buttonVariant="default"
         eyebrowColor="var(--text-tertiary)"
-        titleColor="var(--black-dark)"
-        subtitleColor="var(--brand-purple)"
       />
     </main>
   );

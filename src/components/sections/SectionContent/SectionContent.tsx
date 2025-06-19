@@ -23,21 +23,13 @@ const SectionContent = ({
   ctaText,
   ctaLink,
   buttonVariant = "default",
-  eyebrowColor = "var(--text-secondary)",
-  titleColor = "var(--brand-purple)",
-  subtitleColor = "var(--text-primary)",
 }: SectionContentProps) => {
   return (
     <div className={styles.content}>
-      <h2 className={styles.eyebrow} style={{ color: eyebrowColor }}>
+      <h2 className={styles.eyebrow} style={{}}>
         {eyebrow}
       </h2>
-      <Heading
-        title={title}
-        subtitle={subtitle}
-        titleColor={titleColor}
-        subtitleColor={subtitleColor}
-      />
+      <Heading title={title} subtitle={subtitle} />
       <p className={styles.description}>{description}</p>
       <div className={styles.ctaWrapper}>
         <Button href={ctaLink} variant={buttonVariant}>
