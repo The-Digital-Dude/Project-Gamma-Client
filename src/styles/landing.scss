@@ -1,4 +1,4 @@
-@import "./variables";
+@import "@/styles/variables";
 
 .landing {
   background: linear-gradient(to bottom, #ffffff, #f8fafc);
@@ -42,7 +42,7 @@
         width: 32px;
         height: 32px;
         color: $primary-color;
-        transform: rotate(var(--rotation));
+        transform: rotate(45deg);
       }
     }
 

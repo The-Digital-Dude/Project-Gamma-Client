@@ -1,3 +1,5 @@
+@import "@/styles/variables";
+
 .content {
   max-width: 600px;
 }
@@ -8,22 +10,23 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   font-weight: 500;
+  font-size: $font-sm;
   letter-spacing: 0.05em;
   display: inline-block;
-  margin-bottom: var(--space-md);
+  margin-bottom: $space-md;
 }
 
 .description {
-  font-size: var(--font-sm);
+  font-size: $font-sm;
   line-height: 1.6;
-  color: var(--text-tertiary);
-  margin-bottom: var(--space-lg);
+  color: $text-tertiary;
+  margin-bottom: $space-lg;
   max-width: 540px;
 }
 
 .ctaWrapper {
   margin-top: 0;
-  margin-bottom: var(--space-md);
+  margin-bottom: $space-md;
 }
 
 @media (max-width: 1024px) {
@@ -41,7 +44,7 @@
 
 @media (max-width: 768px) {
   .description {
-    font-size: var(--font-sm);
+    font-size: $font-sm;
   }
 }
 

@@ -29,9 +29,6 @@ const FeatureHero = ({
   imageAlt,
   contentPosition = "left",
   buttonVariant = "default",
-  eyebrowColor = "var(--text-secondary)",
-  titleColor = "var(--brand-purple)",
-  subtitleColor = "var(--text-primary)",
 }: FeatureHeroProps) => {
   const containerClasses = [
     styles.container,
@@ -49,9 +46,6 @@ const FeatureHero = ({
       ctaText={ctaText}
       ctaLink={ctaLink}
       buttonVariant={buttonVariant}
-      eyebrowColor={eyebrowColor}
-      titleColor={titleColor}
-      subtitleColor={subtitleColor}
     />
   );
 

@@ -23,7 +23,7 @@ export default function Home() {
         imageAlt="Enterprise SSO Interface"
         contentPosition="right"
         buttonVariant="outline"
-        eyebrowColor="var(--text-tertiary)"
+        eyebrowColor="$text-tertiary)"
       />
       <FeatureHero
         eyebrow="Powerful Directory Sync"
@@ -36,7 +36,7 @@ export default function Home() {
         imageAlt="Directory Sync Dashboard"
         contentPosition="left"
         buttonVariant="default"
-        eyebrowColor="var(--text-tertiary)"
+        eyebrowColor="$text-tertiary)"
       />
     </main>
   );

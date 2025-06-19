@@ -1,4 +1,4 @@
-@import "../../styles/variables";
+@import "@/styles/variables.scss";
 
 .footer {
   -webkit-text-size-adjust: 100%;
@@ -9,15 +9,14 @@
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   display: block;
-  color: var(--foreground-light-3);
-  background-color: #f9f9fb;
-  padding-top: 66px;
-  padding-bottom: 24px;
+  color: $foreground-light-3;
+  background-color: white;
+  padding: 64px 0 32px;
 }
 
 .pagepadding {
-  padding-left: var(--page-padding);
-  padding-right: var(--page-padding);
+  padding-left: $page-padding;
+  padding-right: $page-padding;
 }
 
 .container {
@@ -39,14 +38,14 @@
   text-decoration: none;
 
   &:hover {
-    color: var(--brand-purple);
+    color: $brand-purple;
   }
 }
 
 .footermenucell {
   > div:first-child {
     font-weight: 600;
-    color: var(--black);
+    color: $black;
     margin-bottom: 16px;
   }
 }
@@ -59,7 +58,7 @@
   transition: color 0.2s ease;
 
   &:hover {
-    color: var(--brand-purple);
+    color: $brand-purple;
   }
 }
 
@@ -68,11 +67,11 @@
   justify-content: space-between;
   align-items: center;
   padding-top: 24px;
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid $border-color;
 }
 
 .footercopyright {
-  color: var(--foreground-light-3);
+  color: $foreground-light-3;
 }
 
 .footersocial {
@@ -88,7 +87,7 @@
   transition: color 0.2s ease;
 
   &:hover {
-    color: var(--brand-purple);
+    color: $brand-purple;
   }
 }
 

@@ -1,12 +1,14 @@
+@import "@/styles/variables";
+
 .button {
   display: inline-block;
-  background-color: var(--brand-purple);
-  color: #fff;
+  background-color: $brand-purple;
+  color: white;
   background-image: linear-gradient(#ffffff1a, #fff0);
   border-radius: 100px;
   padding: 12px 24px;
   font-weight: 500;
-  transition: background-color 0.2s;
+  transition: all 0.2s ease;
   -webkit-user-select: none;
   user-select: none;
   text-decoration: none;
@@ -17,7 +19,12 @@
     0px 1.15891px 0.755676px rgba(23, 6, 100, 0.12);
 
   &:hover {
-    opacity: 0.9;
+    background-color: darken($brand-purple, 10%);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba($brand-purple, 0.3);
   }
 
   &:active {
@@ -26,15 +33,14 @@
 
   &.outline {
     background-color: transparent;
-    border: 1px solid var(--brand-purple);
-    color: var(--brand-purple);
+    border: 1px solid $brand-purple;
+    color: $brand-purple;
     background-image: none;
     box-shadow: none;
 
     &:hover {
-      background-color: var(--brand-purple);
-      color: #fff;
-      opacity: 1;
+      background-color: $brand-purple;
+      color: white;
     }
   }
 

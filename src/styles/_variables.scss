@@ -1,75 +1,75 @@
+// Brand Colors
 $primary-color: #7b61ff;
 $primary-color-hover: darken($primary-color, 7%);
+$brand-purple: #6363f1;
+$brand-purple-hover: #4f46e5;
+$brand-purple-light: rgba(99, 99, 241, 0.1);
+$brand-3: #d8d9fa;
+
+// Base Colors
+$black: #29363d;
+$black-dark: #030628;
+
+// Text Colors
+$text-primary: #1e293b;
+$text-secondary: #475569;
+$text-tertiary: #64748b;
+
+// Heading Colors
+$heading-primary: rgba(24, 25, 58, 0.84);
+
+// Foreground colors
+$foreground-light-2: #656b8a;
+$foreground-light-3: #8f96bd;
+$foreground-dark-2: #c5cae8;
+$foreground-dark-3: #878ca6;
+
+// Background colors
+$section-light: #f9f9fb;
+$cool-gray: #eceff1;
+
+// Border colors
+$border-color: #e8eaed;
+$border-dark: #2b335a;
 $border-radius-rounded: 999px;
 
-:root {
-  // Colors
-  --black: #29363d;
-  --black-dark: #030628;
+// Spacing
+$space-xs: 0.5rem;
+$space-sm: 1rem;
+$space-md: 1.5rem;
+$space-lg: 2rem;
+$space-xl: 2.5rem;
+$space-2xl: 3rem;
+$page-padding: 3.5rem;
 
-  // Brand Colors
-  --brand-purple: #6363f1;
-  --brand-purple-hover: #4f46e5;
-  --brand-purple-light: rgba(99, 99, 241, 0.1);
-  --brand-3: #d8d9fa;
+// Section Padding
+$section-padding-sm: 2rem;
+$section-padding-md: 3rem;
+$section-padding-lg: 4rem;
+$section-padding-xl: 5rem;
+$section-padding-2xl: 6rem;
 
-  // Text Colors
-  --text-primary: #1e293b;
-  --text-secondary: #475569;
-  --text-tertiary: #64748b;
+// Font Family
+$font-sans: "DM Sans", Arial, Helvetica, sans-serif;
 
-  // Heading Colors
-  --heading-primary: #18193ad7;
+// Font Sizes
+$font-xs: 0.875rem;
+$font-sm: 1rem;
+$font-md: 1.125rem;
+$font-lg: 1.25rem;
+$font-xl: 1.5rem;
+$font-2xl: 2rem;
+$font-3xl: 2.5rem;
+$font-4xl: 3rem;
+$font-5xl: 3.5rem;
 
-  // Foreground colors
-  --foreground-light-2: #656b8a;
-  --foreground-light-3: #8f96bd;
-  --foreground-dark-2: #c5cae8;
-  --foreground-dark-3: #878ca6;
+// UI Elements
+$border-radius-sm: 0.5rem;
+$border-radius-md: 0.75rem;
+$border-radius-lg: 1rem;
+$border-radius-full: 9999px;
 
-  // Background colors
-  --section-light: #f9f9fb;
-  --cool-gray: #eceff1;
-
-  // Border colors
-  --border-color: #e8eaed;
-  --border-dark: #2b335a;
-
-  // Spacing
-  --space-xs: 0.5rem; // 8px
-  --space-sm: 1rem; // 16px
-  --space-md: 1.5rem; // 24px
-  --space-lg: 2rem; // 32px
-  --space-xl: 2.5rem; // 40px
-  --space-2xl: 3rem; // 48px
-  --page-padding: 56px;
-
-  // Section Padding
-  --section-padding-sm: 2rem;
-  --section-padding-md: 3rem;
-  --section-padding-lg: 4rem;
-  --section-padding-xl: 5rem;
-  --section-padding-2xl: 6rem;
-
-  // Font Sizes
-  --font-xs: 0.875rem; // 14px
-  --font-sm: 1rem; // 16px
-  --font-md: 1.125rem; // 18px
-  --font-lg: 1.25rem; // 20px
-  --font-xl: 1.5rem; // 24px
-  --font-2xl: 2rem; // 32px
-  --font-3xl: 2.5rem; // 40px
-  --font-4xl: 3rem; // 48px
-  --font-5xl: 3.5rem; // 56px
-
-  // UI Elements
-  --border-radius-sm: 8px;
-  --border-radius-md: 12px;
-  --border-radius-lg: 16px;
-  --border-radius-full: 9999px;
-
-  // Shadows
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.1);
-}
+// Shadows
+$shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.1);

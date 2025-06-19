@@ -10,9 +10,6 @@ interface SectionContentProps {
   ctaText: string;
   ctaLink: string;
   buttonVariant?: "default" | "outline";
-  eyebrowColor?: string;
-  titleColor?: string;
-  subtitleColor?: string;
 }
 
 const SectionContent = ({
