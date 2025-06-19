@@ -1,11 +1,20 @@
+"use client";
+
 import LandingHero from "@/components/sections/LandingHero/LandingHero";
 import HowItWorks from "@/components/sections/HowItWorks/HowItWorks";
 import PersonasSection from "@/components/sections/PersonasSection";
 import Benefits from "@/components/sections/Benefits/Benefits";
 import FeatureHero from "@/components/sections/FeatureHero/FeatureHero";
+import AiSupportPopup from "@/components/AiSupportPopup";
+
 import "@/styles/landing.scss";
 
 export default function Home() {
+  const handleAiCallConfirm = () => {
+    // Handle AI call confirmation
+    console.log("Starting AI support call...");
+    // Add your AI call logic here
+  };
   return (
     <main className="landing">
       <LandingHero />
@@ -38,6 +47,7 @@ export default function Home() {
         buttonVariant="default"
         eyebrowColor="$text-tertiary)"
       />
+      <AiSupportPopup />
     </main>
   );
 }
