@@ -2,18 +2,23 @@
 
 .heading {
   font-weight: 800;
-  color: var(--brand-purple);
+  color: var(--heading-primary);
   line-height: 1.15;
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-lg);
   letter-spacing: -0.02em;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
 
   .subHeading {
-    display: block;
-    margin-top: var(--space-xs);
-    color: var(--text-primary);
     font-weight: 600;
     line-height: 1.2;
-    letter-spacing: -0.025em;
+    letter-spacing: -0.02em;
+    background: linear-gradient(90deg, #5151d3, #6363f1, #7575f3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
   }
 }
 
@@ -113,5 +118,14 @@
     .subHeading {
       font-size: var(--font-xs);
     }
+  }
+}
+
+@keyframes intro-gradient {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }

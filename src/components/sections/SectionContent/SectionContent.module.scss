@@ -3,12 +3,14 @@
 }
 
 .eyebrow {
-  font-size: var(--font-sm);
+  background: linear-gradient(90deg, #2196f3, #4caf50);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   font-weight: 500;
-  color: var(--text-secondary);
+  letter-spacing: 0.05em;
+  display: inline-block;
   margin-bottom: var(--space-md);
-  line-height: 1.15;
-  text-transform: uppercase;
 }
 
 .description {
@@ -47,5 +49,14 @@
   .button {
     width: 100%;
     justify-content: center;
+  }
+}
+
+@keyframes intro-gradient {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
