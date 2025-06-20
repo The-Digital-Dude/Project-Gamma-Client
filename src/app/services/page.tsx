@@ -14,6 +14,7 @@ import {
 } from "react-icons/md";
 import { IconType } from "react-icons";
 import PillText from "@/components/PillText/PillText";
+import WhatWeOffer from "@/components/sections/WhatWeOffer/WhatWeOffer";
 
 const ServicesPage: React.FC = () => {
   interface Service {
@@ -99,50 +100,10 @@ const ServicesPage: React.FC = () => {
       <div className="landing">
         <LandingHero />
       </div>
-      <section className="services">
-        <section className="services__hero">
-          <PillText text="Our Services" />
-          <h1 className="services__title">High-impact marketing services</h1>
-        </section>
-
-        <section className="services__grid-section">
-          <div className="services__grid">
-            {services.map((service, index) => (
-              <div
-                key={service.id}
-                className={`services__card-small services__card-small--${
-                  index + 1
-                }`}
-              >
-                <div
-                  className="services__card-icon-wrapper"
-                  style={{ background: service.color + "20" }}
-                >
-                  {(() => {
-                    const IconComponent = service.icon;
-                    return <IconComponent size={32} color={service.color} />;
-                  })()}
-                </div>
-                <h3 className="services__card-small-title">{service.title}</h3>
-                <p className="services__card-small-description">
-                  {service.description}
-                </p>
-                <ul className="services__card-features">
-                  {service.features.map((feature) => (
-                    <li key={feature}>
-                      <BsCheckCircleFill
-                        style={{ color: "#7b61ff" }}
-                        className="services__check-icon"
-                      />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </section>
-
+      <section>
+        <div className="accent-background--4">
+          <WhatWeOffer />
+        </div>
         <CTA
           title="Ready To Boost Your Growth"
           subtitle="Get in touch with our experts and start scaling your business today."

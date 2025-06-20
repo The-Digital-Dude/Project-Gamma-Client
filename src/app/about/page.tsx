@@ -1,6 +1,7 @@
 import CTA from "@/components/CTA/CTA";
 import Headline from "@/components/Headline/Headline";
-import Subtext from "@/components/Subtext/Subtext";
+import HeroVisual from "@/components/HeroVisual/HeroVisual";
+import { Button } from "@/components/ui-elements/Button/Button";
 import { siteConfig } from "@/config/site";
 import "@/styles/about.scss";
 import {
@@ -13,31 +14,52 @@ import {
 } from "react-icons/md";
 
 export default function AboutPage() {
-  const values = [
-    "Innovation & Creativity",
-    "User-First Mindset",
-    "Technical Excellence",
-    "Transparency & Trust",
-    "Lifelong Learning",
-  ];
-
   return (
-    <main className="about">
-      {/* Hero */}
-      <section className="about__hero">
-        <div className="about__content">
-          <Headline
-            mainText="About"
-            boldText=""
-            highlightText={siteConfig.name}
-          />
-          <Subtext text="Crafting digital solutions that are simple, smart, and human-centered." />
+    <section className="about">
+      <section className="about__hero common-section">
+        <div className="about__content container">
+          <div className="img-box">
+            <img
+              src="https://imagedelivery.net/LqiWLm-3MGbYHtFuUbcBtA/189d259c-f35e-4849-da0b-dc9a73374300/public"
+              alt={siteConfig.name}
+            />
+          </div>
+          <div className="about__content-text">
+            <p className="sub-heading">The Future of Australian Renting</p>
+            <Headline
+              mainText="About"
+              boldText=""
+              highlightText={siteConfig.name}
+            />
+            <p>
+              Rentalease was founded in Sydney by a team of property experts and
+              tech innovators who saw a need for change. We were tired of the
+              clunky, impersonal, and often stressful process that both
+              landlords and tenants had to endure.
+            </p>
+            <p>
+              Our mission is simple: to create a transparent, efficient, and
+              human-centric rental ecosystem. We leverage state-of-the-art
+              technology to simplify the complexities of the rental market, but
+              we never lose sight of the fact that we're dealing with people's
+              homes and their most valuable investments.
+            </p>
+            <p style={{ marginBottom: "15px" }}>
+              Here in mid-2025, we are proud to be one of Australia's
+              fastest-growing rental platforms, committed to building a
+              community based on trust, respect, and a shared goal of making
+              renting better for everyone.
+            </p>
+            <Button variant="outline" href="/contact">
+              Reach Out To Us
+            </Button>
+          </div>
         </div>
       </section>
 
       {/* Sections */}
-      <section className="about__section">
-        <div className="about__grid">
+      <section className="about__section common-section icons-bg--1 accent-background--4">
+        <div className="container about__grid">
           {/* Who We Are */}
           <div className="about__card accent-background--3 accent-border--3">
             <div className="about__card-icon">
@@ -80,16 +102,16 @@ export default function AboutPage() {
           </div>
 
           {/* Our Values */}
+          {/* Our Values */}
           <div className="about__card accent-background--3 accent-border--3 about__card--values">
             <div className="about__card-icon">
               <MdLightbulb size={40} />
             </div>
             <h2>Our Core Values</h2>
-            <ul>
-              {values.map((value) => (
-                <li key={value}>{value}</li>
-              ))}
-            </ul>
+            <p>
+              Innovation & Creativity, User-First Mindset, Technical Excellence,
+              Transparency & Trust, and Lifelong Learning.
+            </p>
           </div>
 
           {/* Our Mission */}
@@ -120,14 +142,18 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <CTA
-        title="Ready To Build Something"
-        highlightText="Extraordinary?"
-        subtitle="Let's collaborate and bring your ideas to life — from vision to deployment and beyond."
-        buttonLabel="Contact Us"
-        onButtonClick={() => {}}
-        className="accent-background--2 accent-border--2"
-      />
-    </main>
+      <div className="common-section">
+        <div className="container">
+          <CTA
+            title="Ready To Build Something"
+            highlightText="Extraordinary?"
+            subtitle="Let's collaborate and bring your ideas to life — from vision to deployment and beyond."
+            buttonLabel="Contact Us"
+            onButtonClick={() => {}}
+            className="accent-background--2 accent-border--2"
+          />
+        </div>
+      </div>
+    </section>
   );
 }

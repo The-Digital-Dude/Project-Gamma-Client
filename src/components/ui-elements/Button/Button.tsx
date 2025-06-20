@@ -8,6 +8,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   fullWidth?: boolean;
   href?: string;
   className?: string;
+  onClick?: () => void;
 }
 
 export const Button = ({
@@ -18,6 +19,7 @@ export const Button = ({
   href,
   className = "",
   disabled = false,
+  onClick,
   ...props
 }: ButtonProps) => {
   const buttonClasses = [
@@ -41,7 +43,12 @@ export const Button = ({
   }
 
   return (
-    <button className={buttonClasses} disabled={disabled} {...props}>
+    <button
+      className={buttonClasses}
+      disabled={disabled}
+      onClick={onClick}
+      {...props}
+    >
       {children}
     </button>
   );

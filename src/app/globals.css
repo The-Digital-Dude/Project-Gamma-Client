@@ -1,31 +1,15 @@
-/* @import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --font-sans: "DM Sans", Arial, Helvetica, sans-serif;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-@theme inline {
-  --color-background: #ffffff;
-  --color-foreground: #171717;
-  --font-sans: "DM Sans", Arial, Helvetica, sans-serif;
-  --font-mono: "DM Sans", Arial, Helvetica, sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: #ffffff;
-  color: #171717;
-  font-family: "DM Sans", Arial, Helvetica, sans-serif;
-} */
-
 
 .accent-background--1 {
   background: #fff9f0;
@@ -40,21 +24,87 @@ body {
 }
 
 .accent-background--4 {
-  background: #f8f5ff;
+  background: #f4efff;
 }
 
 .accent-border--1 {
-  border: 1px solid rgba(253, 230, 161, 0.548);
+  border: 1px solid #fde6a18c;
 }
 
 .accent-border--2 {
-  border: 1px solid rgba(141, 209, 255, 0.534);
+  border: 1px solid #8dd1ff88;
 }
 
 .accent-border--3 {
-  border: 1px solid rgba(198, 169, 255, 0.555);
+  border: 1px solid #c6a9ff8e;
 }
 
 .accent-border--4 {
   border: 1px solid #d1bdff91;
+}
+
+.sub-heading {
+  background: linear-gradient(90deg, #2196f3, #4caf50);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(0, 0, 0, 0);
+  background-clip: text;
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: .05em;
+  display: inline-block;
+}
+
+.container {
+  /* width: 100%; */
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px
+  }
+}
+
+.common-section {
+  position: relative;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.common-section:first-child {
+  padding-top: 200px;
+}
+
+.icons-bg--1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(/icons-bg.png);
+  background-size: 8%;
+  opacity: 0.2;
+  z-index: -1;
 }
