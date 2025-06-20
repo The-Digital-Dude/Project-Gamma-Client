@@ -1,0 +1,113 @@
+@import "@/styles/variables";
+
+.section {
+  position: relative;
+  padding: $section-padding-2xl 0;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: $section-padding-xl 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: $space-xl;
+}
+
+.content {
+  display: grid;
+  gap: $space-2xl;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+@media (max-width: 991px) {
+  .content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+  gap: $space-md;
+}
+
+.title {
+  font-size: $font-5xl;
+  font-weight: 800;
+  color: $text-primary;
+  margin: 0;
+}
+
+@media (max-width: 991px) {
+  .title {
+    font-size: $font-4xl;
+  }
+}
+
+.description {
+  font-size: $font-lg;
+  line-height: 1.6;
+  color: $text-secondary;
+  margin: 0;
+  max-width: 480px;
+}
+
+.imageWrapper {
+  position: relative;
+  border-radius: $border-radius-lg;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 991px) {
+  .description {
+    margin: 0 auto;
+  }
+
+  .imageWrapper {
+    margin: 0 auto;
+    max-width: 600px;
+  }
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $space-xl;
+  padding: 0 $space-md;
+}
+
+@media (max-width: 991px) {
+  .features {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .title {
+    font-size: $font-3xl;
+  }
+
+  .description {
+    font-size: $font-md;
+  }
+}
+
+@media (max-width: 479px) {
+  .features {
+    padding: 0 $space-md;
+    gap: $space-lg;
+  }
+}

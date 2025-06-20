@@ -1,0 +1,132 @@
+@import "@/styles/variables";
+
+.heading {
+  font-weight: 800;
+  color: $heading-primary;
+  line-height: 1.15;
+  margin-bottom: $space-lg;
+  letter-spacing: -0.02em;
+  display: flex;
+  flex-direction: column;
+  gap: $space-sm;
+  margin-top: 0;
+
+  .subHeading {
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    background: linear-gradient(90deg, #5151d3, #6363f1, #7575f3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+  }
+}
+
+// Large size
+.lg {
+  font-size: $font-5xl;
+
+  .subHeading {
+    font-size: $font-xl;
+  }
+
+  @media (max-width: 1200px) {
+    font-size: $font-4xl;
+
+    .subHeading {
+      font-size: $font-lg;
+    }
+  }
+
+  @media (max-width: 768px) {
+    font-size: $font-3xl;
+
+    .subHeading {
+      font-size: $font-md;
+    }
+  }
+
+  @media (max-width: 480px) {
+    font-size: $font-2xl;
+
+    .subHeading {
+      font-size: $font-sm;
+    }
+  }
+}
+
+// Medium size
+.md {
+  font-size: $font-4xl;
+
+  .subHeading {
+    font-size: $font-lg;
+  }
+
+  @media (max-width: 1200px) {
+    font-size: $font-3xl;
+
+    .subHeading {
+      font-size: $font-md;
+    }
+  }
+
+  @media (max-width: 768px) {
+    font-size: $font-2xl;
+
+    .subHeading {
+      font-size: $font-sm;
+    }
+  }
+
+  @media (max-width: 480px) {
+    font-size: $font-xl;
+
+    .subHeading {
+      font-size: $font-xs;
+    }
+  }
+}
+
+// Small size
+.sm {
+  font-size: $font-3xl;
+
+  .subHeading {
+    font-size: $font-md;
+  }
+
+  @media (max-width: 1200px) {
+    font-size: $font-2xl;
+
+    .subHeading {
+      font-size: $font-sm;
+    }
+  }
+
+  @media (max-width: 768px) {
+    font-size: $font-xl;
+
+    .subHeading {
+      font-size: $font-xs;
+    }
+  }
+
+  @media (max-width: 480px) {
+    font-size: $font-lg;
+
+    .subHeading {
+      font-size: $font-xs;
+    }
+  }
+}
+
+@keyframes intro-gradient {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

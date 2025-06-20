@@ -1,0 +1,65 @@
+@import "@/styles/variables";
+
+.content {
+  max-width: 600px;
+}
+
+.eyebrow {
+  background: linear-gradient(90deg, #2196f3, #4caf50);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 500;
+  font-size: $font-sm;
+  letter-spacing: 0.05em;
+  display: inline-block;
+  margin-bottom: $space-md;
+}
+
+.description {
+  font-size: $font-sm;
+  line-height: 1.6;
+  color: $text-tertiary;
+  margin-bottom: $space-lg;
+  max-width: 540px;
+}
+
+.ctaWrapper {
+  margin-top: 0;
+  margin-bottom: $space-md;
+}
+
+@media (max-width: 1024px) {
+  .content {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .description {
+    font-size: $font-sm;
+  }
+}
+
+@media (max-width: 480px) {
+  .button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@keyframes intro-gradient {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

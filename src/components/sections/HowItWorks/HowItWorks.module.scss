@@ -1,0 +1,388 @@
+@import "@/styles/variables";
+
+.section {
+  position: relative;
+  padding: $section-padding-2xl 0;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: linear-gradient(
+      180deg,
+      $brand-purple-light 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    opacity: 0.5;
+    z-index: -1;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: $section-padding-xl 0;
+}
+
+.content {
+  border-radius: $border-radius-lg;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $space-xl;
+}
+
+.header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: $space-2xl;
+  text-align: center;
+  margin-bottom: $space-2xl;
+}
+
+@media (max-width: 991px) {
+  .header {
+    gap: $space-xl;
+  }
+}
+
+.headerContent {
+  display: flex;
+  flex-direction: column;
+  gap: $space-md;
+}
+
+.eyebrow {
+  color: $brand-purple;
+  font-size: $font-md;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.title {
+  font-size: $font-5xl;
+  font-weight: 800;
+  color: $text-primary;
+  margin: 0;
+}
+
+@media (max-width: 991px) {
+  .title {
+    font-size: $font-4xl;
+  }
+}
+
+@media (max-width: 767px) {
+  .title {
+    font-size: $font-3xl;
+  }
+}
+
+.subtitle {
+  color: $text-secondary;
+  margin: 0;
+}
+
+.description {
+  font-size: $font-lg;
+  max-width: 600px;
+  color: $text-secondary;
+  margin: 0 auto;
+}
+
+.steps {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cta {
+  font-size: $font-md;
+  display: inline-flex;
+  align-items: center;
+  background: $brand-purple;
+  color: white;
+  font-size: $font-md;
+  padding: $space-md $space-xl;
+  border-radius: $border-radius-full;
+  text-decoration: none;
+  font-weight: 500;
+  box-shadow: $shadow-md;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background: $brand-purple-hover;
+    box-shadow: $shadow-lg;
+    transform: translateY(-2px);
+  }
+}
+
+.step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.stepContent {
+  position: relative;
+  width: 100%;
+  border-radius: $border-radius-lg;
+  padding: $space-lg;
+  box-shadow: $shadow-lg;
+  border: 1px solid $border-color;
+  background: white;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+}
+
+.stepHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: $space-lg;
+  padding-bottom: $space-md;
+  border-bottom: 1px solid $border-color;
+}
+
+.stepTitle {
+  font-size: $font-lg;
+  font-weight: 600;
+  color: $text-primary;
+  margin: 0;
+}
+
+.stepIcon {
+  width: $space-2xl;
+  height: $space-2xl;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stepNumber {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: $space-xl;
+  height: $space-xl;
+  background: $brand-purple;
+  border-radius: $border-radius-md;
+  color: white;
+  font-weight: 600;
+}
+
+@media (max-width: 991px) {
+  .steps {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .step {
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.featureIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: $border-radius-md;
+  margin-bottom: $space-md;
+  background: $brand-purple-light;
+  color: $brand-purple;
+  padding: $space-xs;
+}
+
+.featureTitle {
+  font-size: $font-lg;
+  font-weight: 600;
+  color: $text-primary;
+  margin-bottom: $space-sm;
+}
+
+.featureDescription {
+  font-size: $font-sm;
+  line-height: 1.6;
+  color: $text-tertiary;
+}
+
+.visualSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.ssoMockup {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: $border-radius-lg;
+  padding: $space-lg;
+  box-shadow: $shadow-lg;
+  border: 1px solid $border-color;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  max-width: 380px;
+  width: 100%;
+  position: relative;
+  transform: rotate(-2deg);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: rotate(0deg);
+  }
+
+  @media (max-width: 968px) {
+    transform: none;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+.mockupHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $space-lg;
+  padding-bottom: $space-md;
+  border-bottom: 1px solid $border-color;
+}
+
+.mockupTitle {
+  font-size: $font-lg;
+  font-weight: 600;
+  color: $text-primary;
+}
+
+.mockupLogo {
+  width: $space-2xl;
+  height: $space-2xl;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoIcon {
+  width: $space-xl;
+  height: $space-xl;
+  background: $brand-purple;
+  border-radius: $border-radius-md;
+  position: relative;
+}
+
+.mockupContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.inputField {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #666;
+    margin-bottom: 0.25rem;
+  }
+
+  input {
+    padding: 0.75rem 1rem;
+    border: 1.5px solid #e5e5e5;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #f9f9f9;
+    color: #999;
+    cursor: not-allowed;
+    transition: border-color 0.2s ease;
+
+    &:focus {
+      outline: none;
+      border-color: rgba(123, 97, 255, 0.5);
+    }
+  }
+}
+
+.mockupButton {
+  background: $primary-color;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.875rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: not-allowed;
+  opacity: 0.8;
+  margin-top: 0.5rem;
+}
+
+// Features Grid Section
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 6rem;
+  position: relative;
+
+  // Add some padding around the grid
+  padding: 3rem 2rem;
+  margin: -3rem -2rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 4rem;
+  }
+}
+
+.featureCard {
+  padding: 0;
+  background: white;
+  border-radius: $border-radius-md;
+}
+
+.socialIcons {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 1.25rem;
+
+  @media (max-width: 480px) {
+    font-size: 1rem;
+  }
+}
