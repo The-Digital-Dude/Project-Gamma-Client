@@ -96,26 +96,30 @@ const ServicesPage: React.FC = () => {
   ];
 
   return (
-    <main>
+    <section>
       <div className="landing">
         <LandingHero />
       </div>
       <section>
-        <div className="accent-background--4">
-          <WhatWeOffer />
+        <div className="py-50 accent-background--4">
+          <div className="container">
+            <WhatWeOffer />
+          </div>
         </div>
-        <CTA
-          title="Ready To Boost Your Growth"
-          subtitle="Get in touch with our experts and start scaling your business today."
-          buttonLabel="Get in Touch"
-          highlightText="Today?"
-          onButtonClick={() => {
-            console.log("cta click");
-          }}
-          className="bg-white"
-        />
+        <div className="py-50">
+          <CTA
+            title="Ready To Boost Your Growth"
+            subtitle="Get in touch with our experts and start scaling your business today."
+            buttonLabel="Get in Touch"
+            highlightText="Today?"
+            onButtonClick={() => {
+              console.log("cta click");
+            }}
+            className="accent-background--2 accent-border--2"
+          />
+        </div>
       </section>
-    </main>
+    </section>
   );
 };
 

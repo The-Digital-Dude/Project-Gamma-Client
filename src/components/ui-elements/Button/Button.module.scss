@@ -1,7 +1,7 @@
 @import "@/styles/variables";
 
 .button {
-  border: none;
+  border: 1px solid $brand-purple;
   cursor: pointer;
   display: inline-block;
   background-color: $brand-purple;

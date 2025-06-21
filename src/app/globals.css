@@ -9,6 +9,7 @@
   padding: 0;
   margin-block-start: 0;
   margin-block-end: 0;
+  font-family: inherit;
 }
 
 .accent-background--1 {
@@ -86,10 +87,12 @@
   }
 }
 
-.common-section {
+.common-section,
+.py-50 {
   position: relative;
   padding-top: 50px;
   padding-bottom: 50px;
+  z-index: 1;
 }
 
 .common-section:first-child {
@@ -105,6 +108,6 @@
   height: 100%;
   background-image: url(/icons-bg.png);
   background-size: 8%;
-  opacity: 0.2;
+  opacity: 0.12;
   z-index: -1;
 }

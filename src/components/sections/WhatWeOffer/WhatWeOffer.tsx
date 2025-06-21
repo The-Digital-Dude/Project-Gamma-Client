@@ -1,137 +1,98 @@
 "use client";
 import React, { useState } from "react";
 import styles from "./WhatWeOffer.module.scss";
-import { BsCheckCircleFill } from "react-icons/bs";
 import {
-  MdEmail,
-  MdCampaign,
-  MdSearch,
-  MdTimeline,
-  MdArticle,
-  MdGroups,
-  MdPerson,
-  MdDashboard,
+  MdHomeWork,
+  MdFactCheck,
+  MdEditDocument,
+  MdAnalytics,
   MdAttachMoney,
-  MdReceipt,
-  MdBuild,
-  MdAssessment,
+  MdVerified,
+  MdNoteAdd,
+  MdNotifications,
+  MdVisibility,
+  MdMenuBook,
 } from "react-icons/md";
 import PillText from "@/components/PillText/PillText";
 import { Button } from "@/components/ui-elements/Button/Button";
 
-const landlordFeatures = [
-  {
-    icon: MdEmail,
-    colorClass: "accent-background--1 accent-border--1",
-    iconColor: "#ff6b6b",
-    title: "Email Marketing",
-    desc: "Lorem ipsum consectetur amet sit ome comerer lirens dolce isimiloli.",
-    features: [
-      "Email Newsletter Setup",
-      "Email Sequences",
-      "Email Monetization",
-    ],
-  },
-  {
-    icon: MdCampaign,
-    colorClass: "accent-background--2 accent-border--2",
-    iconColor: "#3b82f6",
-    title: "Paid Advertising",
-    desc: "Lorem ipsum consectetur amet sit ome comerer lirens dolce isimilol.",
-    features: ["Google Ads", "Facebook Ads", "LinkedIn & Twitter Ads"],
-  },
-  {
-    icon: MdSearch,
-    colorClass: "accent-background--3 accent-border--3",
-    iconColor: "#facc15",
-    title: "SEO",
-    desc: "Lorem ipsum consectetur amet sit ome comerer lirens dolce isimilol olme.",
-    features: ["SEO Audits", "On-Page SEO", "Off-Page SEO"],
-  },
-  {
-    icon: MdTimeline,
-    colorClass: "accent-background--4 accent-border--4",
-    iconColor: "#a855f7",
-    title: "Funnel Optimization",
-    desc: "Lorem ipsum consectetur amet sit ome comerer lirens dolce isimilol olme.",
-    features: ["Analytics Analysis", "A/B Testing", "Conversion Optimization"],
-  },
-  {
-    icon: MdArticle,
-    colorClass: "accent-background--1 accent-border--1",
-    iconColor: "#fb923c",
-    title: "Content Marketing",
-    desc: "Lorem ipsum consectetur amet sit ome comerer lirens dolce isimilol olme.",
-    features: ["Articles & Written Content", "Video Content", "Infographics"],
-  },
-  {
-    icon: MdGroups,
-    colorClass: "accent-background--2 accent-border--2",
-    iconColor: "#0ea5e9",
-    title: "Social Media Marketing",
-    desc: "Lorem ipsum consectetur amet sit ome comerer lirens dolce isimilol olme.",
-    features: [
-      "Content Creation",
-      "Community Management",
-      "Social Media Growth",
-    ],
-  },
-];
+const forLandlords = {
+  headline: "Partner with Rentalease and Maximize Your Investment",
+  body: "Owning a rental property in 2025 is a significant investment. At Rentalease, our mission is to make it a profitable and stress-free one. We are more than just a listing site; we are your strategic partner in property management.",
+  services: [
+    {
+      icon: MdHomeWork,
+      iconColor: "#ff6b6b",
+      title: "Premium Listings & Marketing",
+      desc: "We showcase your property to a vast audience of qualified tenants across Australia. Our premium marketing tools, including professional photography and virtual tour options, make your listing stand out.",
+    },
+    {
+      icon: MdFactCheck,
+      iconColor: "#3b82f6",
+      title: "Advanced Tenant Screening",
+      desc: "Finding the right tenant is crucial. Our comprehensive screening process includes rental history checks, employment verification, and reference checks, giving you the confidence to make the right choice.",
+    },
+    {
+      icon: MdEditDocument,
+      iconColor: "#facc15",
+      title: "Digital Lease Management",
+      desc: "From drafting compliant lease agreements to managing digital signatures and bond lodgements, our platform handles the paperwork securely and efficiently.",
+    },
+    {
+      icon: MdAttachMoney,
+      iconColor: "#a855f7",
+      title: "Secure Rent Collection",
+      desc: "Simplify your cash flow with our automated rent collection and payment tracking system. We handle the reminders, so you don't have to.",
+    },
+    {
+      icon: MdAnalytics,
+      iconColor: "#fb923c",
+      title: "Compliance & Insights",
+      desc: "Stay ahead of the curve. Get access to the latest legislative updates, market rental appraisals, and data-driven insights to ensure your investment remains compliant and competitive in the current market.",
+    },
+  ],
+};
 
-const managerFeatures = [
-  {
-    icon: MdPerson,
-    colorClass: "accent-background--1 accent-border--1",
-    iconColor: "#7b61ff",
-    title: "Dedicated Account Manager",
-    desc: "Property managers get a dedicated account manager for streamlined communication and support.",
-    features: ["Personal Support", "Direct Contact", "Faster Response"],
-  },
-  {
-    icon: MdDashboard,
-    colorClass: "accent-background--2 accent-border--2",
-    iconColor: "#3b82f6",
-    title: "Portfolio Dashboard",
-    desc: "Easily manage all your properties and compliance checks from a single dashboard.",
-    features: ["All Properties", "Compliance Overview", "Easy Navigation"],
-  },
-  {
-    icon: MdAttachMoney,
-    colorClass: "accent-background--3 accent-border--3",
-    iconColor: "#facc15",
-    title: "Bulk Pricing",
-    desc: "Enjoy special rates and bulk pricing for managing multiple properties.",
-    features: ["Discounted Rates", "Flexible Packages", "Transparent Pricing"],
-  },
-  {
-    icon: MdReceipt,
-    colorClass: "accent-background--4 accent-border--4",
-    iconColor: "#a855f7",
-    title: "Flexible Billing",
-    desc: "Choose from flexible billing options tailored for agencies and property managers.",
-    features: ["Monthly Billing", "Annual Billing", "Custom Invoices"],
-  },
-  {
-    icon: MdBuild,
-    colorClass: "accent-background--1 accent-border--1",
-    iconColor: "#fb923c",
-    title: "Priority Repairs",
-    desc: "Get priority access to repairs and maintenance services for your managed properties.",
-    features: ["Fast Repairs", "Trusted Tradespeople", "Guaranteed Work"],
-  },
-  {
-    icon: MdAssessment,
-    colorClass: "accent-background--2 accent-border--2",
-    iconColor: "#0ea5e9",
-    title: "Custom Reporting",
-    desc: "Generate custom compliance and maintenance reports for your portfolio.",
-    features: ["Downloadable Reports", "Custom Filters", "Portfolio Insights"],
-  },
-];
+const forTenants = {
+  headline: "The Keys to Your Next Chapter",
+  body: "Finding a place to call home should be an exciting journey, not a stressful one. Rentalease is designed to empower you. We connect you with quality, verified properties from trusted landlords and agents across Australia.",
+  services: [
+    {
+      icon: MdVerified,
+      iconColor: "#7b61ff",
+      title: "Verified Properties Only",
+      desc: "Say goodbye to fake listings. We verify every property and landlord on our platform, so you can search with absolute confidence.",
+    },
+    {
+      icon: MdNoteAdd,
+      iconColor: "#3b82f6",
+      title: "One Form, Endless Opportunities",
+      desc: "Tired of filling out endless applications? Our smart, reusable rental profile lets you apply for multiple properties with a single, secure form.",
+    },
+    {
+      icon: MdNotifications,
+      iconColor: "#facc15",
+      title: "Instant Alerts",
+      desc: "Be the first to know. Set up personalised alerts for your preferred suburbs, price range, and property types, and get notified the moment a match is listed.",
+    },
+    {
+      icon: MdVisibility,
+      iconColor: "#a855f7",
+      title: "Transparent Process",
+      desc: "We believe in clarity. From application status tracking to clear communication channels with property managers, you’ll always know where you stand.",
+    },
+    {
+      icon: MdMenuBook,
+      iconColor: "#fb923c",
+      title: "Resources for Renters",
+      desc: "Explore our blog for tips on everything from acing your application to understanding your rights as a tenant in 2025.",
+    },
+  ],
+};
 
 const WhatWeOffer = () => {
   const [active, setActive] = useState<"landlords" | "managers">("landlords");
-  const features = active === "landlords" ? landlordFeatures : managerFeatures;
+  const client = active === "landlords" ? forLandlords : forTenants;
 
   return (
     <section className={styles.whatWeOfferSection}>
@@ -152,33 +113,26 @@ const WhatWeOffer = () => {
           variant={active === "managers" ? "default" : "outline"}
           onClick={() => setActive("managers")}
         >
-          For Landlords
+          For Managers
         </Button>
       </div>
+      {/* <div>
+        <div className="sub-heading">{client.headline}</div>
+        <div>{client.body}</div>
+      </div> */}
       <div className={styles.grid}>
-        {features.map((f, i) => {
-          const IconComponent = f.icon;
+        {client.services.map((service, i) => {
+          const IconComponent = service.icon;
           return (
-            <div className={`${styles.card} ${f.colorClass}`} key={i}>
+            <div className={`${styles.card}`} key={i}>
               <div
                 className={styles.icon}
-                style={{ background: f.iconColor + "20" }}
+                style={{ background: service.iconColor + "20" }}
               >
-                <IconComponent size={32} color={f.iconColor} />
+                <IconComponent size={32} color={service.iconColor} />
               </div>
-              <h3 className={styles.cardTitle}>{f.title}</h3>
-              <p className={styles.cardDesc}>{f.desc}</p>
-              <ul className={styles.cardFeatures}>
-                {f.features.map((feature) => (
-                  <li key={feature} className={styles.cardFeatureItem}>
-                    <BsCheckCircleFill
-                      style={{ color: "#7b61ff", marginRight: 8 }}
-                      size={18}
-                    />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
+              <h3 className={styles.cardTitle}>{service.title}</h3>
+              <p className={styles.cardDesc}>{service.desc}</p>
             </div>
           );
         })}
