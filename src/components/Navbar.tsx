@@ -1,6 +1,7 @@
 import React from "react";
 import { siteConfig } from "../config/site";
 import "@/styles/navbar.scss";
+import Link from "next/link";
 
 const Navbar: React.FC = () => {
   return (
@@ -13,26 +14,26 @@ const Navbar: React.FC = () => {
         {/* Navigation Links */}
         <ul className="navbar__links">
           <li>
-            <a href="#chrome-extension">Home</a>
+            <Link href="/">Home</Link>
           </li>
           <li>
-            <a href="/about">About</a>
+            <Link href="/about">About</Link>
           </li>
           <li>
-            <a href="/services">Services</a>
+            <Link href="/services">Services</Link>
           </li>
           <li>
-            <a href="/pricing">Pricing</a>
+            <Link href="/pricing">Pricing</Link>
           </li>
         </ul>
         {/* Action Buttons */}
         <div className="navbar__actions">
-          <a href="#login" className="navbar__login">
+          <Link href="#login" className="navbar__login">
             Log in
-          </a>
-          <a href="#join" className="navbar__join">
+          </Link>
+          <Link href="#join" className="navbar__join">
             Request Demo
-          </a>
+          </Link>
         </div>
       </div>
     </nav>

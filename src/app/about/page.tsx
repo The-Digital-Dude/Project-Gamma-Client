@@ -31,25 +31,27 @@ export default function AboutPage() {
               boldText=""
               highlightText={siteConfig.name}
             />
-            <p>
-              Rentalease was founded in Sydney by a team of property experts and
-              tech innovators who saw a need for change. We were tired of the
-              clunky, impersonal, and often stressful process that both
-              landlords and tenants had to endure.
-            </p>
-            <p>
-              Our mission is simple: to create a transparent, efficient, and
-              human-centric rental ecosystem. We leverage state-of-the-art
-              technology to simplify the complexities of the rental market, but
-              we never lose sight of the fact that we're dealing with people's
-              homes and their most valuable investments.
-            </p>
-            <p style={{ marginBottom: "15px" }}>
-              Here in mid-2025, we are proud to be one of Australia's
-              fastest-growing rental platforms, committed to building a
-              community based on trust, respect, and a shared goal of making
-              renting better for everyone.
-            </p>
+            <div className="description">
+              <p>
+                Rentalease was founded in Sydney by a team of property experts
+                and tech innovators who saw a need for change. We were tired of
+                the clunky, impersonal, and often stressful process that both
+                landlords and tenants had to endure.
+              </p>
+              <p>
+                Our mission is simple: to create a transparent, efficient, and
+                human-centric rental ecosystem. We leverage state-of-the-art
+                technology to simplify the complexities of the rental market,
+                but we never lose sight of the fact that we're dealing with
+                people's homes and their most valuable investments.
+              </p>
+              <p style={{ marginBottom: "15px" }}>
+                Here in mid-2025, we are proud to be one of Australia's
+                fastest-growing rental platforms, committed to building a
+                community based on trust, respect, and a shared goal of making
+                renting better for everyone.
+              </p>
+            </div>
             <Button variant="outline" href="/contact">
               Reach Out To Us
             </Button>

@@ -1,0 +1,108 @@
+@import "@/styles/variables";
+
+.flat-ribbon-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 9px 38px 8px 18px;
+  //   background: $brand-purple no-repeat 100%;
+  //   background-size: 100% 100%;
+  border-radius: $border-radius-lg;
+  color: $text-primary;
+  font-family: $font-sans;
+  font-size: $font-md;
+  box-sizing: border-box;
+  margin-top: 2rem;
+  box-shadow: $shadow-md;
+}
+
+.include-heading {
+  color: $text-tertiary;
+  font-size: $font-xs;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.flat-price {
+  color: $primary-color;
+  font-size: $font-2xl;
+  font-weight: 700;
+  margin: 0;
+}
+
+.plus-gst-size {
+  color: $text-secondary;
+  font-size: $font-sm;
+  margin-left: 0.5rem;
+}
+
+.badge-top,
+.badge-bottom {
+  color: $brand-purple-hover;
+  font-size: $font-xs;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.badge-main {
+  color: $primary-color;
+  font-size: $font-lg;
+  font-weight: 900;
+  background: $brand-3;
+  border-radius: $border-radius-full;
+  padding: 0.1em 0.7em;
+  margin: 0.1em 0;
+  box-shadow: $shadow-sm;
+  border: 2px solid $primary-color;
+  text-transform: uppercase;
+}
+
+.best-price-form {
+  background: #fff;
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow-lg;
+  padding: 2.5rem 2rem 2rem 2rem;
+  min-width: 320px;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1rem;
+  position: relative;
+  z-index: 1;
+}
+.form-title {
+  color: $text-primary;
+  font-size: $font-xl;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.form-input {
+  border: 1px solid $border-color;
+  border-radius: $border-radius-md;
+  padding: 0.75rem 1rem;
+  font-size: $font-md;
+  font-family: $font-sans;
+  color: $text-primary;
+  background: $section-light;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.form-input:focus {
+  border-color: $primary-color;
+}
+.form-submit-btn {
+  background: $primary-color;
+  color: #fff;
+  font-size: $font-lg;
+  font-weight: 700;
+  border: none;
+  border-radius: $border-radius-md;
+  padding: 0.9rem 0;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.form-submit-btn:hover {
+  background: $primary-color-hover;
+}
