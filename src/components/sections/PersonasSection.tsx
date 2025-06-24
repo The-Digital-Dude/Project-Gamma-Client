@@ -1,6 +1,7 @@
 import React from "react";
-import "@/styles/landing.scss";
 import { MdApartment, MdChecklist, MdHome, MdStar } from "react-icons/md";
+
+import "@/styles/landing.scss";
 
 const personas = [
   {

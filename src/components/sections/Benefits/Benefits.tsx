@@ -23,9 +23,9 @@ const Benefits = () => {
           </svg>
         </div>
       ),
-      title: "Medical, dental, and vision",
+      title: "Saves Hours of Admin Time",
       description:
-        "WorkOS pays 90% of premiums for employees and dependents to help keep your family healthy.",
+        "Our automated workflows save property managers hours of admin time, allowing them to focus on what really matters: their tenants and properties.",
     },
     {
       icon: (
@@ -46,9 +46,9 @@ const Benefits = () => {
           </svg>
         </div>
       ),
-      title: "Retirement & 401k",
+      title: "Automated Compliance Scheduling",
       description:
-        "WorkOS provides a 3% match of your 401k contributions to help you save for retirement. Isn't that great?",
+        "Our automated compliance scheduling ensures that all checks are completed on time, reducing the risk of late payments and penalties.",
     },
     {
       icon: (
@@ -78,9 +78,9 @@ const Benefits = () => {
           </svg>
         </div>
       ),
-      title: "Vacation & leave",
+      title: "API Integration with Leading CRMs",
       description:
-        "Relax and recharge with 20 days of paid yearly vacation. We also offer 12 weeks of parental leave for new parents.",
+        "Our API integration with leading CRMs allows you to seamlessly sync your data and automate your workflows, saving you time and effort.",
     },
     {
       icon: (
@@ -101,9 +101,9 @@ const Benefits = () => {
           </svg>
         </div>
       ),
-      title: "Fitness",
+      title: "Instant Report & Invoice Generation",
       description:
-        "Monthly stipend for gyms, yoga classes, race registrations, or whatever keeps you active.",
+        "Our instant report and invoice generation feature allows you to generate reports and invoices in seconds, saving you time and effort.",
     },
     {
       icon: (
@@ -129,9 +129,9 @@ const Benefits = () => {
           </svg>
         </div>
       ),
-      title: "Wellness",
+      title: "Secure, Cloud-Based Platform",
       description:
-        "Monthly stipend for a massage, meditation class, therapy, or activities that enhance your mental well-being.",
+        "Our secure, cloud-based platform ensures that your data is always safe and accessible, no matter where you are.",
     },
     {
       icon: (
@@ -153,9 +153,9 @@ const Benefits = () => {
           </svg>
         </div>
       ),
-      title: "Home office",
+      title: "Local Aussie Support",
       description:
-        "Outfit your working space with a stipend for equipment that will keep you comfortable and productive.",
+        "Our local Aussie support team is always here to help you with any questions or issues you may have, ensuring you have the best experience possible.",
     },
   ];
 

@@ -492,7 +492,6 @@
   justify-content: center;
   gap: 3rem;
   width: 100%;
-  max-width: 100%;
 
   @media (max-width: 1200px) {
     grid-template-columns: repeat(2, minmax(350px, 1fr));
@@ -521,8 +520,6 @@
   text-align: center;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   position: relative;
-  height: 400px;
-  width: 100%;
 
   &:hover {
     transform: translateY(-2px);

@@ -18,9 +18,9 @@ export default function Home() {
   return (
     <main className="landing">
       <LandingHero />
+      <Benefits />
       <PersonasSection />
       <HowItWorks />
-      <Benefits />
       <FeatureHero
         eyebrow="Enterprise-Ready Authentication"
         title="Single Sign-On"

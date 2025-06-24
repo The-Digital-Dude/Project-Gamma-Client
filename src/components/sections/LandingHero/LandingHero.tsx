@@ -63,11 +63,11 @@ const LandingHero = () => {
       <section className="landing__hero">
         <div className="landing__content">
           <Headline
-            mainText="Smart Property Checker CRM for"
+            mainText=" Rental. Compliance."
             boldText=""
-            highlightText="Modern Managers"
+            highlightText="Simplified."
           />
-          <Subtext text="Unify landlords, checkers, and properties — all in one intelligent platform. Stay compliant, connected, and in control without the chaos." />
+          <Subtext text="Rentalease is Australia’s easiest way to manage rental compliance checks—fully automated, fully connected. Designed for property managers, powered by smart workflows." />
           <GlassyInput
             type="email"
             placeholder="Enter your email address"
