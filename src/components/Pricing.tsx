@@ -6,41 +6,35 @@ import "../styles/pricing.scss";
 const Pricing = () => {
   const plans = [
     {
-      name: "Basic",
-      price: "$9",
-      period: "month",
+      name: "Starter",
+      price: "$99",
+      period: "mo",
       features: [
-        "Basic analytics",
-        "Up to 5 projects",
-        "Basic support",
-        "1GB storage",
+        "Up to 50 Properties",
+        "Full CRM Access",
+        "5 API Integrations",
       ],
       highlighted: false,
     },
     {
       name: "Pro",
-      price: "$29",
-      period: "month",
+      price: "$199",
+      period: "mo",
       features: [
-        "Advanced analytics",
-        "Unlimited projects",
-        "Priority support",
-        "10GB storage",
-        "Custom integrations",
+        "Up to 150 Properties",
+        "Priority Support",
+        "Unlimited API Connections",
       ],
       highlighted: true,
     },
     {
       name: "Enterprise",
-      price: "$99",
-      period: "month",
+      price: "Custom",
+      period: "",
       features: [
-        "Custom analytics",
-        "Unlimited everything",
-        "24/7 support",
-        "Unlimited storage",
-        "Custom integrations",
-        "Dedicated account manager",
+        "Unlimited Properties",
+        "Custom Features",
+        "Dedicated Account Manager",
       ],
       highlighted: false,
     },
@@ -48,10 +42,9 @@ const Pricing = () => {
 
   return (
     <section className="pricing-section">
-      <div className="pricing-container">
+      <div className="pricing-container icons-bg--1">
         <div className="pricing-header">
-          <h1>Simple, Transparent Pricing</h1>
-          <p>Choose the plan that's right for you</p>
+          <h3>Simple Pricing. No Surprises.</h3>
         </div>
 
         <div className="pricing-grid">
@@ -64,15 +57,15 @@ const Pricing = () => {
             >
               {plan.highlighted && (
                 <div className="popular-ribbon">Most Popular</div>
-                // <p className="m-plans__ribbon">
-                //   <span>Recommended</span>
-                // </p>
               )}
+
               <div className="card-header">
                 <h2 className="plan-name">{plan.name}</h2>
                 <div className="price-row">
                   <span className="amount">{plan.price}</span>
-                  <span className="period">/{plan.period}</span>
+                  {plan.period && (
+                    <span className="period">/{plan.period}</span>
+                  )}
                 </div>
               </div>
 

@@ -1,0 +1,219 @@
+// .testimonialSection {
+//   padding-top: 120px;
+//   padding-bottom: 120px;
+//   background: linear-gradient(135deg, #f9f9fb 60%, #eceff1 100%);
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+// .sliderContainer {
+//   max-width: 1100px;
+//   margin: 0 auto;
+//   position: relative;
+//   width: 100%;
+//   padding: 0 5vw;
+//   overflow: visible;
+// }
+
+.slide {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  height: auto;
+}
+
+.card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 40px 0 rgba(44, 62, 80, 0.13);
+  padding: 48px 48px 40px 48px;
+  min-height: 340px;
+  min-width: 420px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  border-top: 4px solid var(--brand-purple, #6363f1);
+  margin: 0 auto;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.authorTop {
+  font-weight: 700;
+  color: var(--black, #29363d);
+  font-size: 1.1rem;
+  margin-bottom: 32px;
+  letter-spacing: 0.01em;
+}
+
+.quote {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: var(--black, #29363d);
+  margin-bottom: 40px;
+  font-style: normal;
+  font-weight: 600;
+  text-align: left;
+}
+
+.authorWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  margin-top: auto;
+}
+
+.authorName {
+  font-weight: 700;
+  color: var(--black, #29363d);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 2px;
+}
+
+.authorMeta {
+  color: var(--foreground-light-2, #656b8a);
+  font-size: 0.93rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.readMoreBtn {
+  position: absolute;
+  right: 32px;
+  bottom: 32px;
+  background: #fafaff;
+  color: var(--brand-purple, #6363f1);
+  border: 1px solid #ececfb;
+  border-radius: 24px;
+  padding: 8px 22px 8px 18px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  box-shadow: 0 2px 8px 0 rgba(44, 62, 80, 0.06);
+  transition: background 0.15s, color 0.15s, border 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.readMoreBtn:hover {
+  background: var(--brand-purple, #6363f1);
+  color: #fff;
+  border: 1px solid var(--brand-purple, #6363f1);
+}
+
+// Swiper stacking/peek effect
+// Base style for all slides
+:global(.swiper-slide) {
+  transition: transform 0.4s ease, z-index 0.4s ease, opacity 0.3s ease;
+  opacity: 0.6;
+  transform: scale(0.9) translateX(-10px);
+  z-index: 0;
+  filter: blur(1px);
+}
+
+// Active slide
+:global(.swiper-slide-active) {
+  opacity: 1;
+  transform: scale(1) translateX(0);
+  z-index: 3;
+  filter: none;
+}
+
+// Previous and next slides (peek effect)
+:global(.swiper-slide-prev),
+:global(.swiper-slide-next) {
+  transform: scale(0.92) translateX(-5px);
+  z-index: 2;
+  opacity: 0.8;
+}
+
+// Minimal, modern pagination dots
+:global(.swiper-pagination) {
+  bottom: 0 !important;
+  margin-top: 40px;
+  position: static;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+:global(.swiper-pagination-bullet) {
+  width: 8px;
+  height: 8px;
+  background: var(--brand-purple, #6363f1);
+  opacity: 0.14;
+  border-radius: 50%;
+  margin: 0 7px !important;
+  transition: opacity 0.2s, transform 0.2s;
+}
+:global(.swiper-pagination-bullet-active) {
+  opacity: 0.7;
+  transform: scale(1.2);
+}
+
+@media (max-width: 900px) {
+  .sliderContainer {
+    max-width: 100%;
+  }
+  .card {
+    min-width: 320px;
+    padding: 32px 18px 32px 18px;
+  }
+  .readMoreBtn {
+    right: 16px;
+    bottom: 16px;
+  }
+}
+@media (max-width: 600px) {
+  .testimonialSection {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .card {
+    min-width: 0;
+    width: 100%;
+    padding: 24px 6vw 56px 6vw;
+    min-height: 180px;
+  }
+  .authorTop {
+    margin-bottom: 18px;
+  }
+  .quote {
+    font-size: 1.1rem;
+    margin-bottom: 18px;
+  }
+  .readMoreBtn {
+    right: 10px;
+    bottom: 10px;
+    font-size: 0.95rem;
+    padding: 7px 16px 7px 14px;
+  }
+}
+
+.navButtons {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 48px;
+
+  button {
+    background-color: #fff;
+    border: 1px solid var(--brand-purple, #6363f1);
+    color: var(--brand-purple, #6363f1);
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: var(--brand-purple, #6363f1);
+      color: #fff;
+    }
+  }
+}

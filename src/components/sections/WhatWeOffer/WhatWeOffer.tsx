@@ -1,130 +1,70 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import styles from "./WhatWeOffer.module.scss";
 import {
-  MdHomeWork,
-  MdFactCheck,
-  MdEditDocument,
-  MdAnalytics,
-  MdAttachMoney,
-  MdVerified,
-  MdNoteAdd,
-  MdNotifications,
-  MdVisibility,
-  MdMenuBook,
+  MdApi,
+  MdEventAvailable,
+  MdConstruction,
+  MdDescription,
+  MdReceiptLong,
+  MdLock,
 } from "react-icons/md";
 import PillText from "@/components/PillText/PillText";
-import { Button } from "@/components/ui-elements/Button/Button";
 
-const forLandlords = {
-  headline: "Partner with Rentalease and Maximize Your Investment",
-  body: "Owning a rental property in 2025 is a significant investment. At Rentalease, our mission is to make it a profitable and stress-free one. We are more than just a listing site; we are your strategic partner in property management.",
-  services: [
-    {
-      icon: MdHomeWork,
-      iconColor: "#ff6b6b",
-      title: "Premium Listings & Marketing",
-      desc: "We showcase your property to a vast audience of qualified tenants across Australia. Our premium marketing tools, including professional photography and virtual tour options, make your listing stand out.",
-    },
-    {
-      icon: MdFactCheck,
-      iconColor: "#3b82f6",
-      title: "Advanced Tenant Screening",
-      desc: "Finding the right tenant is crucial. Our comprehensive screening process includes rental history checks, employment verification, and reference checks, giving you the confidence to make the right choice.",
-    },
-    {
-      icon: MdEditDocument,
-      iconColor: "#facc15",
-      title: "Digital Lease Management",
-      desc: "From drafting compliant lease agreements to managing digital signatures and bond lodgements, our platform handles the paperwork securely and efficiently.",
-    },
-    {
-      icon: MdAttachMoney,
-      iconColor: "#a855f7",
-      title: "Secure Rent Collection",
-      desc: "Simplify your cash flow with our automated rent collection and payment tracking system. We handle the reminders, so you don't have to.",
-    },
-    {
-      icon: MdAnalytics,
-      iconColor: "#fb923c",
-      title: "Compliance & Insights",
-      desc: "Stay ahead of the curve. Get access to the latest legislative updates, market rental appraisals, and data-driven insights to ensure your investment remains compliant and competitive in the current market.",
-    },
-  ],
-};
-
-const forTenants = {
-  headline: "The Keys to Your Next Chapter",
-  body: "Finding a place to call home should be an exciting journey, not a stressful one. Rentalease is designed to empower you. We connect you with quality, verified properties from trusted landlords and agents across Australia.",
-  services: [
-    {
-      icon: MdVerified,
-      iconColor: "#7b61ff",
-      title: "Verified Properties Only",
-      desc: "Say goodbye to fake listings. We verify every property and landlord on our platform, so you can search with absolute confidence.",
-    },
-    {
-      icon: MdNoteAdd,
-      iconColor: "#3b82f6",
-      title: "One Form, Endless Opportunities",
-      desc: "Tired of filling out endless applications? Our smart, reusable rental profile lets you apply for multiple properties with a single, secure form.",
-    },
-    {
-      icon: MdNotifications,
-      iconColor: "#facc15",
-      title: "Instant Alerts",
-      desc: "Be the first to know. Set up personalised alerts for your preferred suburbs, price range, and property types, and get notified the moment a match is listed.",
-    },
-    {
-      icon: MdVisibility,
-      iconColor: "#a855f7",
-      title: "Transparent Process",
-      desc: "We believe in clarity. From application status tracking to clear communication channels with property managers, you’ll always know where you stand.",
-    },
-    {
-      icon: MdMenuBook,
-      iconColor: "#fb923c",
-      title: "Resources for Renters",
-      desc: "Explore our blog for tips on everything from acing your application to understanding your rights as a tenant in 2025.",
-    },
-  ],
-};
+const services = [
+  {
+    icon: MdApi,
+    iconColor: "#3b82f6",
+    title: "CRM + API Integration",
+    desc: "We securely connect your CRM (like PropertyMe, Console Cloud, etc.) to Rentalease via API. This allows real-time syncing of property details, tenant information, key dates, and job history — no more double entry or spreadsheet headaches.",
+  },
+  {
+    icon: MdEventAvailable,
+    iconColor: "#10b981",
+    title: "Automated Tenant Scheduling",
+    desc: "Our system identifies when a compliance check is due, sends SMS/email notifications to tenants, offers booking slots, and follows up with reminders — pushing confirmed jobs to your service provider automatically.",
+  },
+  {
+    icon: MdConstruction,
+    iconColor: "#f59e0b",
+    title: "Tradie Job Allocation & Management",
+    desc: "Invite your own tradies or use ours. They get job details, calendar invites, live updates if rescheduled, and can upload reports via mobile after completion.",
+  },
+  {
+    icon: MdDescription,
+    iconColor: "#6366f1",
+    title: "Compliance Report Collection",
+    desc: "Tradies upload compliance reports directly to the platform post-inspection. Reports are stored securely, shared with tenants, and accessible anytime by property managers.",
+  },
+  {
+    icon: MdReceiptLong,
+    iconColor: "#ef4444",
+    title: "Auto-Invoicing",
+    desc: "As soon as a job is marked complete, Rentalease auto-generates the invoice, sends it to the property manager, and syncs the status with your billing system — ensuring on-time payments.",
+  },
+  {
+    icon: MdLock,
+    iconColor: "#8b5cf6",
+    title: "Secure Document Storage & Audit Trail",
+    desc: "Every interaction is logged and timestamped. Export compliance history, retrieve records instantly, and stay legally protected with a full audit trail.",
+  },
+];
 
 const WhatWeOffer = () => {
-  const [active, setActive] = useState<"landlords" | "managers">("landlords");
-  const client = active === "landlords" ? forLandlords : forTenants;
-
   return (
     <section className={styles.whatWeOfferSection}>
       <PillText text="Our Services" />
       <h2 className={styles.title}>What we offer</h2>
       <p className={styles.subtitle}>
-        At CheckHero we offer our clients a fully compliant, thorough, friendly,
-        and affordable service.
+        Rentalease automates, manages, and tracks all your compliance
+        requirements from one dashboard — saving you hours of manual work,
+        reducing risk, and keeping you fully compliant.
       </p>
-      <div className={styles.toggleWrapper}>
-        <Button
-          variant={active === "landlords" ? "default" : "outline"}
-          onClick={() => setActive("landlords")}
-        >
-          For Landlords
-        </Button>
-        <Button
-          variant={active === "managers" ? "default" : "outline"}
-          onClick={() => setActive("managers")}
-        >
-          For Managers
-        </Button>
-      </div>
-      {/* <div>
-        <div className="sub-heading">{client.headline}</div>
-        <div>{client.body}</div>
-      </div> */}
       <div className={styles.grid}>
-        {client.services.map((service, i) => {
+        {services.map((service, i) => {
           const IconComponent = service.icon;
           return (
-            <div className={`${styles.card}`} key={i}>
+            <div className={styles.card} key={i}>
               <div
                 className={styles.icon}
                 style={{ background: service.iconColor + "20" }}
