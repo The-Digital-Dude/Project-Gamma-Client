@@ -1,0 +1,24 @@
+@import "@/styles/_variables.scss";
+
+.best-price-title {
+  color: $brand-purple-hover;
+  font-size: $font-md;
+  font-weight: 500;
+  margin: 0;
+}
+
+.form-input {
+  border-radius: 50px;
+}
+
+.form-input:focus {
+  border: 1px solid $primary-color;
+}
+
+@media (max-width: 991px) {
+  .best-price-form {
+    width: 100%;
+    max-width: 100%;
+    padding: 1.5rem 1rem 1rem 1rem;
+  }
+}
