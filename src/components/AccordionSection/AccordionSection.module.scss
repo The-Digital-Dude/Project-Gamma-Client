@@ -1,0 +1,77 @@
+@import "@/styles/_variables";
+
+.accordionSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.accordionItem {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  padding: 0;
+  border: none;
+  transition: box-shadow 0.2s;
+}
+
+.accordionItem:has(.accordionContentWrapper[style*="max-height: 500px"]) {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.accordionSummary {
+  width: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: $primary-color;
+  cursor: pointer;
+  padding: 1.5rem 2rem;
+  border-radius: 16px;
+  transition: background 0.15s;
+  text-align: left;
+}
+
+.accordionSummary:focus {
+  //   background: #f7f7f7;
+}
+
+.iconCheck {
+  flex-shrink: 0;
+  margin-right: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.iconChevron {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s;
+}
+
+.summaryText {
+  flex: 1 1 auto;
+}
+
+.accordionContentWrapper {
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  max-height: 0;
+  opacity: 0;
+  background: #fff;
+  border-radius: 0 0 16px 16px;
+  padding: 0 2rem;
+}
+
+.accordionContent {
+  margin-top: 1rem;
+  color: #222;
+  font-size: 1.1rem;
+  padding-bottom: 1.5rem;
+}

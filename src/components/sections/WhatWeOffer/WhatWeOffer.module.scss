@@ -1,0 +1,124 @@
+.whatWeOfferSection {
+  text-align: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.toggleWrapper {
+  display: inline-block;
+  border-radius: 100px;
+  margin-bottom: 2.5rem;
+}
+
+.activeToggle,
+.inactiveToggle {
+  border: none;
+  outline: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.75rem 2.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.activeToggle {
+  background: #ff4d1c;
+  color: #fff;
+}
+
+.inactiveToggle {
+  background: #ffe5db;
+  color: #ff4d1c;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 1.25rem;
+  box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.06);
+  padding: 2.5rem 1.5rem 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: box-shadow 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.1);
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  margin-bottom: 1.25rem;
+  font-size: 2rem;
+}
+
+.cardTitle {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #1e293b;
+  text-align: left;
+}
+
+.cardDesc {
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.1rem;
+  text-align: left;
+}
+
+.cardFeatures {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cardFeatureItem {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: #1e293b;
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+}
+
+@media (max-width: 700px) {
+  .whatWeOfferSection {
+    padding: 32px 0 24px 0;
+  }
+  .grid {
+    gap: 1.25rem;
+  }
+  .card {
+    padding: 1.5rem 0.75rem 1.25rem 0.75rem;
+  }
+  .icon {
+    width: 44px;
+    height: 44px;
+    font-size: 1.5rem;
+  }
+}

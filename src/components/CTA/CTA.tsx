@@ -3,6 +3,7 @@ import GlassyInput from "../GlassyInput/GlassyInput";
 import "@/styles/cta.scss";
 
 interface CTAProps {
+  className?: string;
   title: string;
   subtitle: string;
   buttonLabel: string;
@@ -16,10 +17,11 @@ const CTA: React.FC<CTAProps> = ({
   buttonLabel,
   highlightText,
   onButtonClick,
+  className,
 }) => {
   return (
     <section className="cta">
-      <div className="cta__container">
+      <div className={`cta__container ${className ? className : ""}`}>
         <div className="cta__content">
           <h2 className="cta__title">
             {title}{" "}
