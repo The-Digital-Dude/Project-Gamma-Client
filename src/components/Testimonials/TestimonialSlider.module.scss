@@ -106,53 +106,56 @@
   border: 1px solid var(--brand-purple, #6363f1);
 }
 
-// Swiper stacking/peek effect
-// Base style for all slides
-:global(.swiper-slide) {
-  transition: transform 0.4s ease, z-index 0.4s ease, opacity 0.3s ease;
-  opacity: 0.6;
-  transform: scale(0.9) translateX(-10px);
-  z-index: 0;
-  filter: blur(1px);
-}
+// Swiper wrapper to make global selectors pure
+.swiperWrapper {
+  // Swiper stacking/peek effect
+  // Base style for all slides
+  :global(.swiper-slide) {
+    transition: transform 0.4s ease, z-index 0.4s ease, opacity 0.3s ease;
+    opacity: 0.6;
+    transform: scale(0.9) translateX(-10px);
+    z-index: 0;
+    filter: blur(1px);
+  }
 
-// Active slide
-:global(.swiper-slide-active) {
-  opacity: 1;
-  transform: scale(1) translateX(0);
-  z-index: 3;
-  filter: none;
-}
+  // Active slide
+  :global(.swiper-slide-active) {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+    z-index: 3;
+    filter: none;
+  }
 
-// Previous and next slides (peek effect)
-:global(.swiper-slide-prev),
-:global(.swiper-slide-next) {
-  transform: scale(0.92) translateX(-5px);
-  z-index: 2;
-  opacity: 0.8;
-}
+  // Previous and next slides (peek effect)
+  :global(.swiper-slide-prev),
+  :global(.swiper-slide-next) {
+    transform: scale(0.92) translateX(-5px);
+    z-index: 2;
+    opacity: 0.8;
+  }
 
-// Minimal, modern pagination dots
-:global(.swiper-pagination) {
-  bottom: 0 !important;
-  margin-top: 40px;
-  position: static;
-  display: flex;
-  justify-content: center;
-  gap: 18px;
-}
-:global(.swiper-pagination-bullet) {
-  width: 8px;
-  height: 8px;
-  background: var(--brand-purple, #6363f1);
-  opacity: 0.14;
-  border-radius: 50%;
-  margin: 0 7px !important;
-  transition: opacity 0.2s, transform 0.2s;
-}
-:global(.swiper-pagination-bullet-active) {
-  opacity: 0.7;
-  transform: scale(1.2);
+  // Minimal, modern pagination dots
+  :global(.swiper-pagination) {
+    bottom: 0 !important;
+    margin-top: 40px;
+    position: static;
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+  }
+  :global(.swiper-pagination-bullet) {
+    width: 8px;
+    height: 8px;
+    background: var(--brand-purple, #6363f1);
+    opacity: 0.14;
+    border-radius: 50%;
+    margin: 0 7px !important;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+  :global(.swiper-pagination-bullet-active) {
+    opacity: 0.7;
+    transform: scale(1.2);
+  }
 }
 
 @media (max-width: 900px) {

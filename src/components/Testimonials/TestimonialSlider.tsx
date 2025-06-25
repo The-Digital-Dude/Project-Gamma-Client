@@ -55,7 +55,7 @@ const TestimonialSlider: React.FC = () => {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
         }}
-        className={styles.stackingSwiper}
+        className={styles.swiperWrapper}
       >
         {testimonials.map((t, idx) => (
           <SwiperSlide key={idx} className={styles.slide}>
