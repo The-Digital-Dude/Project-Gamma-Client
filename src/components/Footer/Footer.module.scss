@@ -120,3 +120,15 @@
     grid-template-columns: 1fr;
   }
 }
+
+.footlink__container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.footlink {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}

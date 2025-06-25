@@ -27,14 +27,14 @@ const testimonials = [
       "The integration was smooth, and our tradies love the automated job notifications. No more missed appointments!",
     author: "Dean W.",
     role: "Compliance Officer",
-    location: "Melbourne",
+    location: "Victoria",
   },
   {
     quote:
       "Easy to use, clean interface, great support. Highly recommend to anyone managing rentals.",
     author: "Priya K.",
     role: "Portfolio Manager",
-    location: "Melbourne",
+    location: "Victoria",
   },
 ];
 

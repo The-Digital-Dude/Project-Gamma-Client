@@ -3,14 +3,15 @@ import Headline from "@/components/Headline/Headline";
 import HeroVisual from "@/components/HeroVisual/HeroVisual";
 import Stats from "@/components/Stats/Stats";
 import Subtext from "@/components/Subtext/Subtext";
+import { Button } from "@/components/ui-elements/Button/Button";
 import { siteConfig } from "@/config/site";
 import React from "react";
 
 const LandingHero = () => {
   const stats = [
-    { value: "98%", label: "accuracy rate" },
-    { value: "50M+", label: "questions solved" },
-    { value: "5x", label: "faster learning" },
+    { value: "140+", label: "Property Managers" },
+    { value: "2500+", label: "Registered Properties" },
+    { value: "4x", label: "Faster CRM Compared to Other Companies" },
   ];
 
   const features = [
@@ -63,25 +64,19 @@ const LandingHero = () => {
       <section className="landing__hero">
         <div className="landing__content">
           <Headline
-            mainText=" Rental. Compliance."
+            mainText="Rental. Compliance."
             boldText=""
             highlightText="Simplified."
           />
           <Subtext text="Rentalease is Australia’s easiest way to manage rental compliance checks—fully automated, fully connected. Designed for property managers, powered by smart workflows." />
-          <GlassyInput
-            type="email"
-            placeholder="Enter your email address"
-            buttonLabel="Request a Demo"
-            onButtonClick={() => {
-              /* handle click */
-            }}
-          />
+          <div>
+            <Button href="/book-now" fullWidth={false}>
+              Request Demo
+            </Button>
+          </div>
           <Stats stats={stats} />
         </div>
-        <HeroVisual
-          imageUrl="https://imagedelivery.net/LqiWLm-3MGbYHtFuUbcBtA/189d259c-f35e-4849-da0b-dc9a73374300/public"
-          altText={siteConfig.name}
-        />
+        <HeroVisual imageUrl="/img-1.webp" altText={siteConfig.name} />
       </section>
     </div>
   );
