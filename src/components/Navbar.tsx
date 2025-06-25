@@ -1,9 +1,77 @@
-import React from "react";
+"use client";
+
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import { siteConfig } from "../config/site";
 import "@/styles/navbar.scss";
 import Link from "next/link";
 
+const serviceLinks = [
+  { href: "/services/smoke-alarm", label: "Smoke Alarm" },
+  { href: "/services/electrical-safety", label: "Electrical Safety" },
+  { href: "/services/gas-safety", label: "Gas Safety" },
+];
+
 const Navbar: React.FC = () => {
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isTouch, setIsTouch] = useState(false);
+  const dropdownRef = useRef<HTMLLIElement>(null);
+  const buttonRef = useRef<HTMLAnchorElement>(null);
+
+  // Detect outside click
+  useEffect(() => {
+    if (!isServicesOpen) return;
+    function handleClick(e: MouseEvent) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(e.target as Node)
+      ) {
+        setIsServicesOpen(false);
+      }
+    }
+    function handleEscape(e: KeyboardEvent) {
+      if (e.key === "Escape") setIsServicesOpen(false);
+    }
+    document.addEventListener("mousedown", handleClick);
+    document.addEventListener("keydown", handleEscape);
+    return () => {
+      document.removeEventListener("mousedown", handleClick);
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, [isServicesOpen]);
+
+  // Detect touch device
+  useEffect(() => {
+    function handleTouch() {
+      setIsTouch(true);
+      window.removeEventListener("touchstart", handleTouch);
+    }
+    window.addEventListener("touchstart", handleTouch);
+    return () => window.removeEventListener("touchstart", handleTouch);
+  }, []);
+
+  // Open/close handlers
+  const openDropdown = useCallback(() => setIsServicesOpen(true), []);
+  const closeDropdown = useCallback(() => setIsServicesOpen(false), []);
+  const toggleDropdown = useCallback(() => setIsServicesOpen((v) => !v), []);
+
+  // Keyboard navigation
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter" || e.key === " " || e.key === "ArrowDown") {
+      e.preventDefault();
+      openDropdown();
+      // Focus first link
+      setTimeout(() => {
+        const firstLink = dropdownRef.current?.querySelector(
+          ".navbar__dropdown-menu a"
+        ) as HTMLElement;
+        firstLink?.focus();
+      }, 0);
+    } else if (e.key === "Escape") {
+      closeDropdown();
+      buttonRef.current?.focus();
+    }
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar__container">
@@ -19,8 +87,42 @@ const Navbar: React.FC = () => {
           <li>
             <Link href="/about">About</Link>
           </li>
-          <li>
-            <Link href="/services">Services</Link>
+          <li
+            className="navbar__dropdown"
+            ref={dropdownRef}
+            aria-haspopup="true"
+            aria-expanded={!!isServicesOpen}
+            onMouseEnter={!isTouch ? openDropdown : undefined}
+            onMouseLeave={!isTouch ? closeDropdown : undefined}
+          >
+            <Link
+              href="/services"
+              ref={buttonRef}
+              tabIndex={0}
+              aria-haspopup="true"
+              aria-expanded={!!isServicesOpen}
+              onKeyDown={handleKeyDown}
+              onClick={isTouch ? toggleDropdown : undefined}
+            >
+              Services
+            </Link>
+            {isServicesOpen && (
+              <ul
+                className="navbar__dropdown-menu"
+                role="menu"
+                aria-label="Service sub-menu"
+                onMouseEnter={!isTouch ? openDropdown : undefined}
+                onMouseLeave={!isTouch ? closeDropdown : undefined}
+              >
+                {serviceLinks.map((link) => (
+                  <li key={link.href} role="none">
+                    <Link href={link.href} role="menuitem" tabIndex={-1}>
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            )}
           </li>
           <li>
             <Link href="/pricing">Pricing</Link>
