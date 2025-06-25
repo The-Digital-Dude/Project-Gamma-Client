@@ -5,10 +5,11 @@ import Heading from "@/components/ui-elements/Heading/Heading";
 interface SectionContentProps {
   eyebrow: string;
   title: string;
-  subtitle: string;
+  subtitle?: string;
   description: string;
   ctaText: string;
   ctaLink: string;
+  heading?: "h1" | "h2" | "h3" | "h4";
   buttonVariant?: "default" | "outline";
 }
 
@@ -20,13 +21,14 @@ const SectionContent = ({
   ctaText,
   ctaLink,
   buttonVariant = "default",
+  heading,
 }: SectionContentProps) => {
   return (
     <div className={styles.content}>
-      <h2 className={styles.eyebrow} style={{}}>
+      <p className={styles.eyebrow} style={{}}>
         {eyebrow}
-      </h2>
-      <Heading title={title} subtitle={subtitle} />
+      </p>
+      <Heading title={title} subtitle={subtitle} heading={heading} />
       <p className={styles.description}>{description}</p>
       <div className={styles.ctaWrapper}>
         <Button href={ctaLink} variant={buttonVariant}>

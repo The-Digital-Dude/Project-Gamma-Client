@@ -22,12 +22,6 @@
   }
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: $section-padding-xl 0;
-}
-
 .content {
   border-radius: $border-radius-lg;
   max-width: 1200px;
@@ -385,4 +379,64 @@
   @media (max-width: 480px) {
     font-size: 1rem;
   }
+}
+
+.sectionTitle {
+  font-size: $font-4xl;
+  font-weight: 800;
+  color: $text-primary;
+  text-align: center;
+}
+
+.stepsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.stepBox {
+  background: white;
+  border-radius: $border-radius-lg;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.3s;
+  border: 1px solid $border-color;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+}
+
+.icon {
+  font-size: 2.5rem;
+  color: $brand-purple;
+  border-radius: 50%;
+  width: 3.5rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.stepTitle {
+  font-weight: 700;
+  color: $text-primary;
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+
+.stepDescription {
+  font-size: $font-sm;
+  color: $text-secondary;
+  text-align: center;
+  line-height: 1.6;
 }

@@ -1,11 +1,12 @@
 import Image from "next/image";
 import styles from "./FeatureHero.module.scss";
 import SectionContent from "../SectionContent/SectionContent";
+import { CSSProperties } from "react";
 
 interface FeatureHeroProps {
   eyebrow: string;
   title: string;
-  subtitle: string;
+  subtitle?: string;
   description: string;
   ctaText: string;
   ctaLink: string;
@@ -16,6 +17,9 @@ interface FeatureHeroProps {
   eyebrowColor?: string;
   titleColor?: string;
   subtitleColor?: string;
+  heading?: "h1" | "h2" | "h3" | "h4";
+  style?: CSSProperties;
+  iconBG?: boolean;
 }
 
 const FeatureHero = ({
@@ -27,8 +31,11 @@ const FeatureHero = ({
   ctaLink,
   imageSrc,
   imageAlt,
-  contentPosition = "left",
+  contentPosition = "right",
   buttonVariant = "default",
+  heading,
+  style,
+  iconBG,
 }: FeatureHeroProps) => {
   const containerClasses = [
     styles.container,
@@ -46,11 +53,15 @@ const FeatureHero = ({
       ctaText={ctaText}
       ctaLink={ctaLink}
       buttonVariant={buttonVariant}
+      heading={heading}
     />
   );
 
   const ImageComponent = (
-    <div className={styles.imageWrapper}>
+    <div
+      className={styles.imageWrapper}
+      style={contentPosition === "left" ? { order: 13 } : undefined}
+    >
       <Image
         src={imageSrc}
         alt={imageAlt}
@@ -64,16 +75,19 @@ const FeatureHero = ({
 
   return (
     <section className={styles.featureHero}>
-      <div className={containerClasses}>
+      <div
+        className={`${containerClasses} ${iconBG ? "icons-bg--1" : undefined}`}
+        style={style}
+      >
         {contentPosition === "left" ? (
           <>
-            {Content}
             {ImageComponent}
+            {Content}
           </>
         ) : (
           <>
-            {Content}
             {ImageComponent}
+            {Content}
           </>
         )}
       </div>

@@ -1,0 +1,58 @@
+@import "@/styles/variables"; // Adjust path if needed
+
+.comparisonContainer {
+  background-color: $section-light;
+  padding: $section-padding-md;
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow-md;
+  font-family: $font-sans;
+  overflow-x: auto;
+}
+
+.heading {
+  font-size: $font-2xl;
+  font-weight: 600;
+  color: $heading-primary;
+  margin-bottom: $space-md;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: $font-sm;
+  color: $text-primary;
+
+  thead {
+    background-color: $brand-purple-light;
+    color: $brand-purple;
+
+    th {
+      padding: $space-sm $space-md;
+      font-weight: 600;
+    }
+  }
+
+  tbody {
+    tr {
+      border-top: 1px solid $border-color;
+
+      &:nth-child(even) {
+        background-color: $cool-gray;
+      }
+
+      td {
+        padding: $space-sm $space-md;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+.check {
+  color: $brand-purple;
+}
+
+.cross {
+  color: $foreground-light-3;
+}

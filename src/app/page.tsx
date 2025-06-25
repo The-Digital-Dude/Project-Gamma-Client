@@ -8,6 +8,9 @@ import FeatureHero from "@/components/sections/FeatureHero/FeatureHero";
 import AiSupportPopup from "@/components/AiSupportPopup";
 
 import "@/styles/landing.scss";
+import Contact from "@/components/sections/Contact/Contact";
+import Headline from "@/components/Headline/Headline";
+import PillText from "@/components/PillText/PillText";
 
 export default function Home() {
   const handleAiCallConfirm = () => {
@@ -19,9 +22,23 @@ export default function Home() {
     <main className="landing">
       <LandingHero />
       <Benefits />
-      <PersonasSection />
-      <HowItWorks />
-      <FeatureHero
+      {/* <PersonasSection /> */}
+      <div className="accent-background--4">
+        <HowItWorks />
+      </div>
+      <div className="common-section icons-bg--1">
+        <div className="container text-center">
+          <PillText text="Contact us" />
+          <Headline
+            heading="h3"
+            mainText="Feel Free to"
+            highlightText="Reach Out"
+            boldText=""
+          />
+        </div>
+        <Contact />
+      </div>
+      {/* <FeatureHero
         eyebrow="Enterprise-Ready Authentication"
         title="Single Sign-On"
         subtitle="Seamless & Secure Access"
@@ -46,7 +63,8 @@ export default function Home() {
         contentPosition="left"
         buttonVariant="default"
         eyebrowColor="$text-tertiary)"
-      />
+        heading="h3"
+      /> */}
       <AiSupportPopup />
     </main>
   );

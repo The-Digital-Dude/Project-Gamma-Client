@@ -29,16 +29,12 @@
   gap: 1rem;
   font-size: 1.5rem;
   font-weight: 700;
-  color: $primary-color;
+  color: $brand-purple-hover;
   cursor: pointer;
   padding: 1.5rem 2rem;
   border-radius: 16px;
   transition: background 0.15s;
   text-align: left;
-}
-
-.accordionSummary:focus {
-  //   background: #f7f7f7;
 }
 
 .iconCheck {
@@ -70,7 +66,6 @@
 }
 
 .accordionContent {
-  margin-top: 1rem;
   color: #222;
   font-size: 1.1rem;
   padding-bottom: 1.5rem;
