@@ -16,6 +16,7 @@ const Navbar: React.FC = () => {
   const [isTouch, setIsTouch] = useState(false);
   const dropdownRef = useRef<HTMLLIElement>(null);
   const buttonRef = useRef<HTMLAnchorElement>(null);
+  const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   // Detect outside click
   useEffect(() => {
@@ -49,9 +50,33 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener("touchstart", handleTouch);
   }, []);
 
-  // Open/close handlers
-  const openDropdown = useCallback(() => setIsServicesOpen(true), []);
-  const closeDropdown = useCallback(() => setIsServicesOpen(false), []);
+  // Clear timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (closeTimeoutRef.current) {
+        clearTimeout(closeTimeoutRef.current);
+      }
+    };
+  }, []);
+
+  // Open/close handlers with delay
+  const openDropdown = useCallback(() => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+    setIsServicesOpen(true);
+  }, []);
+
+  const closeDropdown = useCallback(() => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+    }
+    closeTimeoutRef.current = setTimeout(() => {
+      setIsServicesOpen(false);
+    }, 150); // 150ms delay to allow clicking
+  }, []);
+
   const toggleDropdown = useCallback(() => setIsServicesOpen((v) => !v), []);
 
   // Keyboard navigation
@@ -67,7 +92,7 @@ const Navbar: React.FC = () => {
         firstLink?.focus();
       }, 0);
     } else if (e.key === "Escape") {
-      closeDropdown();
+      setIsServicesOpen(false);
       buttonRef.current?.focus();
     }
   };
