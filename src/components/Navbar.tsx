@@ -166,9 +166,6 @@ const Navbar: React.FC = () => {
             <li>
               <Link href="/crm">CRM</Link>
             </li>
-            <li>
-              <Link href="/contact">Contact</Link>
-            </li>
             <li
               className="navbar__dropdown"
               ref={dropdownRef}
@@ -208,6 +205,9 @@ const Navbar: React.FC = () => {
             </li>
             <li>
               <Link href="/blog">Blog</Link>
+            </li>
+            <li>
+              <Link href="/contact">Contact</Link>
             </li>
           </ul>
 
@@ -393,33 +393,6 @@ const Navbar: React.FC = () => {
               </Link>
             </li>
             <li>
-              <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M21 10.5V6.5C21 5.11929 19.8807 4 18.5 4H5.5C4.11929 4 3 5.11929 3 6.5V17.5C3 18.8807 4.11929 20 5.5 20H18.5C19.8807 20 21 18.8807 21 17.5V13.5"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M21 10.5L12 16L3 10.5"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-                Contact
-              </Link>
-            </li>
-            <li>
               <Link
                 href="/services/smoke-alarm"
                 onClick={() => setIsMobileMenuOpen(false)}
@@ -552,6 +525,33 @@ const Navbar: React.FC = () => {
                   />
                 </svg>
                 Blog
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M21 10.5V6.5C21 5.11929 19.8807 4 18.5 4H5.5C4.11929 4 3 5.11929 3 6.5V17.5C3 18.8807 4.11929 20 5.5 20H18.5C19.8807 20 21 18.8807 21 17.5V13.5"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M21 10.5L12 16L3 10.5"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+                Contact
               </Link>
             </li>
           </ul>

@@ -51,7 +51,7 @@
   background-clip: text;
   font-weight: 500;
   font-size: 1rem;
-  letter-spacing: .05em;
+  letter-spacing: 0.05em;
   display: inline-block;
 }
 
@@ -60,30 +60,30 @@
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
-  margin-left: auto
+  margin-left: auto;
 }
 
 @media (min-width: 576px) {
   .container {
-    max-width: 540px
+    max-width: 540px;
   }
 }
 
 @media (min-width: 768px) {
   .container {
-    max-width: 720px
+    max-width: 720px;
   }
 }
 
 @media (min-width: 992px) {
   .container {
-    max-width: 960px
+    max-width: 960px;
   }
 }
 
 @media (min-width: 1200px) {
   .container {
-    max-width: 1140px
+    max-width: 1140px;
   }
 }
 
@@ -114,4 +114,10 @@
 
 .text-center {
   text-align: center;
+}
+
+@media (max-width: 900px) {
+  main {
+    margin-top: 70px !important;
+  }
 }
