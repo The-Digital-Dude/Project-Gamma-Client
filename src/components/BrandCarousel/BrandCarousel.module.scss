@@ -1,0 +1,36 @@
+.carouselWrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carouselTrack {
+  display: flex;
+  width: fit-content;
+  animation: scrollLoop 800s linear infinite;
+}
+
+.logo {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2rem;
+
+  img {
+    height: auto;
+    width: 150px;
+  }
+
+  &:hover img {
+    filter: grayscale(0%);
+  }
+}
+
+@keyframes scrollLoop {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

@@ -101,9 +101,9 @@ const Navbar: React.FC = () => {
     <nav className="navbar">
       <div className="navbar__container">
         {/* Logo */}
-        <div className="navbar__logo">
-          <a href="/">{siteConfig.name}</a>
-        </div>
+        <a href="/">
+          <img style={{ width: "80px" }} src="/rentalease-logo.png" alt="" />
+        </a>
         {/* Navigation Links */}
         <ul className="navbar__links">
           <li>
@@ -111,6 +111,9 @@ const Navbar: React.FC = () => {
           </li>
           <li>
             <Link href="/about">About</Link>
+          </li>
+          <li>
+            <Link href="/crm">CRM</Link>
           </li>
           <li
             className="navbar__dropdown"
@@ -120,17 +123,14 @@ const Navbar: React.FC = () => {
             onMouseEnter={!isTouch ? openDropdown : undefined}
             onMouseLeave={!isTouch ? closeDropdown : undefined}
           >
-            <Link
-              href="/services"
-              ref={buttonRef}
-              tabIndex={0}
+            <p
               aria-haspopup="true"
               aria-expanded={!!isServicesOpen}
               onKeyDown={handleKeyDown}
               onClick={isTouch ? toggleDropdown : undefined}
             >
-              Services
-            </Link>
+              Safety Check
+            </p>
             {isServicesOpen && (
               <ul
                 className="navbar__dropdown-menu"
@@ -151,6 +151,9 @@ const Navbar: React.FC = () => {
           </li>
           <li>
             <Link href="/pricing">Pricing</Link>
+          </li>
+          <li>
+            <Link href="/blog">Blog</Link>
           </li>
         </ul>
         {/* Action Buttons */}

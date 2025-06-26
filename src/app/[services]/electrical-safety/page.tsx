@@ -66,7 +66,7 @@ export default function ElectricalSafety({}: Props) {
         <div className="container icons-bg--1">
           <ServiceHero
             mainText="Rentalease Electrical Safety Checks in"
-            highlightText="Melbourne"
+            highlightText="Victoria"
             description="Use our network of friendly, A-Grade electricians to ensure your investment property is safe and fully compliant with all Victorian regulations."
           />
         </div>
@@ -79,7 +79,7 @@ Safety and trust are our priorities. We offer full insurance on every job for co
 "
         ctaText="Learn More"
         ctaLink="/docs/directory-sync"
-        imageSrc="https://imagedelivery.net/LqiWLm-3MGbYHtFuUbcBtA/189d259c-f35e-4849-da0b-dc9a73374300/public"
+        imageSrc="/img-6.jpg"
         imageAlt="Directory Sync Dashboard"
         contentPosition="left"
         buttonVariant="default"
@@ -101,12 +101,12 @@ Safety and trust are our priorities. We offer full insurance on every job for co
       <FeatureHero
         eyebrow="Legislation Update"
         title="Understanding New Landlord Regulations"
-        subtitle="Stay Compliant with Annual Smoke Alarm Checks"
-        description="Victorian legislation now requires rental providers to conduct smoke alarm checks annually. Smoke alarms must be correctly installed, of the right type, and properly maintained.
-Crucially, the legislation also defines smoke alarm non-compliance as an urgent repair. This means landlords must act immediately to rectify any faults reported by tenants. The Rentalease platform helps you manage these obligations effortlessly by providing reminders, professional servicing, and a clear audit trail."
+        subtitle="Stay Compliant with Annual Electrical Safety Checks"
+        description="Under new Victorian legislation, rental providers must ensure an electrical safety check is completed for their property every two years by a licensed electrician. Furthermore, landlords are required to maintain a record of these inspections, including the name and registration number of the person who performed the check, the date of the check, and a copy of the compliance report.
+When you book through Rentalease, you have peace of mind that all these compliance and regulatory requirements are fulfilled and documented for you automatically in your portal."
         ctaText="Learn More"
         ctaLink="/docs/directory-sync"
-        imageSrc="https://imagedelivery.net/LqiWLm-3MGbYHtFuUbcBtA/189d259c-f35e-4849-da0b-dc9a73374300/public"
+        imageSrc="/img-7.jpg"
         imageAlt="Directory Sync Dashboard"
         contentPosition="right"
         buttonVariant="default"
@@ -134,9 +134,9 @@ Crucially, the legislation also defines smoke alarm non-compliance as an urgent 
       <div className="common-section">
         <div className="container">
           <CTA
-            title="Ready To Build Something"
-            highlightText="Extraordinary?"
-            subtitle="Let's collaborate and bring your ideas to life — from vision to deployment and beyond."
+            title="Ready to Build Something"
+            highlightText="Extraordinary with Rentalease?"
+            subtitle="Let’s create something amazing together — from strategy and setup to compliance, marketing, and results."
             buttonLabel="Contact Us"
             onButtonClick={() => {}}
             className="accent-background--2 accent-border--2"

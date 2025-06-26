@@ -30,8 +30,8 @@ export default function ServiceHero({
         <div className="description">
           <p>{description}</p>
         </div>
-        <Button variant="default" href="/contact">
-          Reach Out To Us
+        <Button variant="default" href="/book-now">
+          Request Demo
         </Button>
       </div>
       <ContactMini />

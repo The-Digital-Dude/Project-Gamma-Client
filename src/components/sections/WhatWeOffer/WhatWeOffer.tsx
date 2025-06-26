@@ -10,6 +10,7 @@ import {
   MdLock,
 } from "react-icons/md";
 import PillText from "@/components/PillText/PillText";
+import Headline from "@/components/Headline/Headline";
 
 const services = [
   {
@@ -53,8 +54,13 @@ const services = [
 const WhatWeOffer = () => {
   return (
     <section className={styles.whatWeOfferSection}>
-      <PillText text="Our Services" />
-      <h2 className={styles.title}>What we offer</h2>
+      <PillText text="CRM Features" />
+      <Headline
+        mainText="From Chaos to Clarity: "
+        boldText=""
+        highlightText="Your Rental CRM"
+        heading="h2"
+      />
       <p className={styles.subtitle}>
         Rentalease automates, manages, and tracks all your compliance
         requirements from one dashboard — saving you hours of manual work,

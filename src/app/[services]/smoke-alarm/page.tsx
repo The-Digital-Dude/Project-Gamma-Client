@@ -60,7 +60,7 @@ export default function SmokeAlarm({}: Props) {
         <div className="container icons-bg--1">
           <ServiceHero
             mainText="Rentalease Smoke Alarm Inspections in"
-            highlightText="Melbourne"
+            highlightText="Victoria"
             description="Ensure your property is safe and compliant with our network of friendly, accredited, and insured professionals."
           />
         </div>
@@ -73,7 +73,7 @@ Safety and trust are our priorities. We offer full insurance on every job for co
 "
         ctaText="Learn More"
         ctaLink="/docs/directory-sync"
-        imageSrc="https://imagedelivery.net/LqiWLm-3MGbYHtFuUbcBtA/189d259c-f35e-4849-da0b-dc9a73374300/public"
+        imageSrc="/img-5.jpg"
         imageAlt="Directory Sync Dashboard"
         contentPosition="left"
         buttonVariant="default"
@@ -100,7 +100,7 @@ Safety and trust are our priorities. We offer full insurance on every job for co
 Crucially, the legislation also defines smoke alarm non-compliance as an urgent repair. This means landlords must act immediately to rectify any faults reported by tenants. The Rentalease platform helps you manage these obligations effortlessly by providing reminders, professional servicing, and a clear audit trail."
         ctaText="Learn More"
         ctaLink="/docs/directory-sync"
-        imageSrc="https://imagedelivery.net/LqiWLm-3MGbYHtFuUbcBtA/189d259c-f35e-4849-da0b-dc9a73374300/public"
+        imageSrc="/img-4.jpg"
         imageAlt="Directory Sync Dashboard"
         contentPosition="right"
         buttonVariant="default"
@@ -128,9 +128,9 @@ Crucially, the legislation also defines smoke alarm non-compliance as an urgent 
       <div className="common-section">
         <div className="container">
           <CTA
-            title="Ready To Build Something"
-            highlightText="Extraordinary?"
-            subtitle="Let's collaborate and bring your ideas to life — from vision to deployment and beyond."
+            title="Ready to Build Something"
+            highlightText="Extraordinary with Rentalease?"
+            subtitle="Let’s create something amazing together — from strategy and setup to compliance, marketing, and results."
             buttonLabel="Contact Us"
             onButtonClick={() => {}}
             className="accent-background--2 accent-border--2"

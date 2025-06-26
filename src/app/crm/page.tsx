@@ -1,16 +1,24 @@
 import React from "react";
 import "@/styles/services.scss";
 import "@/styles/landing.scss";
+import "@/styles/about.scss";
 import PillText from "@/components/PillText/PillText";
 import WhatWeOffer from "@/components/sections/WhatWeOffer/WhatWeOffer";
 import { TestimonialSlider } from "@/components/Testimonials";
 import FeatureHero from "@/components/sections/FeatureHero/FeatureHero";
 import Contact from "@/components/sections/Contact/Contact";
 import Headline from "@/components/Headline/Headline";
-import Pricing from "@/components/Pricing";
 import AccordionSection from "@/components/AccordionSection";
+import {
+  MdLocalFireDepartment,
+  MdElectricalServices,
+  MdGasMeter,
+} from "react-icons/md";
 
-const ServicesPage: React.FC = () => {
+import Heading from "@/components/ui-elements/Heading/Heading";
+import { Button } from "@/components/ui-elements/Button/Button";
+
+const CrmPage: React.FC = () => {
   const faqArray = [
     {
       title: "What is Rentalease?",
@@ -75,9 +83,9 @@ const ServicesPage: React.FC = () => {
           subtitle="Stay Ahead of Legal Requirements in Victoria"
           description="Under Victoria’s rental laws, landlords and property managers must meet strict safety standards to legally lease their properties. This includes regular inspections of smoke alarms, electrical and gas systems, and pool barriers (where applicable). Safety documentation must also be disclosed to tenants.
 Neglecting these obligations can lead to government fines, legal issues, broken leases, and serious reputation damage. Don’t risk it—stay ahead with complete rental compliance."
-          ctaText="Learn More"
-          ctaLink="/docs/directory-sync"
-          imageSrc="https://imagedelivery.net/LqiWLm-3MGbYHtFuUbcBtA/189d259c-f35e-4849-da0b-dc9a73374300/public"
+          ctaText="Request Demo"
+          ctaLink="/book-now"
+          imageSrc="/img-3.jpg"
           imageAlt="Directory Sync Dashboard"
           contentPosition="left"
           buttonVariant="default"
@@ -93,9 +101,54 @@ Neglecting these obligations can lead to government fines, legal issues, broken 
             <WhatWeOffer />
           </div>
         </div>
-        <div>
-          <Pricing />
-        </div>
+
+        <section className="about__section common-section accent-background--4">
+          <div className="container">
+            <div className="text-center">
+              <Heading title="Other Services We Offer" heading="h3" />
+            </div>
+            <div className="about__grid">
+              <div className="about__card accent-background--3 accent-border--3">
+                <div className="about__card-icon">
+                  <MdLocalFireDepartment size={40} />
+                </div>
+                <h2>Smoke Alarm Inspections</h2>
+                <p style={{ marginBottom: "15px" }}>
+                  Ensure your property is safe and compliant with our network of
+                  friendly, accredited, and insured professionals.
+                </p>
+                <Button href="/services/smoke-alarm">Learn More</Button>
+              </div>
+
+              <div className="about__card accent-background--3 accent-border--3">
+                <div className="about__card-icon">
+                  <MdElectricalServices size={40} />
+                </div>
+                <h2>Electrical Safety Checks</h2>
+                <p style={{ marginBottom: "15px" }}>
+                  Use our network of friendly, A-Grade electricians to ensure
+                  your investment property is safe and fully compliant with all
+                  Victorian regulations.
+                </p>
+                <Button href="/services/electrical-safety">Learn More</Button>
+              </div>
+
+              <div className="about__card accent-background--3 accent-border--3">
+                <div className="about__card-icon">
+                  <MdGasMeter size={40} />
+                </div>
+                <h2>Gas Safety Checks</h2>
+                <p style={{ marginBottom: "15px" }}>
+                  Use our network of friendly, accredited, and insured gas
+                  fitters to ensure your home is safe and fully compliant with
+                  all Victorian regulations.
+                </p>
+                <Button href="/services/gas-safety">Learn More</Button>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <div className="common-section">
           <div className="container">
             <TestimonialSlider />
@@ -133,4 +186,4 @@ Neglecting these obligations can lead to government fines, legal issues, broken 
   );
 };
 
-export default ServicesPage;
+export default CrmPage;

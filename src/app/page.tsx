@@ -2,15 +2,10 @@
 
 import LandingHero from "@/components/sections/LandingHero/LandingHero";
 import HowItWorks from "@/components/sections/HowItWorks/HowItWorks";
-import PersonasSection from "@/components/sections/PersonasSection";
 import Benefits from "@/components/sections/Benefits/Benefits";
-import FeatureHero from "@/components/sections/FeatureHero/FeatureHero";
 import AiSupportPopup from "@/components/AiSupportPopup";
-
 import "@/styles/landing.scss";
-import Contact from "@/components/sections/Contact/Contact";
-import Headline from "@/components/Headline/Headline";
-import PillText from "@/components/PillText/PillText";
+import CTA from "@/components/CTA/CTA";
 
 export default function Home() {
   const handleAiCallConfirm = () => {
@@ -21,50 +16,22 @@ export default function Home() {
   return (
     <main className="landing">
       <LandingHero />
-      <Benefits />
-      {/* <PersonasSection /> */}
       <div className="accent-background--4">
         <HowItWorks />
       </div>
+      <Benefits />
       <div className="common-section icons-bg--1">
         <div className="container text-center">
-          <PillText text="Contact us" />
-          <Headline
-            heading="h3"
-            mainText="Feel Free to"
-            highlightText="Reach Out"
-            boldText=""
+          <CTA
+            title="Ready to Build Something"
+            highlightText="Extraordinary with Rentalease?"
+            subtitle="Let’s create something amazing together — from strategy and setup to compliance, marketing, and results."
+            buttonLabel="Contact Us"
+            onButtonClick={() => {}}
+            className="accent-background--2 accent-border--2"
           />
         </div>
-        <Contact />
       </div>
-      {/* <FeatureHero
-        eyebrow="Enterprise-Ready Authentication"
-        title="Single Sign-On"
-        subtitle="Seamless & Secure Access"
-        description="Implement enterprise-grade SSO in minutes, not months. Support all major identity providers and give your enterprise customers the security they demand."
-        ctaText="Explore SSO Integration"
-        ctaLink="/docs/sso/guide"
-        imageSrc="https://imagedelivery.net/LqiWLm-3MGbYHtFuUbcBtA/189d259c-f35e-4849-da0b-dc9a73374300/public"
-        imageAlt="Enterprise SSO Interface"
-        contentPosition="right"
-        buttonVariant="outline"
-        eyebrowColor="$text-tertiary)"
-      />
-      <FeatureHero
-        eyebrow="Powerful Directory Sync"
-        title="Directory Sync In Minutes"
-        subtitle="Automated User Management"
-        description="Automatically sync user accounts and groups from any identity provider. Keep your user directory up-to-date without manual intervention."
-        ctaText="Learn About Directory Sync"
-        ctaLink="/docs/directory-sync"
-        imageSrc="https://imagedelivery.net/LqiWLm-3MGbYHtFuUbcBtA/189d259c-f35e-4849-da0b-dc9a73374300/public"
-        imageAlt="Directory Sync Dashboard"
-        contentPosition="left"
-        buttonVariant="default"
-        eyebrowColor="$text-tertiary)"
-        heading="h3"
-      /> */}
       <AiSupportPopup />
     </main>
   );

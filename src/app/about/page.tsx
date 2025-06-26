@@ -1,3 +1,4 @@
+import BrandCarousel from "@/components/BrandCarousel/BrandCarousel";
 import CTA from "@/components/CTA/CTA";
 import Headline from "@/components/Headline/Headline";
 import HeroVisual from "@/components/HeroVisual/HeroVisual";
@@ -19,10 +20,7 @@ export default function AboutPage() {
       <section className="about__hero common-section">
         <div className="about__content container">
           <div className="img-box">
-            <img
-              src="https://imagedelivery.net/LqiWLm-3MGbYHtFuUbcBtA/189d259c-f35e-4849-da0b-dc9a73374300/public"
-              alt={siteConfig.name}
-            />
+            <img src="/img-2.jpg" alt={siteConfig.name} />
           </div>
           <div className="about__content-text">
             <p className="sub-heading">The Future of Australian Renting</p>
@@ -33,27 +31,22 @@ export default function AboutPage() {
             />
             <div className="description">
               <p>
-                Rentalease was founded in Sydney by a team of property experts
-                and tech innovators who saw a need for change. We were tired of
-                the clunky, impersonal, and often stressful process that both
-                landlords and tenants had to endure.
-              </p>
-              <p>
-                Our mission is simple: to create a transparent, efficient, and
-                human-centric rental ecosystem. We leverage state-of-the-art
-                technology to simplify the complexities of the rental market,
-                but we never lose sight of the fact that we're dealing with
-                people's homes and their most valuable investments.
+                At Rentalease, we're on a mission to transform how rental
+                compliance is managed in Australia. What began as a response to
+                the everyday frustrations of property managers has evolved into
+                a powerful, intuitive platform built to simplify the complex.
               </p>
               <p style={{ marginBottom: "15px" }}>
-                Here in mid-2025, we are proud to be one of Australia's
-                fastest-growing rental platforms, committed to building a
-                community based on trust, respect, and a shared goal of making
-                renting better for everyone.
+                Our team saw the hours lost to repetitive admin, outdated
+                systems, and fragmented processes. So, we designed a
+                compliance-focused CRM that replaces that chaos with clarity.
+                From automated reminders to seamless safety check coordination,
+                Rentalease empowers real estate professionals to focus on what
+                truly matters — building relationships, not chasing paperwork.
               </p>
             </div>
-            <Button variant="outline" href="/contact">
-              Reach Out To Us
+            <Button variant="outline" href="/book-now">
+              Request Demo
             </Button>
           </div>
         </div>
@@ -69,10 +62,10 @@ export default function AboutPage() {
             </div>
             <h2>Who We Are</h2>
             <p>
-              We're a team of developers, designers, and strategists passionate
-              about solving real-world problems with elegant code and thoughtful
-              design. At {siteConfig.name}, technology meets creativity to build
-              impactful experiences.
+              We’re a team shaped by real rental experiences — as tenants and
+              landlords. Frustrated by outdated systems, we built Rentalease to
+              make renting simpler, fairer, and more human for everyone
+              involved.
             </p>
           </div>
 
@@ -83,10 +76,9 @@ export default function AboutPage() {
             </div>
             <h2>What We Do</h2>
             <p>
-              From custom web platforms to scalable APIs and intuitive
-              interfaces — we build products that are secure, fast, and
-              delightful to use. Our process is collaborative, agile, and
-              focused on results.
+              Rentalease streamlines the rental process with tools for
+              applications, communication, and compliance — helping tenants and
+              landlords manage everything with ease, from anywhere.
             </p>
           </div>
 
@@ -97,22 +89,22 @@ export default function AboutPage() {
             </div>
             <h2>Why Choose Us</h2>
             <p>
-              We don't just write code — we solve problems. With deep technical
-              know-how and a human-first approach, we translate your vision into
-              digital experiences that truly resonate.
+              We’ve lived the pain points. That’s why we built a platform that
+              prioritizes clarity, trust, and efficiency — making renting less
+              stressful for everyone involved.
             </p>
           </div>
 
-          {/* Our Values */}
-          {/* Our Values */}
+          {/* Our Core Values */}
           <div className="about__card accent-background--3 accent-border--3 about__card--values">
             <div className="about__card-icon">
               <MdLightbulb size={40} />
             </div>
             <h2>Our Core Values</h2>
             <p>
-              Innovation & Creativity, User-First Mindset, Technical Excellence,
-              Transparency & Trust, and Lifelong Learning.
+              Simplicity, empathy, transparency, and innovation guide everything
+              we do — from design to support. We focus on creating tools people
+              can trust and enjoy using.
             </p>
           </div>
 
@@ -123,8 +115,9 @@ export default function AboutPage() {
             </div>
             <h2>Our Mission</h2>
             <p>
-              To empower businesses and individuals through technology that is
-              accessible, purposeful, and future-ready.
+              To bring trust and transparency to the rental market through
+              easy-to-use tools that connect tenants and landlords in a fair,
+              respectful way.
             </p>
           </div>
 
@@ -135,24 +128,27 @@ export default function AboutPage() {
             </div>
             <h2>Our Story</h2>
             <p>
-              {siteConfig.name} began with a simple idea: to build digital
-              experiences that feel effortless. What started as a freelance
-              project has grown into a trusted studio collaborating with
-              startups and enterprises globally.
+              Founded in Victoria in 2022, Rentalease began with a small team
+              and a big vision: to reimagine renting with technology that puts
+              people first.
             </p>
           </div>
         </div>
       </section>
 
       <div className="common-section">
+        <BrandCarousel />
+      </div>
+
+      <div className="common-section accent-background--4">
         <div className="container">
           <CTA
-            title="Ready To Build Something"
-            highlightText="Extraordinary?"
-            subtitle="Let's collaborate and bring your ideas to life — from vision to deployment and beyond."
+            title="Ready to Build Something"
+            highlightText="Extraordinary with Rentalease?"
+            subtitle="Let’s create something amazing together — from strategy and setup to compliance, marketing, and results."
             buttonLabel="Contact Us"
             onButtonClick={() => {}}
-            className="accent-background--2 accent-border--2"
+            className=" accent-border--2"
           />
         </div>
       </div>

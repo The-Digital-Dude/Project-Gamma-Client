@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui-elements/Button/Button";
-import { siteConfig } from "@/config/site";
 import "./contact.scss";
 import {
   MdEmail,
