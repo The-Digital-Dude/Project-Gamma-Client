@@ -13,6 +13,7 @@ const serviceLinks = [
 
 const Navbar: React.FC = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isTouch, setIsTouch] = useState(false);
   const dropdownRef = useRef<HTMLLIElement>(null);
   const buttonRef = useRef<HTMLAnchorElement>(null);
@@ -59,6 +60,45 @@ const Navbar: React.FC = () => {
     };
   }, []);
 
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    if (!isMobileMenuOpen) return;
+
+    function handleClickOutside(e: MouseEvent) {
+      const target = e.target as Element;
+      if (!target.closest(".navbar") && !target.closest(".hamburger")) {
+        setIsMobileMenuOpen(false);
+      }
+    }
+
+    function handleEscape(e: KeyboardEvent) {
+      if (e.key === "Escape") {
+        setIsMobileMenuOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleEscape);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, [isMobileMenuOpen]);
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isMobileMenuOpen]);
+
   // Open/close handlers with delay
   const openDropdown = useCallback(() => {
     if (closeTimeoutRef.current) {
@@ -79,6 +119,14 @@ const Navbar: React.FC = () => {
 
   const toggleDropdown = useCallback(() => setIsServicesOpen((v) => !v), []);
 
+  const toggleMobileMenu = useCallback(() => {
+    setIsMobileMenuOpen((prev) => !prev);
+    // Close services dropdown when mobile menu opens
+    if (isServicesOpen) {
+      setIsServicesOpen(false);
+    }
+  }, [isServicesOpen]);
+
   // Keyboard navigation
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter" || e.key === " " || e.key === "ArrowDown") {
@@ -98,75 +146,128 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="navbar">
-      <div className="navbar__container">
-        {/* Logo */}
-        <a href="/">
-          <img style={{ width: "80px" }} src="/rentalease-logo.png" alt="" />
-        </a>
-        {/* Navigation Links */}
-        <ul className="navbar__links">
-          <li>
-            <Link href="/">Home</Link>
-          </li>
-          <li>
-            <Link href="/about">About</Link>
-          </li>
-          <li>
-            <Link href="/crm">CRM</Link>
-          </li>
-          <li
-            className="navbar__dropdown"
-            ref={dropdownRef}
-            aria-haspopup="true"
-            aria-expanded={!!isServicesOpen}
-            onMouseEnter={!isTouch ? openDropdown : undefined}
-            onMouseLeave={!isTouch ? closeDropdown : undefined}
+    <>
+      <nav className="navbar">
+        <div className="navbar__container">
+          {/* Logo */}
+          <a href="/">
+            <img style={{ width: "80px" }} src="/rentalease-logo.png" alt="" />
+          </a>
+
+          {/* Hamburger Menu Button */}
+          <button
+            className={`hamburger ${isMobileMenuOpen ? "active" : ""}`}
+            onClick={toggleMobileMenu}
+            aria-label="Toggle mobile menu"
+            aria-expanded={isMobileMenuOpen}
           >
-            <p
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          {/* Navigation Links */}
+          <ul
+            className={`navbar__links ${isMobileMenuOpen ? "mobile-open" : ""}`}
+          >
+            <li>
+              <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link href="/about" onClick={() => setIsMobileMenuOpen(false)}>
+                About
+              </Link>
+            </li>
+            <li>
+              <Link href="/crm" onClick={() => setIsMobileMenuOpen(false)}>
+                CRM
+              </Link>
+            </li>
+            <li
+              className="navbar__dropdown"
+              ref={dropdownRef}
               aria-haspopup="true"
               aria-expanded={!!isServicesOpen}
-              onKeyDown={handleKeyDown}
-              onClick={isTouch ? toggleDropdown : undefined}
+              onMouseEnter={!isTouch ? openDropdown : undefined}
+              onMouseLeave={!isTouch ? closeDropdown : undefined}
             >
-              Safety Check
-            </p>
-            {isServicesOpen && (
-              <ul
-                className="navbar__dropdown-menu"
-                role="menu"
-                aria-label="Service sub-menu"
-                onMouseEnter={!isTouch ? openDropdown : undefined}
-                onMouseLeave={!isTouch ? closeDropdown : undefined}
+              <p
+                aria-haspopup="true"
+                aria-expanded={!!isServicesOpen}
+                onKeyDown={handleKeyDown}
+                onClick={isTouch ? toggleDropdown : undefined}
               >
-                {serviceLinks.map((link) => (
-                  <li key={link.href} role="none">
-                    <Link href={link.href} role="menuitem" tabIndex={-1}>
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </li>
-          <li>
-            <Link href="/pricing">Pricing</Link>
-          </li>
-          <li>
-            <Link href="/blog">Blog</Link>
-          </li>
-        </ul>
-        {/* Action Buttons */}
-        <div className="navbar__actions">
-          <Link href="#login" className="navbar__login">
-            Log in
-          </Link>
-          <Link href="#join" className="navbar__join">
-            Request Demo
-          </Link>
+                Safety Check
+              </p>
+              {isServicesOpen && (
+                <ul
+                  className="navbar__dropdown-menu"
+                  role="menu"
+                  aria-label="Service sub-menu"
+                  onMouseEnter={!isTouch ? openDropdown : undefined}
+                  onMouseLeave={!isTouch ? closeDropdown : undefined}
+                >
+                  {serviceLinks.map((link) => (
+                    <li key={link.href} role="none">
+                      <Link
+                        href={link.href}
+                        role="menuitem"
+                        tabIndex={-1}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
+            <li>
+              <Link href="/pricing" onClick={() => setIsMobileMenuOpen(false)}>
+                Pricing
+              </Link>
+            </li>
+            <li>
+              <Link href="/blog" onClick={() => setIsMobileMenuOpen(false)}>
+                Blog
+              </Link>
+            </li>
+          </ul>
+
+          {/* Action Buttons */}
+          <div
+            className={`navbar__actions ${
+              isMobileMenuOpen ? "mobile-open" : ""
+            }`}
+          >
+            <Link
+              href="#login"
+              className="navbar__login"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Log in
+            </Link>
+            <Link
+              href="#join"
+              className="navbar__join"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Request Demo
+            </Link>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+
+      {/* Mobile Menu Overlay */}
+      {isMobileMenuOpen && (
+        <div
+          className="mobile-menu-overlay"
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
+      )}
+    </>
   );
 };
 
