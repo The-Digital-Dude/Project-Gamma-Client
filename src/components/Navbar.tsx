@@ -27,7 +27,8 @@ const Navbar: React.FC = () => {
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(true);
   const [isRentalComplianceOpen, setIsRentalComplianceOpen] = useState(false);
   const [isMobileRentalComplianceOpen, setIsMobileRentalComplianceOpen] =
-    useState(false);
+    useState(true);
+  const submenuCloseTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   // Detect outside click
   useEffect(() => {
@@ -66,6 +67,9 @@ const Navbar: React.FC = () => {
     return () => {
       if (closeTimeoutRef.current) {
         clearTimeout(closeTimeoutRef.current);
+      }
+      if (submenuCloseTimeoutRef.current) {
+        clearTimeout(submenuCloseTimeoutRef.current);
       }
     };
   }, []);
@@ -124,7 +128,7 @@ const Navbar: React.FC = () => {
     }
     closeTimeoutRef.current = setTimeout(() => {
       setIsServicesOpen(false);
-    }, 150); // 150ms delay to allow clicking
+    }, 500); // Increased from 150ms to 500ms delay to allow clicking
   }, []);
 
   const toggleDropdown = useCallback(() => setIsServicesOpen((v) => !v), []);
@@ -171,6 +175,23 @@ const Navbar: React.FC = () => {
     }
   };
 
+  const openSubmenu = useCallback(() => {
+    if (submenuCloseTimeoutRef.current) {
+      clearTimeout(submenuCloseTimeoutRef.current);
+      submenuCloseTimeoutRef.current = null;
+    }
+    setIsRentalComplianceOpen(true);
+  }, []);
+
+  const closeSubmenu = useCallback(() => {
+    if (submenuCloseTimeoutRef.current) {
+      clearTimeout(submenuCloseTimeoutRef.current);
+    }
+    submenuCloseTimeoutRef.current = setTimeout(() => {
+      setIsRentalComplianceOpen(false);
+    }, 500); // 300ms delay for submenu
+  }, []);
+
   return (
     <>
       {/* Desktop Navbar */}
@@ -196,8 +217,6 @@ const Navbar: React.FC = () => {
               onMouseLeave={!isTouch ? closeDropdown : undefined}
             >
               <p
-                aria-haspopup="menu"
-                aria-expanded={isServicesOpen}
                 onKeyDown={handleKeyDown}
                 onClick={isTouch ? toggleDropdown : undefined}
                 tabIndex={0}
@@ -208,24 +227,20 @@ const Navbar: React.FC = () => {
               {isServicesOpen && (
                 <ul
                   className="navbar__dropdown-menu"
-                  role="menu"
-                  aria-label="Services sub-menu"
                   onMouseEnter={!isTouch ? openDropdown : undefined}
                   onMouseLeave={!isTouch ? closeDropdown : undefined}
                 >
                   <li>
-                    <Link href="/crm" role="menuitem">
-                      CRM
-                    </Link>
+                    <Link href="/crm">CRM</Link>
                   </li>
                   <li
                     className="navbar__submenu-parent"
                     style={{ position: "relative" }}
+                    onMouseEnter={!isTouch ? openSubmenu : undefined}
+                    onMouseLeave={!isTouch ? closeSubmenu : undefined}
                   >
                     <button
                       className="navbar__submenu-toggle"
-                      aria-haspopup="menu"
-                      aria-expanded={!!isRentalComplianceOpen}
                       tabIndex={0}
                       onKeyDown={handleRentalComplianceKeyDown}
                       onClick={() => setIsRentalComplianceOpen((v) => !v)}
@@ -266,16 +281,14 @@ const Navbar: React.FC = () => {
                         background: "rgba(255,255,255,0.98)",
                         boxShadow: "0 8px 32px 0 rgba(31,38,135,0.18)",
                         borderRadius: 8,
-                        zIndex: 102,
+                        zIndex: 1001,
                       }}
-                      role="menu"
-                      aria-label="Rental Compliance submenu"
+                      onMouseEnter={!isTouch ? openSubmenu : undefined}
+                      onMouseLeave={!isTouch ? closeSubmenu : undefined}
                     >
                       {rentalComplianceLinks.map((link) => (
                         <li key={link.href}>
-                          <Link href={link.href} role="menuitem">
-                            {link.label}
-                          </Link>
+                          <Link href={link.href}>{link.label}</Link>
                         </li>
                       ))}
                     </ul>
@@ -323,7 +336,6 @@ const Navbar: React.FC = () => {
             className={`mobile-hamburger ${isMobileMenuOpen ? "active" : ""}`}
             onClick={toggleMobileMenu}
             aria-label="Toggle mobile menu"
-            aria-expanded={isMobileMenuOpen}
           >
             <span></span>
             <span></span>
@@ -432,8 +444,6 @@ const Navbar: React.FC = () => {
                 className={`mobile-menu__dropdown-toggle${
                   isMobileServicesOpen ? " active" : ""
                 }`}
-                aria-expanded={!!isMobileServicesOpen}
-                aria-controls="mobile-services-dropdown"
                 onClick={(e) => {
                   e.stopPropagation();
                   setIsMobileServicesOpen((open) => !open);
@@ -491,7 +501,6 @@ const Navbar: React.FC = () => {
                   maxHeight: isMobileServicesOpen ? 400 : 0,
                   transition: "max-height 0.3s ease",
                 }}
-                aria-hidden={!isMobileServicesOpen}
               >
                 <li>
                   <Link
@@ -509,8 +518,6 @@ const Navbar: React.FC = () => {
                     className={`mobile-menu__dropdown-toggle${
                       isMobileRentalComplianceOpen ? " active" : ""
                     }`}
-                    aria-expanded={!!isMobileRentalComplianceOpen}
-                    aria-controls="mobile-rental-compliance-dropdown"
                     onClick={(e) => {
                       e.stopPropagation();
                       setIsMobileRentalComplianceOpen((open) => !open);
@@ -564,7 +571,6 @@ const Navbar: React.FC = () => {
                       transition: "max-height 0.3s ease",
                       background: "rgba(102, 126, 234, 0.07)",
                     }}
-                    aria-hidden={!isMobileRentalComplianceOpen}
                   >
                     {rentalComplianceLinks.map((link) => (
                       <li key={link.href}>
