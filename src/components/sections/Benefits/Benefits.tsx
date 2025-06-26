@@ -163,7 +163,11 @@ const Benefits = () => {
     <section className={styles.benefits}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <Heading title="Our benefits" subtitle="For You" size="md" />
+          <Heading
+            title="Why Property Managers Choose Us"
+            heading="h2"
+            size="sm"
+          />
         </div>
         <div className={styles.grid}>
           {benefits.map((benefit, index) => (

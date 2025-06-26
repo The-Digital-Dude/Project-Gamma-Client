@@ -35,7 +35,7 @@
   flex-direction: column;
   align-items: flex-start;
   position: relative;
-  border-top: 4px solid var(--brand-purple, #6363f1);
+  border-top: 4px solid var(--brand-purple, #024974);
   margin: 0 auto;
   transition: box-shadow 0.2s, transform 0.2s;
 }
@@ -87,7 +87,7 @@
   right: 32px;
   bottom: 32px;
   background: #fafaff;
-  color: var(--brand-purple, #6363f1);
+  color: var(--brand-purple, #024974);
   border: 1px solid #ececfb;
   border-radius: 24px;
   padding: 8px 22px 8px 18px;
@@ -101,9 +101,9 @@
   gap: 6px;
 }
 .readMoreBtn:hover {
-  background: var(--brand-purple, #6363f1);
+  background: var(--brand-purple, #024974);
   color: #fff;
-  border: 1px solid var(--brand-purple, #6363f1);
+  border: 1px solid var(--brand-purple, #024974);
 }
 
 // Swiper wrapper to make global selectors pure
@@ -146,7 +146,7 @@
   :global(.swiper-pagination-bullet) {
     width: 8px;
     height: 8px;
-    background: var(--brand-purple, #6363f1);
+    background: var(--brand-purple, #024974);
     opacity: 0.14;
     border-radius: 50%;
     margin: 0 7px !important;
@@ -205,8 +205,8 @@
 
   button {
     background-color: #fff;
-    border: 1px solid var(--brand-purple, #6363f1);
-    color: var(--brand-purple, #6363f1);
+    border: 1px solid var(--brand-purple, #024974);
+    color: var(--brand-purple, #024974);
     padding: 10px 20px;
     font-size: 1.5rem;
     font-weight: bold;
@@ -215,7 +215,7 @@
     transition: all 0.2s ease;
 
     &:hover {
-      background-color: var(--brand-purple, #6363f1);
+      background-color: var(--brand-purple, #024974);
       color: #fff;
     }
   }

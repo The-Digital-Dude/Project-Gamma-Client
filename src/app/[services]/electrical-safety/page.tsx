@@ -131,7 +131,7 @@ When you book through Rentalease, you have peace of mind that all these complian
           <AccordionSection items={faqArray} />
         </div>
       </div>
-      <div className="common-section">
+      {/* <div className="common-section">
         <div className="container">
           <CTA
             title="Ready to Build Something"
@@ -142,7 +142,7 @@ When you book through Rentalease, you have peace of mind that all these complian
             className="accent-background--2 accent-border--2"
           />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

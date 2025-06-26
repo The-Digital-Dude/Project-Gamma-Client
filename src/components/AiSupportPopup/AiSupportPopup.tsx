@@ -45,19 +45,52 @@ export const AiSupportPopup = () => {
     <>
       <div className={styles.popup}>
         <div className={styles.popupContent}>
-          <p className={styles.message}>
-            Need help? Talk to our AI Calling Support Agent
-          </p>
           {!isCallActive ? (
-            <button onClick={handleOpenModal} className={styles.callButton}>
-              📞 Call Us
+            <button
+              onClick={handleOpenModal}
+              className={styles.callButton}
+              aria-label="Call Support"
+            >
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3.08 4.18 2 2 0 0 1 5 2h3a2 2 0 0 1 2 1.72c.13 1.05.37 2.05.72 3a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6.29 6.29l1.27-1.27a2 2 0 0 1 2.11-.45c.95.35 1.95.59 3 .72A2 2 0 0 1 22 16.92z"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  fill="currentColor"
+                />
+              </svg>
             </button>
           ) : (
             <button
               onClick={handleEndCall}
               className={`${styles.callButton} ${styles.endCall}`}
+              aria-label="End Call"
             >
-              🔴 End Call
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="12" cy="12" r="12" fill="#e53e3e" />
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3.08 4.18 2 2 0 0 1 5 2h3a2 2 0 0 1 2 1.72c.13 1.05.37 2.05.72 3a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6.29 6.29l1.27-1.27a2 2 0 0 1 2.11-.45c.95.35 1.95.59 3 .72A2 2 0 0 1 22 16.92z"
+                  stroke="#fff"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  fill="#fff"
+                />
+              </svg>
             </button>
           )}
         </div>

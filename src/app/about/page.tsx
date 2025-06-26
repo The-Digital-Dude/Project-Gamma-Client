@@ -140,7 +140,7 @@ export default function AboutPage() {
         <BrandCarousel />
       </div>
 
-      <div className="common-section accent-background--4">
+      {/* <div className="common-section accent-background--4">
         <div className="container">
           <CTA
             title="Ready to Build Something"
@@ -151,7 +151,7 @@ export default function AboutPage() {
             className=" accent-border--2"
           />
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }

@@ -131,7 +131,7 @@ This check can only be performed by a specialised class of plumbers/gas fitters 
           <AccordionSection items={faqArray} />
         </div>
       </div>
-      <div className="common-section">
+      {/* <div className="common-section">
         <div className="container">
           <CTA
             title="Ready to Build Something"
@@ -142,7 +142,7 @@ This check can only be performed by a specialised class of plumbers/gas fitters 
             className="accent-background--2 accent-border--2"
           />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

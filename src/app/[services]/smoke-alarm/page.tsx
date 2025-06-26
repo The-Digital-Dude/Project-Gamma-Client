@@ -125,7 +125,7 @@ Crucially, the legislation also defines smoke alarm non-compliance as an urgent 
           <AccordionSection items={faqArray} />
         </div>
       </div>
-      <div className="common-section">
+      {/* <div className="common-section">
         <div className="container">
           <CTA
             title="Ready to Build Something"
@@ -136,7 +136,7 @@ Crucially, the legislation also defines smoke alarm non-compliance as an urgent 
             className="accent-background--2 accent-border--2"
           />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
