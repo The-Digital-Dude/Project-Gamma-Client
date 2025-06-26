@@ -11,6 +11,12 @@ const serviceLinks = [
   { href: "/services/gas-safety", label: "Gas Safety" },
 ];
 
+const rentalComplianceLinks = [
+  { href: "/services/smoke-alarm", label: "Smoke Alarm Safety" },
+  { href: "/services/electrical-safety", label: "Electrical Safety" },
+  { href: "/services/gas-safety", label: "Gas Safety" },
+];
+
 const Navbar: React.FC = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -18,6 +24,10 @@ const Navbar: React.FC = () => {
   const dropdownRef = useRef<HTMLLIElement>(null);
   const buttonRef = useRef<HTMLAnchorElement>(null);
   const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(true);
+  const [isRentalComplianceOpen, setIsRentalComplianceOpen] = useState(false);
+  const [isMobileRentalComplianceOpen, setIsMobileRentalComplianceOpen] =
+    useState(false);
 
   // Detect outside click
   useEffect(() => {
@@ -145,6 +155,22 @@ const Navbar: React.FC = () => {
     }
   };
 
+  // Keyboard navigation for Rental Compliance submenu
+  const handleRentalComplianceKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter" || e.key === " " || e.key === "ArrowDown") {
+      e.preventDefault();
+      setIsRentalComplianceOpen(true);
+      setTimeout(() => {
+        const firstLink = document.querySelector(
+          ".navbar__dropdown-menu .navbar__submenu a"
+        ) as HTMLElement;
+        firstLink?.focus();
+      }, 0);
+    } else if (e.key === "Escape") {
+      setIsRentalComplianceOpen(false);
+    }
+  };
+
   return (
     <>
       {/* Desktop Navbar */}
@@ -163,40 +189,97 @@ const Navbar: React.FC = () => {
             <li>
               <Link href="/about">About</Link>
             </li>
-            <li>
-              <Link href="/crm">CRM</Link>
-            </li>
             <li
               className="navbar__dropdown"
               ref={dropdownRef}
-              aria-haspopup="true"
-              aria-expanded={!!isServicesOpen}
               onMouseEnter={!isTouch ? openDropdown : undefined}
               onMouseLeave={!isTouch ? closeDropdown : undefined}
             >
               <p
-                aria-haspopup="true"
-                aria-expanded={!!isServicesOpen}
+                aria-haspopup="menu"
+                aria-expanded={isServicesOpen}
                 onKeyDown={handleKeyDown}
                 onClick={isTouch ? toggleDropdown : undefined}
+                tabIndex={0}
+                style={{ cursor: "pointer" }}
               >
-                Safety Check
+                Services
               </p>
               {isServicesOpen && (
                 <ul
                   className="navbar__dropdown-menu"
                   role="menu"
-                  aria-label="Service sub-menu"
+                  aria-label="Services sub-menu"
                   onMouseEnter={!isTouch ? openDropdown : undefined}
                   onMouseLeave={!isTouch ? closeDropdown : undefined}
                 >
-                  {serviceLinks.map((link) => (
-                    <li key={link.href} role="none">
-                      <Link href={link.href} role="menuitem" tabIndex={-1}>
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
+                  <li>
+                    <Link href="/crm" role="menuitem">
+                      CRM
+                    </Link>
+                  </li>
+                  <li
+                    className="navbar__submenu-parent"
+                    style={{ position: "relative" }}
+                  >
+                    <button
+                      className="navbar__submenu-toggle"
+                      aria-haspopup="menu"
+                      aria-expanded={!!isRentalComplianceOpen}
+                      tabIndex={0}
+                      onKeyDown={handleRentalComplianceKeyDown}
+                      onClick={() => setIsRentalComplianceOpen((v) => !v)}
+                    >
+                      Rental Compliance Check
+                      <svg
+                        width="16"
+                        height="16"
+                        style={{
+                          marginLeft: 6,
+                          transform: isRentalComplianceOpen
+                            ? "rotate(90deg)"
+                            : "rotate(0deg)",
+                          transition: "transform 0.2s",
+                        }}
+                        viewBox="0 0 20 20"
+                        fill="none"
+                      >
+                        <path
+                          d="M7 7l3 3 3-3"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </button>
+                    <ul
+                      className={`navbar__dropdown-menu navbar__submenu${
+                        isRentalComplianceOpen ? " active" : ""
+                      }`}
+                      style={{
+                        left: "100%",
+                        top: 0,
+                        position: "absolute",
+                        minWidth: 200,
+                        display: isRentalComplianceOpen ? "block" : "none",
+                        background: "rgba(255,255,255,0.98)",
+                        boxShadow: "0 8px 32px 0 rgba(31,38,135,0.18)",
+                        borderRadius: 8,
+                        zIndex: 102,
+                      }}
+                      role="menu"
+                      aria-label="Rental Compliance submenu"
+                    >
+                      {rentalComplianceLinks.map((link) => (
+                        <li key={link.href}>
+                          <Link href={link.href} role="menuitem">
+                            {link.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </li>
                 </ul>
               )}
             </li>
@@ -344,113 +427,163 @@ const Navbar: React.FC = () => {
                 About
               </Link>
             </li>
-            <li>
-              <Link href="/crm" onClick={() => setIsMobileMenuOpen(false)}>
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M14 2V8H20"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M16 13H8"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M16 17H8"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M10 9H9H8"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-                CRM
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/services/smoke-alarm"
-                onClick={() => setIsMobileMenuOpen(false)}
+            <li className="mobile-menu__dropdown">
+              <button
+                className={`mobile-menu__dropdown-toggle${
+                  isMobileServicesOpen ? " active" : ""
+                }`}
+                aria-expanded={!!isMobileServicesOpen}
+                aria-controls="mobile-services-dropdown"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIsMobileServicesOpen((open) => !open);
+                }}
+                type="button"
               >
+                <span style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                  {/* Gear icon for Services */}
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    style={{ color: "currentColor" }}
+                  >
+                    <path
+                      d="M19.43 12.98c.04-.32.07-.65.07-.98s-.03-.66-.07-.98l2.11-1.65a.5.5 0 00.12-.64l-2-3.46a.5.5 0 00-.6-.22l-2.49 1a7.03 7.03 0 00-1.69-.98l-.38-2.65A.488.488 0 0014 2h-4a.488.488 0 00-.5.42l-.38 2.65c-.63.24-1.22.56-1.77.94l-2.49-1a.5.5 0 00-.6.22l-2 3.46a.5.5 0 00.12.64l2.11 1.65c-.05.32-.08.65-.08.99s.03.67.08.99l-2.11 1.65a.5.5 0 00-.12.64l2 3.46c.14.24.44.32.68.22l2.49-1c.53.38 1.11.7 1.74.94l.38 2.65c.05.28.27.48.5.48h4c.23 0 .45-.2.5-.48l.38-2.65c.63-.24 1.22-.56 1.77-.94l2.49 1c.24.1.54.02.68-.22l2-3.46a.5.5 0 00-.12-.64l-2.11-1.65zM12 15.5A3.5 3.5 0 1112 8.5a3.5 3.5 0 010 7z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                  Services
+                </span>
                 <svg
+                  className="mobile-menu__dropdown-arrow"
                   width="20"
                   height="20"
-                  viewBox="0 0 24 24"
+                  viewBox="0 0 20 20"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
+                  style={{
+                    marginLeft: 8,
+                    transition: "transform 0.3s",
+                    transform: isMobileServicesOpen
+                      ? "rotate(180deg)"
+                      : "rotate(0deg)",
+                    color: "currentColor",
+                  }}
                 >
                   <path
-                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"
-                    fill="currentColor"
+                    d="M6 8l4 4 4-4"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   />
                 </svg>
-                Smoke Alarm
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/services/electrical-safety"
-                onClick={() => setIsMobileMenuOpen(false)}
+              </button>
+              <ul
+                id="mobile-services-dropdown"
+                className={`mobile-menu__dropdown-content${
+                  isMobileServicesOpen ? " active" : ""
+                }`}
+                style={{
+                  maxHeight: isMobileServicesOpen ? 400 : 0,
+                  transition: "max-height 0.3s ease",
+                }}
+                aria-hidden={!isMobileServicesOpen}
               >
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"
-                    fill="currentColor"
-                  />
-                </svg>
-                Electrical Safety
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/services/gas-safety"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M12 2C8.13 2 5 8.13 5 12c0 3.87 3.13 7 7 7s7-3.13 7-7c0-3.87-3.13-10-7-10zm0 15c-2.76 0-5-2.24-5-5 0-2.76 2.24-5 5-5s5 2.24 5 5c0 2.76-2.24 5-5 5z"
-                    fill="currentColor"
-                  />
-                </svg>
-                Gas Safety
-              </Link>
+                <li>
+                  <Link
+                    href="/crm"
+                    onClick={() => {
+                      setIsMobileMenuOpen(false);
+                      setIsMobileServicesOpen(false);
+                    }}
+                  >
+                    CRM
+                  </Link>
+                </li>
+                <li className="mobile-menu__dropdown">
+                  <button
+                    className={`mobile-menu__dropdown-toggle${
+                      isMobileRentalComplianceOpen ? " active" : ""
+                    }`}
+                    aria-expanded={!!isMobileRentalComplianceOpen}
+                    aria-controls="mobile-rental-compliance-dropdown"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setIsMobileRentalComplianceOpen((open) => !open);
+                    }}
+                    type="button"
+                    style={{
+                      width: "100%",
+                      textAlign: "left",
+                      background: "none",
+                      border: "none",
+                      fontSize: "1rem",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                      padding: "0.625rem 1rem 0.625rem 2.5rem",
+                    }}
+                  >
+                    <span>Rental Compliance Check</span>
+                    <svg
+                      className="mobile-menu__dropdown-arrow"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      style={{
+                        marginLeft: 8,
+                        transition: "transform 0.3s",
+                        transform: isMobileRentalComplianceOpen
+                          ? "rotate(90deg)"
+                          : "rotate(0deg)",
+                        color: "currentColor",
+                      }}
+                    >
+                      <path
+                        d="M7 7l3 3 3-3"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </button>
+                  <ul
+                    id="mobile-rental-compliance-dropdown"
+                    className={`mobile-menu__dropdown-content${
+                      isMobileRentalComplianceOpen ? " active" : ""
+                    }`}
+                    style={{
+                      maxHeight: isMobileRentalComplianceOpen ? 200 : 0,
+                      transition: "max-height 0.3s ease",
+                      background: "rgba(102, 126, 234, 0.07)",
+                    }}
+                    aria-hidden={!isMobileRentalComplianceOpen}
+                  >
+                    {rentalComplianceLinks.map((link) => (
+                      <li key={link.href}>
+                        <Link
+                          className="mobile-menu__secondary-dropdown-link"
+                          href={link.href}
+                          onClick={() => {
+                            setIsMobileMenuOpen(false);
+                            setIsMobileServicesOpen(false);
+                            setIsMobileRentalComplianceOpen(false);
+                          }}
+                        >
+                          {link.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+              </ul>
             </li>
             <li>
               <Link href="/pricing" onClick={() => setIsMobileMenuOpen(false)}>
