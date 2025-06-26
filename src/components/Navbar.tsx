@@ -24,7 +24,7 @@ const Navbar: React.FC = () => {
   const dropdownRef = useRef<HTMLLIElement>(null);
   const buttonRef = useRef<HTMLAnchorElement>(null);
   const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(true);
+  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
   const [isRentalComplianceOpen, setIsRentalComplianceOpen] = useState(false);
   const [isMobileRentalComplianceOpen, setIsMobileRentalComplianceOpen] =
     useState(true);
@@ -80,7 +80,11 @@ const Navbar: React.FC = () => {
 
     function handleClickOutside(e: MouseEvent) {
       const target = e.target as Element;
-      if (!target.closest(".mobile-navbar") && !target.closest(".hamburger")) {
+      if (
+        !target.closest(".mobile-navbar") &&
+        !target.closest(".hamburger") &&
+        !target.closest(".mobile-menu")
+      ) {
         setIsMobileMenuOpen(false);
       }
     }
@@ -128,7 +132,7 @@ const Navbar: React.FC = () => {
     }
     closeTimeoutRef.current = setTimeout(() => {
       setIsServicesOpen(false);
-    }, 500); // Increased from 150ms to 500ms delay to allow clicking
+    }, 800);
   }, []);
 
   const toggleDropdown = useCallback(() => setIsServicesOpen((v) => !v), []);
@@ -169,7 +173,7 @@ const Navbar: React.FC = () => {
           ".navbar__dropdown-menu .navbar__submenu a"
         ) as HTMLElement;
         firstLink?.focus();
-      }, 0);
+      }, 800);
     } else if (e.key === "Escape") {
       setIsRentalComplianceOpen(false);
     }
@@ -189,7 +193,7 @@ const Navbar: React.FC = () => {
     }
     submenuCloseTimeoutRef.current = setTimeout(() => {
       setIsRentalComplianceOpen(false);
-    }, 500); // 300ms delay for submenu
+    }, 1200); // Increased from 800ms to 1200ms for better UX
   }, []);
 
   return (
@@ -343,14 +347,6 @@ const Navbar: React.FC = () => {
           </button>
         </div>
       </nav>
-
-      {/* Mobile Menu Overlay */}
-      {isMobileMenuOpen && (
-        <div
-          className="mobile-menu-overlay"
-          onClick={() => setIsMobileMenuOpen(false)}
-        />
-      )}
 
       {/* Mobile Menu Content */}
       <div className={`mobile-menu ${isMobileMenuOpen ? "active" : ""}`}>
