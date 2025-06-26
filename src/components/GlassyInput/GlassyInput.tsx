@@ -1,5 +1,6 @@
 import React, { forwardRef } from "react";
 import styles from "./GlassyInput.module.scss";
+import { Button } from "../ui-elements/Button/Button";
 
 interface GlassyInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   className?: string;
@@ -25,13 +26,13 @@ const GlassyInput = forwardRef<HTMLInputElement, GlassyInputProps>(
         className={`${styles.glassyInput} ${className}`}
         {...props}
       />
-      <button
+      <Button
         type={buttonType}
         className={styles.button}
         // onClick={onButtonClick}
       >
         {buttonLabel}
-      </button>
+      </Button>
     </div>
   )
 );

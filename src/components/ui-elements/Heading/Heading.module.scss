@@ -15,11 +15,8 @@
     font-weight: 600;
     line-height: 1;
     letter-spacing: -0.03em;
-    background: linear-gradient(90deg, #5151d3, #6363f1, #7575f3);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
     display: inline-block;
+    color: $primary-color;
   }
 }
 

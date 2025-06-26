@@ -29,13 +29,13 @@
   &__title {
     font-size: 2rem;
     font-weight: 700;
-    color: #1a1a1a;
+    color: $text-primary;
     margin-bottom: 0.5rem;
   }
 
   &__subtitle {
     font-size: 1.125rem;
-    color: #4a4a4a;
+    color: $text-secondary;
     margin-bottom: 1rem;
     max-width: 500px;
   }
