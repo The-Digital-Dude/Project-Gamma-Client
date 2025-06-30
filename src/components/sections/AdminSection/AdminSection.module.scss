@@ -1,0 +1,136 @@
+@import "@/styles/variables";
+
+.adminSection {
+  padding: $section-padding-2xl 0;
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: linear-gradient(
+      180deg,
+      $brand-purple-light 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    opacity: 0.5;
+    z-index: -1;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $space-lg;
+}
+
+.content {
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: $font-4xl;
+  font-weight: 800;
+  color: $text-primary;
+  margin: $space-md 0;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.description {
+  font-size: $font-lg;
+  line-height: 1.6;
+  color: $text-secondary;
+  margin-bottom: $space-xl;
+  max-width: 600px;
+}
+
+.inlineLink {
+  color: $primary-color;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s;
+
+  &:hover {
+    color: $primary-color-hover;
+  }
+}
+
+.ctaGroup {
+  display: flex;
+  align-items: center;
+  gap: $space-md;
+  margin-top: $space-md;
+}
+
+.textLink {
+  display: flex;
+  align-items: center;
+  gap: $space-sm;
+  color: $text-secondary;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s;
+
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+.playIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: $brand-purple-light;
+  border-radius: 50%;
+  color: $primary-color;
+}
+
+@media (max-width: 768px) {
+  .adminSection {
+    padding: $section-padding-xl 0;
+  }
+
+  .title {
+    font-size: $font-3xl;
+  }
+
+  .description {
+    font-size: $font-md;
+  }
+
+  .ctaGroup {
+    flex-direction: column;
+    gap: $space-sm;
+  }
+}
+
+@media (max-width: 480px) {
+  .adminSection {
+    padding: $section-padding-lg 0;
+  }
+
+  .container {
+    padding: 0 $space-md;
+  }
+
+  .title {
+    font-size: $font-2xl;
+  }
+
+  .description {
+    font-size: $font-sm;
+  }
+}

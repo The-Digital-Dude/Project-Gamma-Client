@@ -7,7 +7,7 @@ import AiSupportPopup from "@/components/AiSupportPopup";
 import "@/styles/landing.scss";
 import CTA from "@/components/CTA/CTA";
 import { TestimonialSlider } from "@/components/Testimonials";
-
+import AdminSection from "@/components/sections/AdminSection";
 export default function Home() {
   const handleAiCallConfirm = () => {
     // Handle AI call confirmation
@@ -25,6 +25,9 @@ export default function Home() {
         <div className="container text-center">
           <TestimonialSlider />
         </div>
+      </div>
+      <div className="accent-background--2">
+        <AdminSection />
       </div>
       <AiSupportPopup />
     </main>
