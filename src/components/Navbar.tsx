@@ -203,7 +203,7 @@ const Navbar: React.FC = () => {
         <div className="navbar__container">
           {/* Logo */}
           <a href="/">
-            <img style={{ width: "80px" }} src="/rentalease-logo.png" alt="" />
+            <img style={{ width: "100px" }} src="/rentalease-logo.png" alt="" />
           </a>
 
           {/* Navigation Links */}
@@ -316,7 +316,7 @@ const Navbar: React.FC = () => {
             <Link href="#login" className="navbar__login">
               Log in
             </Link>
-            <Link href="#join" className="navbar__join">
+            <Link href="/book-now" className="navbar__join">
               Request Demo
             </Link>
           </div>

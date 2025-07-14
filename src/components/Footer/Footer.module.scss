@@ -53,13 +53,13 @@
 
 .footerlink {
   display: block;
-  color: inherit;
+  color: $primary-color;
   text-decoration: none;
   margin-bottom: 12px;
   transition: color 0.2s ease;
 
   &:hover {
-    color: $brand-purple;
+    color: $primary-color-hover;
   }
 }
 

@@ -18,8 +18,8 @@
 
 .slide {
   display: flex;
-  justify-content: flex-start;
-  align-items: stretch;
+  justify-content: center;
+  align-items: center;
   height: auto;
 }
 
@@ -38,6 +38,7 @@
   border-top: 4px solid var(--brand-purple, #024974);
   margin: 0 auto;
   transition: box-shadow 0.2s, transform 0.2s;
+  z-index: 2; // Ensure card content stays above overlay
 }
 
 .authorTop {
@@ -111,11 +112,12 @@
   // Swiper stacking/peek effect
   // Base style for all slides
   :global(.swiper-slide) {
-    transition: transform 0.4s ease, z-index 0.4s ease, opacity 0.3s ease;
-    opacity: 0.6;
-    transform: scale(0.9) translateX(-10px);
+    transition: transform 0.4s ease, z-index 0.4s ease, opacity 0.3s ease,
+      filter 0.4s ease;
+    opacity: 0.4;
+    transform: scale(0.85) translateX(-10px);
     z-index: 0;
-    filter: blur(1px);
+    filter: blur(2px) brightness(0.7);
   }
 
   // Active slide
@@ -129,9 +131,33 @@
   // Previous and next slides (peek effect)
   :global(.swiper-slide-prev),
   :global(.swiper-slide-next) {
-    transform: scale(0.92) translateX(-5px);
+    transform: scale(0.9) translateX(-5px);
     z-index: 2;
-    opacity: 0.8;
+    opacity: 0.6;
+    filter: blur(1px);
+  }
+
+  // Add gradient overlay effect for better blending
+  :global(.swiper-slide):not(.swiper-slide-active) {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        90deg,
+        rgba(249, 249, 251, 0.3) 0%,
+        rgba(249, 249, 251, 0.1) 50%,
+        rgba(249, 249, 251, 0.3) 100%
+      );
+      z-index: 1;
+      border-radius: 20px;
+      pointer-events: none;
+    }
   }
 
   // Minimal, modern pagination dots
@@ -156,44 +182,172 @@
     opacity: 0.7;
     transform: scale(1.2);
   }
+
+  // Mobile-specific optimizations for blur effects
+  @media (max-width: 768px) {
+    :global(.swiper-slide) {
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      filter: none; // Remove blur on mobile for better readability
+      opacity: 0.6;
+    }
+
+    :global(.swiper-slide-active) {
+      opacity: 1;
+      filter: none;
+    }
+
+    :global(.swiper-slide-prev),
+    :global(.swiper-slide-next) {
+      filter: none; // Remove blur on mobile
+      opacity: 0.7;
+    }
+
+    // Remove overlay on mobile for better readability
+    :global(.swiper-slide):not(.swiper-slide-active) {
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  // For very small screens, simplify even more
+  @media (max-width: 480px) {
+    :global(.swiper-slide) {
+      opacity: 0.5;
+      transform: scale(0.95);
+    }
+
+    :global(.swiper-slide-active) {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    :global(.swiper-slide-prev),
+    :global(.swiper-slide-next) {
+      opacity: 0.6;
+      transform: scale(0.98);
+    }
+  }
 }
 
-@media (max-width: 900px) {
-  .sliderContainer {
-    max-width: 100%;
-  }
+@media (max-width: 1024px) {
   .card {
-    min-width: 320px;
-    padding: 32px 18px 32px 18px;
-  }
-  .readMoreBtn {
-    right: 16px;
-    bottom: 16px;
+    min-width: 360px;
+    padding: 40px 32px 36px 32px;
   }
 }
-@media (max-width: 600px) {
-  .testimonialSection {
-    padding-top: 40px;
-    padding-bottom: 40px;
-  }
+
+@media (max-width: 768px) {
   .card {
-    min-width: 0;
-    width: 100%;
-    padding: 24px 6vw 56px 6vw;
-    min-height: 180px;
+    min-width: 300px;
+    padding: 32px 24px 32px 24px;
+  }
+  .readMoreBtn {
+    right: 20px;
+    bottom: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .card {
+    min-width: 280px;
+    padding: 28px 20px 20px 20px;
+    min-height: 300px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+  }
+  .quote {
+    font-size: 1.3rem;
+    text-align: left;
+    margin-bottom: 24px;
+  }
+  .authorWrap {
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
   }
   .authorTop {
-    margin-bottom: 18px;
+    text-align: center;
+  }
+  .readMoreBtn {
+    position: static;
+    margin-top: auto;
+    align-self: center;
+    font-size: 0.95rem;
+    padding: 7px 16px 7px 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    min-width: 260px;
+    padding: 24px 18px 20px 18px;
+    min-height: 280px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .authorTop {
+    margin-bottom: 20px;
+    font-size: 1rem;
+    text-align: center;
+  }
+  .quote {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  .authorWrap {
+    align-items: center;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  .readMoreBtn {
+    position: static;
+    margin-top: auto;
+    align-self: center;
+    font-size: 0.9rem;
+    padding: 6px 14px 6px 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  .card {
+    min-width: 240px;
+    padding: 20px 16px 18px 16px;
+    min-height: 260px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
   }
   .quote {
     font-size: 1.1rem;
     margin-bottom: 18px;
+    text-align: left;
+  }
+  .authorTop {
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  .authorWrap {
+    align-items: center;
+    text-align: center;
+    margin-bottom: 16px;
   }
   .readMoreBtn {
-    right: 10px;
-    bottom: 10px;
-    font-size: 0.95rem;
-    padding: 7px 16px 7px 14px;
+    position: static;
+    margin-top: auto;
+    align-self: center;
+    font-size: 0.85rem;
+    padding: 5px 12px 5px 10px;
   }
 }
 
