@@ -24,14 +24,16 @@
 }
 
 .callButton {
-  width: 60px;
+  width: auto;
   height: 60px;
-  border-radius: 50%;
+  padding: 0 1.5rem;
+  border-radius: 30px;
   background: $primary-color;
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 0.75rem;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
   border: none;
   cursor: pointer;
@@ -39,22 +41,32 @@
   bottom: 32px;
   right: 32px;
   z-index: 1200;
-  transition: background 0.2s, box-shadow 0.2s;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
   font-size: 2rem;
+  white-space: nowrap;
 
   svg {
     color: #fff;
     width: 24px;
     height: 24px;
     display: block;
+    flex-shrink: 0;
   }
 
   &:hover,
   &:focus {
     background: $primary-color-hover;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+    transform: translateY(-2px);
     outline: none;
   }
+}
+
+.buttonText {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
 }
 
 .endCall {

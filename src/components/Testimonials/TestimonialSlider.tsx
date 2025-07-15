@@ -16,74 +16,82 @@ import "swiper/css/effect-coverflow";
 
 const testimonials = [
   {
+    author: "Jack Thompson",
     quote:
-      "Rentalease has changed the game for us. We used to spend hours each week just scheduling compliance checks. Now it's all done for us.",
-    author: "Sarah J.",
-    role: "Property Manager",
-    location: "Geelong",
+      "I’ve tried a few compliance services before, but nothing matches the simplicity and reliability of Rentalease. From gas checks to electrical inspections, everything was handled professionally. I got all my certificates online without chasing anyone.",
+    role: "landlord",
   },
   {
+    author: "Sophie Williams",
     quote:
-      "The integration was smooth, and our tradies love the automated job notifications. No more missed appointments!",
-    author: "Dean W.",
-    role: "Compliance Officer",
-    location: "Victoria",
+      "Their platform made it super easy to stay compliant across multiple properties. I could track every service, view reports, and even arrange repairs when something failed inspection. It’s a complete game-changer for landlords like me.",
+    role: "landlord",
   },
   {
+    author: "Liam Anderson",
     quote:
-      "Easy to use, clean interface, great support. Highly recommend to anyone managing rentals.",
-    author: "Priya K.",
-    role: "Portfolio Manager",
-    location: "Victoria",
+      "I manage properties remotely and Rentalease has made it so much easier to stay on top of compliance. Everything is online—certificates, reports. Zero stress and great service",
+    role: "landlord",
   },
   {
+    author: "Emily Nguyen",
     quote:
-      "Finally, a system that actually understands property management. The automated reminders have saved us from so many compliance headaches.",
-    author: "Michael T.",
-    role: "Property Director",
-    location: "Melbourne",
+      "They offer great value and peace of mind. I used to worry about gas checks and smoke alarm deadlines, but now it's all handled automatically. Highly recommended for anyone managing rentals",
+    role: "landlord",
   },
   {
+    author: "Daniel Smith",
     quote:
-      "Our tenant satisfaction has improved significantly since we started using Rentalease. Everything is so much more organized now.",
-    author: "Emma L.",
-    role: "Property Manager",
-    location: "Sydney",
+      "The portal is so user-friendly. I log in and see the status of every job across my three rental properties. I’ve also had nothing but positive feedback from my tenants about the tradespeople",
+    role: "landlord",
   },
   {
+    author: "Olivia Brown",
     quote:
-      "The reporting features are incredible. We can now track all our compliance requirements in real-time across our entire portfolio.",
-    author: "James R.",
-    role: "Operations Manager",
-    location: "Brisbane",
+      "Appreciate their transparency and attention to detail. If something fails an inspection, they don’t just tell you—they help you fix it quickly. That’s real service",
+    role: "landlord",
   },
   {
+    author: "Matthew Taylor",
     quote:
-      "What used to take our team 3 days to organize now happens automatically. Rentalease has been a game-changer for our efficiency.",
-    author: "Lisa M.",
-    role: "Regional Manager",
-    location: "Perth",
+      "The pricing is fair, the communication is excellent, and the turnaround is fast. I’ve already referred two of my friends to use Rentalease",
+    role: "landlord",
   },
   {
+    author: "Chloe Harris",
     quote:
-      "The mobile app is fantastic. Our contractors can update job status on-site, which keeps everyone in the loop instantly.",
-    author: "Robert K.",
-    role: "Maintenance Coordinator",
-    location: "Adelaide",
+      "Very professional service. They arrived on time, wore uniforms, and explained what they were checking. I’ve never had a compliance visit go this smoothly before.",
+    role: "tenant",
   },
   {
+    author: "Ryan Martin",
     quote:
-      "Customer support is outstanding. They helped us migrate our entire system without any downtime. Highly professional team.",
-    author: "Angela S.",
-    role: "General Manager",
-    location: "Gold Coast",
+      "Super easy process. Got a text reminder the day before and they were done in under 30 minutes. The technician was polite and explained the smoke alarm testing clearly",
+    role: "tenant",
   },
   {
+    author: "Jessica White",
     quote:
-      "The cost savings alone have paid for the system. But the peace of mind knowing all compliance is handled? Priceless.",
-    author: "David P.",
-    role: "Property Owner",
-    location: "Canberra",
+      "It’s good to see my landlord actually keeping up with safety checks. The gas guy even spotted a leak that we didn’t know about and arranged a fix right away",
+    role: "tenant",
+  },
+  {
+    author: "Benjamin Lee",
+    quote:
+      "They were friendly, fast, and left no mess. Definitely better than other tradies we’ve dealt with.",
+    role: "tenant",
+  },
+  {
+    author: "Grace Hall",
+    quote:
+      "I appreciated the heads-up and the clear communication. It was all done quickly and gave me confidence the place is safe",
+    role: "tenant",
+  },
+  {
+    author: "Harry King",
+    quote:
+      "We had our smoke alarms and gas checked. Everything was explained clearly, and I got a digital certificate by email. It’s nice to know they take safety seriously",
+    role: "tenant",
   },
 ];
 
@@ -92,12 +100,11 @@ const TestimonialSlider: React.FC = () => {
     <>
       <Swiper
         modules={[A11y, Autoplay, Navigation]}
-        spaceBetween={-120}
-        slidesPerView={1.5}
-        centeredSlides
-        loop
+        spaceBetween={15}
+        slidesPerView={3}
+        centeredSlides={true}
+        loop={true}
         loopAdditionalSlides={2}
-        watchSlidesProgress
         speed={800}
         autoplay={{
           delay: 4000,
@@ -110,24 +117,16 @@ const TestimonialSlider: React.FC = () => {
         }}
         breakpoints={{
           320: {
-            slidesPerView: 1.15,
-            spaceBetween: -60,
-          },
-          480: {
-            slidesPerView: 1.25,
-            spaceBetween: -80,
+            slidesPerView: 1,
+            spaceBetween: 30,
           },
           640: {
-            slidesPerView: 1.35,
-            spaceBetween: -100,
-          },
-          768: {
-            slidesPerView: 1.4,
-            spaceBetween: -110,
+            slidesPerView: 2,
+            spaceBetween: 40,
           },
           1024: {
-            slidesPerView: 1.5,
-            spaceBetween: -120,
+            slidesPerView: 3,
+            spaceBetween: 50,
           },
         }}
         className={styles.swiperWrapper}
@@ -135,17 +134,11 @@ const TestimonialSlider: React.FC = () => {
         {testimonials.map((t, idx) => (
           <SwiperSlide key={idx} className={styles.slide}>
             <div className={styles.card}>
-              <div className={styles.authorTop}>{t.author}</div>
               <blockquote className={styles.quote}>{t.quote}</blockquote>
               <div className={styles.authorWrap}>
-                <div className={styles.authorName}>{t.author}</div>
-                <div className={styles.authorMeta}>
-                  {t.role}, {t.location}
-                </div>
+                <div className={styles.authorName}>- {t.author}</div>
+                <div className={styles.authorRole}>{t.role}</div>
               </div>
-              <a href="#" className={styles.readMoreBtn}>
-                Read more <span aria-hidden>→</span>
-              </a>
             </div>
           </SwiperSlide>
         ))}

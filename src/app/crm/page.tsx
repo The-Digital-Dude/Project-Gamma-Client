@@ -167,7 +167,7 @@ Neglecting these obligations can lead to government fines, legal issues, broken 
             <AccordionSection items={faqArray} />
           </div>
         </div>
-        <div className="py-50">
+        {/* <div className="py-50">
           <div className="container text-center">
             <PillText text="Contact us" />
             <div style={{ marginBottom: "30px" }}>
@@ -180,7 +180,7 @@ Neglecting these obligations can lead to government fines, legal issues, broken 
             </div>
           </div>
           <Contact />
-        </div>
+        </div> */}
       </section>
     </section>
   );

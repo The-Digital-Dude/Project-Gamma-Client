@@ -8,6 +8,8 @@ import "@/styles/landing.scss";
 import CTA from "@/components/CTA/CTA";
 import { TestimonialSlider } from "@/components/Testimonials";
 import AdminSection from "@/components/sections/AdminSection";
+import Headline from "@/components/Headline/Headline";
+import MarqueeCards from "@/components/MarqueeCards";
 export default function Home() {
   const handleAiCallConfirm = () => {
     // Handle AI call confirmation
@@ -21,8 +23,17 @@ export default function Home() {
         <HowItWorks />
       </div>
       <Benefits />
+      <MarqueeCards />
       <div className="common-section icons-bg--1">
         <div className="container text-center">
+          <div style={{ marginBottom: "2rem" }}>
+            <Headline
+              mainText=""
+              boldText="Client Testimonials"
+              highlightText=""
+              heading="h2"
+            />
+          </div>
           <TestimonialSlider />
         </div>
       </div>

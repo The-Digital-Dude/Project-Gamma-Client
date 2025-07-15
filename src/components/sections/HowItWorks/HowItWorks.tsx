@@ -4,6 +4,7 @@ import { FaPlug, FaCalendarCheck, FaClipboardCheck } from "react-icons/fa";
 import Heading from "@/components/ui-elements/Heading/Heading";
 import Headline from "@/components/Headline/Headline";
 import PillText from "@/components/PillText/PillText";
+import { Button } from "@/components/ui-elements/Button/Button";
 
 const HowItWorks = () => {
   const steps = [
@@ -45,6 +46,11 @@ const HowItWorks = () => {
               <p className={styles.stepDescription}>{step.description}</p>
             </div>
           ))}
+        </div>
+        <div style={{ marginTop: "2rem" }}>
+          <Button href="/book-now" fullWidth={false}>
+            Request Demo
+          </Button>
         </div>
       </div>
     </section>

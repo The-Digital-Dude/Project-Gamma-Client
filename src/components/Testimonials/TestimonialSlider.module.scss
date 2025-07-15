@@ -1,35 +1,17 @@
-// .testimonialSection {
-//   padding-top: 120px;
-//   padding-bottom: 120px;
-//   background: linear-gradient(135deg, #f9f9fb 60%, #eceff1 100%);
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-// }
-
-// .sliderContainer {
-//   max-width: 1100px;
-//   margin: 0 auto;
-//   position: relative;
-//   width: 100%;
-//   padding: 0 5vw;
-//   overflow: visible;
-// }
-
 .slide {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   height: auto;
 }
 
 .card {
   background: #fff;
   border-radius: 20px;
-  box-shadow: 0 8px 40px 0 rgba(44, 62, 80, 0.13);
-  padding: 48px 48px 40px 48px;
-  min-height: 340px;
-  min-width: 420px;
+  border: 1px solid #e0e0e0;
+  padding: 24px 24px 24px 24px;
+  min-height: 220px;
+  width: 100%;
   max-width: 100%;
   display: flex;
   flex-direction: column;
@@ -38,24 +20,16 @@
   border-top: 4px solid var(--brand-purple, #024974);
   margin: 0 auto;
   transition: box-shadow 0.2s, transform 0.2s;
-  z-index: 2; // Ensure card content stays above overlay
-}
-
-.authorTop {
-  font-weight: 700;
-  color: var(--black, #29363d);
-  font-size: 1.1rem;
-  margin-bottom: 32px;
-  letter-spacing: 0.01em;
+  gap: 12px;
 }
 
 .quote {
-  font-size: 1.5rem;
-  line-height: 1.5;
+  font-size: 1.1rem;
+  line-height: 1.4;
   color: var(--black, #29363d);
-  margin-bottom: 40px;
+  margin-bottom: 16px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: normal;
   text-align: left;
 }
 
@@ -76,88 +50,34 @@
   margin-bottom: 2px;
 }
 
-.authorMeta {
-  color: var(--foreground-light-2, #656b8a);
-  font-size: 0.93rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
-.readMoreBtn {
-  position: absolute;
-  right: 32px;
-  bottom: 32px;
-  background: #fafaff;
+.authorRole {
+  font-weight: 400;
   color: var(--brand-purple, #024974);
-  border: 1px solid #ececfb;
-  border-radius: 24px;
-  padding: 8px 22px 8px 18px;
-  font-size: 1rem;
-  font-weight: 500;
-  text-decoration: none;
-  box-shadow: 0 2px 8px 0 rgba(44, 62, 80, 0.06);
-  transition: background 0.15s, color 0.15s, border 0.15s;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-.readMoreBtn:hover {
-  background: var(--brand-purple, #024974);
-  color: #fff;
-  border: 1px solid var(--brand-purple, #024974);
+  font-size: 0.9rem;
+  text-transform: capitalize;
+  letter-spacing: 0.02em;
 }
 
 // Swiper wrapper to make global selectors pure
 .swiperWrapper {
-  // Swiper stacking/peek effect
-  // Base style for all slides
+  width: 100%;
+  margin: 0 auto;
+
+  // Clean side-by-side layout - all slides equally visible
   :global(.swiper-slide) {
-    transition: transform 0.4s ease, z-index 0.4s ease, opacity 0.3s ease,
-      filter 0.4s ease;
-    opacity: 0.4;
-    transform: scale(0.85) translateX(-10px);
-    z-index: 0;
-    filter: blur(2px) brightness(0.7);
-  }
-
-  // Active slide
-  :global(.swiper-slide-active) {
     opacity: 1;
-    transform: scale(1) translateX(0);
-    z-index: 3;
+    transform: none;
     filter: none;
+    transition: none;
   }
 
-  // Previous and next slides (peek effect)
+  // Remove any special styling for active/adjacent slides
+  :global(.swiper-slide-active),
   :global(.swiper-slide-prev),
   :global(.swiper-slide-next) {
-    transform: scale(0.9) translateX(-5px);
-    z-index: 2;
-    opacity: 0.6;
-    filter: blur(1px);
-  }
-
-  // Add gradient overlay effect for better blending
-  :global(.swiper-slide):not(.swiper-slide-active) {
-    position: relative;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(
-        90deg,
-        rgba(249, 249, 251, 0.3) 0%,
-        rgba(249, 249, 251, 0.1) 50%,
-        rgba(249, 249, 251, 0.3) 100%
-      );
-      z-index: 1;
-      border-radius: 20px;
-      pointer-events: none;
-    }
+    opacity: 1;
+    transform: none;
+    filter: none;
   }
 
   // Minimal, modern pagination dots
@@ -182,175 +102,98 @@
     opacity: 0.7;
     transform: scale(1.2);
   }
-
-  // Mobile-specific optimizations for blur effects
-  @media (max-width: 768px) {
-    :global(.swiper-slide) {
-      transition: transform 0.3s ease, opacity 0.3s ease;
-      filter: none; // Remove blur on mobile for better readability
-      opacity: 0.6;
-    }
-
-    :global(.swiper-slide-active) {
-      opacity: 1;
-      filter: none;
-    }
-
-    :global(.swiper-slide-prev),
-    :global(.swiper-slide-next) {
-      filter: none; // Remove blur on mobile
-      opacity: 0.7;
-    }
-
-    // Remove overlay on mobile for better readability
-    :global(.swiper-slide):not(.swiper-slide-active) {
-      &::before {
-        display: none;
-      }
-    }
-  }
-
-  // For very small screens, simplify even more
-  @media (max-width: 480px) {
-    :global(.swiper-slide) {
-      opacity: 0.5;
-      transform: scale(0.95);
-    }
-
-    :global(.swiper-slide-active) {
-      opacity: 1;
-      transform: scale(1);
-    }
-
-    :global(.swiper-slide-prev),
-    :global(.swiper-slide-next) {
-      opacity: 0.6;
-      transform: scale(0.98);
-    }
-  }
 }
 
 @media (max-width: 1024px) {
   .card {
-    min-width: 360px;
-    padding: 40px 32px 36px 32px;
+    width: 100%;
+    padding: 20px 20px 20px 20px;
+    min-height: 200px;
   }
 }
 
 @media (max-width: 768px) {
   .card {
-    min-width: 300px;
-    padding: 32px 24px 32px 24px;
-  }
-  .readMoreBtn {
-    right: 20px;
-    bottom: 20px;
+    width: 100%;
+    padding: 18px 18px 18px 18px;
+    min-height: 180px;
+    gap: 10px;
   }
 }
 
 @media (max-width: 640px) {
   .card {
-    min-width: 280px;
-    padding: 28px 20px 20px 20px;
-    min-height: 300px;
+    width: 100%;
+    padding: 16px 16px 16px 16px;
+    min-height: 160px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     text-align: center;
+    gap: 8px;
   }
   .quote {
-    font-size: 1.3rem;
+    font-size: 1rem;
     text-align: left;
-    margin-bottom: 24px;
+    margin-bottom: 12px;
   }
   .authorWrap {
     align-items: center;
     text-align: center;
     margin-bottom: 20px;
-  }
-  .authorTop {
-    text-align: center;
-  }
-  .readMoreBtn {
-    position: static;
-    margin-top: auto;
-    align-self: center;
-    font-size: 0.95rem;
-    padding: 7px 16px 7px 14px;
   }
 }
 
 @media (max-width: 480px) {
   .card {
-    min-width: 260px;
-    padding: 24px 18px 20px 18px;
-    min-height: 280px;
+    width: 100%;
+    padding: 14px 14px 14px 14px;
+    min-height: 150px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    gap: 6px;
   }
-  .authorTop {
-    margin-bottom: 20px;
-    font-size: 1rem;
-    text-align: center;
-  }
+
   .quote {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
     text-align: left;
   }
   .authorWrap {
     align-items: center;
     text-align: center;
     margin-bottom: 16px;
-  }
-  .readMoreBtn {
-    position: static;
-    margin-top: auto;
-    align-self: center;
-    font-size: 0.9rem;
-    padding: 6px 14px 6px 12px;
   }
 }
 
 @media (max-width: 360px) {
   .card {
-    min-width: 240px;
-    padding: 20px 16px 18px 16px;
-    min-height: 260px;
+    width: 100%;
+    padding: 12px 12px 12px 12px;
+    min-height: 140px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    gap: 6px;
   }
   .quote {
-    font-size: 1.1rem;
-    margin-bottom: 18px;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
     text-align: left;
-  }
-  .authorTop {
-    margin-bottom: 16px;
-    text-align: center;
   }
   .authorWrap {
     align-items: center;
     text-align: center;
     margin-bottom: 16px;
   }
-  .readMoreBtn {
-    position: static;
-    margin-top: auto;
-    align-self: center;
-    font-size: 0.85rem;
-    padding: 5px 12px 5px 10px;
-  }
 }
-
 .navButtons {
   display: flex;
   justify-content: center;

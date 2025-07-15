@@ -85,32 +85,21 @@
     width: 100%;
     height: 100%;
     pointer-events: auto;
-    // Icon pattern as background with reduced opacity using a pseudo-element
+    // Background image with primary color overlay
     &::before {
       content: "";
       position: absolute;
       inset: 0;
-      background-image: url("/hero-background-pattern.png");
-      background-repeat: repeat;
-      background-size: 220px 220px;
-      background-position: 0 0;
-      opacity: 0.08; // Even more subtle
-      z-index: 1;
-    }
-    // Grayish gradient overlay
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      inset: 0;
       background: linear-gradient(
-        120deg,
-        rgba(120, 120, 130, 0.07) 0%,
-        rgba(200, 200, 210, 0.04) 100%
-      );
-      z-index: 2;
-      pointer-events: none;
+          120deg,
+          rgba($primary-color, 0.9) 0%,
+          rgba($primary-color, 0.9) 100%
+        ),
+        url("/hero-bg.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 0 0;
+      z-index: 1;
     }
   }
 
@@ -199,7 +188,7 @@
     font-weight: 700;
     line-height: 1.1;
     margin-bottom: 0.5rem;
-    color: #18181b;
+    color: #ffffff;
     letter-spacing: -0.02em;
 
     &--bold {
@@ -236,7 +225,7 @@
 
   &__subtext {
     font-size: 1.0625rem;
-    color: #52525b;
+    color: $cool-gray;
     line-height: 1.5;
     margin-bottom: 0.5rem;
     max-width: 540px;
@@ -360,13 +349,13 @@
     .landing__stat-value {
       font-size: 2.75rem;
       font-weight: 800;
-      color: #18181b;
+      color: $section-light;
       line-height: 1;
     }
 
     .landing__stat-label {
       font-size: 0.9375rem;
-      color: #52525b;
+      color: $cool-gray;
       font-weight: 500;
     }
   }
@@ -672,5 +661,30 @@
   .landing__personas-card-description {
     max-width: 100%;
     font-size: 1rem;
+  }
+}
+
+.subscribeButton {
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+  white-space: nowrap;
+
+  &:hover {
+    background: linear-gradient(135deg, #9f7aea 0%, #8b5cf6 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+  }
+
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(139, 92, 246, 0.3);
   }
 }

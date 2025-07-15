@@ -67,6 +67,7 @@ export const AiSupportPopup = () => {
                   fill="currentColor"
                 />
               </svg>
+              <span className={styles.buttonText}>Talk with our AI Agent</span>
             </button>
           ) : (
             <button

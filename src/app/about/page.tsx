@@ -54,6 +54,13 @@ export default function AboutPage() {
 
       {/* Sections */}
       <section className="about__section common-section icons-bg--1 accent-background--4">
+        <div className="container">
+          <Headline
+            mainText="Get to Know"
+            boldText=""
+            highlightText="Rentalease"
+          />
+        </div>
         <div className="container about__grid">
           {/* Who We Are */}
           <div className="about__card accent-background--3 accent-border--3">
