@@ -1,3 +1,5 @@
+"use client";
+
 import ServiceHero from "@/components/ServiceHero/ServiceHero";
 import "@/styles/safety-compliance.scss";
 import AccordionSection from "@/components/AccordionSection";
@@ -6,10 +8,31 @@ import Heading from "@/components/ui-elements/Heading/Heading";
 import ServiceOfferings from "@/components/sections/ServiceOfferings/ServiceOfferings";
 import ComparisonTable from "@/components/sections/ComparisonTable/ComparisonTable";
 import CTA from "@/components/CTA/CTA";
+import { useState } from "react";
+import {
+  MdLocalGasStation,
+  MdSecurity,
+  MdAssignment,
+  MdAttachMoney,
+  MdCloudDownload,
+  MdConstruction,
+  MdDashboard,
+  MdIntegrationInstructions,
+  MdSchedule,
+  MdFolder,
+  MdGroup,
+  MdHandyman,
+} from "react-icons/md";
 
 type Props = {};
 
 export default function GasSafety({}: Props) {
+  const [activeTab, setActiveTab] = useState<'landlords' | 'managers'>('landlords');
+
+  const handleTabChange = (tab: 'landlords' | 'managers') => {
+    setActiveTab(tab);
+  };
+
   const includedArray = [
     {
       title: "Licensed Gas Safety Inspection",
@@ -98,6 +121,173 @@ Safety and trust are our priorities. We offer full insurance on every job for co
           <AccordionSection items={includedArray} />
         </div>
       </div>
+
+
+      <FeatureHero
+        eyebrow=""
+        title="New regulations for landlords"
+        description="Gas safety checks are required on all Victorian rental properties, and are required to be conducted every two years. The new requirement will require gas fitters to submit the June 2022 revised gas safety checklist as well as submit their check via a separate VBA portal, the rental providers will also receive both copies.
+
+The safety checks can only be performed by a specialised class of plumbers/gas fitters holding the Type A Servicing qualification. The legislation also contains additional requirements to maintain records of inspections, including the inspector’s name and registration number, and a copy of the compliance report."
+        ctaText="⬇️ Download our comprehensive gas safety checklist (PDF 160KB)"
+        ctaLink=""
+        imageSrc="/img-6.jpg"
+        imageAlt="New regulations for landlords"
+        contentPosition="right"
+        buttonVariant="default"
+        eyebrowColor="$text-tertiary)"
+        heading="h3"
+      />
+      <div className="common-section accent-background--4">
+        <div className="container">
+          <div className="text-center">
+            <Heading
+              title="What we offer"
+              heading="h3"
+              size="md"
+            />
+            <p className="subtitle" style={{ marginBottom: '1rem'}}>
+              CheckHero we offer our clients a fully compliant, thorough, friendly, and affordable service.
+            </p>
+          </div>
+          
+          {/* Radio Button Toggle */}
+          <div className="radio-toggle-container text-center mb-5">
+            <div className="toggle-wrapper">
+              <label className="radio-option">
+                <input 
+                  type="radio" 
+                  name="userType" 
+                  value="landlords" 
+                  checked={activeTab === 'landlords'}
+                  onChange={() => handleTabChange('landlords')}
+                />
+                <span 
+                  className={`toggle-button ${activeTab === 'landlords' ? 'active-toggle' : 'inactive-toggle'}`}
+                  onClick={() => handleTabChange('landlords')}
+                > 
+                  For Landlords
+                </span>
+              </label>
+              <label className="radio-option">
+                <input 
+                  type="radio" 
+                  name="userType" 
+                  value="managers" 
+                  checked={activeTab === 'managers'}
+                  onChange={() => handleTabChange('managers')}
+                />
+                <span 
+                  className={`toggle-button ${activeTab === 'managers' ? 'active-toggle' : 'inactive-toggle'}`}
+                  onClick={() => handleTabChange('managers')}
+                > 
+                  For Property Managers
+                </span>
+              </label>
+            </div>
+          </div>
+
+          {/* Landlords Content */}
+          <div className="content-section" style={{display: activeTab === 'landlords' ? 'block' : 'none'}}>
+            <div className="cards-grid">
+              <div className="feature-card">
+                <div className="feature-card-icon" style={{ background: "#3b82f620" }}>
+                  <MdLocalGasStation size={40} color="#3b82f6" />
+                </div>
+                <h5>Fully Compliant Gas Safety Inspections</h5>
+                <p>We conduct thorough, regulation-compliant checks to ensure your property meets Victorian gas safety standards.</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-card-icon" style={{ background: "#10b98120" }}>
+                  <MdSecurity size={40} color="#10b981" />
+                </div>
+                <h5>Licensed & Insured Gas Fitters</h5>
+                <p>All checks are carried out by qualified professionals with Type A Servicing qualification and double insurance coverage for extra peace of mind.</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-card-icon" style={{ background: "#f59e0b20" }}>
+                  <MdAssignment size={40} color="#f59e0b" />
+                </div>
+                <h5>Clear Compliance Documentation</h5>
+                <p>Receive detailed inspection reports and compliance certificates for your records or legal obligations.</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-card-icon" style={{ background: "#6366f120" }}>
+                  <MdAttachMoney size={40} color="#6366f1" />
+                </div>
+                <h5>Competitive Pricing</h5>
+                <p>Take advantage of our best price guarantee—affordable compliance with no compromise on quality.</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-card-icon" style={{ background: "#ef444420" }}>
+                  <MdCloudDownload size={40} color="#ef4444" />
+                </div>
+                <h5>Online Access Anytime</h5>
+                <p>View and download your reports securely through our user-friendly online portal, 24/7.</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-card-icon" style={{ background: "#8b5cf620" }}>
+                  <MdConstruction size={40} color="#8b5cf6" />
+                </div>
+                <h5>Quick Fixes When Needed</h5>
+                <p>Should issues arise, we can swiftly organise licensed gas fitters from our network to complete repairs.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Property Managers Content */}
+          <div className="content-section" style={{display: activeTab === 'managers' ? 'block' : 'none'}}>
+            <div className="cards-grid">
+              <div className="feature-card">
+                <div className="feature-card-icon" style={{ background: "#3b82f620" }}>
+                  <MdDashboard size={40} color="#3b82f6" />
+                </div>
+                <h5>Multi-Property Compliance Oversight</h5>
+                <p>Manage and monitor gas safety compliance across all properties in your portfolio, from one central dashboard.</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-card-icon" style={{ background: "#10b98120" }}>
+                  <MdIntegrationInstructions size={40} color="#10b981" />
+                </div>
+                <h5>Seamless Software Integration</h5>
+                <p>Works with leading platforms like PropertyMe and Property Tree to streamline your workflow.</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-card-icon" style={{ background: "#f59e0b20" }}>
+                  <MdSchedule size={40} color="#f59e0b" />
+                </div>
+                <h5>Automated Reminders & Scheduling</h5>
+                <p>Never miss a deadline—our system helps you schedule inspections and sends timely alerts.</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-card-icon" style={{ background: "#6366f120" }}>
+                  <MdFolder size={40} color="#6366f1" />
+                </div>
+                <h5>Centralised Report Storage</h5>
+                <p>Easily access and download inspection reports and certificates across multiple tenancies.</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-card-icon" style={{ background: "#ef444420" }}>
+                  <MdGroup size={40} color="#ef4444" />
+                </div>
+                <h5>Tenant-Friendly Service</h5>
+                <p>Our gas fitters are punctual, respectful, and experienced in working within occupied properties.</p>
+              </div>
+              <div className="feature-card">
+                <div className="feature-card-icon" style={{ background: "#8b5cf620" }}>
+                  <MdHandyman size={40} color="#8b5cf6" />
+                </div>
+                <h5>End-to-End Repair Support</h5>
+                <p>We coordinate prompt repair work through our trusted network, keeping your properties safe and compliant.</p>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+
       <FeatureHero
         eyebrow="Legislation Update"
         title="Understanding New Landlord Regulations"
