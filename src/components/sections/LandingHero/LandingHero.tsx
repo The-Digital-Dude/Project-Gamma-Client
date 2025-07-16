@@ -20,21 +20,20 @@ const LandingHero = () => {
       <section className="landing__hero">
         <div className="landing__content">
           <Headline
-            mainText="Rental. Compliance. Simplified."
+            mainText="Rental. Compliance."
             boldText=""
-            highlightText=""
+            highlightText="Simplified."
           />
           <Subtext text="Rentalease is Australia’s easiest way to manage rental compliance checks—fully automated, fully connected. Designed for property managers, powered by smart workflows." />
           <div>
-            <Link href="/book-now">
-              <button type="submit" className="subscribeButton">
-                Request Demo
-              </button>
-            </Link>
+            <Button href="/book-now" fullWidth={false}>
+              Request Demo
+            </Button>
           </div>
           <Stats stats={stats} />
         </div>
-        <HeroVisual imageUrl="/img-1.webp" altText={siteConfig.name} />
+        {/* <Stats stats={stats} /> */}
+        {/* <HeroVisual imageUrl="/img-14.jpg" altText={siteConfig.name} /> */}
       </section>
     </div>
   );

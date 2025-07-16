@@ -8,6 +8,7 @@ import styles from "./AiSupportPopup.module.scss";
 export const AiSupportPopup = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isCallActive, setIsCallActive] = useState(false);
+  const [isTextVisible, setIsTextVisible] = useState(true);
 
   const { startSession, endSession } = useConversation({
     apiKey: process.env.NEXT_PUBLIC_ELEVENLABS_API_KEY!,
@@ -20,6 +21,10 @@ export const AiSupportPopup = () => {
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
+  };
+
+  const handleCloseText = () => {
+    setIsTextVisible(false);
   };
 
   const handleConfirm = async () => {
@@ -45,6 +50,37 @@ export const AiSupportPopup = () => {
     <>
       <div className={styles.popup}>
         <div className={styles.popupContent}>
+          {isTextVisible && (
+            <div className={styles.textDialog}>
+              <div className={styles.textContent}>
+                <span className={styles.helpText}>
+                  How can we help you today?
+                </span>
+                <button
+                  onClick={handleCloseText}
+                  className={styles.closeButton}
+                  aria-label="Close help text"
+                >
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M18 6L6 18M6 6l12 12"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          )}
+
           {!isCallActive ? (
             <button
               onClick={handleOpenModal}
@@ -67,7 +103,7 @@ export const AiSupportPopup = () => {
                   fill="currentColor"
                 />
               </svg>
-              <span className={styles.buttonText}>Talk with our AI Agent</span>
+              {/* <span className={styles.buttonText}>Talk with our AI Agent</span> */}
             </button>
           ) : (
             <button

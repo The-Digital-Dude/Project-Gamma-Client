@@ -72,9 +72,7 @@ export default function Contact() {
                 <span className="contact-info-label">Office Address:</span>
                 <br />
                 <span className="contact-info-text">
-                  Level 10, 123 Property Lane
-                  <br />
-                  Sydney, NSW 2000 Australia
+                  Melbourne, VIC, Australia
                 </span>
               </div>
             </div>

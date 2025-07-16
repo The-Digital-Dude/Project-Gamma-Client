@@ -412,7 +412,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   return (
-    <div className={styles.blogPostPage}>
+    <div className={`${styles.blogPostPage} common-section`}>
       <div className={styles.container}>
         {/* Breadcrumb */}
         <nav className={styles.breadcrumb}>

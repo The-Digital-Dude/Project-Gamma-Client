@@ -28,7 +28,6 @@
 
 .footermenu {
   display: grid;
-  align-items: center;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 48px;
   margin-bottom: 64px;
@@ -37,6 +36,10 @@
 .footerlogocontainer {
   display: flex;
   flex-direction: column;
+}
+
+.footerdescription {
+  color: $section-light;
 }
 
 .footerlogolink {
@@ -50,10 +53,13 @@
 }
 
 .contactinfo {
+  > div:first-child {
+    font-weight: 600;
+    color: $section-light;
+  }
   display: flex;
   flex-direction: column;
   gap: 16px;
-  margin-top: 8px;
 }
 
 .contactitem {

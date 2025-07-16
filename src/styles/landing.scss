@@ -90,16 +90,14 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(
-          120deg,
-          rgba($primary-color, 0.9) 0%,
-          rgba($primary-color, 0.9) 100%
-        ),
-        url("/hero-bg.jpg");
+      background: url("/img-14.jpg");
       background-repeat: no-repeat;
       background-size: cover;
       background-position: 0 0;
       z-index: 1;
+      @media (max-width: 900px) {
+        background: #eeeeee;
+      }
     }
   }
 
@@ -107,7 +105,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    // justify-content: center;
     padding: 2rem 0;
     max-width: 1200px;
     margin: 0 auto;
@@ -127,11 +125,14 @@
       gap: 1.25rem;
       padding: 2rem 1rem;
       text-align: center;
+      min-height: auto;
+      padding-top: 80px;
+      padding-bottom: 100px;
     }
 
-    @media (max-width: 600px) {
-      padding: 1.25rem 0.5rem;
-    }
+    // @media (max-width: 600px) {
+    //   padding: 1.25rem 0.5rem;
+    // }
   }
 
   &__hero::before {
@@ -146,7 +147,8 @@
   }
 
   &__content {
-    flex: 1;
+    // flex: 1;
+    text-align: left;
     max-width: 500px;
     display: flex;
     flex-direction: column;
@@ -224,7 +226,7 @@
 
   &__subtext {
     font-size: 1.0625rem;
-    color: $cool-gray;
+    // color: $cool-gray;
     line-height: 1.5;
     margin-bottom: 0.5rem;
     max-width: 540px;
@@ -322,6 +324,7 @@
     display: flex;
     gap: 2.5rem;
     margin-top: 0.75rem;
+    color: $primary-color;
 
     @media (max-width: 900px) {
       justify-content: center;
@@ -348,13 +351,13 @@
     .landing__stat-value {
       font-size: 2.75rem;
       font-weight: 800;
-      color: $section-light;
+      color: $primary-color;
       line-height: 1;
     }
 
     .landing__stat-label {
       font-size: 0.9375rem;
-      color: $cool-gray;
+      color: $black;
       font-weight: 500;
     }
   }
@@ -688,6 +691,6 @@
   }
 }
 
-.landing .landing__content .landing__headline {
-  color: #ffffff;
-}
+// .landing .landing__content .landing__headline {
+//   color: #ffffff;
+// }

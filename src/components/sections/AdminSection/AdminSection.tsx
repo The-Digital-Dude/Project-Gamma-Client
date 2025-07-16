@@ -23,12 +23,6 @@ const AdminSection = () => {
             </p>
             <div className={styles.ctaGroup}>
               <Button href="/book-now">Try a live demo</Button>
-              <a href="https://youtu.be/demo" className={styles.textLink}>
-                <span className={styles.playIcon}>
-                  <FaPlay size={12} />
-                </span>
-                Watch the demo video
-              </a>
             </div>
           </div>
           <div className={styles.videoContainer}>
