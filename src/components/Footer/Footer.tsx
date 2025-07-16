@@ -134,16 +134,6 @@ const Footer = () => {
                 </div>
               </form>
             </div>
-
-            {/* <div className={styles.footermenucell}>
-              <div>Legal</div>
-              <Link href="/privacy-policy" className={styles.footerlink}>
-                Privacy Policy
-              </Link>
-              <Link href="/terms-of-service" className={styles.footerlink}>
-                Terms of Service
-              </Link>
-            </div> */}
           </div>
 
           <div className={styles.footerbottom}>

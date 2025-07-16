@@ -1,0 +1,273 @@
+@import "../../styles/variables";
+
+.blogPage {
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $space-lg;
+
+  @media (max-width: 768px) {
+    padding: 0 $space-md;
+  }
+}
+
+// Hero Section
+.hero {
+  //   padding: $section-padding-xl 0 $section-padding-lg 0;
+  text-align: center;
+  //   background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  //   margin-bottom: $section-padding-lg;
+
+  @media (max-width: 768px) {
+    padding: $section-padding-lg 0 $section-padding-md 0;
+    margin-bottom: $section-padding-md;
+  }
+}
+
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+// Blog Grid
+.blogGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: $space-2xl;
+  margin-bottom: $section-padding-xl;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: $space-xl;
+    margin-bottom: $section-padding-lg;
+  }
+}
+
+.blogCardLink {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.blogCard {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  height: 100%;
+}
+
+.blogCardLink:hover .blogCard {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.blogCardLink:hover .blogImage {
+  transform: scale(1.05);
+}
+
+.blogCardLink:hover .arrow {
+  transform: translateX(4px);
+}
+
+.imageContainer {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+}
+
+.blogImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.category {
+  position: absolute;
+  top: $space-md;
+  left: $space-md;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  color: $primary-color;
+  padding: $space-xs $space-sm;
+  border-radius: $border-radius-rounded;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid rgba(2, 73, 116, 0.1);
+}
+
+.cardContent {
+  padding: $space-xl;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: $space-xs;
+  margin-bottom: $space-md;
+  font-size: 0.875rem;
+  color: $text-tertiary;
+}
+
+.author {
+  font-weight: 500;
+  color: $text-secondary;
+}
+
+.divider {
+  color: $text-tertiary;
+}
+
+.date,
+.readTime {
+  color: $text-tertiary;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: $heading-primary;
+  margin-bottom: $space-md;
+  line-height: 1.3;
+
+  @media (max-width: 768px) {
+    font-size: 1.25rem;
+  }
+}
+
+.excerpt {
+  color: $text-secondary;
+  line-height: 1.6;
+  margin-bottom: $space-xl;
+  font-size: 1rem;
+}
+
+.readMore {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-xs;
+  background: none;
+  border: none;
+  color: $primary-color;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+  text-decoration: none;
+
+  &:hover {
+    color: $primary-color-hover;
+  }
+}
+
+.arrow {
+  transition: transform 0.2s ease;
+}
+
+// Newsletter Section
+.newsletter {
+  background: linear-gradient(135deg, $primary-color 0%, #1e3a8a 100%);
+  border-radius: 20px;
+  padding: $section-padding-lg;
+  text-align: center;
+  margin-bottom: $section-padding-lg;
+
+  @media (max-width: 768px) {
+    padding: $section-padding-md;
+    border-radius: 16px;
+  }
+}
+
+.newsletterContent {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.newsletterTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: $space-md;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+}
+
+.newsletterSubtitle {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.125rem;
+  margin-bottom: $space-2xl;
+  line-height: 1.6;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    margin-bottom: $space-xl;
+  }
+}
+
+.newsletterForm {
+  display: flex;
+  gap: $space-md;
+  max-width: 480px;
+  margin: 0 auto;
+
+  @media (max-width: 640px) {
+    flex-direction: column;
+    gap: $space-sm;
+  }
+}
+
+.emailInput {
+  flex: 1;
+  padding: $space-md $space-lg;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  color: #ffffff;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  &:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.15);
+  }
+}
+
+.subscribeBtn {
+  padding: $space-md $space-xl;
+  background: #ffffff;
+  color: $primary-color;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+
+  &:hover {
+    background: #f8fafc;
+    transform: translateY(-1px);
+  }
+
+  @media (max-width: 640px) {
+    width: 100%;
+  }
+}

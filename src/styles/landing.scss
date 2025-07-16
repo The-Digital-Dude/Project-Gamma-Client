@@ -188,7 +188,6 @@
     font-weight: 700;
     line-height: 1.1;
     margin-bottom: 0.5rem;
-    color: #ffffff;
     letter-spacing: -0.02em;
 
     &--bold {
@@ -687,4 +686,8 @@
     transform: translateY(-1px);
     box-shadow: 0 2px 8px rgba(139, 92, 246, 0.3);
   }
+}
+
+.landing .landing__content .landing__headline {
+  color: #ffffff;
 }
