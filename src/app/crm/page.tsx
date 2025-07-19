@@ -85,7 +85,7 @@ const CrmPage: React.FC = () => {
 Neglecting these obligations can lead to government fines, legal issues, broken leases, and serious reputation damage. Don’t risk it—stay ahead with complete rental compliance."
           ctaText="Request Demo"
           ctaLink="/book-now"
-          imageSrc="/img-3.jpg"
+          imageSrc="/img-15.jpg"
           imageAlt="Directory Sync Dashboard"
           contentPosition="left"
           buttonVariant="default"
