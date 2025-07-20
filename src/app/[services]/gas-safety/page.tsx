@@ -139,15 +139,16 @@ Safety and trust are our priorities. We offer full insurance on every job for co
         description="Gas safety checks are required on all Victorian rental properties, and are required to be conducted every two years. The new requirement will require gas fitters to submit the June 2022 revised gas safety checklist as well as submit their check via a separate VBA portal, the rental providers will also receive both copies.
 
 The safety checks can only be performed by a specialised class of plumbers/gas fitters holding the Type A Servicing qualification. The legislation also contains additional requirements to maintain records of inspections, including the inspector’s name and registration number, and a copy of the compliance report."
-        ctaText="⬇️ Download our comprehensive gas safety checklist (PDF 160KB)"
-        ctaLink="https://www.consumer.vic.gov.au/housing/renting/repairs-alterations-safety-and-pets/minimum-standards/checklist-rental-properties-minimum-standards"
-        imageSrc="/img-6.jpg"
+        ctaText="⬇ Download our comprehensive gas safety checklist (PDF 160KB)"
+        ctaLink=""
+        imageSrc="/gas-safety-checks.jpg"
         imageAlt="New regulations for landlords"
         contentPosition="left"
         buttonVariant="default"
         eyebrowColor="$text-tertiary)"
         heading="h3"
       />
+      
       <div className="common-section accent-background--4">
         <div className="container">
           <div className="text-center">
