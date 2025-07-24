@@ -1,0 +1,120 @@
+.privacy-policy {
+  &__hero {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+  }
+
+  &__content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+
+    @media (max-width: 768px) {
+      font-size: 2.5rem;
+    }
+  }
+
+  &__description {
+    margin-bottom: 3rem;
+    
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: #666;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+  }
+
+  &__section {
+    text-align: left;
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+
+    @media (max-width: 768px) {
+      padding: 1.5rem;
+    }
+  }
+
+  &__section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #2196f3;
+    padding-bottom: 0.5rem;
+  }
+
+  &__section-content {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #555;
+    margin: 0;
+  }
+
+  &__sub-sections {
+    margin-top: 2rem;
+  }
+
+  &__sub-section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #2196f3;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      padding: 1rem;
+    }
+  }
+
+  &__sub-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  &__sub-content {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #666;
+    margin: 0;
+  }
+
+  &__contact-email {
+    color: #1976d2;
+    font-weight: 600;
+    word-break: break-all;
+  }
+
+  &__contact-phone {
+    color: #388e3c;
+    font-weight: 600;
+  }
+
+  &__contact-website {
+    color: #1976d2;
+    font-weight: 600;
+    text-decoration: underline;
+  }
+} 

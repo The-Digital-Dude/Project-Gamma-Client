@@ -133,9 +133,9 @@ Safety and trust are our priorities. We offer full insurance on every job for co
         description="Victorian Legislation now requires rental providers to conduct annual smoke alarm checks, meaning that smoke alarms, both in type and location, must be installed and maintained according to regulations.
 
 The legislation also contains additional requirements that smoke alarm non-compliance is now considered an urgent repair."
-        ctaText="⬇️ Download our comprehensive smoke alarm checklist"
-        ctaLink="https://www.consumer.vic.gov.au/housing/renting/repairs-alterations-safety-and-pets/minimum-standards/checklist-rental-properties-minimum-standards"
-        imageSrc="/img-6.jpg"
+        ctaText="⬇ Download our comprehensive smoke alarm checklist"
+        ctaLink=""
+        imageSrc="/smoke-alarm.png"
         imageAlt="New regulations for landlords"
         contentPosition="left"
         buttonVariant="default"
