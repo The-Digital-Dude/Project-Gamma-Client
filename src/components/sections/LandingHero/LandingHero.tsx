@@ -10,8 +10,8 @@ import React from "react";
 
 const LandingHero = () => {
   const stats = [
-    { value: "140+", label: "Property Managers" },
-    { value: "2500+", label: "Registered Properties" },
+    { value: "30+", label: "Agencies" },
+    { value: "4000+", label: "Rentals" },
     { value: "4x", label: "Faster CRM Compared to Other Companies" },
   ];
 
@@ -24,7 +24,7 @@ const LandingHero = () => {
             boldText=""
             highlightText="Simplified."
           />
-          <Subtext text="Rentalease is Australia’s easiest way to manage rental compliance checks—fully automated, fully connected. Designed for property managers, powered by smart workflows." />
+          <Subtext text="Proudly servicing VIC, NSW, QLD, WA, SA, and TAS. Simplifying compliance for property managers nationwide." />
           <div>
             <Button href="/book-now" fullWidth={false}>
               Request Demo
@@ -32,8 +32,6 @@ const LandingHero = () => {
           </div>
           <Stats stats={stats} />
         </div>
-        {/* <Stats stats={stats} /> */}
-        {/* <HeroVisual imageUrl="/img-14.jpg" altText={siteConfig.name} /> */}
       </section>
     </div>
   );

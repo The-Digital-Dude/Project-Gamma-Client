@@ -28,7 +28,7 @@ const Footer = () => {
             </div>
 
             <div className={styles.footermenucell}>
-              <div>Important Links</div>
+              <div>Other Links</div>
               <Link href="/services" className={styles.footerlink}>
                 Services
               </Link>
@@ -40,6 +40,40 @@ const Footer = () => {
               </Link>
               <Link href="/contact" className={styles.footerlink}>
                 Contact
+              </Link>
+            </div>
+
+            <div className={styles.footermenucell}>
+              <div>Important Links</div>
+              <Link
+                href="https://www.energysafe.vic.gov.au/industry-guidance/electrical/electricians-toolkit/residential-tenancy"
+                className={styles.footerlink}
+              >
+                ESV
+              </Link>
+              <Link
+                href="https://www.housing.vic.gov.au/our-maintenance-responsibilities"
+                className={styles.footerlink}
+              >
+                Housing VIC
+              </Link>
+              <Link
+                href="https://www.vba.vic.gov.au/consumers/residential-tenancies-regulations-2021"
+                className={styles.footerlink}
+              >
+                VBA
+              </Link>
+              <Link
+                href="https://www.consumer.vic.gov.au/housing/renting/rental-providers-inspecting-or-entering-a-property/when-a-rental-provider-can-enter-a-property"
+                className={styles.footerlink}
+              >
+                Consumer Vic
+              </Link>
+              <Link
+                href="https://tenantsvic.org.au/explore-topics/during-your-tenancy/safety-requirements/"
+                className={styles.footerlink}
+              >
+                Tenants Vic
               </Link>
             </div>
 
@@ -112,34 +146,17 @@ const Footer = () => {
                 <span>hello@rentalease.com.au</span>
               </div>
             </div>
-
-            {/* <div className={styles.newslettersection}>
-              <div className={styles.newsletterheader}>
-                <div>Stay Updated</div>
-                <p className={styles.newsletterdescription}>
-                  Subscribe to our newsletter for the latest property management
-                  tips and updates
-                </p>
-              </div>
-              <form className={styles.newsletterform}>
-                <div className={styles.inputcontainer}>
-                  <input
-                    type="email"
-                    placeholder="Enter your email"
-                    className={styles.newsletterinput}
-                    required
-                  />
-                  <button type="submit" className={styles.subscribebutton}>
-                    Subscribe
-                  </button>
-                </div>
-              </form>
-            </div> */}
           </div>
 
           <div className={styles.footerbottom}>
             <div className={styles.footercopyright}>
-              © 2025 Rentalease. Developed By Roko Automations
+              © 2025 Rentalease. Developed By{" "}
+              <Link
+                href={"https://rokoautomations.com/"}
+                className={styles.footerRoko}
+              >
+                Roko Automations
+              </Link>
             </div>
 
             <div className={styles.footlink__container}>

@@ -111,6 +111,17 @@
   }
 }
 
+.footerRoko {
+  display: inline-block;
+  color: #cbced1;
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: #ffffff;
+  }
+}
+
 .footerbottom {
   display: flex;
   justify-content: space-between;
