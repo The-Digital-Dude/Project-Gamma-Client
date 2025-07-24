@@ -1,4 +1,5 @@
 import Headline from "@/components/Headline/Headline";
+import Link from "next/link";
 import "@/styles/privacy-policy.scss";
 
 export default function PrivacyPolicyPage() {
@@ -168,6 +169,13 @@ export default function PrivacyPolicyPage() {
                 </ul>
               </div>
             </div>
+          </div>
+          <div style={{ marginTop: 48, textAlign: "center" }}>
+            <nav aria-label="breadcrumb">
+              <Link href="/" style={{ color: "#1a237e", textDecoration: "underline", fontWeight: 500 }}>Home</Link>
+              <span style={{ margin: "0 8px", color: "#888" }}>&gt;</span>
+              <span style={{ color: "#333", fontWeight: 500 }}>Privacy Policy</span>
+            </nav>
           </div>
         </div>
       </section>
