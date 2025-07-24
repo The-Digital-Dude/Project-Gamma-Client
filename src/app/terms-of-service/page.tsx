@@ -1,4 +1,5 @@
 import Headline from "@/components/Headline/Headline";
+import Link from "next/link";
 import "@/styles/terms-of-service.scss";
 
 export default function TermsOfServicePage() {
@@ -327,6 +328,13 @@ export default function TermsOfServicePage() {
             </div>
 
            
+          </div>
+          <div style={{ marginTop: 48, textAlign: "center" }}>
+            <nav aria-label="breadcrumb">
+              <Link href="/" style={{ color: "#1a237e", textDecoration: "underline", fontWeight: 500 }}>Home</Link>
+              <span style={{ margin: "0 8px", color: "#888" }}>&gt;</span>
+              <span style={{ color: "#333", fontWeight: 500 }}>Terms of Service</span>
+            </nav>
           </div>
         </div>
       </section>
