@@ -249,3 +249,54 @@
     right: -41px;
   }
 }
+
+.error-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #dc3545;
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  animation: slideIn 0.3s ease-out;
+
+  p {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+
+  button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

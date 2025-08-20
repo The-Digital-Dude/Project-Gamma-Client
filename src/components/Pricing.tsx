@@ -1,11 +1,19 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
+import SignupForm, { SignupFormData } from "./SignupForm";
+import subscriptionService from "../services/subscriptionService";
 import "../styles/pricing.scss";
 
 const Pricing = () => {
+  const [showSignupModal, setShowSignupModal] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState<'starter' | 'pro' | 'enterprise'>('starter');
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
   const plans = [
     {
+      id: "starter" as const,
       name: "Starter",
       price: "$99",
       period: "mo",
@@ -17,6 +25,7 @@ const Pricing = () => {
       highlighted: false,
     },
     {
+      id: "pro" as const,
       name: "Pro",
       price: "$199",
       period: "mo",
@@ -28,6 +37,7 @@ const Pricing = () => {
       highlighted: true,
     },
     {
+      id: "enterprise" as const,
       name: "Enterprise",
       price: "Custom",
       period: "",
@@ -39,6 +49,47 @@ const Pricing = () => {
       highlighted: false,
     },
   ];
+
+  const handleGetStarted = (planType: 'starter' | 'pro' | 'enterprise') => {
+    if (planType === 'enterprise') {
+      // Handle enterprise plans differently - redirect to contact
+      window.location.href = '/contact?plan=enterprise';
+      return;
+    }
+
+    setSelectedPlan(planType);
+    setShowSignupModal(true);
+    setError(null);
+  };
+
+  const handleSignupSubmit = async (formData: SignupFormData) => {
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      const response = await subscriptionService.registerWithSubscription(formData);
+      
+      // Redirect to Stripe Checkout
+      if (response.data.checkout.url) {
+        subscriptionService.redirectToCheckout(response.data.checkout.url);
+      } else {
+        throw new Error('No checkout URL received');
+      }
+    } catch (err) {
+      const errorMessage = err instanceof Error ? err.message : 'An error occurred';
+      setError(errorMessage);
+      console.error('Subscription signup error:', err);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const closeModal = () => {
+    if (!isLoading) {
+      setShowSignupModal(false);
+      setError(null);
+    }
+  };
 
   return (
     <section className="pricing-section">
@@ -91,11 +142,33 @@ const Pricing = () => {
                 ))}
               </ul>
 
-              <button className="cta-button">Get Started</button>
+              <button 
+                className="cta-button"
+                onClick={() => handleGetStarted(plan.id)}
+                disabled={isLoading}
+              >
+                {plan.id === 'enterprise' ? 'Contact Sales' : 'Get Started'}
+              </button>
             </div>
           ))}
         </div>
       </div>
+
+      {error && (
+        <div className="error-notification">
+          <p>{error}</p>
+          <button onClick={() => setError(null)}>×</button>
+        </div>
+      )}
+
+      {showSignupModal && (
+        <SignupForm
+          planType={selectedPlan}
+          onSubmit={handleSignupSubmit}
+          isLoading={isLoading}
+          onClose={closeModal}
+        />
+      )}
     </section>
   );
 };
