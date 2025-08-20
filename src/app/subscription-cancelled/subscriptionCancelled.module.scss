@@ -1,0 +1,284 @@
+@import "@/styles/variables";
+
+.subscription-cancelled {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fef7f0 0%, #fff7ed 100%);
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .cancelled-container {
+    background: white;
+    border-radius: 1.5rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+    padding: 3rem 2.5rem;
+    max-width: 900px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .cancelled-icon {
+    margin: 0 auto 2rem;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #f59e0b;
+    margin: 0 0 1rem 0;
+  }
+
+  .cancelled-message {
+    font-size: 1.2rem;
+    color: $text-secondary;
+    margin: 0 0 3rem 0;
+    line-height: 1.6;
+  }
+
+  .what-happened {
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-radius: 1rem;
+    padding: 2rem;
+    margin: 2rem 0;
+
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #d97706;
+      margin: 0 0 1rem 0;
+    }
+
+    p {
+      color: #92400e;
+      line-height: 1.6;
+      margin: 0;
+    }
+  }
+
+  .options {
+    margin: 3rem 0;
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: $text-primary;
+      margin: 0 0 2rem 0;
+    }
+
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .option-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 1rem;
+      padding: 2rem 1.5rem;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+        background: white;
+      }
+
+      .option-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      h3 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: $text-primary;
+        margin: 0 0 0.75rem 0;
+      }
+
+      p {
+        color: $text-secondary;
+        line-height: 1.5;
+        margin: 0 0 1.5rem 0;
+        font-size: 0.95rem;
+      }
+
+      .option-button {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: all 0.2s ease;
+
+        &.primary {
+          background: $primary-color;
+          color: white;
+
+          &:hover {
+            background: darken($primary-color, 10%);
+            transform: translateY(-1px);
+          }
+        }
+
+        &.secondary {
+          background: white;
+          color: $primary-color;
+          border: 1px solid $primary-color;
+
+          &:hover {
+            background: $primary-color;
+            color: white;
+            transform: translateY(-1px);
+          }
+        }
+      }
+    }
+  }
+
+  .reassurance {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border: 1px solid #bae6fd;
+    border-radius: 1rem;
+    padding: 2rem;
+    margin: 3rem 0;
+
+    h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: $primary-color;
+      margin: 0 0 1.5rem 0;
+    }
+
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+
+      .benefit {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-size: 0.95rem;
+        color: #0369a1;
+
+        .benefit-icon {
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+
+  .final-cta {
+    margin: 3rem 0 0 0;
+
+    p {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: $text-primary;
+      margin: 0 0 1.5rem 0;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      .cta-primary {
+        background: linear-gradient(90deg, $primary-color 0%, darken($primary-color, 5%) 100%);
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 0.75rem;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.2s ease;
+        display: inline-block;
+
+        &:hover {
+          background: linear-gradient(90deg, darken($primary-color, 5%) 0%, darken($primary-color, 10%) 100%);
+          transform: translateY(-2px);
+          box-shadow: 0 8px 25px rgba(2, 73, 116, 0.25);
+        }
+      }
+
+      .cta-secondary {
+        background: white;
+        color: $text-secondary;
+        padding: 1rem 2rem;
+        border: 1px solid #e2e8f0;
+        border-radius: 0.75rem;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.2s ease;
+        display: inline-block;
+
+        &:hover {
+          background: #f8fafc;
+          color: $text-primary;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .subscription-cancelled {
+    padding: 1rem;
+
+    .cancelled-container {
+      padding: 2rem 1.5rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    .cancelled-message {
+      font-size: 1.1rem;
+    }
+
+    .options .options-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .reassurance .benefits {
+      grid-template-columns: 1fr;
+    }
+
+    .final-cta .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+
+      .cta-primary,
+      .cta-secondary {
+        width: 100%;
+        text-align: center;
+        max-width: 300px;
+      }
+    }
+  }
+}
