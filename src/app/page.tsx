@@ -2,6 +2,8 @@
 
 import LandingHero from "@/components/sections/LandingHero/LandingHero";
 import HowItWorks from "@/components/sections/HowItWorks/HowItWorks";
+import { WhyRentalease } from "@/components/sections/WhyRentalease";
+import { ComplianceCovered } from "@/components/sections/ComplianceCovered";
 import Benefits from "@/components/sections/Benefits/Benefits";
 import AiSupportPopup from "@/components/AiSupportPopup";
 import "@/styles/landing.scss";
@@ -24,6 +26,8 @@ export default function Home() {
       <div className="accent-background--4">
         <HowItWorks />
       </div>
+      <WhyRentalease />
+      <ComplianceCovered />
       <Benefits />
       <MarqueeCards />
       <div className="common-section icons-bg--1">

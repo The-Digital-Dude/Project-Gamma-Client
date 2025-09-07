@@ -50,7 +50,7 @@
     text-decoration: none;
     color: $primary-color;
     font-weight: 500;
-    font-size: 1rem;
+    font-size: 1.1rem;
 
     svg {
       color: $primary-color;
@@ -71,6 +71,8 @@
   &__dropdown {
     cursor: pointer;
     position: relative;
+    font-size: 1.1rem;
+    font-weight: 500;
   }
 
   &__dropdown-menu {

@@ -31,13 +31,19 @@ const HowItWorks = () => {
   return (
     <section className="py-50">
       <div className="container text-center">
-        <PillText text="How it works" />
+        <PillText text="The Gap We Fill" />
         <Headline
           heading="h3"
-          mainText="Simplifying Compliance,"
-          highlightText="One Step at a Time"
+          mainText="Closing the Gap in"
+          highlightText="Property Management"
           boldText=""
         />
+        <p style={{ marginTop: "1rem" }}>
+          Property compliance and services have always been fragmented—multiple
+          contractors, scattered reports, endless admin. Rentalease fixes that
+          by combining compliance, tradies, and services into one powerful,
+          automated system.
+        </p>
         <div className={styles.stepsGrid}>
           {steps.map((step, idx) => (
             <div className={`${styles.stepBox} accent-border--4`} key={idx}>

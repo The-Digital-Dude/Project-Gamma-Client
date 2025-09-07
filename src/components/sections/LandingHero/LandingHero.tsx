@@ -4,6 +4,7 @@ import HeroVisual from "@/components/HeroVisual/HeroVisual";
 import Stats from "@/components/Stats/Stats";
 import Subtext from "@/components/Subtext/Subtext";
 import { Button } from "@/components/ui-elements/Button/Button";
+import { SecondaryButton } from "@/components/ui-elements/SecondaryButton";
 import { siteConfig } from "@/config/site";
 import Link from "next/link";
 import React from "react";
@@ -19,18 +20,30 @@ const LandingHero = () => {
     <div className="landing__hero-wrapper">
       <section className="landing__hero">
         <div className="landing__content">
-          <Headline
-            mainText="Rental. Compliance."
-            boldText=""
-            highlightText="Simplified."
-          />
-          <Subtext text="Proudly servicing VIC, NSW, QLD, WA, SA, and TAS. Simplifying compliance for property managers nationwide." />
-          <div>
-            <Button href="/book-now" fullWidth={false}>
-              Request Demo
-            </Button>
+          <div className="fade-in">
+            <Headline
+              mainText="The Future of Rental Compliance &"
+              boldText=""
+              highlightText="Property Services"
+            />
           </div>
-          <Stats stats={stats} />
+          <div className="fade-in fade-in-delay-1">
+            <Subtext
+              text="One powerful CRM, our own licensed tradies, and complete automation—Rentalease is
+the all-in-one solution built for modern property management."
+            />
+          </div>
+          <div className="fade-in fade-in-delay-2">
+            <Button href="/book-now" fullWidth={false}>
+              Book a Demo
+            </Button>
+            <SecondaryButton style={{ marginLeft: "1rem" }}>
+              Get Started Today
+            </SecondaryButton>
+          </div>
+          <div className="fade-in fade-in-delay-3">
+            <Stats stats={stats} />
+          </div>
         </div>
       </section>
     </div>

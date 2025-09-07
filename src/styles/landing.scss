@@ -91,6 +91,7 @@
       position: absolute;
       inset: 0;
       background: url("/img-14.jpg");
+      background-attachment: fixed;
       background-repeat: no-repeat;
       background-size: cover;
       background-position: 0 0;
@@ -156,6 +157,25 @@
     padding-right: 0.5rem;
     position: relative;
     z-index: 1;
+
+    // Fade-in animation classes
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    .fade-in-delay-1 {
+      animation-delay: 0.2s;
+    }
+
+    .fade-in-delay-2 {
+      animation-delay: 0.4s;
+    }
+
+    .fade-in-delay-3 {
+      animation-delay: 0.6s;
+    }
 
     // Subtle purplish glow effect around the whole content
     &::before {
@@ -698,4 +718,16 @@
 .compliance-logo-section {
   background-color: #ffffff;
   text-align: center !important;
+}
+
+// Fade-in animation keyframes
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
