@@ -144,18 +144,6 @@ const HowRentaleaseWorks = () => {
                   </div>
                 </div>
               </FadeInAnimation>
-              {index < steps.length - 1 && (
-                <FadeInAnimation
-                  index={index}
-                  duration={0.6}
-                  delay={0.5}
-                  yindex={0}
-                >
-                  <div className={styles.connector}>
-                    <div className={styles.arrow}></div>
-                  </div>
-                </FadeInAnimation>
-              )}
             </React.Fragment>
           ))}
         </div>
