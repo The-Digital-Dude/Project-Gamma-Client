@@ -1,35 +1,9 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import styles from "./WhyRentalease.module.scss";
 import PillText from "@/components/PillText/PillText";
+import FadeInAnimation from "@/components/Animations/FadeInAnimation";
 
 const WhyRentalease = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px",
-      }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
-
   const highlights = [
     {
       icon: (
@@ -101,7 +75,7 @@ const WhyRentalease = () => {
   ];
 
   return (
-    <section ref={sectionRef} className={styles.whyRentalease}>
+    <section className={styles.whyRentalease}>
       <div className={styles.container}>
         <div style={{ textAlign: "center" }}>
           <PillText text="Why Rentalease" />
@@ -112,16 +86,21 @@ const WhyRentalease = () => {
 
         <div className={styles.highlights}>
           {highlights.map((highlight, index) => (
-            <div
+            <FadeInAnimation
               key={index}
-              className={`${styles.card} ${isVisible ? styles.animate : ""} ${
-                styles[`delay-${index}`]
-              }`}
+              index={index}
+              duration={0.6}
+              delay={0.2}
+              yindex={30}
             >
-              <div className={styles.iconWrapper}>{highlight.icon}</div>
-              <h3 className={styles.cardTitle}>{highlight.title}</h3>
-              <p className={styles.cardDescription}>{highlight.description}</p>
-            </div>
+              <div className={styles.card}>
+                <div className={styles.iconWrapper}>{highlight.icon}</div>
+                <h3 className={styles.cardTitle}>{highlight.title}</h3>
+                <p className={styles.cardDescription}>
+                  {highlight.description}
+                </p>
+              </div>
+            </FadeInAnimation>
           ))}
         </div>
       </div>

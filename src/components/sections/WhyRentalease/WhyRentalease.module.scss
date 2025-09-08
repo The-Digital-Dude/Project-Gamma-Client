@@ -2,11 +2,6 @@
 
 .whyRentalease {
   padding: 6rem 2rem;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.95) 0%,
-    rgba(248, 250, 252, 0.9) 100%
-  );
   position: relative;
   overflow: hidden;
 
@@ -68,6 +63,7 @@
   }
 
   .card {
+    height: 100%;
     background: rgba(255, 255, 255, 0.8);
     border: 1px solid rgba(2, 73, 116, 0.1);
     border-radius: 1rem;
@@ -178,34 +174,7 @@
     }
   }
 
-  // Scroll-triggered animations
-  .card {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-
-    &.animate {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    // Sequential delay classes
-    &.delay-0 {
-      transition-delay: 0s;
-    }
-
-    &.delay-1 {
-      transition-delay: 0.3s;
-    }
-
-    &.delay-2 {
-      transition-delay: 0.6s;
-    }
-
-    &.delay-3 {
-      transition-delay: 0.9s;
-    }
-  }
+  // Animation is now handled by Framer Motion
 
   // Icon bounce animation on scroll
   .card:hover .iconWrapper svg {
@@ -243,14 +212,5 @@
 
 // Scroll-triggered animations (will be enhanced with Intersection Observer)
 @media (prefers-reduced-motion: no-preference) {
-  .card {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .card.animate {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  // Animation is now handled by Framer Motion
 }

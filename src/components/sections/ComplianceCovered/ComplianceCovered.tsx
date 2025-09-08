@@ -1,34 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import styles from "./ComplianceCovered.module.scss";
+import FadeInAnimation from "@/components/Animations/FadeInAnimation";
 
 const ComplianceCovered = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px",
-      }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
-
   const services = [
     {
       icon: (
@@ -131,10 +105,7 @@ const ComplianceCovered = () => {
   ];
 
   return (
-    <section
-      ref={sectionRef}
-      className={`${styles.complianceCovered} accent-background--3`}
-    >
+    <section className={`${styles.complianceCovered} icons-bg--1`}>
       <div className={styles.container}>
         <div className={styles.header}>
           <h2 className={styles.headline}>Compliance Covered, Always</h2>
@@ -146,16 +117,30 @@ const ComplianceCovered = () => {
 
         <div className={styles.services}>
           {services.map((service, index) => (
-            <div
+            <FadeInAnimation
               key={index}
-              className={`${styles.serviceCard} ${
-                isVisible ? styles.animate : ""
-              } ${styles[`delay-${index}`]}`}
+              index={index}
+              duration={0.8}
+              delay={0.2}
+              yindex={30}
             >
-              <div className={styles.iconWrapper}>{service.icon}</div>
-              <h3 className={styles.serviceTitle}>{service.title}</h3>
-              <p className={styles.serviceDescription}>{service.description}</p>
-            </div>
+              <div
+                className={styles.serviceCard}
+                style={{ transition: "transform 0.3s ease-out" }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.transform = "translateY(-12px)")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.transform = "translateY(0)")
+                }
+              >
+                <div className={styles.iconWrapper}>{service.icon}</div>
+                <h3 className={styles.serviceTitle}>{service.title}</h3>
+                <p className={styles.serviceDescription}>
+                  {service.description}
+                </p>
+              </div>
+            </FadeInAnimation>
           ))}
         </div>
       </div>

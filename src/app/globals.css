@@ -99,6 +99,11 @@
   padding-top: 160px;
 }
 
+.icons-bg--1 {
+  position: relative;
+  overflow: hidden;
+}
+
 .icons-bg--1::before {
   content: "";
   position: absolute;

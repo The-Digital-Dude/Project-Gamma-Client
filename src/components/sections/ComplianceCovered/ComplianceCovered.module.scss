@@ -2,11 +2,7 @@
 
 .complianceCovered {
   padding: 6rem 2rem;
-  background: linear-gradient(
-    135deg,
-    rgba(2, 73, 116, 0.02) 0%,
-    rgba(255, 255, 255, 0.95) 100%
-  );
+  background: linear-gradient(135deg, #024974 0%, #02598d 100%);
   position: relative;
   overflow: hidden;
 
@@ -41,7 +37,7 @@
     .headline {
       font-size: 2.5rem;
       font-weight: 700;
-      color: $primary-color;
+      color: whitesmoke;
       margin: 0 0 1rem 0;
       line-height: 1.2;
 
@@ -56,7 +52,7 @@
 
     .body {
       font-size: 1.2rem;
-      color: #666;
+      color: rgb(228, 228, 228);
       line-height: 1.6;
       margin: 0;
       max-width: 600px;
@@ -86,37 +82,16 @@
     border-radius: 1rem;
     padding: 2.5rem 2rem;
     text-align: center;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 300ms ease-in-out;
     position: relative;
     overflow: hidden;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     box-shadow: 0 4px 20px rgba(2, 73, 116, 0.08);
 
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(
-        90deg,
-        $primary-color,
-        lighten($primary-color, 20%)
-      );
-      transform: scaleX(0);
-      transition: transform 0.3s ease;
-    }
-
     &:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 40px rgba(2, 73, 116, 0.15);
       border-color: rgba(2, 73, 116, 0.2);
-
-      &::before {
-        transform: scaleX(1);
-      }
+      background: rgba(255, 255, 255, 0.95);
 
       .iconWrapper {
         transform: scale(1.1);
@@ -200,34 +175,7 @@
     }
   }
 
-  // Scroll-triggered animations
-  .serviceCard {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-
-    &.animate {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    // Sequential delay classes
-    &.delay-0 {
-      transition-delay: 0s;
-    }
-
-    &.delay-1 {
-      transition-delay: 0.3s;
-    }
-
-    &.delay-2 {
-      transition-delay: 0.6s;
-    }
-
-    &.delay-3 {
-      transition-delay: 0.9s;
-    }
-  }
+  // Hover effects are now handled by Framer Motion
 }
 
 // Keyframe animations

@@ -202,9 +202,9 @@ const Navbar: React.FC = () => {
       <nav className="navbar desktop-navbar">
         <div className="navbar__container">
           {/* Logo */}
-          <a href="/">
+          <Link href="/">
             <img style={{ width: "100px" }} src="/rentalease-logo.png" alt="" />
-          </a>
+          </Link>
 
           {/* Navigation Links */}
           <ul className="navbar__links">
