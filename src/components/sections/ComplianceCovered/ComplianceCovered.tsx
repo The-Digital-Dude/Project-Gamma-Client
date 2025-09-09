@@ -2,7 +2,19 @@ import React from "react";
 import styles from "./ComplianceCovered.module.scss";
 import FadeInAnimation from "@/components/Animations/FadeInAnimation";
 
-const ComplianceCovered = () => {
+type Props = {
+  style?: React.CSSProperties;
+  className?: string;
+  headlineColor?: string;
+  bodyColor?: string;
+};
+
+const ComplianceCovered = ({
+  style,
+  className,
+  headlineColor,
+  bodyColor,
+}: Props) => {
   const services = [
     {
       icon: (
@@ -105,13 +117,27 @@ const ComplianceCovered = () => {
   ];
 
   return (
-    <section className={`${styles.complianceCovered} icons-bg--1`}>
+    <section
+      className={`${styles.complianceCovered} ${
+        className ? className : ""
+      }`.trim()}
+      style={style}
+    >
       <div className={styles.container}>
         <div className={styles.header}>
-          <h2 className={styles.headline}>Compliance Covered, Always</h2>
-          <p className={styles.body}>
-            Stay fully compliant with automated scheduling, reminders, and
-            professional service.
+          <h2
+            className={styles.headline}
+            style={headlineColor ? { color: headlineColor } : undefined}
+          >
+            Compliance Covered, Always
+          </h2>
+          <p
+            className={styles.body}
+            style={bodyColor ? { color: bodyColor } : undefined}
+          >
+            Stay fully compliant with scheduled checks, automated reminders, and
+            instant reporting—delivered by our licensed tradies and tracked in
+            your CRM.
           </p>
         </div>
 

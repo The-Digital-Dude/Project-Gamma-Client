@@ -1,0 +1,152 @@
+@import "@/styles/_variables";
+
+.section {
+  position: relative;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: $space-2xl;
+}
+
+.title {
+  font-size: $font-4xl;
+  font-weight: 800;
+  color: $heading-primary;
+  margin: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: $space-sm;
+  align-items: stretch;
+
+  @media (max-width: 1180px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (max-width: 720px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 520px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.grid > * {
+  height: 100%;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid $border-color;
+  border-radius: $border-radius-lg;
+  padding: $space-xl $space-lg;
+  text-align: center;
+  box-shadow: 0 6px 24px rgba(2, 73, 116, 0.08);
+  transition: box-shadow 0.2s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    box-shadow: 0 12px 36px rgba(2, 73, 116, 0.18);
+  }
+}
+
+.icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto $space-md auto;
+  color: $primary-color;
+  background: linear-gradient(
+    135deg,
+    rgba(2, 73, 116, 0.1),
+    rgba(2, 73, 116, 0.05)
+  );
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+.cardTitle {
+  font-size: $font-lg;
+  font-weight: 700;
+  color: $text-primary;
+  margin: 0 0 $space-xs 0;
+}
+.cardDesc {
+  font-size: $font-sm;
+  color: $text-secondary;
+  margin: 0;
+}
+
+// Icon animations on hover
+.card:hover .iconCalendar {
+  animation: flipCal 800ms ease-in-out;
+}
+.card:hover .iconDoc {
+  animation: unfoldDoc 700ms ease-in-out;
+}
+
+@keyframes flipCal {
+  0% {
+    transform: rotateX(0deg);
+  }
+  50% {
+    transform: rotateX(180deg);
+  }
+  100% {
+    transform: rotateX(360deg);
+  }
+}
+
+@keyframes unfoldDoc {
+  0% {
+    transform: scaleY(0.8);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scaleY(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+.mockupsRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $space-xl;
+  margin-top: $space-2xl;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.mockupScheduling,
+.mockupReporting {
+  background: #fff;
+  border: 1px solid $border-color;
+  border-radius: $border-radius-lg;
+  padding: $space-2xl;
+  text-align: center;
+  color: $text-secondary;
+  box-shadow: $shadow-lg;
+}
+
+// Additional icon hooks (can attach more keyframes later)
+.iconUser {
+}
+.iconCloud {
+}
+.iconShield {
+}

@@ -214,6 +214,9 @@ const Navbar: React.FC = () => {
             <li>
               <Link href="/about">About</Link>
             </li>
+            <li>
+              <Link href="/our-technology">Our Technology</Link>
+            </li>
             <li
               className="navbar__dropdown"
               ref={dropdownRef}
@@ -226,7 +229,7 @@ const Navbar: React.FC = () => {
                 tabIndex={0}
                 style={{ cursor: "pointer" }}
               >
-                Services
+                <Link href="/services">Services</Link>
               </p>
               {isServicesOpen && (
                 <ul
