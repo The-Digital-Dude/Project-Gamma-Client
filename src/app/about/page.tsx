@@ -25,7 +25,7 @@ import { TestimonialSlider } from "@/components/Testimonials";
 export default function AboutPage() {
   return (
     <section className="about about__born">
-      <section className="about__hero common-section">
+      <section className="about__hero common-section icons-bg--1">
         <div className="about__content container">
           <div className="img-box">
             <img src="/img-2.jpg" alt={siteConfig.name} />
@@ -34,9 +34,17 @@ export default function AboutPage() {
             <p className="sub-heading fadeInLeft">
               From Pain Points to Progress—The Rentalease Way
             </p>
-            <h2 className="fadeInLeft" style={{ marginTop: "6px" }}>
-              Born from Experience. Built for the Future.
-            </h2>
+            <div className="fadeInLeft">
+              <Headline
+                mainText="Born from"
+                boldText="Experience."
+                highlightText="Built for the Future."
+                heading="h1"
+              />
+            </div>
+            {/* <h1 className="fadeInLeft" style={{ marginTop: "6px" }}>
+                
+            </h1> */}
             <p className="slideUp">
               Founded in 2022, Rentalease set out to fix the pain points of
               property management:
@@ -132,7 +140,7 @@ export default function AboutPage() {
       </section> */}
 
       {/* Mission & Vision */}
-      <section className="about__mv common-section icons-bg--1 ">
+      <section className="about__mv common-section">
         <div className="container">
           <FadeInAnimation duration={0.6} delay={0.05}>
             <div style={{ textAlign: "center" }}>
@@ -151,11 +159,19 @@ export default function AboutPage() {
                   />
                 </div>
               </div>
-              <Heading title="Mission & Vision" heading="h3" />
+              {/* <Heading title="Mission & Vision" heading="h3" /> */}
+              <div style={{ marginBottom: "30px" }}>
+                <Headline
+                  heading="h2"
+                  boldText=""
+                  highlightText="Mission & Vision"
+                  mainText=""
+                />
+              </div>
             </div>
           </FadeInAnimation>
           <div className="about__mv-cards">
-            <FadeInAnimation duration={0.6} delay={0.05} index={0}>
+            <FadeInAnimation duration={1} delay={0.05} index={0}>
               <div className="about__mv-card">
                 <div className="about__mv-icon">
                   <MdLightbulb size={28} />
@@ -169,7 +185,7 @@ export default function AboutPage() {
                 </p>
               </div>
             </FadeInAnimation>
-            <FadeInAnimation duration={0.6} delay={0.05} index={1}>
+            <FadeInAnimation duration={0.6} delay={0.1} index={1}>
               <div className="about__mv-card">
                 <div className="about__mv-icon">
                   <MdFlag size={28} />
@@ -197,87 +213,99 @@ export default function AboutPage() {
         </div>
         <div className="container about__grid">
           {/* Who We Are */}
-          <div className="about__card accent-background--2 accent-border--2">
-            <div className="about__card-icon">
-              <MdPeople size={40} />
+          <FadeInAnimation index={0} duration={0.6} delay={0.03}>
+            <div className="about__card accent-background--2 accent-border--2">
+              <div className="about__card-icon">
+                <MdPeople size={40} />
+              </div>
+              <h2>Who We Are</h2>
+              <p>
+                We’re a team shaped by real rental experiences — as tenants and
+                landlords. Frustrated by outdated systems, we built Rentalease
+                to make renting simpler, fairer, and more human for everyone
+                involved.
+              </p>
             </div>
-            <h2>Who We Are</h2>
-            <p>
-              We’re a team shaped by real rental experiences — as tenants and
-              landlords. Frustrated by outdated systems, we built Rentalease to
-              make renting simpler, fairer, and more human for everyone
-              involved.
-            </p>
-          </div>
+          </FadeInAnimation>
 
           {/* What We Do */}
-          <div className="about__card accent-background--2 accent-border--2">
-            <div className="about__card-icon">
-              <MdBuild size={40} />
+          <FadeInAnimation index={1} duration={0.6} delay={0.06}>
+            <div className="about__card accent-background--2 accent-border--2">
+              <div className="about__card-icon">
+                <MdBuild size={40} />
+              </div>
+              <h2>What We Do</h2>
+              <p>
+                Rentalease streamlines the rental process with tools for
+                applications, communication, and compliance — helping tenants
+                and landlords manage everything with ease, from anywhere.
+              </p>
             </div>
-            <h2>What We Do</h2>
-            <p>
-              Rentalease streamlines the rental process with tools for
-              applications, communication, and compliance — helping tenants and
-              landlords manage everything with ease, from anywhere.
-            </p>
-          </div>
+          </FadeInAnimation>
 
           {/* Why Choose Us */}
-          <div className="about__card accent-background--2 accent-border--2">
-            <div className="about__card-icon">
-              <MdFavorite size={40} />
+          <FadeInAnimation index={2} duration={0.6} delay={0.09}>
+            <div className="about__card accent-background--2 accent-border--2">
+              <div className="about__card-icon">
+                <MdFavorite size={40} />
+              </div>
+              <h2>Why Choose Us</h2>
+              <p>
+                We’ve lived the pain points. That’s why we built a platform that
+                prioritizes clarity, trust, and efficiency — making renting less
+                stressful for everyone involved.
+              </p>
             </div>
-            <h2>Why Choose Us</h2>
-            <p>
-              We’ve lived the pain points. That’s why we built a platform that
-              prioritizes clarity, trust, and efficiency — making renting less
-              stressful for everyone involved.
-            </p>
-          </div>
+          </FadeInAnimation>
 
           {/* Our Core Values */}
-          <div className="about__card accent-background--2 accent-border--2 about__card--values">
-            <div className="about__card-icon">
-              <MdLightbulb size={40} />
+          <FadeInAnimation index={3} duration={0.6} delay={0.12}>
+            <div className="about__card accent-background--2 accent-border--2 about__card--values">
+              <div className="about__card-icon">
+                <MdLightbulb size={40} />
+              </div>
+              <h2>Our Core Values</h2>
+              <p>
+                Simplicity, empathy, transparency, and innovation guide
+                everything we do — from design to support. We focus on creating
+                tools people can trust and enjoy using.
+              </p>
             </div>
-            <h2>Our Core Values</h2>
-            <p>
-              Simplicity, empathy, transparency, and innovation guide everything
-              we do — from design to support. We focus on creating tools people
-              can trust and enjoy using.
-            </p>
-          </div>
+          </FadeInAnimation>
 
           {/* Our Mission */}
-          <div className="about__card accent-background--2 accent-border--2">
-            <div className="about__card-icon">
-              <MdFlag size={40} />
+          <FadeInAnimation index={4} duration={0.6} delay={0.15}>
+            <div className="about__card accent-background--2 accent-border--2">
+              <div className="about__card-icon">
+                <MdFlag size={40} />
+              </div>
+              <h2>Our Mission</h2>
+              <p>
+                To bring trust and transparency to the rental market through
+                easy-to-use tools that connect tenants and landlords in a fair,
+                respectful way.
+              </p>
             </div>
-            <h2>Our Mission</h2>
-            <p>
-              To bring trust and transparency to the rental market through
-              easy-to-use tools that connect tenants and landlords in a fair,
-              respectful way.
-            </p>
-          </div>
+          </FadeInAnimation>
 
           {/* Our Story */}
-          <div className="about__card accent-background--2 accent-border--2">
-            <div className="about__card-icon">
-              <MdHistory size={40} />
+          <FadeInAnimation index={5} duration={0.6} delay={0.18}>
+            <div className="about__card accent-background--2 accent-border--2">
+              <div className="about__card-icon">
+                <MdHistory size={40} />
+              </div>
+              <h2>Our Story</h2>
+              <p>
+                Founded in Victoria in 2022, Rentalease began with a small team
+                and a big vision: to reimagine renting with technology that puts
+                people first.
+              </p>
             </div>
-            <h2>Our Story</h2>
-            <p>
-              Founded in Victoria in 2022, Rentalease began with a small team
-              and a big vision: to reimagine renting with technology that puts
-              people first.
-            </p>
-          </div>
+          </FadeInAnimation>
         </div>
       </section>
 
-      <div className="common-section icons-bg--1">
+      <div className="common-section">
         <div className="container text-center">
           <div style={{ marginBottom: "2rem" }}>
             <Headline
