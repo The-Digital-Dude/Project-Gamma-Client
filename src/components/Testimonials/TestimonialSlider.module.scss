@@ -7,6 +7,8 @@
 
 .card {
   background: #fff;
+  /* Let flexbox control the height instead of relying on percentage */
+  height: auto;
   border-radius: 20px;
   border: 1px solid #e0e0e0;
   padding: 24px 24px 24px 24px;
@@ -15,12 +17,15 @@
   max-width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
   position: relative;
   border-top: 4px solid var(--brand-purple, #024974);
   margin: 0 auto;
   transition: box-shadow 0.2s, transform 0.2s;
   gap: 12px;
+  /* Make the card fill the slide height */
+  flex: 1 1 auto;
 }
 
 .quote {
@@ -30,15 +35,42 @@
   margin-bottom: 16px;
   font-style: normal;
   font-weight: normal;
-  text-align: left;
+  text-align: center;
 }
 
 .authorWrap {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 2px;
-  margin-top: auto;
+  margin-top: 0;
+}
+
+.stars {
+  display: flex;
+  gap: 6px;
+  color: #f5b50a;
+}
+
+.star {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.authorImageWrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.authorImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .authorName {
@@ -62,6 +94,10 @@
 .swiperWrapper {
   width: 100%;
   margin: 0 auto;
+  /* Ensure all slides in a row stretch to the same height */
+  :global(.swiper-wrapper) {
+    align-items: stretch;
+  }
 
   // Clean side-by-side layout - all slides equally visible
   :global(.swiper-slide) {
@@ -69,6 +105,9 @@
     transform: none;
     filter: none;
     transition: none;
+    /* Make each slide a flex container so its child can stretch */
+    display: flex;
+    height: auto;
   }
 
   // Remove any special styling for active/adjacent slides

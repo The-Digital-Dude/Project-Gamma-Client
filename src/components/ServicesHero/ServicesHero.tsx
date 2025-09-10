@@ -16,12 +16,7 @@ const ServicesHero = () => {
       <div className={styles.servicesHeroContainer}>
         <div className={styles.servicesHeroContent}>
           <FadeInAnimation index={0} duration={0.8} delay={0.2} yindex={30}>
-            <Headline
-              mainText="All Your Property"
-              boldText="Services."
-              highlightText="One Platform."
-              heading="h1"
-            />
+            <h1>All Your Property Services. One Platform.</h1>
           </FadeInAnimation>
 
           <FadeInAnimation index={1} duration={0.8} delay={0.4} yindex={30}>

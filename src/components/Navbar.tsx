@@ -231,7 +231,7 @@ const Navbar: React.FC = () => {
               >
                 <Link href="/services">Services</Link>
               </p>
-              {isServicesOpen && (
+              {/* {isServicesOpen && (
                 <ul
                   className="navbar__dropdown-menu"
                   onMouseEnter={!isTouch ? openDropdown : undefined}
@@ -301,7 +301,7 @@ const Navbar: React.FC = () => {
                     </ul>
                   </li>
                 </ul>
-              )}
+              )} */}
             </li>
             <li>
               <Link href="/pricing">Pricing</Link>

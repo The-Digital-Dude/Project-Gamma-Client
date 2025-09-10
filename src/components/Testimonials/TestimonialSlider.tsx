@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
   Pagination,
@@ -134,9 +135,31 @@ const TestimonialSlider: React.FC = () => {
         {testimonials.map((t, idx) => (
           <SwiperSlide key={idx} className={styles.slide}>
             <div className={styles.card}>
+              <div className={styles.stars} aria-label="5 out of 5 stars">
+                {[0, 1, 2, 3, 4].map((i) => (
+                  <svg
+                    key={i}
+                    className={styles.star}
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z" />
+                  </svg>
+                ))}
+              </div>
               <blockquote className={styles.quote}>{t.quote}</blockquote>
               <div className={styles.authorWrap}>
-                <div className={styles.authorName}>- {t.author}</div>
+                <div className={styles.authorImageWrap}>
+                  <Image
+                    src="/img-1.webp"
+                    alt={`${t.author} avatar`}
+                    width={48}
+                    height={48}
+                    className={styles.authorImage}
+                  />
+                </div>
+                <div className={styles.authorName}>{t.author}</div>
                 <div className={styles.authorRole}>{t.role}</div>
               </div>
             </div>
