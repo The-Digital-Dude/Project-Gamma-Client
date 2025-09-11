@@ -2,7 +2,7 @@
 
 .howServicesWork {
   padding: $section-padding-2xl 0;
-  background: linear-gradient(135deg, #e2e8f0f2 0%, #f1f5f9e6 100%);
+  background: $primary-color;
 }
 
 .container {
@@ -19,7 +19,7 @@
 .title {
   font-size: $font-4xl;
   font-weight: 800;
-  color: $heading-primary;
+  color: $cool-gray;
   margin: 0;
 }
 
@@ -33,11 +33,7 @@
   top: 35px;
   left: 0;
   height: 2px;
-  background: linear-gradient(
-    90deg,
-    rgba(2, 73, 116, 0.15),
-    rgba(2, 73, 116, 0.35)
-  );
+  background: rgb(181, 181, 181);
   border-radius: 2px;
 }
 
@@ -85,7 +81,7 @@
 .stepText {
   text-align: center;
   font-size: $font-sm;
-  color: $text-secondary;
+  color: rgb(208, 208, 208);
   max-width: 220px;
 }
 

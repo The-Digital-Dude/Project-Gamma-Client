@@ -40,7 +40,7 @@
 
   &__links {
     display: flex;
-    gap: 2rem;
+    gap: 5px;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -48,9 +48,33 @@
 
   &__links li a {
     text-decoration: none;
-    color: $primary-color;
+    color: #024974;
     font-weight: 500;
     font-size: 1.1rem;
+    padding: 0.45rem 0.75rem;
+    border-radius: 0.5rem;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    transition: color 0.2s ease-in-out, transform 0.2s ease-in-out,
+      box-shadow 0.2s ease-in-out;
+
+    // Animated gradient background via pseudo-element
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      z-index: -1;
+      background: linear-gradient(
+        135deg,
+        rgba(2, 72, 116, 0.423) 0%,
+        rgba(2, 72, 116, 0.748) 100%
+      );
+      opacity: 0;
+      transform: scale(0.98);
+      transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+    }
 
     svg {
       color: $primary-color;
@@ -60,11 +84,26 @@
 
   &__links li a:hover,
   &__links li a:focus {
-    background: $primary-color;
     color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 22px rgba(2, 73, 116, 0.22);
+    &::before {
+      opacity: 1;
+      transform: scale(1);
+    }
 
     svg {
       color: #fff;
+    }
+  }
+
+  // Active link state
+  &__links li a.active {
+    color: #fff;
+    box-shadow: 0 8px 22px rgba(2, 73, 116, 0.22);
+    &::before {
+      opacity: 1;
+      transform: scale(1);
     }
   }
 

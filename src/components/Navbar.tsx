@@ -4,6 +4,7 @@ import React, { useState, useRef, useEffect, useCallback } from "react";
 import { siteConfig } from "../config/site";
 import "@/styles/navbar.scss";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const serviceLinks = [
   { href: "/services/smoke-alarm", label: "Smoke Alarm" },
@@ -18,6 +19,7 @@ const rentalComplianceLinks = [
 ];
 
 const Navbar: React.FC = () => {
+  const pathname = usePathname();
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isTouch, setIsTouch] = useState(false);
@@ -203,19 +205,36 @@ const Navbar: React.FC = () => {
         <div className="navbar__container">
           {/* Logo */}
           <Link href="/">
-            <img style={{ width: "100px" }} src="/rentalease-logo.png" alt="" />
+            <img style={{ width: "150px" }} src="/rentalease-logo.png" alt="" />
           </Link>
 
           {/* Navigation Links */}
           <ul className="navbar__links">
             <li>
-              <Link href="/">Home</Link>
+              <Link
+                href="/"
+                className={pathname === "/" ? "active" : undefined}
+              >
+                Home
+              </Link>
             </li>
             <li>
-              <Link href="/about">About</Link>
+              <Link
+                href="/about"
+                className={pathname.startsWith("/about") ? "active" : undefined}
+              >
+                About
+              </Link>
             </li>
             <li>
-              <Link href="/our-technology">Our Technology</Link>
+              <Link
+                href="/our-technology"
+                className={
+                  pathname.startsWith("/our-technology") ? "active" : undefined
+                }
+              >
+                Our Technology
+              </Link>
             </li>
             <li
               className="navbar__dropdown"
@@ -229,7 +248,14 @@ const Navbar: React.FC = () => {
                 tabIndex={0}
                 style={{ cursor: "pointer" }}
               >
-                <Link href="/services">Services</Link>
+                <Link
+                  href="/services"
+                  className={
+                    pathname.startsWith("/services") ? "active" : undefined
+                  }
+                >
+                  Services
+                </Link>
               </p>
               {/* {isServicesOpen && (
                 <ul
@@ -304,13 +330,32 @@ const Navbar: React.FC = () => {
               )} */}
             </li>
             <li>
-              <Link href="/pricing">Pricing</Link>
+              <Link
+                href="/pricing"
+                className={
+                  pathname.startsWith("/pricing") ? "active" : undefined
+                }
+              >
+                Pricing
+              </Link>
             </li>
             <li>
-              <Link href="/blog">Blog</Link>
+              <Link
+                href="/blog"
+                className={pathname.startsWith("/blog") ? "active" : undefined}
+              >
+                Blog
+              </Link>
             </li>
             <li>
-              <Link href="/contact">Contact</Link>
+              <Link
+                href="/contact"
+                className={
+                  pathname.startsWith("/contact") ? "active" : undefined
+                }
+              >
+                Contact
+              </Link>
             </li>
           </ul>
 
