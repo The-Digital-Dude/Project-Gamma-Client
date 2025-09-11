@@ -1,12 +1,8 @@
-import GlassyInput from "@/components/GlassyInput/GlassyInput";
 import Headline from "@/components/Headline/Headline";
-import HeroVisual from "@/components/HeroVisual/HeroVisual";
 import Stats from "@/components/Stats/Stats";
 import Subtext from "@/components/Subtext/Subtext";
 import { Button } from "@/components/ui-elements/Button/Button";
 import { SecondaryButton } from "@/components/ui-elements/SecondaryButton";
-import { siteConfig } from "@/config/site";
-import Link from "next/link";
 import React from "react";
 
 const LandingHero = () => {

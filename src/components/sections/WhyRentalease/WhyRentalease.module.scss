@@ -12,12 +12,7 @@
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(
-      circle at center,
-      rgba(2, 73, 116, 0.03) 0%,
-      rgba(2, 73, 116, 0.01) 30%,
-      transparent 70%
-    );
+    background: linear-gradient(135deg, #e2e8f0f2 0%, #f1f5f9e6 100%);
     z-index: 0;
     pointer-events: none;
   }

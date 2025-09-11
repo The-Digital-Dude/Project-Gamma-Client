@@ -28,9 +28,7 @@ export default function Home() {
   return (
     <main className="landing">
       <LandingHero />
-      <div className="accent-background--4">
-        <HowItWorks />
-      </div>
+      <HowItWorks />
       <WhyRentalease />
       <ComplianceCovered />
       <BeyondCompliance />

@@ -438,7 +438,56 @@ const Navbar: React.FC = () => {
                 About
               </Link>
             </li>
-            <li className="mobile-menu__dropdown">
+            <li>
+              <Link
+                href="/our-technology"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  style={{ color: "currentColor" }}
+                >
+                  <path
+                    d="M12 3L13.8 7.2L18 9L13.8 10.8L12 15L10.2 10.8L6 9L10.2 7.2L12 3Z"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M4 19H20M7 16H17"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+                Our Technology
+              </Link>
+            </li>
+            <li>
+              <Link href="/services" onClick={() => setIsMobileMenuOpen(false)}>
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  style={{ color: "currentColor" }}
+                >
+                  <path
+                    d="M19.43 12.98c.04-.32.07-.65.07-.98s-.03-.66-.07-.98l2.11-1.65a.5.5 0 00.12-.64l-2-3.46a.5.5 0 00-.6-.22l-2.49 1a7.03 7.03 0 00-1.69-.98l-.38-2.65A.488.488 0 0014 2h-4a.488.488 0 00-.5.42l-.38 2.65c-.63.24-1.22.56-1.77.94l-2.49-1a.5.5 0 00-.6.22l-2 3.46a.5.5 0 00.12.64l2.11 1.65c-.05.32-.08.65-.08.99s.03.67.08.99l-2.11 1.65a.5.5 0 00-.12.64l2 3.46c.14.24.44.32.68.22l2.49-1c.53.38 1.11.7 1.74.94l.38 2.65c.05.28.27.48.5.48h4c.23 0 .45-.2.5-.48l.38-2.65c.63-.24 1.22-.56 1.77-.94l2.49 1c.24.1.54.02.68-.22l2-3.46a.5.5 0 00-.12-.64l-2.11-1.65zM12 15.5A3.5 3.5 0 1112 8.5a3.5 3.5 0 010 7z"
+                    fill="currentColor"
+                  />
+                </svg>
+                Services
+              </Link>
+            </li>
+            {/* <li className="mobile-menu__dropdown">
               <button
                 className={`mobile-menu__dropdown-toggle${
                   isMobileServicesOpen ? " active" : ""
@@ -450,7 +499,6 @@ const Navbar: React.FC = () => {
                 type="button"
               >
                 <span style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                  {/* Gear icon for Services */}
                   <svg
                     width="20"
                     height="20"
@@ -589,7 +637,7 @@ const Navbar: React.FC = () => {
                   </ul>
                 </li>
               </ul>
-            </li>
+            </li> */}
             <li>
               <Link href="/pricing" onClick={() => setIsMobileMenuOpen(false)}>
                 <svg

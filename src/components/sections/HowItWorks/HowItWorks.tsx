@@ -46,7 +46,7 @@ const HowItWorks = () => {
         </p>
         <div className={styles.stepsGrid}>
           {steps.map((step, idx) => (
-            <div className={`${styles.stepBox} accent-border--4`} key={idx}>
+            <div className={`${styles.stepBox} accent-border--2`} key={idx}>
               <div className={styles.icon}>{step.icon}</div>
               <h3 className={styles.stepTitle}>{step.title}</h3>
               <p className={styles.stepDescription}>{step.description}</p>
