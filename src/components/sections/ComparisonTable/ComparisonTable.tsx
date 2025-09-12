@@ -11,7 +11,7 @@ const ComparisonTable = () => {
         <thead>
           <tr>
             <th>Features</th>
-            <th>The Rentalease Service</th>
+            <th>The RentalEase Service</th>
             <th>Individual Tradies &amp; Contractors</th>
           </tr>
         </thead>

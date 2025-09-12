@@ -1,0 +1,108 @@
+@import "@/styles/_variables";
+
+.howPropertyCareServicesWork {
+  padding: $section-padding-2xl 0;
+  background: $primary-color;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $page-padding;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: $space-2xl;
+}
+
+.title {
+  font-size: $font-4xl;
+  font-weight: 800;
+  color: $cool-gray;
+  margin: 0;
+}
+
+.timelineWrapper {
+  position: relative;
+  margin-top: $space-2xl;
+}
+
+.connector {
+  position: absolute;
+  top: 35px;
+  left: 0;
+  height: 2px;
+  background: rgb(181, 181, 181);
+  border-radius: 2px;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: $space-lg;
+  align-items: start;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-sm;
+}
+
+.iconWrapper {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(2, 73, 116, 0.2);
+  background: white;
+  color: $primary-color;
+  position: relative;
+}
+
+.iconWrapper::after {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border-radius: 50%;
+  background: rgba(2, 73, 116, 0.08);
+}
+
+.icon svg {
+  width: 28px;
+  height: 28px;
+  z-index: 1;
+}
+
+.stepText {
+  text-align: center;
+  font-size: $font-sm;
+  color: rgb(208, 208, 208);
+  max-width: 180px;
+}
+
+@media (max-width: 1200px) {
+  .steps {
+    grid-template-columns: repeat(3, 1fr);
+    gap: $space-xl;
+  }
+  .connector {
+    display: none;
+  }
+}
+
+@media (max-width: 960px) {
+  .steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 540px) {
+  .steps {
+    grid-template-columns: 1fr;
+  }
+}

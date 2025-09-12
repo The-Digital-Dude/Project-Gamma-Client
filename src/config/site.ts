@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: "Rentalease",
+  name: "RentalEase",
   description: "Project Gamma Landing Page",
   url: "https://gamma.example.com", // Update this with your actual domain
   ogImage: "https://gamma.example.com/og.jpg", // Update this with your actual OG image

@@ -15,26 +15,50 @@ export default function PrivacyPolicyPage() {
                 This Privacy Policy governs the manner in which RentalEase Pty
                 Ltd ("RentalEase", "we", "our", or "us") collects, uses,
                 maintains and discloses information collected from users (each,
-                a "User") of the <a href="https://www.rentalease.com.au" className="privacy-policy__contact-website" target="_blank" rel="noopener noreferrer">www.rentalease.com.au</a> website ("Site"). This
-                privacy policy applies to the Site and all products and services
-                offered by RentalEase.
+                a "User") of the{" "}
+                <a
+                  href="https://www.RentalEase.com.au"
+                  className="privacy-policy__contact-website"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  www.RentalEase.com.au
+                </a>{" "}
+                website ("Site"). This privacy policy applies to the Site and
+                all products and services offered by RentalEase.
               </p>
             </div>
 
             <div className="privacy-policy__section">
               <h3 className="privacy-policy__section-title">
-              Personal identification information
+                Personal identification information
               </h3>
               <p className="privacy-policy__section-content">
-              We may collect personal identification information from Users in a variety of ways, including, but notlimited to, when Users visit our site, fill out a form, and in connection with other activities, services,features or resources we make available on our Site. Users may be asked for, as appropriate, name,email address, mailing address, phone number. Users may, however, visit our Site anonymously. Wewill collect personal identification information from Users only if they voluntarily submit such information to us. Users can always refuse to supply personally identification information, except thatit may prevent them from engaging in certain Site related activities.
+                We may collect personal identification information from Users in
+                a variety of ways, including, but notlimited to, when Users
+                visit our site, fill out a form, and in connection with other
+                activities, services,features or resources we make available on
+                our Site. Users may be asked for, as appropriate, name,email
+                address, mailing address, phone number. Users may, however,
+                visit our Site anonymously. Wewill collect personal
+                identification information from Users only if they voluntarily
+                submit such information to us. Users can always refuse to supply
+                personally identification information, except thatit may prevent
+                them from engaging in certain Site related activities.
               </p>
             </div>
             <div className="privacy-policy__section">
               <h3 className="privacy-policy__section-title">
-              Non-personal identification information
+                Non-personal identification information
               </h3>
               <p className="privacy-policy__section-content">
-              We may collect non-personal identification information about Users whenever they interact with our Site. Non-personal identification information may include the browser name, the type of computer and technical information about Users means of connection to our Site, such as the operating system and the Internet service providers utilized and other similar information.
+                We may collect non-personal identification information about
+                Users whenever they interact with our Site. Non-personal
+                identification information may include the browser name, the
+                type of computer and technical information about Users means of
+                connection to our Site, such as the operating system and the
+                Internet service providers utilized and other similar
+                information.
               </p>
             </div>
             <div className="privacy-policy__section">
@@ -42,7 +66,12 @@ export default function PrivacyPolicyPage() {
                 Web browser cookies
               </h3>
               <p className="privacy-policy__section-content">
-              Our Site may use "cookies" to enhance User experience. User's web browser places cookies on their hard drive for record-keeping purposes and sometimes to track information about them. User may choose to set their web browser to refuse cookies, or to alert you when cookies are being sent. If they do so, note that some parts of the Site may not function properly.
+                Our Site may use "cookies" to enhance User experience. User's
+                web browser places cookies on their hard drive for
+                record-keeping purposes and sometimes to track information about
+                them. User may choose to set their web browser to refuse
+                cookies, or to alert you when cookies are being sent. If they do
+                so, note that some parts of the Site may not function properly.
               </p>
             </div>
 
@@ -51,8 +80,8 @@ export default function PrivacyPolicyPage() {
                 How we use collected information
               </h3>
               <p className="privacy-policy__section-content">
-              RentalEase may collect and use Users personal information for the
-                following purposes:
+                RentalEase may collect and use Users personal information for
+                the following purposes:
               </p>
 
               <div className="privacy-policy__sub-sections">
@@ -156,25 +185,83 @@ export default function PrivacyPolicyPage() {
             <div className="privacy-policy__section">
               <h3 className="privacy-policy__section-title">Contacting Us</h3>
               <div className="privacy-policy__section-content">
-                <p>If you have any questions about this Privacy Policy, the practices of this Site, or your dealings with RentalEase, please feel free to contact us:</p>
-                <ul style={{ listStyle: "none", padding: 0, margin: "1.5rem 0 0 0" }}>
-                  <li><strong>RentalEase</strong></li>
-                  <li><strong>General Enquiries:</strong> <span className="privacy-policy__contact-email">hello@rentalease.com.au</span></li>
-                  <li><strong>Landlord Support:</strong> <span className="privacy-policy__contact-email">landlords@rentalease.com.au</span></li>
-                  <li><strong>Tenant Support:</strong> <span className="privacy-policy__contact-email">tenants@rentalease.com.au</span></li>
-                  <li><strong>Phone:</strong> <span className="privacy-policy__contact-phone">1300 RENTLEASE (1300 736 853)</span></li>
-                  <li><strong>Office Address:</strong> Melbourne, VIC, Australia</li>
-                  <li><strong>Operating Hours:</strong> Monday – Friday: 9:00 AM – 5:00 PM (AEST)</li>
-                  <li><strong>Website:</strong> <a href="https://www.rentalease.com.au" className="privacy-policy__contact-website" target="_blank" rel="noopener noreferrer">www.rentalease.com.au</a></li>
+                <p>
+                  If you have any questions about this Privacy Policy, the
+                  practices of this Site, or your dealings with RentalEase,
+                  please feel free to contact us:
+                </p>
+                <ul
+                  style={{
+                    listStyle: "none",
+                    padding: 0,
+                    margin: "1.5rem 0 0 0",
+                  }}
+                >
+                  <li>
+                    <strong>RentalEase</strong>
+                  </li>
+                  <li>
+                    <strong>General Enquiries:</strong>{" "}
+                    <span className="privacy-policy__contact-email">
+                      hello@RentalEase.com.au
+                    </span>
+                  </li>
+                  <li>
+                    <strong>Landlord Support:</strong>{" "}
+                    <span className="privacy-policy__contact-email">
+                      landlords@RentalEase.com.au
+                    </span>
+                  </li>
+                  <li>
+                    <strong>Tenant Support:</strong>{" "}
+                    <span className="privacy-policy__contact-email">
+                      tenants@RentalEase.com.au
+                    </span>
+                  </li>
+                  <li>
+                    <strong>Phone:</strong>{" "}
+                    <span className="privacy-policy__contact-phone">
+                      1300 RENTLEASE (1300 736 853)
+                    </span>
+                  </li>
+                  <li>
+                    <strong>Office Address:</strong> Melbourne, VIC, Australia
+                  </li>
+                  <li>
+                    <strong>Operating Hours:</strong> Monday – Friday: 9:00 AM –
+                    5:00 PM (AEST)
+                  </li>
+                  <li>
+                    <strong>Website:</strong>{" "}
+                    <a
+                      href="https://www.RentalEase.com.au"
+                      className="privacy-policy__contact-website"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      www.RentalEase.com.au
+                    </a>
+                  </li>
                 </ul>
               </div>
             </div>
           </div>
           <div style={{ marginTop: 48, textAlign: "center" }}>
             <nav aria-label="breadcrumb">
-              <Link href="/" style={{ color: "#1a237e", textDecoration: "underline", fontWeight: 500 }}>Home</Link>
+              <Link
+                href="/"
+                style={{
+                  color: "#1a237e",
+                  textDecoration: "underline",
+                  fontWeight: 500,
+                }}
+              >
+                Home
+              </Link>
               <span style={{ margin: "0 8px", color: "#888" }}>&gt;</span>
-              <span style={{ color: "#333", fontWeight: 500 }}>Privacy Policy</span>
+              <span style={{ color: "#333", fontWeight: 500 }}>
+                Privacy Policy
+              </span>
             </nav>
           </div>
         </div>

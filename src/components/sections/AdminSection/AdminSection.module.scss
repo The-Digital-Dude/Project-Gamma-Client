@@ -139,11 +139,16 @@
   position: relative;
   width: 100%;
   max-width: 600px;
-  height: 0;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
   border-radius: 12px;
-  overflow: hidden;
+  overflow: visible;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+  }
 
   iframe {
     position: absolute;

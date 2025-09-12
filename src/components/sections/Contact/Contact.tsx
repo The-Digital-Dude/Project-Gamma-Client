@@ -27,24 +27,26 @@ export default function Contact() {
     setIsRecaptchaVerified(!!token);
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { id, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [id]: value
+      [id]: value,
     }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!isRecaptchaVerified) {
       alert("Please complete the reCAPTCHA verification.");
       return;
     }
 
     const recaptchaToken = recaptchaRef.current?.getValue();
-    
+
     if (!recaptchaToken) {
       alert("Please complete the reCAPTCHA verification.");
       return;
@@ -53,10 +55,10 @@ export default function Contact() {
     // Here you would typically send the form data to your backend
     console.log("Form submitted:", formData);
     console.log("reCAPTCHA token:", recaptchaToken);
-    
+
     // For now, just show a success message
     alert("Thank you for your message! We'll get back to you soon.");
-    
+
     // Reset form
     setFormData({ name: "", email: "", phone: "", message: "" });
     setIsRecaptchaVerified(false);
@@ -76,36 +78,10 @@ export default function Contact() {
                 <span className="contact-info-label">General Enquiries:</span>
                 <br />
                 <a
-                  href="mailto:hello@rentalease.com.au"
+                  href="mailto:hello@RentalEase.com.au"
                   className="contact-info-link"
                 >
-                  hello@rentalease.com.au
-                </a>
-              </div>
-            </div>
-            <div className="contact-info-item">
-              <MdBusiness className="contact-info-icon" />
-              <div>
-                <span className="contact-info-label">Landlord Support:</span>
-                <br />
-                <a
-                  href="mailto:landlords@rentalease.com.au"
-                  className="contact-info-link"
-                >
-                  landlords@rentalease.com.au
-                </a>
-              </div>
-            </div>
-            <div className="contact-info-item">
-              <MdHome className="contact-info-icon" />
-              <div>
-                <span className="contact-info-label">Tenant Support:</span>
-                <br />
-                <a
-                  href="mailto:tenants@rentalease.com.au"
-                  className="contact-info-link"
-                >
-                  tenants@rentalease.com.au
+                  hello@RentalEase.com.au
                 </a>
               </div>
             </div>
@@ -207,7 +183,10 @@ export default function Contact() {
             <div className="contact-form-group recaptcha-container">
               <ReCAPTCHA
                 ref={recaptchaRef}
-                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"} // Test key for development
+                sitekey={
+                  process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ||
+                  "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+                } // Test key for development
                 onChange={handleRecaptchaChange}
               />
             </div>

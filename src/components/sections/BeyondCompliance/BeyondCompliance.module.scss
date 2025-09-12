@@ -64,17 +64,18 @@
 
   .services {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 2rem;
     margin-top: 3rem;
 
     @media (max-width: 768px) {
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(2, 1fr);
       gap: 1.5rem;
     }
   }
 
   .serviceCard {
+    height: 100%;
     background: rgba(255, 255, 255, 0.9);
     border: 1px solid rgba(2, 73, 116, 0.1);
     border-radius: 1rem;
@@ -84,6 +85,11 @@
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     box-shadow: 0 4px 20px rgba(2, 73, 116, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1.5rem;
+    min-height: 200px;
 
     &:hover {
       transform: translateY(-8px);
@@ -91,76 +97,60 @@
         0 8px 25px rgba(2, 73, 116, 0.15);
       border-color: rgba(2, 73, 116, 0.2);
 
-      .imageWrapper {
-        transform: scale(1.05);
+      .iconWrapper {
+        transform: scale(1.1);
+        background: rgba(2, 73, 116, 0.1);
       }
 
-      .imageOverlay {
-        opacity: 0.8;
+      .serviceIcon {
+        color: $primary-color;
       }
     }
 
-    .imageWrapper {
-      position: relative;
-      height: 300px;
-      overflow: hidden;
-      transition: transform 0.4s ease-out;
+    .iconWrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: rgba(2, 73, 116, 0.05);
+      margin-bottom: 1.5rem;
+      transition: all 0.3s ease;
 
-      .serviceImage {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.4s ease-out;
-      }
-
-      .imageOverlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.208);
-        opacity: 1;
-        transition: opacity 0.3s ease;
-        z-index: 1;
+      .serviceIcon {
+        font-size: 2.5rem;
+        color: $primary-color;
+        transition: all 0.3s ease;
       }
     }
 
     .content {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 2rem;
+      text-align: center;
+      flex: 1;
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
-      align-items: center;
-      text-align: center;
-      z-index: 2;
-      color: white;
-      background: linear-gradient(
-        to top,
-        rgba(0, 0, 0, 0.8) 0%,
-        rgba(0, 0, 0, 0.6) 50%,
-        transparent 100%
-      );
+      justify-content: center;
 
       .serviceTitle {
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: white;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: $primary-color;
         margin: 0;
-        line-height: 1.3;
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        line-height: 1.4;
+        text-align: center;
+
+        @media (max-width: 768px) {
+          font-size: 1rem;
+        }
       }
 
       .serviceDescription {
-        font-size: 1rem;
-        color: rgba(255, 255, 255, 0.9);
-        line-height: 1.6;
-        margin: 0;
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+        font-size: 0.9rem;
+        color: #666;
+        line-height: 1.5;
+        margin: 0.5rem 0 0 0;
+        text-align: center;
       }
     }
   }

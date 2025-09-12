@@ -28,7 +28,7 @@ const services = [
     icon: MdAttachMoney,
     iconColor: "#f59e0b",
     title: "Competitive Pricing",
-    desc: "We offer a market-leading price, backed by a price beat guarantee. As a Rentalease user, you can also conveniently pay post-job via your secure portal.",
+    desc: "We offer a market-leading price, backed by a price beat guarantee. As a RentalEase user, you can also conveniently pay post-job via your secure portal.",
   },
   {
     icon: MdGavel,
@@ -40,7 +40,7 @@ const services = [
     icon: MdBuild,
     iconColor: "#ef4444",
     title: "Seamless Repairs",
-    desc: "If an alarm is found to be faulty or expired, we will provide you with a quote for replacement from a Rentalease-approved tradesperson, backed by our best price guarantee.",
+    desc: "If an alarm is found to be faulty or expired, we will provide you with a quote for replacement from a rentalease-approved tradesperson, backed by our best price guarantee.",
   },
   {
     icon: MdVideoCall,
@@ -55,9 +55,8 @@ const ServiceOfferings = () => {
     <div className="py-50 icons-bg--1 accent-background--2">
       <div className="container">
         <section className={styles.whatWeOfferSection}>
-          <PillText text="Our Services" />
           <h2 className={styles.title}>
-            What the Rentalease Service Offers You
+            What the RentalEase Service Offers You
           </h2>
           <p className={styles.subtitle}>
             We simplify compliance management so you can focus on what matters

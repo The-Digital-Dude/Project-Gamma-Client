@@ -25,7 +25,7 @@
 }
 
 .accent-background--4 {
-  background: #f4efff !important;
+  background: #f4fdf5 !important;
 }
 
 .accent-border--1 {
@@ -41,7 +41,11 @@
 }
 
 .accent-border--4 {
-  border: 1px solid #d1bdff91 !important;
+  border: 1px solid #0c5f2833 !important;
+}
+
+.accent-border--5 {
+  border: 1px solid #0c5d2a !important;
 }
 
 .sub-heading {
@@ -124,5 +128,18 @@
 @media (max-width: 900px) {
   main {
     margin-top: 70px !important;
+  }
+}
+
+/* Responsive logo image */
+.responsive-logo-image {
+  max-width: 596px;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .responsive-logo-image {
+    width: 100% !important;
+    height: auto !important;
   }
 }

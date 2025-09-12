@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useState } from 'react';
-import { PLAN_DETAILS } from '@/config/stripe';
-import styles from './SignupForm.module.scss';
+import React, { useState } from "react";
+import { PLAN_DETAILS } from "@/config/stripe";
+import styles from "./SignupForm.module.scss";
 
 interface SignupFormProps {
-  planType: 'starter' | 'pro' | 'enterprise';
+  planType: "starter" | "pro" | "enterprise";
   onSubmit: (data: SignupFormData) => Promise<void>;
   isLoading: boolean;
   onClose: () => void;
@@ -55,36 +55,38 @@ const SignupForm: React.FC<SignupFormProps> = ({
   planType,
   onSubmit,
   isLoading,
-  onClose
+  onClose,
 }) => {
   const [formData, setFormData] = useState<SignupFormData>({
-    companyName: '',
-    abn: '',
-    contactPerson: '',
-    email: '',
-    phone: '',
-    region: '',
-    compliance: '',
-    password: '',
-    confirmPassword: '',
+    companyName: "",
+    abn: "",
+    contactPerson: "",
+    email: "",
+    phone: "",
+    region: "",
+    compliance: "",
+    password: "",
+    confirmPassword: "",
     planType,
-    billingPeriod: 'monthly'
+    billingPeriod: "monthly",
   });
 
   const [errors, setErrors] = useState<Record<string, string>>({});
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
-    
+
     // Clear error when user starts typing
     if (errors[name]) {
-      setErrors(prev => ({
+      setErrors((prev) => ({
         ...prev,
-        [name]: ''
+        [name]: "",
       }));
     }
   };
@@ -93,45 +95,47 @@ const SignupForm: React.FC<SignupFormProps> = ({
     const newErrors: Record<string, string> = {};
 
     if (!formData.companyName.trim()) {
-      newErrors.companyName = 'Company name is required';
+      newErrors.companyName = "Company name is required";
     }
 
     if (!formData.abn.trim()) {
-      newErrors.abn = 'ABN is required';
+      newErrors.abn = "ABN is required";
     } else if (!/^\d{11}$/.test(formData.abn)) {
-      newErrors.abn = 'ABN must be 11 digits';
+      newErrors.abn = "ABN must be 11 digits";
     }
 
     if (!formData.contactPerson.trim()) {
-      newErrors.contactPerson = 'Contact person is required';
+      newErrors.contactPerson = "Contact person is required";
     }
 
     if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
-    } else if (!/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(formData.email)) {
-      newErrors.email = 'Please enter a valid email';
+      newErrors.email = "Email is required";
+    } else if (
+      !/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(formData.email)
+    ) {
+      newErrors.email = "Please enter a valid email";
     }
 
     if (!formData.phone.trim()) {
-      newErrors.phone = 'Phone number is required';
+      newErrors.phone = "Phone number is required";
     }
 
     if (!formData.region) {
-      newErrors.region = 'Please select a region';
+      newErrors.region = "Please select a region";
     }
 
     if (!formData.compliance) {
-      newErrors.compliance = 'Please select a compliance package';
+      newErrors.compliance = "Please select a compliance package";
     }
 
     if (!formData.password) {
-      newErrors.password = 'Password is required';
+      newErrors.password = "Password is required";
     } else if (formData.password.length < 8) {
-      newErrors.password = 'Password must be at least 8 characters';
+      newErrors.password = "Password must be at least 8 characters";
     }
 
     if (formData.password !== formData.confirmPassword) {
-      newErrors.confirmPassword = 'Passwords do not match';
+      newErrors.confirmPassword = "Passwords do not match";
     }
 
     setErrors(newErrors);
@@ -140,7 +144,7 @@ const SignupForm: React.FC<SignupFormProps> = ({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!validateForm()) {
       return;
     }
@@ -148,7 +152,7 @@ const SignupForm: React.FC<SignupFormProps> = ({
     try {
       await onSubmit(formData);
     } catch (error) {
-      console.error('Form submission error:', error);
+      console.error("Form submission error:", error);
     }
   };
 
@@ -159,7 +163,9 @@ const SignupForm: React.FC<SignupFormProps> = ({
       <div className={styles.signupModal}>
         <div className={styles.signupModalHeader}>
           <h2>Start Your RentalEase Journey</h2>
-          <p>Sign up for the <strong>{selectedPlan.name}</strong></p>
+          <p>
+            Sign up for the <strong>{selectedPlan.name}</strong>
+          </p>
           <button className={styles.closeButton} onClick={onClose}>
             ×
           </button>
@@ -170,7 +176,9 @@ const SignupForm: React.FC<SignupFormProps> = ({
             <h3>{selectedPlan.name}</h3>
             <div className={styles.planPrice}>
               <span className={styles.amount}>{selectedPlan.price}</span>
-              {selectedPlan.period && <span className={styles.period}>/{selectedPlan.period}</span>}
+              {selectedPlan.period && (
+                <span className={styles.period}>/{selectedPlan.period}</span>
+              )}
             </div>
             <ul className={styles.planFeatures}>
               {selectedPlan.features.map((feature, index) => (
@@ -182,7 +190,7 @@ const SignupForm: React.FC<SignupFormProps> = ({
           <form onSubmit={handleSubmit} className={styles.signupForm}>
             <div className={styles.formSection}>
               <h4>Company Information</h4>
-              
+
               <div className={styles.formGroup}>
                 <label htmlFor="companyName">Company Name *</label>
                 <input
@@ -191,9 +199,13 @@ const SignupForm: React.FC<SignupFormProps> = ({
                   name="companyName"
                   value={formData.companyName}
                   onChange={handleChange}
-                  className={errors.companyName ? styles.error : ''}
+                  className={errors.companyName ? styles.error : ""}
                 />
-                {errors.companyName && <span className={styles.errorMessage}>{errors.companyName}</span>}
+                {errors.companyName && (
+                  <span className={styles.errorMessage}>
+                    {errors.companyName}
+                  </span>
+                )}
               </div>
 
               <div className={styles.formGroup}>
@@ -206,9 +218,11 @@ const SignupForm: React.FC<SignupFormProps> = ({
                   onChange={handleChange}
                   placeholder="11 digit ABN"
                   maxLength={11}
-                  className={errors.abn ? styles.error : ''}
+                  className={errors.abn ? styles.error : ""}
                 />
-                {errors.abn && <span className={styles.errorMessage}>{errors.abn}</span>}
+                {errors.abn && (
+                  <span className={styles.errorMessage}>{errors.abn}</span>
+                )}
               </div>
 
               <div className={styles.formGroup}>
@@ -219,9 +233,13 @@ const SignupForm: React.FC<SignupFormProps> = ({
                   name="contactPerson"
                   value={formData.contactPerson}
                   onChange={handleChange}
-                  className={errors.contactPerson ? styles.error : ''}
+                  className={errors.contactPerson ? styles.error : ""}
                 />
-                {errors.contactPerson && <span className={styles.errorMessage}>{errors.contactPerson}</span>}
+                {errors.contactPerson && (
+                  <span className={styles.errorMessage}>
+                    {errors.contactPerson}
+                  </span>
+                )}
               </div>
 
               <div className={styles.formRow}>
@@ -233,9 +251,11 @@ const SignupForm: React.FC<SignupFormProps> = ({
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className={errors.email ? styles.error : ''}
+                    className={errors.email ? styles.error : ""}
                   />
-                  {errors.email && <span className={styles.errorMessage}>{errors.email}</span>}
+                  {errors.email && (
+                    <span className={styles.errorMessage}>{errors.email}</span>
+                  )}
                 </div>
 
                 <div className={styles.formGroup}>
@@ -246,9 +266,11 @@ const SignupForm: React.FC<SignupFormProps> = ({
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className={errors.phone ? styles.error : ''}
+                    className={errors.phone ? styles.error : ""}
                   />
-                  {errors.phone && <span className={styles.errorMessage}>{errors.phone}</span>}
+                  {errors.phone && (
+                    <span className={styles.errorMessage}>{errors.phone}</span>
+                  )}
                 </div>
               </div>
 
@@ -260,14 +282,18 @@ const SignupForm: React.FC<SignupFormProps> = ({
                     name="region"
                     value={formData.region}
                     onChange={handleChange}
-                    className={errors.region ? styles.error : ''}
+                    className={errors.region ? styles.error : ""}
                   >
                     <option value="">Select Region</option>
-                    {REGIONS.map(region => (
-                      <option key={region} value={region}>{region}</option>
+                    {REGIONS.map((region) => (
+                      <option key={region} value={region}>
+                        {region}
+                      </option>
                     ))}
                   </select>
-                  {errors.region && <span className={styles.errorMessage}>{errors.region}</span>}
+                  {errors.region && (
+                    <span className={styles.errorMessage}>{errors.region}</span>
+                  )}
                 </div>
 
                 <div className={styles.formGroup}>
@@ -277,21 +303,27 @@ const SignupForm: React.FC<SignupFormProps> = ({
                     name="compliance"
                     value={formData.compliance}
                     onChange={handleChange}
-                    className={errors.compliance ? styles.error : ''}
+                    className={errors.compliance ? styles.error : ""}
                   >
                     <option value="">Select Package</option>
-                    {COMPLIANCE_OPTIONS.map(option => (
-                      <option key={option} value={option}>{option}</option>
+                    {COMPLIANCE_OPTIONS.map((option) => (
+                      <option key={option} value={option}>
+                        {option}
+                      </option>
                     ))}
                   </select>
-                  {errors.compliance && <span className={styles.errorMessage}>{errors.compliance}</span>}
+                  {errors.compliance && (
+                    <span className={styles.errorMessage}>
+                      {errors.compliance}
+                    </span>
+                  )}
                 </div>
               </div>
             </div>
 
             <div className={styles.formSection}>
               <h4>Account Security</h4>
-              
+
               <div className={styles.formGroup}>
                 <label htmlFor="password">Password *</label>
                 <input
@@ -300,9 +332,11 @@ const SignupForm: React.FC<SignupFormProps> = ({
                   name="password"
                   value={formData.password}
                   onChange={handleChange}
-                  className={errors.password ? styles.error : ''}
+                  className={errors.password ? styles.error : ""}
                 />
-                {errors.password && <span className={styles.errorMessage}>{errors.password}</span>}
+                {errors.password && (
+                  <span className={styles.errorMessage}>{errors.password}</span>
+                )}
               </div>
 
               <div className={styles.formGroup}>
@@ -313,9 +347,13 @@ const SignupForm: React.FC<SignupFormProps> = ({
                   name="confirmPassword"
                   value={formData.confirmPassword}
                   onChange={handleChange}
-                  className={errors.confirmPassword ? styles.error : ''}
+                  className={errors.confirmPassword ? styles.error : ""}
                 />
-                {errors.confirmPassword && <span className={styles.errorMessage}>{errors.confirmPassword}</span>}
+                {errors.confirmPassword && (
+                  <span className={styles.errorMessage}>
+                    {errors.confirmPassword}
+                  </span>
+                )}
               </div>
             </div>
 
@@ -325,16 +363,20 @@ const SignupForm: React.FC<SignupFormProps> = ({
                 className={styles.submitButton}
                 disabled={isLoading}
               >
-                {isLoading ? 'Processing...' : 'Continue to Payment'}
+                {isLoading ? "Processing..." : "Continue to Payment"}
               </button>
             </div>
 
             <p className={styles.termsText}>
-              By continuing, you agree to our{' '}
-              <a href="/terms-of-service" target="_blank">Terms of Service</a>
-              {' '}and{' '}
-              <a href="/privacy-policy" target="_blank">Privacy Policy</a>.
-              You'll start with a 14-day free trial.
+              By continuing, you agree to our{" "}
+              <a href="/terms-of-service" target="_blank">
+                Terms of Service
+              </a>{" "}
+              and{" "}
+              <a href="/privacy-policy" target="_blank">
+                Privacy Policy
+              </a>
+              . You'll start with a 14-day free trial.
             </p>
           </form>
         </div>

@@ -20,11 +20,6 @@ import MarqueeCards from "@/components/MarqueeCards";
 import Image from "next/image";
 import Heading from "@/components/ui-elements/Heading/Heading";
 export default function Home() {
-  const handleAiCallConfirm = () => {
-    // Handle AI call confirmation
-    console.log("Starting AI support call...");
-    // Add your AI call logic here
-  };
   return (
     <main className="landing">
       <LandingHero />
@@ -36,7 +31,7 @@ export default function Home() {
       <BuiltForEveryone />
       <SmartSystemBehind />
       <Benefits />
-      <MarqueeCards />
+      {/* <MarqueeCards /> */}
       <div className="common-section icons-bg--1">
         <div className="container text-center">
           <div style={{ marginBottom: "2rem" }}>
@@ -51,11 +46,10 @@ export default function Home() {
         </div>
       </div>
 
-      <FinalCTA />
-
-      {/* <div className="accent-background--2">
+      <div className="accent-background--2">
         <AdminSection />
-      </div> */}
+      </div>
+      <FinalCTA />
       <div className="compliance-logo-section common-section">
         <div className="container">
           <Heading
@@ -69,10 +63,14 @@ export default function Home() {
             alt="Hero Background Pattern"
             width={596}
             height={85}
+            style={{
+              width: "100%",
+              height: "auto",
+            }}
+            className="responsive-logo-image"
           />
         </div>
       </div>
-      <AiSupportPopup />
     </main>
   );
 }

@@ -123,27 +123,27 @@ const HowRentaleaseWorks = () => {
     <section className={styles.howRentaleaseWorks}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <h2 className={styles.headline}>How Rentalease Works</h2>
+          <h2 className={styles.headline}>How RentalEase Works</h2>
         </div>
 
         <div className={styles.timeline}>
           {steps.map((step, index) => (
             <React.Fragment key={index}>
-              <FadeInAnimation
+              {/* <FadeInAnimation
                 index={index}
                 duration={0.8}
                 delay={0.3}
                 yindex={50}
-              >
-                <div className={styles.step}>
-                  <div className={styles.stepNumber}>{step.number}</div>
-                  <div className={styles.stepIcon}>{step.icon}</div>
-                  <div className={styles.stepContent}>
-                    <h3 className={styles.stepTitle}>{step.title}</h3>
-                    <p className={styles.stepDescription}>{step.description}</p>
-                  </div>
+              > */}
+              <div className={styles.step}>
+                <div className={styles.stepNumber}>{step.number}</div>
+                <div className={styles.stepIcon}>{step.icon}</div>
+                <div className={styles.stepContent}>
+                  <h3 className={styles.stepTitle}>{step.title}</h3>
+                  <p className={styles.stepDescription}>{step.description}</p>
                 </div>
-              </FadeInAnimation>
+              </div>
+              {/* </FadeInAnimation> */}
             </React.Fragment>
           ))}
         </div>

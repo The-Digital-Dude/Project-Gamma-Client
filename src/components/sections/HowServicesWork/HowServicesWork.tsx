@@ -110,7 +110,7 @@ const HowServicesWork = () => {
     <section className={styles.howServicesWork}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <h2 className={styles.title}>How Services Work Through Rentalease</h2>
+          <h2 className={styles.title}>How Services Work Through RentalEase</h2>
         </div>
 
         <div className={styles.timelineWrapper}>

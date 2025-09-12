@@ -205,7 +205,7 @@ const Navbar: React.FC = () => {
         <div className="navbar__container">
           {/* Logo */}
           <Link href="/">
-            <img style={{ width: "150px" }} src="/rentalease-logo.png" alt="" />
+            <img style={{ width: "250px" }} src="/rentalease-logo.png" alt="" />
           </Link>
 
           {/* Navigation Links */}
@@ -249,7 +249,7 @@ const Navbar: React.FC = () => {
                 style={{ cursor: "pointer" }}
               >
                 <Link
-                  href="/services"
+                  href="#"
                   className={
                     pathname.startsWith("/services") ? "active" : undefined
                   }
@@ -257,16 +257,23 @@ const Navbar: React.FC = () => {
                   Services
                 </Link>
               </p>
-              {/* {isServicesOpen && (
+              {isServicesOpen && (
                 <ul
                   className="navbar__dropdown-menu"
                   onMouseEnter={!isTouch ? openDropdown : undefined}
                   onMouseLeave={!isTouch ? closeDropdown : undefined}
                 >
                   <li>
-                    <Link href="/crm">CRM</Link>
+                    <Link href="/services/compliance-services">
+                      Compliance Services
+                    </Link>
                   </li>
-                  <li
+                  <li>
+                    <Link href="/services/property-care-services">
+                      Property Care Services
+                    </Link>
+                  </li>
+                  {/* <li
                     className="navbar__submenu-parent"
                     style={{ position: "relative" }}
                     onMouseEnter={!isTouch ? openSubmenu : undefined}
@@ -325,11 +332,11 @@ const Navbar: React.FC = () => {
                         </li>
                       ))}
                     </ul>
-                  </li>
+                  </li> */}
                 </ul>
-              )} */}
+              )}
             </li>
-            <li>
+            {/* <li>
               <Link
                 href="/pricing"
                 className={
@@ -338,15 +345,15 @@ const Navbar: React.FC = () => {
               >
                 Pricing
               </Link>
-            </li>
-            <li>
+            </li> */}
+            {/* <li>
               <Link
                 href="/blog"
                 className={pathname.startsWith("/blog") ? "active" : undefined}
               >
                 Blog
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link
                 href="/contact"
@@ -514,8 +521,8 @@ const Navbar: React.FC = () => {
                 Our Technology
               </Link>
             </li>
-            <li>
-              <Link href="/services" onClick={() => setIsMobileMenuOpen(false)}>
+            {/* <li>
+              <span onClick={() => setIsMobileMenuOpen(false)}>
                 <svg
                   width="20"
                   height="20"
@@ -530,9 +537,9 @@ const Navbar: React.FC = () => {
                   />
                 </svg>
                 Services
-              </Link>
-            </li>
-            {/* <li className="mobile-menu__dropdown">
+              </span>
+            </li> */}
+            <li className="mobile-menu__dropdown">
               <button
                 className={`mobile-menu__dropdown-toggle${
                   isMobileServicesOpen ? " active" : ""
@@ -543,7 +550,14 @@ const Navbar: React.FC = () => {
                 }}
                 type="button"
               >
-                <span style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                <span
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "1rem",
+                    color: "#024974",
+                  }}
+                >
                   <svg
                     width="20"
                     height="20"
@@ -596,94 +610,29 @@ const Navbar: React.FC = () => {
               >
                 <li>
                   <Link
-                    href="/crm"
+                    href="/services/compliance-services"
                     onClick={() => {
                       setIsMobileMenuOpen(false);
                       setIsMobileServicesOpen(false);
                     }}
                   >
-                    CRM
+                    Compliance Services
                   </Link>
                 </li>
-                <li className="mobile-menu__dropdown">
-                  <button
-                    className={`mobile-menu__dropdown-toggle${
-                      isMobileRentalComplianceOpen ? " active" : ""
-                    }`}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setIsMobileRentalComplianceOpen((open) => !open);
-                    }}
-                    type="button"
-                    style={{
-                      width: "100%",
-                      textAlign: "left",
-                      background: "none",
-                      border: "none",
-                      fontSize: "1rem",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "space-between",
-                      padding: "0.625rem 1rem 0.625rem 2.5rem",
+                <li>
+                  <Link
+                    href="/services/property-care-services"
+                    onClick={() => {
+                      setIsMobileMenuOpen(false);
+                      setIsMobileServicesOpen(false);
                     }}
                   >
-                    <span>Rental Compliance Check</span>
-                    <svg
-                      className="mobile-menu__dropdown-arrow"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      style={{
-                        marginLeft: 8,
-                        transition: "transform 0.3s",
-                        transform: isMobileRentalComplianceOpen
-                          ? "rotate(90deg)"
-                          : "rotate(0deg)",
-                        color: "currentColor",
-                      }}
-                    >
-                      <path
-                        d="M7 7l3 3 3-3"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </button>
-                  <ul
-                    id="mobile-rental-compliance-dropdown"
-                    className={`mobile-menu__dropdown-content${
-                      isMobileRentalComplianceOpen ? " active" : ""
-                    }`}
-                    style={{
-                      maxHeight: isMobileRentalComplianceOpen ? 200 : 0,
-                      transition: "max-height 0.3s ease",
-                      background: "rgba(102, 126, 234, 0.07)",
-                    }}
-                  >
-                    {rentalComplianceLinks.map((link) => (
-                      <li key={link.href}>
-                        <Link
-                          className="mobile-menu__secondary-dropdown-link"
-                          href={link.href}
-                          onClick={() => {
-                            setIsMobileMenuOpen(false);
-                            setIsMobileServicesOpen(false);
-                            setIsMobileRentalComplianceOpen(false);
-                          }}
-                        >
-                          {link.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
+                    Property Care Services
+                  </Link>
                 </li>
               </ul>
-            </li> */}
-            <li>
+            </li>
+            {/* <li>
               <Link href="/pricing" onClick={() => setIsMobileMenuOpen(false)}>
                 <svg
                   width="20"
@@ -709,8 +658,8 @@ const Navbar: React.FC = () => {
                 </svg>
                 Pricing
               </Link>
-            </li>
-            <li>
+            </li> */}
+            {/* <li>
               <Link href="/blog" onClick={() => setIsMobileMenuOpen(false)}>
                 <svg
                   width="20"
@@ -757,7 +706,7 @@ const Navbar: React.FC = () => {
                 </svg>
                 Blog
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
                 <svg

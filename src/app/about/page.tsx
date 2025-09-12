@@ -28,11 +28,11 @@ export default function AboutPage() {
       <section className="about__hero common-section icons-bg--1">
         <div className="about__content container">
           <div className="img-box">
-            <img src="/img-2.jpg" alt={siteConfig.name} />
+            <img src="/about-hero.png" alt={siteConfig.name} />
           </div>
           <div className="about__born-text">
             <p className="sub-heading fadeInLeft">
-              From Pain Points to Progress—The Rentalease Way
+              From Pain Points to Progress—The RentalEase Way
             </p>
             <div className="fadeInLeft">
               <Headline
@@ -46,7 +46,7 @@ export default function AboutPage() {
                 
             </h1> */}
             <p className="slideUp">
-              Founded in 2022, Rentalease set out to fix the pain points of
+              Founded in 2022, RentalEase set out to fix the pain points of
               property management:
             </p>
             <ul className="slideUp">
@@ -66,79 +66,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Born from Experience Section */}
-      {/* <section className="about__born common-section">
-        <div className="container about__born-grid">
-          <div className="about__born-text">
-            <p className="sub-heading fadeInLeft">
-              From Pain Points to Progress—The Rentalease Way
-            </p>
-            <h2 className="fadeInLeft" style={{ marginTop: "6px" }}>
-              Born from Experience. Built for the Future.
-            </h2>
-            <p className="slideUp">
-              Founded in 2022, Rentalease set out to fix the pain points of
-              property management:
-            </p>
-            <ul className="slideUp">
-              <li>Managers drowning in admin.</li>
-              <li>Landlords facing rising risks.</li>
-              <li>Tenants unsure about safety.</li>
-              <li>Tradies stuck with messy systems.</li>
-            </ul>
-            <p className="slideUp">
-              We built a smarter platform—powered by CRM, licensed tradies, and
-              automation—to make renting faster, safer, and easier for everyone.
-            </p>
-          </div>
-          <div className="about__born-visual">
-            <div className="split-visual">
-              <img src="/img-9.jpg" alt="Paperwork chaos" />
-              <img src="/hero-bg.jpg" alt="Clean digital dashboard" />
-            </div>
-            <div className="orbit">
-              <div className="orbit__center">
-                <img src="/rentalease-logo.svg" alt="Rentalease" />
-              </div>
-              <div className="orbit__ring">
-                <div
-                  className="orbit__item orbit__item--pm"
-                  aria-label="Property Manager"
-                >
-                  <div className="orbit__icon">
-                    <MdApartment size={22} />
-                  </div>
-                </div>
-                <div
-                  className="orbit__item orbit__item--landlord"
-                  aria-label="Landlord"
-                >
-                  <div className="orbit__icon">
-                    <MdHome size={22} />
-                  </div>
-                </div>
-                <div
-                  className="orbit__item orbit__item--tenant"
-                  aria-label="Tenant"
-                >
-                  <div className="orbit__icon">
-                    <MdPerson size={22} />
-                  </div>
-                </div>
-                <div
-                  className="orbit__item orbit__item--tradie"
-                  aria-label="Tradie"
-                >
-                  <div className="orbit__icon">
-                    <MdHandyman size={22} />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
       {/* Mission & Vision */}
       <section className="about__mv common-section">
         <div className="container">
@@ -148,10 +75,11 @@ export default function AboutPage() {
                 <div className="about__mv-tagline">
                   <Typewriter
                     phrases={[
-                      "Empowering agencies",
-                      "Protecting landlords",
-                      "Supporting tenants",
-                      "Enabling tradies",
+                      "Empowering Agencies",
+                      "Protecting Landlords",
+                      "Supporting Tenants",
+                      "Enabling Tradies",
+                      "Transforming Property Management",
                     ]}
                     typingSpeedMs={42}
                     deletingSpeedMs={28}
@@ -208,7 +136,7 @@ export default function AboutPage() {
           <Headline
             mainText="Get to Know"
             boldText=""
-            highlightText="Rentalease"
+            highlightText="RentalEase"
           />
         </div>
         <div className="container about__grid">
@@ -221,7 +149,7 @@ export default function AboutPage() {
               <h2>Who We Are</h2>
               <p>
                 We’re a team shaped by real rental experiences — as tenants and
-                landlords. Frustrated by outdated systems, we built Rentalease
+                landlords. Frustrated by outdated systems, we built RentalEase
                 to make renting simpler, fairer, and more human for everyone
                 involved.
               </p>
@@ -236,7 +164,7 @@ export default function AboutPage() {
               </div>
               <h2>What We Do</h2>
               <p>
-                Rentalease streamlines the rental process with tools for
+                RentalEase streamlines the rental process with tools for
                 applications, communication, and compliance — helping tenants
                 and landlords manage everything with ease, from anywhere.
               </p>
@@ -296,7 +224,7 @@ export default function AboutPage() {
               </div>
               <h2>Our Story</h2>
               <p>
-                Founded in Victoria in 2022, Rentalease began with a small team
+                Founded in Victoria in 2022, RentalEase began with a small team
                 and a big vision: to reimagine renting with technology that puts
                 people first.
               </p>
@@ -321,6 +249,14 @@ export default function AboutPage() {
 
       <FinalCTA />
       <div className="common-section">
+        <div className="container text-center" style={{ marginBottom: "30px" }}>
+          <Headline
+            mainText=""
+            boldText=""
+            highlightText="Recognised by Australia’s Leading Property Compliance Authorities"
+            heading="h3"
+          />
+        </div>
         <BrandCarousel />
       </div>
     </section>

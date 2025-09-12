@@ -77,11 +77,9 @@ const WhyRentalease = () => {
   return (
     <section className={styles.whyRentalease}>
       <div className={styles.container}>
-        <div style={{ textAlign: "center" }}>
-          <PillText text="Why Rentalease" />
-        </div>
+        <div style={{ textAlign: "center" }}></div>
         <div className={styles.header} style={{ marginBottom: 0 }}>
-          <h2 className={styles.headline}>Why Agencies Choose Rentalease</h2>
+          <h2 className={styles.headline}>Why Agencies Choose RentalEase</h2>
         </div>
 
         <div className={styles.highlights}>

@@ -139,8 +139,8 @@
         inset: -2px;
         background: linear-gradient(
           135deg,
-          $primary-color,
-          lighten($primary-color, 20%)
+          $logo-secondary,
+          lighten($logo-secondary, 20%)
         );
         border-radius: 50%;
         opacity: 0;

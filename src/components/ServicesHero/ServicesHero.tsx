@@ -21,7 +21,7 @@ const ServicesHero = () => {
 
           <FadeInAnimation index={1} duration={0.8} delay={0.4} yindex={30}>
             <p className={styles.servicesHeroSubheadline}>
-              From compliance to property care, Rentalease connects powerful CRM
+              From compliance to property care, RentalEase connects powerful CRM
               automation with licensed tradies—giving you a complete solution in
               one place.
             </p>

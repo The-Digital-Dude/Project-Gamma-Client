@@ -3,7 +3,7 @@
 .landing {
   background: linear-gradient(to bottom, #ffffff, #f8fafc);
   background-color: white;
-  min-height: 100vh;
+  min-height: calc(100dvh - 95px);
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -82,24 +82,42 @@
     z-index: 1;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    // width: 100%;
+    // height: 100%;
     pointer-events: auto;
-    // Background image with primary color overlay
-    &::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: url("/rentalease-banner.png");
-      background-attachment: fixed;
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: 0 0;
-      z-index: 1;
-      @media (max-width: 900px) {
-        background: #eeeeee;
+
+    // Prevent carousel slides from stacking on initial load
+    .MuiCarousel-root {
+      .MuiCarousel-slide {
+        position: absolute !important;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+
+        &.MuiCarousel-slide--active {
+          opacity: 1;
+          position: relative !important;
+        }
       }
     }
+    // Background image with primary color overlay
+    // &::before {
+    //   content: "";
+    //   position: absolute;
+    //   inset: 0;
+    //   // background: url("/rentalease-banner.png");
+    //   // background-attachment: fixed;
+    //   // background-repeat: no-repeat;
+    //   // background-size: cover;
+    //   // background-position: 0 0;
+    //   z-index: 1;
+    //   // @media (max-width: 900px) {
+    //   //   background: #eeeeee;
+    //   // }
+    // }
     // Left-side gradient overlay for improved text contrast
     &::after {
       content: "";
@@ -107,21 +125,21 @@
       inset: 0;
       z-index: 1;
       pointer-events: none;
-      background: linear-gradient(
-        90deg,
-        rgba(255, 255, 255, 1) 0%,
-        rgba(255, 255, 255, 0.75) 30%,
-        rgba(255, 255, 255, 0.38) 45%,
-        rgba(255, 255, 255, 0) 70%
-      );
-      @media (max-width: 900px) {
-        background: linear-gradient(
-          90deg,
-          rgba(255, 255, 255, 0.8) 0%,
-          rgba(255, 255, 255, 0.5) 40%,
-          rgba(255, 255, 255, 0) 80%
-        );
-      }
+      // background: linear-gradient(
+      //   90deg,
+      //   rgba(255, 255, 255, 1) 0%,
+      //   rgba(255, 255, 255, 0.75) 30%,
+      //   rgba(255, 255, 255, 0.38) 45%,
+      //   rgba(255, 255, 255, 0) 70%
+      // );
+      // @media (max-width: 900px) {
+      //   background: linear-gradient(
+      //     90deg,
+      //     rgba(255, 255, 255, 0.8) 0%,
+      //     rgba(255, 255, 255, 0.5) 40%,
+      //     rgba(255, 255, 255, 0) 80%
+      //   );
+      // }
     }
   }
 
@@ -129,15 +147,15 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    // justify-content: center;
+    justify-content: center;
     padding: 2rem 0;
     max-width: 1200px;
     margin: 0 auto;
     gap: 1.5rem;
     width: 100%;
     box-sizing: border-box;
-    min-height: 100vh;
-    padding-top: 5rem;
+    min-height: calc(100dvh - 95px);
+    // padding-top: 5rem;
 
     @media (max-width: 1024px) {
       padding: 2rem 1rem;
@@ -150,8 +168,11 @@
       padding: 2rem 1rem;
       text-align: center;
       min-height: auto;
-      padding-top: 80px;
-      padding-bottom: 100px;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+      justify-content: center;
+      width: 100%;
+      max-width: 100%;
     }
 
     // @media (max-width: 600px) {
@@ -165,17 +186,18 @@
     top: 0;
     left: 0;
     inset: 0;
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.75);
     z-index: 0;
     pointer-events: none;
   }
 
   &__content {
     // flex: 1;
-    text-align: left;
+    text-align: center;
     max-width: 500px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 1rem;
     padding-right: 0.5rem;
     position: relative;
@@ -224,12 +246,14 @@
     @media (max-width: 900px) {
       padding-right: 0;
       align-items: center;
+      max-width: 100%;
+      width: 100%;
     }
   }
 
   &__headline {
     margin-top: 0;
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     font-weight: 700;
     line-height: 1.1;
     margin-bottom: 0.5rem;
@@ -246,16 +270,16 @@
       position: relative;
       display: inline-block;
 
-      &::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 8px;
-        background: rgba($primary-color, 0.1);
-        border-radius: 4px;
-      }
+      // &::after {
+      //   content: "";
+      //   position: absolute;
+      //   bottom: 0;
+      //   left: 0;
+      //   width: 100%;
+      //   height: 8px;
+      //   background: rgba($primary-color, 0.1);
+      //   border-radius: 4px;
+      // }
     }
 
     @media (max-width: 768px) {
@@ -365,6 +389,7 @@
 
   &__stats {
     display: flex;
+    text-align: left;
     gap: 2.5rem;
     margin-top: 0.75rem;
     color: $primary-color;
@@ -374,10 +399,20 @@
       gap: 2rem;
     }
 
+    @media (max-width: 768px) {
+      gap: 1.5rem;
+    }
+
     @media (max-width: 600px) {
-      flex-direction: column;
+      // flex-direction: column;
       align-items: center;
+      flex-wrap: wrap;
       gap: 1.25rem;
+    }
+
+    @media (max-width: 480px) {
+      gap: 1rem;
+      margin-top: 0.5rem;
     }
   }
 
@@ -396,12 +431,29 @@
       font-weight: 800;
       color: $primary-color;
       line-height: 1;
+
+      @media (max-width: 768px) {
+        font-size: 2.25rem;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 1.875rem;
+      }
     }
 
     .landing__stat-label {
       font-size: 0.9375rem;
       color: $black;
       font-weight: 500;
+
+      @media (max-width: 768px) {
+        font-size: 0.875rem;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 0.8125rem;
+        text-align: center;
+      }
     }
   }
 
@@ -741,6 +793,34 @@
 .compliance-logo-section {
   background-color: #ffffff;
   text-align: center !important;
+}
+
+// Hero slide responsive backgrounds
+.hero-slide {
+  // Prevent initial stacking flash
+  &:not(:first-child) {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    background-size: cover !important;
+    background-position: center center !important;
+    background-attachment: scroll !important;
+    background-repeat: no-repeat !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  @media (max-width: 480px) {
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
 }
 
 // Fade-in animation keyframes

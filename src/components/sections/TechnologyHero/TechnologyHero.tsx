@@ -26,7 +26,7 @@ const TechnologyHero = () => {
             </FadeInAnimation>
             <FadeInAnimation index={1} duration={0.7} delay={0.25} yindex={20}>
               <p className={styles.subheadline}>
-                Rentalease isn’t just a service—it’s an advanced technology
+                RentalEase isn’t just a service—it’s an advanced technology
                 platform with CRM, automation, and reporting built in.
               </p>
             </FadeInAnimation>
@@ -48,80 +48,18 @@ const TechnologyHero = () => {
             </FadeInAnimation>
           </div>
 
-          {/* Mockup */}
+          {/* CRM Screenshot */}
           <FadeInAnimation index={0} duration={0.8} delay={0.25} yindex={30}>
-            <div className={styles.mockup}>
-              <div className={styles.mockupHeader}>
-                <div className={styles.traffic}>
-                  <span className={`${styles.dot} ${styles.red}`} />
-                  <span className={`${styles.dot} ${styles.amber}`} />
-                  <span className={`${styles.dot} ${styles.green}`} />
-                </div>
-                <span className={styles.headerNote}>Dashboard</span>
-              </div>
-
-              <div className={styles.mockupBody}>
-                <motion.div
-                  initial={{ opacity: 0, y: 12 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
-                  className={styles.graphCard}
-                >
-                  <div className={styles.graphTitle}>Compliance Graphs</div>
-                  <div className={styles.bars}>
-                    {[60, 95, 80, 45, 72].map((h, i) => (
-                      <motion.div
-                        key={i}
-                        initial={{ height: 0 }}
-                        whileInView={{ height: h }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.05 * i }}
-                        style={{
-                          width: 14,
-                          borderRadius: 6,
-                          background: i % 2 ? "#60a5fa" : "#38bdf8",
-                        }}
-                      />
-                    ))}
-                  </div>
-                </motion.div>
-
-                <div className={styles.stack}>
-                  <motion.div
-                    initial={{ opacity: 0, x: 16 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, ease: "easeOut", delay: 0.15 }}
-                    className={styles.tile}
-                  >
-                    <span className={styles.tileTitle}>Job Scheduled</span>
-                    <span className={styles.tileMeta}>12:30 PM</span>
-                  </motion.div>
-
-                  <motion.div
-                    initial={{ opacity: 0, x: 16 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, ease: "easeOut", delay: 0.25 }}
-                    className={styles.tile}
-                  >
-                    <span className={styles.tileTitle}>Completed</span>
-                    <span className={styles.tileOk}>✓</span>
-                  </motion.div>
-
-                  <motion.div
-                    initial={{ opacity: 0, x: 16 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, ease: "easeOut", delay: 0.35 }}
-                    className={styles.tile}
-                  >
-                    <span className={styles.tileTitle}>Report Ready</span>
-                    <span className={styles.tileMeta}>PDF</span>
-                  </motion.div>
-                </div>
-              </div>
+            <div className={styles.crmImage}>
+              <motion.img
+                src="/crm-ss.png"
+                alt="RentalEase CRM Dashboard"
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+                className={styles.crmScreenshot}
+              />
             </div>
           </FadeInAnimation>
         </div>

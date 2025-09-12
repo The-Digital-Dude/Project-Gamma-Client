@@ -1,16 +1,16 @@
 "use client";
 
-import React, { useEffect, useState, Suspense } from 'react';
-import { useSearchParams } from 'next/navigation';
-import Link from 'next/link';
-import styles from './subscriptionSuccess.module.scss';
+import React, { useEffect, useState, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
+import Link from "next/link";
+import styles from "./subscriptionSuccess.module.scss";
 
 const SubscriptionSuccessContent: React.FC = () => {
   const searchParams = useSearchParams();
   const [sessionId, setSessionId] = useState<string | null>(null);
 
   useEffect(() => {
-    const sessionId = searchParams.get('session_id');
+    const sessionId = searchParams.get("session_id");
     if (sessionId) {
       setSessionId(sessionId);
     }
@@ -27,7 +27,7 @@ const SubscriptionSuccessContent: React.FC = () => {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <circle cx="12" cy="12" r="10" fill="#10b981"/>
+            <circle cx="12" cy="12" r="10" fill="#10b981" />
             <path
               d="M8 12l2 2 4-4"
               stroke="#ffffff"
@@ -39,9 +39,10 @@ const SubscriptionSuccessContent: React.FC = () => {
         </div>
 
         <h1>Welcome to RentalEase!</h1>
-        
+
         <p className={styles.successMessage}>
-          🎉 Your subscription has been successfully activated! Your 14-day free trial has started.
+          🎉 Your subscription has been successfully activated! Your 14-day free
+          trial has started.
         </p>
 
         <div className={styles.nextSteps}>
@@ -50,19 +51,28 @@ const SubscriptionSuccessContent: React.FC = () => {
             <div className={styles.step}>
               <div className={styles.stepIcon}>📧</div>
               <h3>Check Your Email</h3>
-              <p>We've sent your login credentials and welcome information to your email address.</p>
+              <p>
+                We've sent your login credentials and welcome information to
+                your email address.
+              </p>
             </div>
-            
+
             <div className={styles.step}>
               <div className={styles.stepIcon}>🔐</div>
               <h3>Access Your CRM</h3>
-              <p>Use the credentials we've sent to log into your new RentalEase CRM dashboard.</p>
+              <p>
+                Use the credentials we've sent to log into your new RentalEase
+                CRM dashboard.
+              </p>
             </div>
-            
+
             <div className={styles.step}>
               <div className={styles.stepIcon}>🏢</div>
               <h3>Set Up Properties</h3>
-              <p>Start adding your properties and begin managing your portfolio efficiently.</p>
+              <p>
+                Start adding your properties and begin managing your portfolio
+                efficiently.
+              </p>
             </div>
           </div>
         </div>
@@ -72,13 +82,17 @@ const SubscriptionSuccessContent: React.FC = () => {
             <span>14-Day Free Trial</span>
           </div>
           <p>
-            Your trial includes full access to all features. You won't be charged until your trial ends.
-            You can cancel anytime from your billing settings.
+            Your trial includes full access to all features. You won't be
+            charged until your trial ends. You can cancel anytime from your
+            billing settings.
           </p>
         </div>
 
         <div className={styles.actionButtons}>
-          <Link href="http://localhost:5173/login" className={styles.primaryButton}>
+          <Link
+            href="http://localhost:5173/login"
+            className={styles.primaryButton}
+          >
             Access Your CRM Dashboard
           </Link>
           <Link href="/contact" className={styles.secondaryButton}>

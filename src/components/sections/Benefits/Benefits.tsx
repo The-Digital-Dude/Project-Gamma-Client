@@ -6,37 +6,37 @@ import Image from "next/image";
 const Benefits = () => {
   const benefits = [
     {
-      image: "/benefit-img-6.jpg",
+      image: "/save-time.png",
       title: "Saves Hours of Admin Time",
       description:
         "Our automated workflows save property managers hours of admin time, allowing them to focus on what really matters: their tenants and properties.",
     },
     {
-      image: "/benefit-img-5.jpg",
+      image: "/schedule.png",
       title: "Automated Compliance Scheduling",
       description:
         "Our automated compliance scheduling ensures that all checks are completed on time, reducing the risk of late payments and penalties.",
     },
     {
-      image: "/benefit-img-3.jpg",
+      image: "/api-integration.png",
       title: "API Integration with Leading CRMs",
       description:
         "Our API integration with leading CRMs allows you to seamlessly sync your data and automate your workflows, saving you time and effort.",
     },
     {
-      image: "/benefit-img-2.jpg",
+      image: "/invoice.png",
       title: "Instant Report & Invoice Generation",
       description:
         "Our instant report and invoice generation feature allows you to generate reports and invoices in seconds, saving you time and effort.",
     },
     {
-      image: "/benefit-img-4.jpg",
+      image: "/secure.png",
       title: "Secure, Cloud-Based Platform",
       description:
         "Our secure, cloud-based platform ensures that your data is always safe and accessible, no matter where you are.",
     },
     {
-      image: "/benefit-img-1.jpg",
+      image: "/support.png",
       title: "Local Aussie Support",
       description:
         "Our local Aussie support team is always here to help you with any questions or issues you may have, ensuring you have the best experience possible.",

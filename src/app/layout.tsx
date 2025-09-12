@@ -36,6 +36,12 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     images: [siteConfig.ogImage],
   },
+  icons: {
+    icon: [
+      { url: "/favicon.png", type: "image/png", sizes: "32x32" },
+      { url: "/favicon.png", type: "image/png", sizes: "16x16" },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -49,7 +55,7 @@ export default function RootLayout({
         <Navbar />
         <main>{children}</main>
         <Footer />
-        <AiSupportPopup />
+        {/* <AiSupportPopup /> */}
       </body>
     </html>
   );

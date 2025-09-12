@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from "react";
-import Image from "next/image";
 import styles from "./SmartSystemBehind.module.scss";
 import FadeInAnimation from "@/components/Animations/FadeInAnimation";
 
@@ -138,7 +137,7 @@ const SmartSystemBehind = () => {
               </div>
             </FadeInAnimation>
 
-            <div className={styles.cloudElements}>
+            {/* <div className={styles.cloudElements}>
               <div className={`${styles.cloud} ${styles.cloud1}`}>☁️</div>
               <div className={`${styles.cloud} ${styles.cloud2}`}>☁️</div>
               <div className={`${styles.cloud} ${styles.cloud3}`}>☁️</div>
@@ -147,7 +146,7 @@ const SmartSystemBehind = () => {
               <div className={`${styles.gear} ${styles.gear2}`}>⚙️</div>
               <div className={`${styles.arrow} ${styles.arrow1}`}>→</div>
               <div className={`${styles.arrow} ${styles.arrow2}`}>→</div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

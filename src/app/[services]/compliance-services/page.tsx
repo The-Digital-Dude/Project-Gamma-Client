@@ -21,22 +21,8 @@ export default function page({}: Props) {
         headlineColor="#024974"
         bodyColor="#000000"
       />
-      <BeyondCompliance />
       <HowServicesWork />
       <WhyRentalease />
-      <div className="common-section icons-bg--1">
-        <div className="container text-center">
-          <div style={{ marginBottom: "2rem" }}>
-            <Headline
-              mainText=""
-              boldText="Client Testimonials"
-              highlightText=""
-              heading="h2"
-            />
-          </div>
-          <TestimonialSlider />
-        </div>
-      </div>
       <FinalCTA />
     </div>
   );

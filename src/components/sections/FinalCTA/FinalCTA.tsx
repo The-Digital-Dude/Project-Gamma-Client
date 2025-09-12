@@ -17,7 +17,7 @@ const FinalCTA = () => {
 
           <FadeInAnimation duration={0.8} delay={0.4} yindex={30}>
             <p className={styles.subheadline}>
-              From compliance to complete property services, Rentalease is the
+              From compliance to complete property services, RentalEase is the
               most powerful system for modern agencies.
             </p>
           </FadeInAnimation>

@@ -22,21 +22,24 @@ const Footer = () => {
                 </div>
               </Link>
               <div className={styles.footerdescription}>
-                Rentalease is Australia's easiest way to manage rental
+                RentalEase is Australia's easiest way to manage rental
                 compliance checks—fully automated, fully connected.
               </div>
             </div>
 
             <div className={styles.footermenucell}>
               <div>Other Links</div>
-              <Link href="/services" className={styles.footerlink}>
-                Services
-              </Link>
-              <Link href="/pricing" className={styles.footerlink}>
-                Pricing
+              <Link href="/" className={styles.footerlink}>
+                Home
               </Link>
               <Link href="/about" className={styles.footerlink}>
-                About Us
+                About
+              </Link>
+              <Link href="/our-technology" className={styles.footerlink}>
+                Our Technology
+              </Link>
+              <Link href="/services" className={styles.footerlink}>
+                Services
               </Link>
               <Link href="/contact" className={styles.footerlink}>
                 Contact
@@ -87,6 +90,12 @@ const Footer = () => {
               </Link>
               <Link href="/documentation" className={styles.footerlink}>
                 Documentation
+              </Link>
+              <Link href="/privacy-policy" className={styles.footerlink}>
+                Privacy Policy
+              </Link>
+              <Link href="/terms-of-service" className={styles.footerlink}>
+                Terms of Service
               </Link>
             </div>
 
@@ -143,14 +152,14 @@ const Footer = () => {
                     />
                   </svg>
                 </div>
-                <span>hello@rentalease.com.au</span>
+                <span>hello@RentalEase.com.au</span>
               </div>
             </div>
           </div>
 
           <div className={styles.footerbottom}>
             <div className={styles.footercopyright}>
-              © 2025 Rentalease. Developed By{" "}
+              © 2025 RentalEase. Developed By{" "}
               <Link
                 href={"https://rokoautomations.com/"}
                 className={styles.footerRoko}
@@ -160,23 +169,6 @@ const Footer = () => {
             </div>
 
             <div className={styles.footlink__container}>
-              <div className={styles.footlink}>
-                <Link
-                  href="/privacy-policy"
-                  className={styles.footerlink}
-                  style={{ margin: 0 }}
-                >
-                  Privacy Policy
-                </Link>
-                <p>|</p>
-                <Link
-                  href="/terms-of-service"
-                  className={styles.footerlink}
-                  style={{ margin: 0 }}
-                >
-                  Terms of Service
-                </Link>
-              </div>
               <div className={styles.footersocial}>
                 <a
                   href="https://facebook.com"

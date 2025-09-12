@@ -17,7 +17,7 @@ const services = [
     icon: MdApi,
     iconColor: "#3b82f6",
     title: "CRM + API Integration",
-    desc: "We securely connect your CRM (like PropertyMe, Console Cloud, etc.) to Rentalease via API. This allows real-time syncing of property details, tenant information, key dates, and job history — no more double entry or spreadsheet headaches.",
+    desc: "We securely connect your CRM (like PropertyMe, Console Cloud, etc.) to RentalEase via API. This allows real-time syncing of property details, tenant information, key dates, and job history — no more double entry or spreadsheet headaches.",
   },
   {
     icon: MdEventAvailable,
@@ -41,7 +41,7 @@ const services = [
     icon: MdReceiptLong,
     iconColor: "#ef4444",
     title: "Auto-Invoicing",
-    desc: "As soon as a job is marked complete, Rentalease auto-generates the invoice, sends it to the property manager, and syncs the status with your billing system — ensuring on-time payments.",
+    desc: "As soon as a job is marked complete, RentalEase auto-generates the invoice, sends it to the property manager, and syncs the status with your billing system — ensuring on-time payments.",
   },
   {
     icon: MdLock,
@@ -54,7 +54,6 @@ const services = [
 const WhatWeOffer = () => {
   return (
     <section className={styles.whatWeOfferSection}>
-      <PillText text="CRM Features" />
       <Headline
         mainText="From Chaos to Clarity: "
         boldText=""
@@ -62,7 +61,7 @@ const WhatWeOffer = () => {
         heading="h2"
       />
       <p className={styles.subtitle}>
-        Rentalease automates, manages, and tracks all your compliance
+        RentalEase automates, manages, and tracks all your compliance
         requirements from one dashboard — saving you hours of manual work,
         reducing risk, and keeping you fully compliant.
       </p>

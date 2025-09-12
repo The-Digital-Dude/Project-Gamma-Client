@@ -51,7 +51,7 @@ export default function SmokeAlarm({}: Props) {
     {
       title: "Detailed Compliance Report",
       content: `
-        You'll receive a comprehensive audit report and compliance certificate in your Rentalease portal, outlining all work completed and confirming your property's legal compliance.
+        You'll receive a comprehensive audit report and compliance certificate in your RentalEase portal, outlining all work completed and confirming your property's legal compliance.
       `,
     },
   ];
@@ -60,7 +60,7 @@ export default function SmokeAlarm({}: Props) {
     {
       title: "How do I know when my smoke alarm inspections are due?",
       content:
-        "The Rentalease platform automatically tracks your property's compliance dates. We will send you an email and a dashboard notification well in advance of your annual due date, so you never have to worry about missing it.",
+        "The RentalEase platform automatically tracks your property's compliance dates. We will send you an email and a dashboard notification well in advance of your annual due date, so you never have to worry about missing it.",
     },
     {
       title: "Can I just check the smoke alarms myself?",
@@ -83,8 +83,8 @@ export default function SmokeAlarm({}: Props) {
     <div>
       <section className="common-section">
         <FeatureHero
-          eyebrow="Rentalease Residential"
-          title="Rentalease Smoke Alarm Inspections in Victoria"
+          eyebrow="RentalEase Residential"
+          title="RentalEase Smoke Alarm Inspections in Victoria"
           subtitle=""
           description="Ensure your property is safe and compliant with our network of friendly, accredited, and insured professionals."
           ctaText="Request Demo"
@@ -102,8 +102,8 @@ export default function SmokeAlarm({}: Props) {
       <FeatureHero
         eyebrow=""
         title="How We Can Help"
-        description="Our Integrated Smoke Alarm Compliance Service Annual smoke alarm checks are a critical and mandatory requirement for all Victorian rental properties. To make this simple, Rentalease offers a specialised, standalone smoke alarm inspection. We provide a thorough, friendly, and accredited service to meet all your compliance needs at an unbeatable rate, backed by our price beat guarantee.
-Safety and trust are our priorities. We offer full insurance on every job for complete peace of mind. All compliance documentation, including a detailed audit report and compliance certificate, is delivered directly to your Rentalease portal for easy access at any time. Should an alarm need replacement, we facilitate the entire process through our network, with quotes delivered straight to your dashboard for approval.
+        description="Our Integrated Smoke Alarm Compliance Service Annual smoke alarm checks are a critical and mandatory requirement for all Victorian rental properties. To make this simple, RentalEase offers a specialised, standalone smoke alarm inspection. We provide a thorough, friendly, and accredited service to meet all your compliance needs at an unbeatable rate, backed by our price beat guarantee.
+Safety and trust are our priorities. We offer full insurance on every job for complete peace of mind. All compliance documentation, including a detailed audit report and compliance certificate, is delivered directly to your RentalEase portal for easy access at any time. Should an alarm need replacement, we facilitate the entire process through our network, with quotes delivered straight to your dashboard for approval.
 "
         ctaText="Learn More"
         ctaLink="/docs/directory-sync"
@@ -147,7 +147,7 @@ The legislation also contains additional requirements that smoke alarm non-compl
           <div className="text-center">
             <Heading title="What we offer" heading="h3" size="md" />
             <p className="subtitle" style={{ marginBottom: "1rem" }}>
-              CheckHero we offer our clients a fully compliant, thorough,
+              RentalEase we offer our clients a fully compliant, thorough,
               friendly, and affordable service.
             </p>
           </div>
@@ -377,7 +377,7 @@ The legislation also contains additional requirements that smoke alarm non-compl
         title="Understanding New Landlord Regulations"
         subtitle="Stay Compliant with Annual Smoke Alarm Checks"
         description="Victorian legislation now requires rental providers to conduct smoke alarm checks annually. Smoke alarms must be correctly installed, of the right type, and properly maintained.
-Crucially, the legislation also defines smoke alarm non-compliance as an urgent repair. This means landlords must act immediately to rectify any faults reported by tenants. The Rentalease platform helps you manage these obligations effortlessly by providing reminders, professional servicing, and a clear audit trail."
+Crucially, the legislation also defines smoke alarm non-compliance as an urgent repair. This means landlords must act immediately to rectify any faults reported by tenants. The RentalEase platform helps you manage these obligations effortlessly by providing reminders, professional servicing, and a clear audit trail."
         ctaText="Learn More"
         ctaLink="/docs/directory-sync"
         imageSrc="/img-11.webp"
@@ -409,7 +409,7 @@ Crucially, the legislation also defines smoke alarm non-compliance as an urgent 
         <div className="container">
           <CTA
             title="Ready to Build Something"
-            highlightText="Extraordinary with Rentalease?"
+            highlightText="Extraordinary with RentalEase?"
             subtitle="Let’s create something amazing together — from strategy and setup to compliance, marketing, and results."
             buttonLabel="Contact Us"
             onButtonClick={() => {}}

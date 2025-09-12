@@ -58,7 +58,7 @@ export default function ElectricalSafety({}: Props) {
     {
       title: "Digital Compliance Report",
       content: `
-            After the inspection, you'll receive a detailed digital report and all compliance documentation directly in your Rentalease portal for easy record-keeping.
+            After the inspection, you'll receive a detailed digital report and all compliance documentation directly in your RentalEase portal for easy record-keeping.
           `,
     },
   ];
@@ -77,7 +77,7 @@ export default function ElectricalSafety({}: Props) {
     {
       title: "What do I receive once the test has been completed?",
       content:
-        "You will receive a detailed digital report in your Rentalease portal, which serves as your record of the electrical safety check. It will outline all tests performed, the results, and any recommendations or required repairs.",
+        "You will receive a detailed digital report in your RentalEase portal, which serves as your record of the electrical safety check. It will outline all tests performed, the results, and any recommendations or required repairs.",
     },
     {
       title: "Do I require an electrical safety check? If so, when?",
@@ -90,8 +90,8 @@ export default function ElectricalSafety({}: Props) {
     <div>
       <section className="common-section">
         <FeatureHero
-          eyebrow="Rentalease Residential"
-          title="Rentalease Electrical Safety Checks in Victoria"
+          eyebrow="RentalEase Residential"
+          title="RentalEase Electrical Safety Checks in Victoria"
           subtitle=""
           description="Use our network of friendly, A-Grade electricians to ensure your investment property is safe and fully compliant with all Victorian regulations."
           ctaText="Request Demo"
@@ -109,8 +109,8 @@ export default function ElectricalSafety({}: Props) {
       <FeatureHero
         eyebrow=""
         title="How We Can Help"
-        description="Our Integrated Electrical Compliance Service Recent Victorian regulations require landlords to complete electrical safety checks every two years. To make this obligation simple, Rentalease offers a specialised, standalone electrical check service. We provide a thorough, friendly, and accredited solution to meet your compliance needs at an unbeatable rate, backed by our price beat guarantee.
-Safety and trust are our priorities. We offer full insurance on every job for complete peace of mind. All compliance documentation, including the record of the check and any certificates, is delivered directly to your Rentalease portal for easy access. Should your property require any repairs to become compliant, we will facilitate quotes from our extensive network of professionals, delivered straight to your dashboard for one-click approval.
+        description="Our Integrated Electrical Compliance Service Recent Victorian regulations require landlords to complete electrical safety checks every two years. To make this obligation simple, RentalEase offers a specialised, standalone electrical check service. We provide a thorough, friendly, and accredited solution to meet your compliance needs at an unbeatable rate, backed by our price beat guarantee.
+Safety and trust are our priorities. We offer full insurance on every job for complete peace of mind. All compliance documentation, including the record of the check and any certificates, is delivered directly to your RentalEase portal for easy access. Should your property require any repairs to become compliant, we will facilitate quotes from our extensive network of professionals, delivered straight to your dashboard for one-click approval.
 "
         ctaText="Learn More"
         ctaLink="/docs/directory-sync"
@@ -137,7 +137,7 @@ Safety and trust are our priorities. We offer full insurance on every job for co
       <FeatureHero
         eyebrow=""
         title="New regulations for landlords"
-        description="Under new Victorian legislation, rental providers are periodically required to complete a variety of safety inspections, including in relation to gas and electrical services. In addition, rental providers are required to maintain a record of these inspections including, among other things, the name and registration number of the person doing the check, the date of the check and an associated compliance report. At CheckHero, you have peace of mind that all these compliance and regulatory requirements are fulfilled."
+        description="Under new Victorian legislation, rental providers are periodically required to complete a variety of safety inspections, including in relation to gas and electrical services. In addition, rental providers are required to maintain a record of these inspections including, among other things, the name and registration number of the person doing the check, the date of the check and an associated compliance report. At RentalEase, you have peace of mind that all these compliance and regulatory requirements are fulfilled."
         ctaText="⬇ Download our comprehensive electrical safety checklist"
         ctaLink=""
         imageSrc="/img-6.jpg"
@@ -152,7 +152,7 @@ Safety and trust are our priorities. We offer full insurance on every job for co
           <div className="text-center">
             <Heading title="What we offer" heading="h3" size="md" />
             <p className="subtitle" style={{ marginBottom: "1rem" }}>
-              CheckHero we offer our clients a fully compliant, thorough,
+              RentalEase we offer our clients a fully compliant, thorough,
               friendly, and affordable service.
             </p>
           </div>
@@ -436,7 +436,7 @@ Safety and trust are our priorities. We offer full insurance on every job for co
         title="Understanding New Landlord Regulations"
         subtitle="Stay Compliant with Annual Electrical Safety Checks"
         description="Under new Victorian legislation, rental providers must ensure an electrical safety check is completed for their property every two years by a licensed electrician. Furthermore, landlords are required to maintain a record of these inspections, including the name and registration number of the person who performed the check, the date of the check, and a copy of the compliance report.
-When you book through Rentalease, you have peace of mind that all these compliance and regulatory requirements are fulfilled and documented for you automatically in your portal."
+When you book through RentalEase, you have peace of mind that all these compliance and regulatory requirements are fulfilled and documented for you automatically in your portal."
         ctaText="Learn More"
         ctaLink="/docs/directory-sync"
         imageSrc="/img-7.jpg"
@@ -468,7 +468,7 @@ When you book through Rentalease, you have peace of mind that all these complian
         <div className="container">
           <CTA
             title="Ready to Build Something"
-            highlightText="Extraordinary with Rentalease?"
+            highlightText="Extraordinary with RentalEase?"
             subtitle="Let’s create something amazing together — from strategy and setup to compliance, marketing, and results."
             buttonLabel="Contact Us"
             onButtonClick={() => {}}

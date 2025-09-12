@@ -13,7 +13,7 @@ export default function TechnologyPage() {
       <TechnologyHero />
       <CoreFeatures />
       <SmartSystemBehind />
-      <Benefits />
+      {/* <Benefits /> */}
       <FinalCTA />
     </>
   );

@@ -19,7 +19,7 @@ const testimonials = [
   {
     author: "Jack Thompson",
     quote:
-      "I’ve tried a few compliance services before, but nothing matches the simplicity and reliability of Rentalease. From gas checks to electrical inspections, everything was handled professionally. I got all my certificates online without chasing anyone.",
+      "I’ve tried a few compliance services before, but nothing matches the simplicity and reliability of RentalEase. From gas checks to electrical inspections, everything was handled professionally. I got all my certificates online without chasing anyone.",
     role: "landlord",
   },
   {
@@ -31,7 +31,7 @@ const testimonials = [
   {
     author: "Liam Anderson",
     quote:
-      "I manage properties remotely and Rentalease has made it so much easier to stay on top of compliance. Everything is online—certificates, reports. Zero stress and great service",
+      "I manage properties remotely and RentalEase has made it so much easier to stay on top of compliance. Everything is online—certificates, reports. Zero stress and great service",
     role: "landlord",
   },
   {
@@ -55,7 +55,7 @@ const testimonials = [
   {
     author: "Matthew Taylor",
     quote:
-      "The pricing is fair, the communication is excellent, and the turnaround is fast. I’ve already referred two of my friends to use Rentalease",
+      "The pricing is fair, the communication is excellent, and the turnaround is fast. I’ve already referred two of my friends to use RentalEase",
     role: "landlord",
   },
   {

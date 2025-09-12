@@ -66,107 +66,21 @@
   margin-top: 1.5rem;
 }
 
-.mockup {
-  background: #fff;
-  border: 1px solid #e8eaed;
-  border-radius: 16px;
-  box-shadow: 0 20px 40px rgba(2, 73, 116, 0.08);
-  padding: 20px;
-}
-
-.mockupHeader {
+.crmImage {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  border-bottom: 1px solid #eef1f4;
-  padding-bottom: 12px;
-  margin-bottom: 16px;
 }
 
-.traffic {
-  display: flex;
-  gap: 6px;
-}
-
-.dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 999px;
-}
-.red {
-  background: #ef4444;
-}
-.amber {
-  background: #f59e0b;
-}
-.green {
-  background: #10b981;
-}
-
-.headerNote {
-  font-size: 13px;
-  color: #64748b;
-}
-
-.mockupBody {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 16px;
-  align-items: start;
+.crmScreenshot {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(2, 73, 116, 0.12);
+  border: 1px solid rgba(2, 73, 116, 0.08);
 
   @media (max-width: 960px) {
-    grid-template-columns: 1fr;
+    max-width: 100%;
   }
-}
-
-.graphCard {
-  background: #f8fafc;
-  border: 1px solid #eef1f4;
-  border-radius: 12px;
-  padding: 16px;
-}
-
-.graphTitle {
-  font-size: 13px;
-  color: #475569;
-  margin-bottom: 10px;
-}
-
-.bars {
-  display: flex;
-  gap: 8px;
-  align-items: flex-end;
-  height: 120px;
-}
-
-.stack {
-  display: grid;
-  gap: 16px;
-}
-
-.tile {
-  background: #ffffff;
-  border: 1px solid #eef1f4;
-  border-radius: 12px;
-  padding: 14px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.tileTitle {
-  color: #0f172a;
-  font-weight: 600;
-  font-size: 14px;
-}
-
-.tileMeta {
-  color: #64748b;
-  font-size: 13px;
-}
-
-.tileOk {
-  color: #10b981;
-  font-size: 13px;
-  font-weight: 700;
 }

@@ -10,7 +10,6 @@ const AdminSection = () => {
       <div className={styles.container}>
         <div className={styles.gridLayout}>
           <div className={styles.content}>
-            <PillText text="Easy Setup" />
             <h2 className={styles.title}>The Property Manager's Assistant</h2>
             <p className={styles.description}>
               Free your team from the hassle of managing compliance checks for
@@ -25,9 +24,9 @@ const AdminSection = () => {
               <Button href="/book-now">Try a live demo</Button>
             </div>
           </div>
-          <div className={styles.videoContainer}>
-            <div className={styles.videoWrapper}>
-              <iframe
+          {/* <div className={styles.videoContainer}> */}
+          {/* <div className={styles.videoWrapper}> */}
+          {/* <iframe
                 width="1097"
                 height="617"
                 src="https://www.youtube.com/embed/dQw4w9WgXcQ?list=RDdQw4w9WgXcQ"
@@ -36,7 +35,10 @@ const AdminSection = () => {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen
-              ></iframe>
+              ></iframe> */}
+          <div className={styles.videoContainer}>
+            <div className={styles.videoWrapper}>
+              <img src="/crm-ss.png" alt="" />
             </div>
           </div>
         </div>

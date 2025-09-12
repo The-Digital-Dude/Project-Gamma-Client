@@ -14,7 +14,7 @@ export default function ContactPage() {
             style={{ maxWidth: 720, margin: "0 auto" }}
           >
             Have questions about compliance, services, or technology? Our team
-            is here to help you streamline property management with Rentalease.
+            is here to help you streamline property management with RentalEase.
           </p>
         </div>
 
@@ -107,7 +107,7 @@ export default function ContactPage() {
           </a>
 
           <a
-            href="mailto:hello@rentalease.com"
+            href="mailto:hello@RentalEase.com"
             style={{
               textDecoration: "none",
               background: "#fff",
@@ -271,7 +271,7 @@ export default function ContactPage() {
                   Request a Demo
                 </h3>
                 <p style={{ margin: ".25rem 0 0", color: "#475569" }}>
-                  See Rentalease in action with a personalised walkthrough
+                  See RentalEase in action with a personalised walkthrough
                 </p>
               </div>
             </div>

@@ -1,8 +1,8 @@
 "use client";
 
-import React from 'react';
-import Link from 'next/link';
-import './subscriptionCancelled.module.scss';
+import React from "react";
+import Link from "next/link";
+import "./subscriptionCancelled.module.scss";
 
 const SubscriptionCancelledPage: React.FC = () => {
   return (
@@ -16,7 +16,7 @@ const SubscriptionCancelledPage: React.FC = () => {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <circle cx="12" cy="12" r="10" fill="#f59e0b"/>
+            <circle cx="12" cy="12" r="10" fill="#f59e0b" />
             <path
               d="M8 12h8"
               stroke="#ffffff"
@@ -27,22 +27,24 @@ const SubscriptionCancelledPage: React.FC = () => {
         </div>
 
         <h1>Subscription Cancelled</h1>
-        
+
         <p className="cancelled-message">
-          Your subscription process was cancelled. Don't worry - no payment was processed.
+          Your subscription process was cancelled. Don't worry - no payment was
+          processed.
         </p>
 
         <div className="what-happened">
           <h2>What happened?</h2>
           <p>
-            You cancelled the payment process before completion. This is completely normal and happens sometimes.
-            Your information has not been saved and no charges were made.
+            You cancelled the payment process before completion. This is
+            completely normal and happens sometimes. Your information has not
+            been saved and no charges were made.
           </p>
         </div>
 
         <div className="options">
           <h2>What would you like to do next?</h2>
-          
+
           <div className="options-grid">
             <div className="option-card">
               <div className="option-icon">🔄</div>
@@ -52,20 +54,25 @@ const SubscriptionCancelledPage: React.FC = () => {
                 View Pricing Plans
               </Link>
             </div>
-            
+
             <div className="option-card">
               <div className="option-icon">❓</div>
               <h3>Have Questions?</h3>
-              <p>Our support team is here to help with any concerns or questions.</p>
+              <p>
+                Our support team is here to help with any concerns or questions.
+              </p>
               <Link href="/contact" className="option-button secondary">
                 Contact Support
               </Link>
             </div>
-            
+
             <div className="option-card">
               <div className="option-icon">📖</div>
               <h3>Learn More</h3>
-              <p>Explore our features and see how RentalEase can help your business.</p>
+              <p>
+                Explore our features and see how RentalEase can help your
+                business.
+              </p>
               <Link href="/about" className="option-button secondary">
                 About RentalEase
               </Link>

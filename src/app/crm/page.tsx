@@ -21,31 +21,31 @@ import { Button } from "@/components/ui-elements/Button/Button";
 const CrmPage: React.FC = () => {
   const faqArray = [
     {
-      title: "What is Rentalease?",
+      title: "What is RentalEase?",
       content:
-        "Rentalease is a CRM platform designed for Australian property managers to automate and manage rental compliance checks. From tenant scheduling to tradie coordination and invoice generation, it streamlines the entire process.",
+        "RentalEase is a CRM platform designed for Australian property managers to automate and manage rental compliance checks. From tenant scheduling to tradie coordination and invoice generation, it streamlines the entire process.",
     },
     {
       title:
-        "How does Rentalease integrate with my existing property management system?",
+        "How does RentalEase integrate with my existing property management system?",
       content:
         "We connect via secure API integrations with most major property management CRMs. Our onboarding team will guide you through the setup to ensure a seamless data flow.",
     },
     {
-      title: "What types of compliance checks does Rentalease support?",
+      title: "What types of compliance checks does RentalEase support?",
       content:
         "Our platform supports checks including smoke alarms, electrical safety, gas fitting, pool safety, and other region-specific rental compliance requirements.",
     },
     {
       title: "Can I use my existing electricians or plumbers (tradies)?",
       content:
-        "Yes, you can invite and manage your preferred tradies within the Rentalease platform. They’ll receive job notifications and can upload reports directly into the system.",
+        "Yes, you can invite and manage your preferred tradies within the RentalEase platform. They’ll receive job notifications and can upload reports directly into the system.",
     },
     {
       title:
-        "Is Rentalease suitable for small property managers or only large agencies?",
+        "Is RentalEase suitable for small property managers or only large agencies?",
       content:
-        "Rentalease is scalable — whether you manage 20 properties or 2,000. Our pricing and features suit individual managers, boutique agencies, and large-scale operations.",
+        "RentalEase is scalable — whether you manage 20 properties or 2,000. Our pricing and features suit individual managers, boutique agencies, and large-scale operations.",
     },
     {
       title: "What happens after a tenant confirms a compliance appointment?",
@@ -53,19 +53,19 @@ const CrmPage: React.FC = () => {
         "Once a tenant confirms, our system automatically notifies the assigned tradie. After job completion, the tradie uploads the report, and the system generates the invoice.",
     },
     {
-      title: "Can I access Rentalease on mobile devices?",
+      title: "Can I access RentalEase on mobile devices?",
       content:
-        "Yes, Rentalease is cloud-based and mobile-responsive. A dedicated app is also in development for easier on-the-go access and real-time updates.",
+        "Yes, RentalEase is cloud-based and mobile-responsive. A dedicated app is also in development for easier on-the-go access and real-time updates.",
     },
     {
-      title: "Is my data secure with Rentalease?",
+      title: "Is my data secure with RentalEase?",
       content:
         "Absolutely. We use encrypted connections and secure Australian-based cloud storage to ensure compliance with all local data protection regulations.",
     },
     {
       title: "Do I need to train my staff to use the platform?",
       content:
-        "Not at all. Rentalease is designed to be user-friendly. We also provide onboarding assistance, training materials, and ongoing customer support.",
+        "Not at all. RentalEase is designed to be user-friendly. We also provide onboarding assistance, training materials, and ongoing customer support.",
     },
     {
       title: "How do I get started?",
@@ -169,7 +169,7 @@ Neglecting these obligations can lead to government fines, legal issues, broken 
         </div>
         {/* <div className="py-50">
           <div className="container text-center">
-            <PillText text="Contact us" />
+            
             <div style={{ marginBottom: "30px" }}>
               <Headline
                 heading="h3"

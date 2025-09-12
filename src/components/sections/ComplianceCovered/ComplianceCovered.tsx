@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import styles from "./ComplianceCovered.module.scss";
 import FadeInAnimation from "@/components/Animations/FadeInAnimation";
 
@@ -40,6 +41,7 @@ const ComplianceCovered = ({
       title: "Smoke Alarm Testing",
       description:
         "Regular testing and maintenance of smoke alarms to ensure tenant safety and compliance.",
+      href: "/services/smoke-alarm",
     },
     {
       icon: (
@@ -57,6 +59,7 @@ const ComplianceCovered = ({
       title: "Electrical Safety Inspections",
       description:
         "Comprehensive electrical safety checks to meet all regulatory requirements.",
+      href: "/services/electrical-safety",
     },
     {
       icon: (
@@ -89,6 +92,7 @@ const ComplianceCovered = ({
       title: "Gas Appliance Safety Checks",
       description:
         "Professional gas safety inspections to ensure all appliances are safe and compliant.",
+      href: "/services/gas-safety",
     },
     {
       icon: (
@@ -161,7 +165,13 @@ const ComplianceCovered = ({
                 }
               >
                 <div className={styles.iconWrapper}>{service.icon}</div>
-                <h3 className={styles.serviceTitle}>{service.title}</h3>
+                {service.href ? (
+                  <h3 className={styles.serviceTitle}>
+                    <Link href={service.href}>{service.title}</Link>
+                  </h3>
+                ) : (
+                  <h3 className={styles.serviceTitle}>{service.title}</h3>
+                )}
                 <p className={styles.serviceDescription}>
                   {service.description}
                 </p>

@@ -1,9 +1,7 @@
 import React from "react";
 import styles from "./HowItWorks.module.scss";
 import { FaPlug, FaCalendarCheck, FaClipboardCheck } from "react-icons/fa";
-import Heading from "@/components/ui-elements/Heading/Heading";
 import Headline from "@/components/Headline/Headline";
-import PillText from "@/components/PillText/PillText";
 import { Button } from "@/components/ui-elements/Button/Button";
 
 const HowItWorks = () => {
@@ -24,23 +22,24 @@ const HowItWorks = () => {
       icon: <FaClipboardCheck />,
       title: "Compliance Made Easy",
       description:
-        "Tradies complete jobs, submit reports, and Rentalease generates the invoices—automatically.",
+        "Tradies complete jobs, submit reports, and RentalEase generates the invoices—automatically.",
     },
   ];
 
   return (
     <section className="py-50">
       <div className="container text-center">
-        <PillText text="The Gap We Fill" />
-        <Headline
-          heading="h3"
-          mainText="Closing the Gap in"
-          highlightText="Property Management"
-          boldText=""
-        />
+        <div>
+          <Headline
+            heading="h3"
+            mainText="Closing the Gap in "
+            highlightText="Property Management"
+            boldText=""
+          />
+        </div>
         <p style={{ marginTop: "1rem" }}>
           Property compliance and services have always been fragmented—multiple
-          contractors, scattered reports, endless admin. Rentalease fixes that
+          contractors, scattered reports, endless admin. RentalEase fixes that
           by combining compliance, tradies, and services into one powerful,
           automated system.
         </p>

@@ -57,7 +57,7 @@ export default function GasSafety({}: Props) {
     {
       title: "Detailed Compliance Report",
       content: `
-            After the inspection, you’ll receive a full report and required compliance documentation directly in your Rentalease portal for record-keeping and peace of mind.
+            After the inspection, you’ll receive a full report and required compliance documentation directly in your RentalEase portal for record-keeping and peace of mind.
           `,
     },
   ];
@@ -66,12 +66,12 @@ export default function GasSafety({}: Props) {
     {
       title: "What happens if an appliance is deemed unsafe?",
       content:
-        "If a gas appliance fails the safety check, our technician will immediately advise on the necessary steps. We will provide you with a detailed report and a no-obligation quote for repair or replacement through your Rentalease portal.",
+        "If a gas appliance fails the safety check, our technician will immediately advise on the necessary steps. We will provide you with a detailed report and a no-obligation quote for repair or replacement through your RentalEase portal.",
     },
     {
       title: "What documentation do I receive after the check?",
       content:
-        "You will receive a detailed record of the gas safety check, outlining all tests performed and their results. This documentation is stored in your Rentalease portal and serves as your proof of compliance.",
+        "You will receive a detailed record of the gas safety check, outlining all tests performed and their results. This documentation is stored in your RentalEase portal and serves as your proof of compliance.",
     },
     {
       title: "Who is qualified to perform the gas safety check?",
@@ -89,8 +89,8 @@ export default function GasSafety({}: Props) {
     <div>
       <section className="common-section">
         <FeatureHero
-          eyebrow="Rentalease Residential"
-          title="Rentalease Gas Safety Checks in Victoria"
+          eyebrow="RentalEase Residential"
+          title="RentalEase Gas Safety Checks in Victoria"
           subtitle=""
           description="Use our network of friendly, accredited, and insured gas fitters to ensure your home is safe and fully compliant with all Victorian regulations."
           ctaText="Request Demo"
@@ -108,8 +108,8 @@ export default function GasSafety({}: Props) {
       <FeatureHero
         eyebrow=""
         title="How We Can Help"
-        description="Our Integrated Gas Compliance Service New Victorian regulations require rental providers to conduct gas safety checks every two years. To simplify this for our landlords, Rentalease offers a specialised, standalone gas check service. We provide a thorough, friendly, and accredited solution to meet your compliance needs at an unbeatable rate, backed by our price beat guarantee.
-Safety and trust are our priorities. We offer full insurance on every job for complete peace of mind. All compliance documentation, including the record of the check and any certificates, is delivered directly to your Rentalease portal for easy access. Should your property require any repairs to become compliant, we will facilitate quotes from our extensive network of professionals, delivered straight to your dashboard for one-click approval.
+        description="Our Integrated Gas Compliance Service New Victorian regulations require rental providers to conduct gas safety checks every two years. To simplify this for our landlords, RentalEase offers a specialised, standalone gas check service. We provide a thorough, friendly, and accredited solution to meet your compliance needs at an unbeatable rate, backed by our price beat guarantee.
+Safety and trust are our priorities. We offer full insurance on every job for complete peace of mind. All compliance documentation, including the record of the check and any certificates, is delivered directly to your RentalEase portal for easy access. Should your property require any repairs to become compliant, we will facilitate quotes from our extensive network of professionals, delivered straight to your dashboard for one-click approval.
 "
         ctaText="Learn More"
         ctaLink="/docs/directory-sync"
@@ -148,13 +148,13 @@ The safety checks can only be performed by a specialised class of plumbers/gas f
         eyebrowColor="$text-tertiary)"
         heading="h3"
       />
-      
+
       <div className="common-section accent-background--4">
         <div className="container">
           <div className="text-center">
             <Heading title="What we offer" heading="h3" size="md" />
             <p className="subtitle" style={{ marginBottom: "1rem" }}>
-              CheckHero we offer our clients a fully compliant, thorough,
+              RentalEase we offer our clients a fully compliant, thorough,
               friendly, and affordable service.
             </p>
           </div>
@@ -385,7 +385,7 @@ The safety checks can only be performed by a specialised class of plumbers/gas f
         title="Understanding New Landlord Regulations"
         subtitle="Stay Compliant with Annual Gas Safety Checks"
         description="Gas safety checks are a mandatory requirement for all Victorian rental properties and must be conducted every two years by a qualified professional. The legislation requires gas fitters to submit a revised safety checklist and log the check via a separate VBA portal. Rental providers will receive copies of both for their records.
-This check can only be performed by a specialised class of plumbers/gas fitters holding the Type A Servicing qualification. The Rentalease network consists exclusively of these qualified professionals, ensuring your legal obligations are always met."
+This check can only be performed by a specialised class of plumbers/gas fitters holding the Type A Servicing qualification. The RentalEase network consists exclusively of these qualified professionals, ensuring your legal obligations are always met."
         ctaText="Learn More"
         ctaLink="/docs/directory-sync"
         imageSrc="/img-9.jpg"
@@ -417,7 +417,7 @@ This check can only be performed by a specialised class of plumbers/gas fitters 
         <div className="container">
           <CTA
             title="Ready to Build Something"
-            highlightText="Extraordinary with Rentalease?"
+            highlightText="Extraordinary with RentalEase?"
             subtitle="Let’s create something amazing together — from strategy and setup to compliance, marketing, and results."
             buttonLabel="Contact Us"
             onButtonClick={() => {}}
