@@ -8,12 +8,12 @@ const BuiltForEveryone = () => {
     {
       title: "Agencies & Property Managers",
       description: "Scale portfolios without scaling admin.",
-      image: "/agency-1.png",
+      image: "/property-manager.jpeg",
     },
     {
       title: "Landlords",
       description: "Compliance and property care, fully managed.",
-      image: "/landlord-1.png",
+      image: "/landlords.png",
     },
     {
       title: "Tenants",
