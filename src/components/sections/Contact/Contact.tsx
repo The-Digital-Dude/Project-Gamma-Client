@@ -16,11 +16,14 @@ import {
 export default function Contact() {
   const [isTurnstileVerified, setIsTurnstileVerified] = useState(false);
   const [formData, setFormData] = useState({
-    name: "",
+    firstName: "",
+    lastName: "",
     email: "",
     phone: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const turnstileRef = useRef<any>(null);
 
   const handleTurnstileSuccess = (token: string) => {
@@ -53,16 +56,45 @@ export default function Contact() {
       return;
     }
 
-    // Here you would typically send the form data to your backend
-    console.log("Form submitted:", formData);
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
 
-    // For now, just show a success message
-    alert("Thank you for your message! We'll get back to you soon.");
+    try {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000';
+      const response = await fetch(`${apiUrl}/api/v1/website-leads`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          message: formData.message,
+        }),
+      });
 
-    // Reset form
-    setFormData({ name: "", email: "", phone: "", message: "" });
-    setIsTurnstileVerified(false);
-    turnstileRef.current?.reset();
+      if (response.ok) {
+        setSubmitStatus('success');
+        alert("Thank you for your message! We'll get back to you soon.");
+        
+        // Reset form
+        setFormData({ firstName: "", lastName: "", email: "", phone: "", message: "" });
+        setIsTurnstileVerified(false);
+        turnstileRef.current?.reset();
+      } else {
+        const errorData = await response.json();
+        console.error('Form submission error:', errorData);
+        setSubmitStatus('error');
+        alert("There was an error submitting your message. Please try again.");
+      }
+    } catch (error) {
+      console.error('Network error:', error);
+      setSubmitStatus('error');
+      alert("There was a network error. Please check your connection and try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -124,19 +156,35 @@ export default function Contact() {
         {/* Contact Form */}
         <section className="contact-form accent-border--2 accent-background--2">
           <form className="contact-form-fields" onSubmit={handleSubmit}>
-            <div className="contact-form-group">
-              <label htmlFor="name" className="contact-form-label">
-                Full Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                className="contact-form-input"
-                placeholder="Full name"
-                value={formData.name}
-                onChange={handleInputChange}
-                required
-              />
+            <div className="contact-form-row">
+              <div className="contact-form-group">
+                <label htmlFor="firstName" className="contact-form-label">
+                  First Name
+                </label>
+                <input
+                  type="text"
+                  id="firstName"
+                  className="contact-form-input"
+                  placeholder="First name"
+                  value={formData.firstName}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+              <div className="contact-form-group">
+                <label htmlFor="lastName" className="contact-form-label">
+                  Last Name
+                </label>
+                <input
+                  type="text"
+                  id="lastName"
+                  className="contact-form-input"
+                  placeholder="Last name"
+                  value={formData.lastName}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
             </div>
             <div className="contact-form-row">
               <div className="contact-form-group">
@@ -200,8 +248,8 @@ export default function Contact() {
               />
             </div>
 
-            <Button type="submit" disabled={!isTurnstileVerified}>
-              Submit Now
+            <Button type="submit" disabled={!isTurnstileVerified || isSubmitting}>
+              {isSubmitting ? "Submitting..." : "Submit Now"}
             </Button>
           </form>
         </section>
