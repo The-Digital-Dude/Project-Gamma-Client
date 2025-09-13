@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useRef } from "react";
-import ReCAPTCHA from "react-google-recaptcha";
+import { Turnstile } from "@marsidev/react-turnstile";
 import { Button } from "@/components/ui-elements/Button/Button";
 import "./contact.scss";
 import {
@@ -14,17 +14,25 @@ import {
 } from "react-icons/md";
 
 export default function Contact() {
-  const [isRecaptchaVerified, setIsRecaptchaVerified] = useState(false);
+  const [isTurnstileVerified, setIsTurnstileVerified] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     message: "",
   });
-  const recaptchaRef = useRef<ReCAPTCHA>(null);
+  const turnstileRef = useRef<any>(null);
 
-  const handleRecaptchaChange = (token: string | null) => {
-    setIsRecaptchaVerified(!!token);
+  const handleTurnstileSuccess = (token: string) => {
+    setIsTurnstileVerified(true);
+  };
+
+  const handleTurnstileError = () => {
+    setIsTurnstileVerified(false);
+  };
+
+  const handleTurnstileExpire = () => {
+    setIsTurnstileVerified(false);
   };
 
   const handleInputChange = (
@@ -40,33 +48,28 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!isRecaptchaVerified) {
-      alert("Please complete the reCAPTCHA verification.");
-      return;
-    }
-
-    const recaptchaToken = recaptchaRef.current?.getValue();
-
-    if (!recaptchaToken) {
-      alert("Please complete the reCAPTCHA verification.");
+    if (!isTurnstileVerified) {
+      alert("Please complete the security verification.");
       return;
     }
 
     // Here you would typically send the form data to your backend
     console.log("Form submitted:", formData);
-    console.log("reCAPTCHA token:", recaptchaToken);
 
     // For now, just show a success message
     alert("Thank you for your message! We'll get back to you soon.");
 
     // Reset form
     setFormData({ name: "", email: "", phone: "", message: "" });
-    setIsRecaptchaVerified(false);
-    recaptchaRef.current?.reset();
+    setIsTurnstileVerified(false);
+    turnstileRef.current?.reset();
   };
 
   return (
-    <div className="contact-inner container">
+    <div
+      className="contact-inner container"
+      style={{ paddingLeft: "10px", paddingRight: "10px" }}
+    >
       <div className="contact-grid">
         {/* Contact Information */}
         <section className="contact-info accent-background--4 accent-border--4">
@@ -179,19 +182,25 @@ export default function Contact() {
               ></textarea>
             </div>
 
-            {/* reCAPTCHA */}
-            <div className="contact-form-group recaptcha-container">
-              <ReCAPTCHA
-                ref={recaptchaRef}
-                sitekey={
-                  process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ||
-                  "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
-                } // Test key for development
-                onChange={handleRecaptchaChange}
+            {/* Cloudflare Turnstile */}
+            <div className="contact-form-group turnstile-container">
+              <Turnstile
+                ref={turnstileRef}
+                siteKey={
+                  process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ||
+                  "1x00000000000000000000AA" // Test key for development
+                }
+                onSuccess={handleTurnstileSuccess}
+                onError={handleTurnstileError}
+                onExpire={handleTurnstileExpire}
+                options={{
+                  theme: "light",
+                  size: "flexible",
+                }}
               />
             </div>
 
-            <Button type="submit" disabled={!isRecaptchaVerified}>
+            <Button type="submit" disabled={!isTurnstileVerified}>
               Submit Now
             </Button>
           </form>

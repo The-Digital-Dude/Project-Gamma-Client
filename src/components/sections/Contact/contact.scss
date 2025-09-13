@@ -196,6 +196,12 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+
+  // Ensure Turnstile container takes full width
+  &.turnstile-container {
+    width: 100%;
+    flex: none;
+  }
 }
 
 .contact-form-label {
@@ -242,16 +248,28 @@
   }
 }
 
-// reCAPTCHA styling
-.recaptcha-container {
+// Turnstile styling
+.turnstile-container {
+  width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   margin: 0.5rem 0;
 
-  // Ensure reCAPTCHA fits well on mobile
+  // Force Turnstile widget to take full width
+  iframe {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  // Target the Turnstile widget container
+  > div {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  // Ensure Turnstile fits well on mobile
   @media (max-width: 480px) {
-    transform: scale(0.85);
-    transform-origin: center;
+    justify-content: center;
   }
 }

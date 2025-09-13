@@ -1,5 +1,15 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Environment Variables
+
+Create a `.env.local` file in the root directory with the following variables:
+
+```bash
+# Cloudflare Turnstile Configuration
+# Get your site key from: https://dash.cloudflare.com/profile/api-tokens
+NEXT_PUBLIC_TURNSTILE_SITE_KEY=your_turnstile_site_key_here
+```
+
 ## Getting Started
 
 First, run the development server:
