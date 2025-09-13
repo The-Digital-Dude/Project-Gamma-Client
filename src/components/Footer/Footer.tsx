@@ -14,11 +14,7 @@ const Footer = () => {
                 aria-label="Homepage"
               >
                 <div>
-                  <img
-                    style={{ width: "180px" }}
-                    src="/logo-white.png"
-                    alt=""
-                  />
+                  <img style={{ width: "100%" }} src="/logo-white.png" alt="" />
                 </div>
               </Link>
               <div className={styles.footerdescription}>

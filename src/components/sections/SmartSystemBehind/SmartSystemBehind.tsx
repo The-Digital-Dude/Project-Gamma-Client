@@ -60,16 +60,18 @@ const SmartSystemBehind = () => {
   return (
     <section ref={sectionRef} className={styles.smartSystemBehind}>
       <div className={styles.container}>
-        <div className={styles.header}>
-          <FadeInAnimation duration={0.8} delay={0.2} yindex={30}>
-            <h2 className={styles.headline}>
-              The Smart System Behind the Service
-            </h2>
-          </FadeInAnimation>
-        </div>
-
         <div className={styles.content}>
           <div className={styles.features}>
+            <div
+              className={styles.header}
+              style={{ textAlign: "left", marginBottom: "0" }}
+            >
+              <FadeInAnimation duration={0.8} delay={0.2} yindex={30}>
+                <h2 className={styles.headline}>
+                  The Smart System Behind the Service
+                </h2>
+              </FadeInAnimation>
+            </div>
             {features.map((feature, index) => (
               <FadeInAnimation
                 key={index}
@@ -88,53 +90,11 @@ const SmartSystemBehind = () => {
 
           <div className={styles.visualContainer}>
             <FadeInAnimation duration={1} delay={0.4} yindex={40}>
-              <div className={styles.dashboardContainer}>
-                <div className={styles.dashboard}>
-                  <div className={styles.dashboardHeader}>
-                    <div className={styles.dashboardTitle}>
-                      Analytics Dashboard
-                    </div>
-                    <div className={styles.dashboardSubtitle}>
-                      Real-time Insights
-                    </div>
-                  </div>
-
-                  <div className={styles.chartsContainer}>
-                    <div className={styles.chart}>
-                      <div className={styles.chartTitle}>Admin Reduction</div>
-                      <div className={styles.chartBar}>
-                        <div
-                          className={styles.chartFill}
-                          data-percentage="80"
-                        ></div>
-                      </div>
-                      <div className={styles.chartValue}>80%</div>
-                    </div>
-
-                    <div className={styles.chart}>
-                      <div className={styles.chartTitle}>Efficiency</div>
-                      <div className={styles.chartBar}>
-                        <div
-                          className={styles.chartFill}
-                          data-percentage="95"
-                        ></div>
-                      </div>
-                      <div className={styles.chartValue}>95%</div>
-                    </div>
-
-                    <div className={styles.chart}>
-                      <div className={styles.chartTitle}>Uptime</div>
-                      <div className={styles.chartBar}>
-                        <div
-                          className={styles.chartFill}
-                          data-percentage="99"
-                        ></div>
-                      </div>
-                      <div className={styles.chartValue}>99.9%</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <img
+                src="/mobile-app.jpeg"
+                alt="RentalEase Mobile App"
+                className={styles.mobileAppImage}
+              />
             </FadeInAnimation>
 
             {/* <div className={styles.cloudElements}>

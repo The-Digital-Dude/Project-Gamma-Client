@@ -139,6 +139,10 @@ const Navbar: React.FC = () => {
 
   const toggleDropdown = useCallback(() => setIsServicesOpen((v) => !v), []);
 
+  const closeDropdownOnLinkClick = useCallback(() => {
+    setIsServicesOpen(false);
+  }, []);
+
   const toggleMobileMenu = useCallback(() => {
     setIsMobileMenuOpen((prev) => !prev);
     // Close services dropdown when mobile menu opens
@@ -264,96 +268,25 @@ const Navbar: React.FC = () => {
                   onMouseLeave={!isTouch ? closeDropdown : undefined}
                 >
                   <li>
-                    <Link href="/services/compliance-services">
+                    <Link
+                      href="/services/compliance-services"
+                      onClick={closeDropdownOnLinkClick}
+                    >
                       Compliance Services
                     </Link>
                   </li>
                   <li>
-                    <Link href="/services/property-care-services">
+                    <Link
+                      href="/services/property-care-services"
+                      onClick={closeDropdownOnLinkClick}
+                    >
                       Property Care Services
                     </Link>
                   </li>
-                  {/* <li
-                    className="navbar__submenu-parent"
-                    style={{ position: "relative" }}
-                    onMouseEnter={!isTouch ? openSubmenu : undefined}
-                    onMouseLeave={!isTouch ? closeSubmenu : undefined}
-                  >
-                    <button
-                      className="navbar__submenu-toggle"
-                      tabIndex={0}
-                      onKeyDown={handleRentalComplianceKeyDown}
-                      onClick={() => setIsRentalComplianceOpen((v) => !v)}
-                    >
-                      Rental Compliance Check
-                      <svg
-                        width="16"
-                        height="16"
-                        style={{
-                          marginLeft: 6,
-                          transform: isRentalComplianceOpen
-                            ? "rotate(90deg)"
-                            : "rotate(0deg)",
-                          transition: "transform 0.2s",
-                        }}
-                        viewBox="0 0 20 20"
-                        fill="none"
-                      >
-                        <path
-                          d="M7 7l3 3 3-3"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </button>
-                    <ul
-                      className={`navbar__dropdown-menu navbar__submenu${
-                        isRentalComplianceOpen ? " active" : ""
-                      }`}
-                      style={{
-                        left: "100%",
-                        top: 0,
-                        position: "absolute",
-                        minWidth: 200,
-                        display: isRentalComplianceOpen ? "block" : "none",
-                        background: "rgba(255,255,255,0.98)",
-                        boxShadow: "0 8px 32px 0 rgba(31,38,135,0.18)",
-                        borderRadius: 8,
-                        zIndex: 1001,
-                      }}
-                      onMouseEnter={!isTouch ? openSubmenu : undefined}
-                      onMouseLeave={!isTouch ? closeSubmenu : undefined}
-                    >
-                      {rentalComplianceLinks.map((link) => (
-                        <li key={link.href}>
-                          <Link href={link.href}>{link.label}</Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </li> */}
                 </ul>
               )}
             </li>
-            {/* <li>
-              <Link
-                href="/pricing"
-                className={
-                  pathname.startsWith("/pricing") ? "active" : undefined
-                }
-              >
-                Pricing
-              </Link>
-            </li> */}
-            {/* <li>
-              <Link
-                href="/blog"
-                className={pathname.startsWith("/blog") ? "active" : undefined}
-              >
-                Blog
-              </Link>
-            </li> */}
+
             <li>
               <Link
                 href="/contact"

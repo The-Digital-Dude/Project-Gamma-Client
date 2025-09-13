@@ -122,93 +122,15 @@
     min-height: 400px;
   }
 
-  .dashboardContainer {
-    position: relative;
-    z-index: 2;
-  }
-
-  .dashboard {
-    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-    border-radius: 16px;
-    padding: 2rem;
-    box-shadow: 0 20px 40px rgba(2, 73, 116, 0.1);
-    border: 1px solid rgba(2, 73, 116, 0.1);
-    min-width: 300px;
-    max-width: 400px;
+  .mobileAppImage {
+    border: 1px solid $border-color;
+    padding: 1rem;
     width: 100%;
-
-    .dashboardHeader {
-      text-align: center;
-      margin-bottom: 2rem;
-
-      .dashboardTitle {
-        font-size: 1.3rem;
-        font-weight: 600;
-        color: $primary-color;
-        margin-bottom: 0.5rem;
-      }
-
-      .dashboardSubtitle {
-        font-size: 0.9rem;
-        color: #64748b;
-      }
-    }
-
-    .chartsContainer {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .chart {
-      .chartTitle {
-        font-size: 0.9rem;
-        color: #64748b;
-        margin-bottom: 0.5rem;
-        font-weight: 500;
-      }
-
-      .chartBar {
-        height: 8px;
-        background: #e2e8f0;
-        border-radius: 4px;
-        overflow: hidden;
-        position: relative;
-        margin-bottom: 0.5rem;
-
-        .chartFill {
-          height: 100%;
-          background: linear-gradient(90deg, #024974 0%, #02598d 100%);
-          border-radius: 4px;
-          width: 0%;
-          transition: width 2.5s cubic-bezier(0.4, 0, 0.2, 1);
-          position: relative;
-
-          &::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(
-              90deg,
-              transparent 0%,
-              rgba(255, 255, 255, 0.3) 50%,
-              transparent 100%
-            );
-            animation: shimmer 2s infinite;
-          }
-        }
-      }
-
-      .chartValue {
-        font-size: 0.8rem;
-        color: $primary-color;
-        font-weight: 600;
-        text-align: right;
-      }
-    }
+    max-width: 350px;
+    // height: calc(100% - 50px);
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(2, 73, 116, 0.1);
   }
 
   .cloudElements {
@@ -350,20 +272,21 @@
   }
 }
 
-// Chart fill animation when in view
+// Mobile app image animation when in view
 .smartSystemBehind.inView {
-  .chartFill {
-    &[data-percentage="80"] {
-      width: 80%;
-    }
+  .mobileAppImage {
+    animation: fadeInScale 1s ease-out;
+  }
+}
 
-    &[data-percentage="95"] {
-      width: 95%;
-    }
-
-    &[data-percentage="99"] {
-      width: 99%;
-    }
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
