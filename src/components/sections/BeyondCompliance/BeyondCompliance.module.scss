@@ -99,11 +99,16 @@
 
       .iconWrapper {
         transform: scale(1.1);
-        background: rgba(2, 73, 116, 0.1);
+        background: rgba($logo-secondary, 0.15);
       }
 
       .serviceIcon {
-        color: $primary-color;
+        color: $logo-secondary !important;
+
+        svg {
+          color: $logo-secondary !important;
+          fill: $logo-secondary !important;
+        }
       }
     }
 

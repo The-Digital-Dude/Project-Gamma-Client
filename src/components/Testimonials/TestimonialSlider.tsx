@@ -19,80 +19,93 @@ const testimonials = [
   {
     author: "Jack Thompson",
     quote:
-      "I’ve tried a few compliance services before, but nothing matches the simplicity and reliability of RentalEase. From gas checks to electrical inspections, everything was handled professionally. I got all my certificates online without chasing anyone.",
+      "I've tried a few compliance services before, but nothing matches the simplicity and reliability of RentalEase. From gas checks to electrical inspections, everything was handled professionally. I got all my certificates online without chasing anyone.",
     role: "landlord",
+    image: "/male-1.jpeg",
   },
   {
     author: "Sophie Williams",
     quote:
-      "Their platform made it super easy to stay compliant across multiple properties. I could track every service, view reports, and even arrange repairs when something failed inspection. It’s a complete game-changer for landlords like me.",
+      "Their platform made it super easy to stay compliant across multiple properties. I could track every service, view reports, and even arrange repairs when something failed inspection. It's a complete game-changer for landlords like me.",
     role: "landlord",
+    image: "/female-1.jpeg",
   },
   {
     author: "Liam Anderson",
     quote:
       "I manage properties remotely and RentalEase has made it so much easier to stay on top of compliance. Everything is online—certificates, reports. Zero stress and great service",
     role: "landlord",
+    image: "/male-2.jpeg",
   },
   {
     author: "Emily Nguyen",
     quote:
       "They offer great value and peace of mind. I used to worry about gas checks and smoke alarm deadlines, but now it's all handled automatically. Highly recommended for anyone managing rentals",
     role: "landlord",
+    image: "/female-2.jpeg",
   },
   {
     author: "Daniel Smith",
     quote:
-      "The portal is so user-friendly. I log in and see the status of every job across my three rental properties. I’ve also had nothing but positive feedback from my tenants about the tradespeople",
+      "The portal is so user-friendly. I log in and see the status of every job across my three rental properties. I've also had nothing but positive feedback from my tenants about the tradespeople",
     role: "landlord",
+    image: "/male-3.jpeg",
   },
   {
     author: "Olivia Brown",
     quote:
-      "Appreciate their transparency and attention to detail. If something fails an inspection, they don’t just tell you—they help you fix it quickly. That’s real service",
+      "Appreciate their transparency and attention to detail. If something fails an inspection, they don't just tell you—they help you fix it quickly. That's real service",
     role: "landlord",
+    image: "/female-3.jpeg",
   },
   {
     author: "Matthew Taylor",
     quote:
-      "The pricing is fair, the communication is excellent, and the turnaround is fast. I’ve already referred two of my friends to use RentalEase",
+      "The pricing is fair, the communication is excellent, and the turnaround is fast. I've already referred two of my friends to use RentalEase",
     role: "landlord",
+    image: "/male-4.jpeg",
   },
   {
     author: "Chloe Harris",
     quote:
-      "Very professional service. They arrived on time, wore uniforms, and explained what they were checking. I’ve never had a compliance visit go this smoothly before.",
+      "Very professional service. They arrived on time, wore uniforms, and explained what they were checking. I've never had a compliance visit go this smoothly before.",
     role: "tenant",
+    image: "/female-4.jpeg",
   },
   {
     author: "Ryan Martin",
     quote:
       "Super easy process. Got a text reminder the day before and they were done in under 30 minutes. The technician was polite and explained the smoke alarm testing clearly",
     role: "tenant",
+    image: "/male-5.jpeg",
   },
   {
     author: "Jessica White",
     quote:
-      "It’s good to see my landlord actually keeping up with safety checks. The gas guy even spotted a leak that we didn’t know about and arranged a fix right away",
+      "It's good to see my landlord actually keeping up with safety checks. The gas guy even spotted a leak that we didn't know about and arranged a fix right away",
     role: "tenant",
+    image: "/female-5.jpeg",
   },
   {
     author: "Benjamin Lee",
     quote:
-      "They were friendly, fast, and left no mess. Definitely better than other tradies we’ve dealt with.",
+      "They were friendly, fast, and left no mess. Definitely better than other tradies we've dealt with.",
     role: "tenant",
+    image: "/male-6.jpeg",
   },
   {
     author: "Grace Hall",
     quote:
       "I appreciated the heads-up and the clear communication. It was all done quickly and gave me confidence the place is safe",
     role: "tenant",
+    image: "/female-6.jpeg",
   },
   {
     author: "Harry King",
     quote:
-      "We had our smoke alarms and gas checked. Everything was explained clearly, and I got a digital certificate by email. It’s nice to know they take safety seriously",
+      "We had our smoke alarms and gas checked. Everything was explained clearly, and I got a digital certificate by email. It's nice to know they take safety seriously",
     role: "tenant",
+    image: "/male-7.jpeg",
   },
 ];
 
@@ -152,7 +165,7 @@ const TestimonialSlider: React.FC = () => {
               <div className={styles.authorWrap}>
                 <div className={styles.authorImageWrap}>
                   <Image
-                    src="/img-1.webp"
+                    src={t.image}
                     alt={`${t.author} avatar`}
                     width={48}
                     height={48}

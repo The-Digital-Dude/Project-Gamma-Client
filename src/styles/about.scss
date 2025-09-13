@@ -363,6 +363,14 @@
 
     &:hover {
       transform: translateY(-5px);
+
+      .about__card-icon {
+        background: rgba($logo-secondary, 0.15);
+
+        svg {
+          color: $logo-secondary !important;
+        }
+      }
     }
 
     h2 {
@@ -391,11 +399,13 @@
     border-radius: 50%;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
 
     svg {
       width: 40px;
       height: 40px;
       color: $primary-color;
+      transition: all 0.3s ease;
     }
   }
 

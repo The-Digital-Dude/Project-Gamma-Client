@@ -68,8 +68,8 @@
       z-index: -1;
       background: linear-gradient(
         135deg,
-        rgba(2, 72, 116, 0.423) 0%,
-        rgba(2, 72, 116, 0.748) 100%
+        rgb(12 94 41 / 42%) 0%,
+        rgb(13 93 42 / 75%) 100%
       );
       opacity: 0;
       transform: scale(0.98);
@@ -254,18 +254,18 @@
   &__join {
     background: linear-gradient(
       135deg,
-      $primary-color 0%,
-      lighten($primary-color, 5%) 100%
+      $logo-secondary 0%,
+      lighten($logo-secondary, 5%) 100%
     );
     color: #fff;
     border: 1.5px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 16px rgba(2, 73, 116, 0.2);
+    box-shadow: 0 4px 16px rgba($logo-secondary, 0.2);
 
     &:hover {
       background: linear-gradient(
         135deg,
-        $primary-color-hover 0%,
-        $primary-color 100%
+        darken($logo-secondary, 5%) 0%,
+        $logo-secondary 100%
       );
       transform: translateY(-1px);
       box-shadow: 0 6px 20px rgba(2, 73, 116, 0.3);
@@ -510,18 +510,18 @@
     &__join {
       background: linear-gradient(
         135deg,
-        $primary-color 0%,
-        lighten($primary-color, 5%) 100%
+        $logo-secondary 0%,
+        lighten($logo-secondary, 5%) 100%
       );
       color: #fff;
       border: 1.5px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 4px 16px rgba(2, 73, 116, 0.2);
+      box-shadow: 0 4px 16px rgba($logo-secondary, 0.2);
 
       &:hover {
         background: linear-gradient(
           135deg,
-          $primary-color-hover 0%,
-          $primary-color 100%
+          darken($logo-secondary, 5%) 0%,
+          $logo-secondary 100%
         );
         transform: translateY(-1px);
         box-shadow: 0 6px 20px rgba(2, 73, 116, 0.3);
@@ -1171,20 +1171,20 @@
   &__join {
     background: linear-gradient(
       135deg,
-      $primary-color 0%,
-      lighten($primary-color, 5%) 100%
+      $logo-secondary 0%,
+      lighten($logo-secondary, 5%) 100%
     );
     color: #fff;
     border: 1.5px solid rgba(255, 255, 255, 0.2);
     border-radius: $border-radius-rounded;
-    box-shadow: 0 4px 16px rgba(2, 73, 116, 0.2);
+    box-shadow: 0 4px 16px rgba($logo-secondary, 0.2);
 
     &:hover,
     &:focus {
       background: linear-gradient(
         135deg,
-        $primary-color-hover 0%,
-        $primary-color 100%
+        darken($logo-secondary, 5%) 0%,
+        $logo-secondary 100%
       );
       color: #fff;
       transform: translateY(-2px);

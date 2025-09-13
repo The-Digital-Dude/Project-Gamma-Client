@@ -133,7 +133,9 @@ const LandingHero = () => {
                   <Button href="/book-now" fullWidth={false}>
                     Book a Demo
                   </Button>
-                  <SecondaryButton>Get Started Today</SecondaryButton>
+                  <SecondaryButton href="/contact">
+                    Get Started Today
+                  </SecondaryButton>
                 </div>
                 {slide.showStats && (
                   <div className="fade-in fade-in-delay-4">

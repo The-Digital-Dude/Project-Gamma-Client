@@ -100,7 +100,11 @@
     .stepIcon {
       width: 80px;
       height: 80px;
-      background: linear-gradient(135deg, #024974 0%, #02598d 100%);
+      background: linear-gradient(
+        135deg,
+        $logo-secondary 0%,
+        lighten($logo-secondary, 10%) 100%
+      );
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -115,6 +119,7 @@
         width: 36px;
         height: 36px;
         transition: all 0.3s ease;
+        color: #ffffff;
       }
 
       &::before {
@@ -153,6 +158,11 @@
     &:hover {
       .stepIcon {
         transform: scale(1.1);
+        background: linear-gradient(
+          135deg,
+          $primary-color 0%,
+          lighten($primary-color, 10%) 100%
+        );
         color: #ffffff;
 
         &::before {
@@ -161,6 +171,7 @@
 
         svg {
           transform: scale(1.1);
+          color: #ffffff;
         }
       }
     }
