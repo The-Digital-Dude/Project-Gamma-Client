@@ -205,7 +205,7 @@ const Navbar: React.FC = () => {
         <div className="navbar__container">
           {/* Logo */}
           <Link href="/">
-            <img style={{ width: "250px" }} src="/rentalease-logo.png" alt="" />
+            <img style={{ width: "200px" }} src="/rentalease-logo.png" alt="" />
           </Link>
 
           {/* Navigation Links */}

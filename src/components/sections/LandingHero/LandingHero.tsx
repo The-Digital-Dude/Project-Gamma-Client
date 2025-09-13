@@ -13,9 +13,13 @@ const ResponsiveStats: React.FC<{
   return (
     <div className="landing__stats">
       {stats.map((stat, index) => (
-        <div key={index} className="landing__stat">
-          <span className="landing__stat-value">{stat.value}</span>
-          <span className="landing__stat-label">{stat.label}</span>
+        <div key={index} className="landing__stat" style={{ color: "white" }}>
+          <span className="landing__stat-value" style={{ color: "white" }}>
+            {stat.value}
+          </span>
+          <span className="landing__stat-label" style={{ color: "#d1d0d0" }}>
+            {stat.label}
+          </span>
         </div>
       ))}
     </div>
@@ -45,9 +49,9 @@ const LandingHero = () => {
       key: "default",
       bg: "/rentalease-banner.png",
       headline: {
-        mainText: "The Future of Rental Compliance &",
+        mainText: "The Future of Rental Compliance & Property Services",
         boldText: "",
-        highlightText: "Property Services",
+        highlightText: "",
       },
       subtext:
         "One powerful CRM, our own licensed tradies, and complete automation—RentalEase is the all-in-one solution built for modern property management.",
@@ -57,9 +61,9 @@ const LandingHero = () => {
       key: "compliance-services",
       bg: "/tradie-2.jpeg",
       headline: {
-        mainText: "Compliance Services",
+        mainText: "Compliance Services Made Simple",
         boldText: "",
-        highlightText: "Made Simple",
+        highlightText: "",
       },
       subtext:
         "Electrical, Gas, and Smoke Alarm checks handled end‑to‑end. Automated scheduling, instant reports, and audit‑ready records.",
@@ -69,9 +73,9 @@ const LandingHero = () => {
       key: "beyond-compliance",
       bg: "/tradie-3-lg.jpg",
       headline: {
-        mainText: "Beyond Compliance",
+        mainText: "Beyond Compliance Property Care",
         boldText: "",
-        highlightText: "Property Care",
+        highlightText: "",
       },
       subtext:
         "Proactive maintenance, happier tenants, and portfolio insights that drive NOI—powered by our modern CRM.",
@@ -89,7 +93,7 @@ const LandingHero = () => {
         swipe
         duration={500}
         interval={6000}
-        height={`calc(100dvh - 95px)`}
+        height={`calc(100dvh - 81px)`}
         sx={{
           opacity: isCarouselReady ? 1 : 0,
           transition: "opacity 0.3s ease-in-out",
@@ -101,7 +105,7 @@ const LandingHero = () => {
             className="hero-slide"
             style={{
               width: "100%",
-              minHeight: "calc(100dvh - 95px)",
+              minHeight: "calc(100dvh - 81px)",
               backgroundImage: `url(${slide.bg})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
@@ -111,14 +115,20 @@ const LandingHero = () => {
           >
             <section className="landing__hero">
               <div className="landing__content">
-                <div className="fade-in fade-in-delay-1">
+                <div
+                  className="fade-in fade-in-delay-1"
+                  style={{ color: "white" }}
+                >
                   <Headline
                     mainText={slide.headline.mainText}
                     boldText={slide.headline.boldText}
                     highlightText={slide.headline.highlightText}
                   />
                 </div>
-                <div className="fade-in fade-in-delay-2">
+                <div
+                  className="fade-in fade-in-delay-2"
+                  style={{ color: "#dedddd" }}
+                >
                   <Subtext text={slide.subtext} />
                 </div>
                 <div
@@ -138,7 +148,10 @@ const LandingHero = () => {
                   </SecondaryButton>
                 </div>
                 {slide.showStats && (
-                  <div className="fade-in fade-in-delay-4">
+                  <div
+                    className="fade-in fade-in-delay-4"
+                    style={{ color: "white" }}
+                  >
                     <ResponsiveStats stats={stats} />
                   </div>
                 )}

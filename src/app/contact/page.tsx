@@ -5,7 +5,10 @@ import "@/components/sections/Contact/contact.scss";
 
 export default function ContactPage() {
   return (
-    <div className="common-section icons-bg--1 contact-container">
+    <div
+      className="common-section icons-bg--1 contact-container"
+      style={{ marginTop: "-60px" }}
+    >
       <div className="container" style={{ paddingBottom: "50px" }}>
         <div className="contact-intro" style={{ textAlign: "center" }}>
           <h1 className="contact-headline">Let’s Talk</h1>
@@ -18,15 +21,7 @@ export default function ContactPage() {
           </p>
         </div>
 
-        <div
-          className="contact-options"
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
-            gap: "1.5rem",
-            marginTop: "2rem",
-          }}
-        >
+        <div className="contact-options">
           <a
             href="tel:+61123456789"
             style={{
