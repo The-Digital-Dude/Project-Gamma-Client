@@ -42,6 +42,30 @@ export default function BookNow() {
             </div>
           </div>
 
+          <div className="contact-form-group">
+            <label htmlFor="profession" className="contact-form-label">
+              Profession
+            </label>
+            <select id="profession" className="contact-form-input">
+              <option value="">Select your profession</option>
+              <option value="tradie">Tradie</option>
+              <option value="business-owner">Business Owner</option>
+              <option value="property-manager">Property Manager</option>
+            </select>
+          </div>
+
+          <div className="contact-form-group">
+            <label htmlFor="service" className="contact-form-label">
+              What service do you need?
+            </label>
+            <textarea
+              id="service"
+              className="contact-form-input"
+              placeholder="Please describe the service you need"
+              rows={4}
+            />
+          </div>
+
           <Button type="submit">Submit Now</Button>
         </form>
       </section>

@@ -99,6 +99,13 @@
   z-index: 1;
 }
 
+.py-45 {
+  padding-top: 45px;
+  padding-bottom: 45px;
+  position: relative;
+  z-index: 1;
+}
+
 .common-section:first-child {
   padding-top: 160px;
 }
