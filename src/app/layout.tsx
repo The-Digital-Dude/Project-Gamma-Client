@@ -5,6 +5,7 @@ import { siteConfig } from "@/config/site";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer/Footer";
 import AiSupportPopup from "@/components/AiSupportPopup";
+import { Toaster } from "react-hot-toast";
 
 const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "700"] });
 
@@ -56,6 +57,28 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         {/* <AiSupportPopup /> */}
+        <Toaster
+          position="top-right"
+          toastOptions={{
+            duration: 4000,
+            style: {
+              background: '#363636',
+              color: '#fff',
+            },
+            success: {
+              duration: 3000,
+              style: {
+                background: '#10b981',
+              },
+            },
+            error: {
+              duration: 4000,
+              style: {
+                background: '#ef4444',
+              },
+            },
+          }}
+        />
       </body>
     </html>
   );

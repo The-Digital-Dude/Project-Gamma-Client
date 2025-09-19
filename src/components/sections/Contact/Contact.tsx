@@ -20,6 +20,7 @@ export default function Contact() {
     lastName: "",
     email: "",
     phone: "",
+    profession: "",
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -39,7 +40,7 @@ export default function Contact() {
   };
 
   const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     const { id, value } = e.target;
     setFormData((prev) => ({
@@ -71,6 +72,7 @@ export default function Contact() {
           lastName: formData.lastName,
           email: formData.email,
           phone: formData.phone,
+          profession: formData.profession,
           message: formData.message,
         }),
       });
@@ -80,7 +82,7 @@ export default function Contact() {
         alert("Thank you for your message! We'll get back to you soon.");
         
         // Reset form
-        setFormData({ firstName: "", lastName: "", email: "", phone: "", message: "" });
+        setFormData({ firstName: "", lastName: "", email: "", phone: "", profession: "", message: "" });
         setIsTurnstileVerified(false);
         turnstileRef.current?.reset();
       } else {
@@ -215,6 +217,29 @@ export default function Contact() {
                   onChange={handleInputChange}
                 />
               </div>
+            </div>
+            <div className="contact-form-group">
+              <label htmlFor="profession" className="contact-form-label">
+                Profession
+              </label>
+              <select
+                id="profession"
+                className="contact-form-input"
+                value={formData.profession}
+                onChange={handleInputChange}
+              >
+                <option value="">Select your profession</option>
+                <option value="Property Manager">Property Manager</option>
+                <option value="Landlord">Landlord</option>
+                <option value="Tenant">Tenant</option>
+                <option value="Real Estate Agent">Real Estate Agent</option>
+                <option value="Property Developer">Property Developer</option>
+                <option value="Property Investor">Property Investor</option>
+                <option value="Strata Manager">Strata Manager</option>
+                <option value="Building Manager">Building Manager</option>
+                <option value="Facility Manager">Facility Manager</option>
+                <option value="Other">Other</option>
+              </select>
             </div>
             <div className="contact-form-group">
               <label htmlFor="message" className="contact-form-label">
