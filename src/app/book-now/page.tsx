@@ -5,11 +5,14 @@ export default function BookNowPage() {
   return (
     <div className="icons-bg--1 contact-container py-45">
       <div className="container ">
-        <div className="contact-intro" style={{ textAlign: "center" }}>
-          <h1 className="contact-headline">Booking Portal</h1>
+        <div style={{ textAlign: "center" }}>
+          <h1 className="contact-headline">
+            ⚡You’re Just 1 Step Away From Total Control: Compliance & Beyond ⚡
+          </h1>
           <p className="contact-subtext">
-            Book now to get support regarding your property. Our team is ready
-            to assist.
+            Book your free demo and discover how Rentalease not only keeps every
+            property 100% compliant, but also helps you save time, reduce admin,
+            and deliver more value to your landlords & tenants.
           </p>
 
           <BookNow />

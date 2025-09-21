@@ -16,7 +16,9 @@ export default function BookNow() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
   ) => {
     const { id, value } = e.target;
     setFormData((prev) => ({
@@ -36,15 +38,15 @@ export default function BookNow() {
     setIsSubmitting(true);
 
     try {
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000';
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000";
       const response = await fetch(`${apiUrl}/api/v1/website-leads`, {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          firstName: formData.name.split(' ')[0] || formData.name,
-          lastName: formData.name.split(' ').slice(1).join(' ') || '',
+          firstName: formData.name.split(" ")[0] || formData.name,
+          lastName: formData.name.split(" ").slice(1).join(" ") || "",
           email: formData.email,
           phone: formData.phone,
           profession: formData.profession,
@@ -53,7 +55,9 @@ export default function BookNow() {
       });
 
       if (response.ok) {
-        toast.success("Thank you for your booking request! We'll get back to you soon.");
+        toast.success(
+          "Thank you for your booking request! We'll get back to you soon."
+        );
 
         // Reset form
         setFormData({
@@ -65,12 +69,17 @@ export default function BookNow() {
         });
       } else {
         const errorData = await response.json();
-        console.error('Form submission error:', errorData);
-        toast.error(errorData.message || "There was an error submitting your request. Please try again.");
+        console.error("Form submission error:", errorData);
+        toast.error(
+          errorData.message ||
+            "There was an error submitting your request. Please try again."
+        );
       }
     } catch (error) {
-      console.error('Network error:', error);
-      toast.error("There was a network error. Please check your connection and try again.");
+      console.error("Network error:", error);
+      toast.error(
+        "There was a network error. Please check your connection and try again."
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -81,7 +90,7 @@ export default function BookNow() {
         <form className="contact-form-fields" onSubmit={handleSubmit}>
           <div className="contact-form-group">
             <label htmlFor="name" className="contact-form-label">
-              Full Name
+              Let's personalise your demo
             </label>
             <input
               type="text"
@@ -93,39 +102,39 @@ export default function BookNow() {
               required
             />
           </div>
-          <div className="contact-form-row">
-            <div className="contact-form-group">
-              <label htmlFor="email" className="contact-form-label">
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                className="contact-form-input"
-                placeholder="Email address"
-                value={formData.email}
-                onChange={handleInputChange}
-                required
-              />
-            </div>
-            <div className="contact-form-group">
-              <label htmlFor="phone" className="contact-form-label">
-                Phone
-              </label>
-              <input
-                type="tel"
-                id="phone"
-                className="contact-form-input"
-                placeholder="Phone number"
-                value={formData.phone}
-                onChange={handleInputChange}
-              />
-            </div>
+          {/* <div className="contact-form-row"> */}
+          <div className="contact-form-group">
+            <label htmlFor="email" className="contact-form-label">
+              Where should we send your booking link?
+            </label>
+            <input
+              type="email"
+              id="email"
+              className="contact-form-input"
+              placeholder="Email address"
+              value={formData.email}
+              onChange={handleInputChange}
+              required
+            />
           </div>
+          <div className="contact-form-group">
+            <label htmlFor="phone" className="contact-form-label">
+              Quick confirmation (no spam, promise)
+            </label>
+            <input
+              type="tel"
+              id="phone"
+              className="contact-form-input"
+              placeholder="Phone number"
+              value={formData.phone}
+              onChange={handleInputChange}
+            />
+          </div>
+          {/* </div> */}
 
           <div className="contact-form-group">
             <label htmlFor="profession" className="contact-form-label">
-              Profession
+              Are you a Landlord, Property Manager, or Agency?
             </label>
             <select
               id="profession"
