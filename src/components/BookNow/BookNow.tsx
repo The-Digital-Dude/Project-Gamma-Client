@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import toast from "react-hot-toast";
 import { Button } from "@/components/ui-elements/Button/Button";
 import "./BookNow.scss";
+import { Turnstile } from "@marsidev/react-turnstile";
 
 export default function BookNow() {
   const [formData, setFormData] = useState({
@@ -14,6 +15,7 @@ export default function BookNow() {
     service: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isTurnstileVerified, setIsTurnstileVerified] = useState(false);
 
   const handleInputChange = (
     e: React.ChangeEvent<
@@ -25,6 +27,20 @@ export default function BookNow() {
       ...prev,
       [id]: value,
     }));
+  };
+
+  const turnstileRef = useRef<any>(null);
+
+  const handleTurnstileSuccess = (token: string) => {
+    setIsTurnstileVerified(true);
+  };
+
+  const handleTurnstileError = () => {
+    setIsTurnstileVerified(false);
+  };
+
+  const handleTurnstileExpire = () => {
+    setIsTurnstileVerified(false);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -171,6 +187,20 @@ export default function BookNow() {
               required
             />
           </div>
+          <Turnstile
+            ref={turnstileRef}
+            siteKey={
+              process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ||
+              "1x00000000000000000000AA" // Test key for development
+            }
+            onSuccess={handleTurnstileSuccess}
+            onError={handleTurnstileError}
+            onExpire={handleTurnstileExpire}
+            options={{
+              theme: "light",
+              size: "flexible",
+            }}
+          />
 
           <Button type="submit" disabled={isSubmitting}>
             {isSubmitting ? "Submitting..." : "Submit Now"}
