@@ -24,7 +24,9 @@ export default function Contact() {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [submitStatus, setSubmitStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
   const turnstileRef = useRef<any>(null);
 
   const handleTurnstileSuccess = (token: string) => {
@@ -40,7 +42,9 @@ export default function Contact() {
   };
 
   const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
   ) => {
     const { id, value } = e.target;
     setFormData((prev) => ({
@@ -58,14 +62,14 @@ export default function Contact() {
     }
 
     setIsSubmitting(true);
-    setSubmitStatus('idle');
+    setSubmitStatus("idle");
 
     try {
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000';
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000";
       const response = await fetch(`${apiUrl}/api/v1/website-leads`, {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           firstName: formData.firstName,
@@ -79,23 +83,32 @@ export default function Contact() {
       });
 
       if (response.ok) {
-        setSubmitStatus('success');
+        setSubmitStatus("success");
         alert("Thank you for your message! We'll get back to you soon.");
-        
+
         // Reset form
-        setFormData({ firstName: "", lastName: "", email: "", phone: "", profession: "", message: "" });
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          profession: "",
+          message: "",
+        });
         setIsTurnstileVerified(false);
         turnstileRef.current?.reset();
       } else {
         const errorData = await response.json();
-        console.error('Form submission error:', errorData);
-        setSubmitStatus('error');
+        console.error("Form submission error:", errorData);
+        setSubmitStatus("error");
         alert("There was an error submitting your message. Please try again.");
       }
     } catch (error) {
-      console.error('Network error:', error);
-      setSubmitStatus('error');
-      alert("There was a network error. Please check your connection and try again.");
+      console.error("Network error:", error);
+      setSubmitStatus("error");
+      alert(
+        "There was a network error. Please check your connection and try again."
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -117,10 +130,10 @@ export default function Contact() {
                 <span className="contact-info-label">General Enquiries:</span>
                 <br />
                 <a
-                  href="mailto:hello@RentalEase.com.au"
+                  href="mailto:info@rentalease.com.au"
                   className="contact-info-link"
                 >
-                  hello@RentalEase.com.au
+                  info@rentalease.com.au
                 </a>
               </div>
             </div>
@@ -129,8 +142,8 @@ export default function Contact() {
               <div>
                 <span className="contact-info-label">Phone:</span>
                 <br />
-                <a href="tel:1300736853" className="contact-info-link">
-                  1300 RENTLEASE (1300 736 853)
+                <a href="tel:0359067723" className="contact-info-link">
+                  03 5906 7723
                 </a>
               </div>
             </div>
@@ -140,7 +153,7 @@ export default function Contact() {
                 <span className="contact-info-label">Office Address:</span>
                 <br />
                 <span className="contact-info-text">
-                  Melbourne, VIC, Australia
+                  3/581 Dohertys Road Truganina, VIC 3029
                 </span>
               </div>
             </div>
@@ -275,7 +288,10 @@ export default function Contact() {
               />
             </div>
 
-            <Button type="submit" disabled={!isTurnstileVerified || isSubmitting}>
+            <Button
+              type="submit"
+              disabled={!isTurnstileVerified || isSubmitting}
+            >
               {isSubmitting ? "Submitting..." : "Submit Now"}
             </Button>
           </form>

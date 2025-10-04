@@ -112,7 +112,7 @@ const Footer = () => {
                     />
                   </svg>
                 </div>
-                <span>Melbourne, VIC, Australia</span>
+                <span>3/581 Dohertys Road Truganina, VIC 3029</span>
               </div>
 
               <div className={styles.contactitem}>
@@ -130,7 +130,7 @@ const Footer = () => {
                     />
                   </svg>
                 </div>
-                <span>1300 RENTLEASE (1300 736 853)</span>
+                <span>03 5906 7723</span>
               </div>
 
               <div className={styles.contactitem}>
@@ -148,7 +148,7 @@ const Footer = () => {
                     />
                   </svg>
                 </div>
-                <span>hello@RentalEase.com.au</span>
+                <span>info@rentalease.com.au</span>
               </div>
             </div>
           </div>
