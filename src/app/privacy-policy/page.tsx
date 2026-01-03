@@ -17,12 +17,12 @@ export default function PrivacyPolicyPage() {
                 maintains and discloses information collected from users (each,
                 a "User") of the{" "}
                 <a
-                  href="https://www.RentalEase.com.au"
+                  href="https://www.rentalease.com.au"
                   className="privacy-policy__contact-website"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  www.RentalEase.com.au
+                  www.rentalease.com.au
                 </a>{" "}
                 website ("Site"). This privacy policy applies to the Site and
                 all products and services offered by RentalEase.
@@ -198,25 +198,34 @@ export default function PrivacyPolicyPage() {
                   }}
                 >
                   <li>
-                    <strong>RentalEase</strong>
+                    <strong>rentalease</strong>
                   </li>
                   <li>
                     <strong>General Enquiries:</strong>{" "}
-                    <span className="privacy-policy__contact-email">
-                      hello@RentalEase.com.au
-                    </span>
+                    <a
+                      href="mailto:hello@rentalease.com.au"
+                      className="privacy-policy__contact-email"
+                    >
+                      hello@rentalease.com.au
+                    </a>
                   </li>
                   <li>
                     <strong>Landlord Support:</strong>{" "}
-                    <span className="privacy-policy__contact-email">
-                      landlords@RentalEase.com.au
-                    </span>
+                    <a
+                      href="mailto:landlords@rentalease.com.au"
+                      className="privacy-policy__contact-email"
+                    >
+                      landlords@rentalease.com.au
+                    </a>
                   </li>
                   <li>
                     <strong>Tenant Support:</strong>{" "}
-                    <span className="privacy-policy__contact-email">
-                      tenants@RentalEase.com.au
-                    </span>
+                    <a
+                      href="mailto:tenants@rentalease.com.au"
+                      className="privacy-policy__contact-email"
+                    >
+                      tenants@rentalease.com.au
+                    </a>
                   </li>
                   <li>
                     <strong>Phone:</strong>{" "}
@@ -234,12 +243,12 @@ export default function PrivacyPolicyPage() {
                   <li>
                     <strong>Website:</strong>{" "}
                     <a
-                      href="https://www.RentalEase.com.au"
+                      href="https://www.rentalease.com.au"
                       className="privacy-policy__contact-website"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      www.RentalEase.com.au
+                      www.rentalease.com.au
                     </a>
                   </li>
                 </ul>

@@ -1,0 +1,318 @@
+@import "@/styles/_variables";
+
+.support-page {
+  // Hero Section
+  &__hero {
+    background: linear-gradient(135deg, rgba(2, 73, 116, 0.06) 0%, rgba(2, 73, 116, 0.02) 100%);
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  &__hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__hero-subtitle {
+    font-size: 1.125rem;
+    color: $text-secondary;
+    margin-top: 1.5rem;
+    line-height: 1.7;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  // Contact Section
+  &__contact-section {
+    padding: 4rem 0 3rem;
+    background: #fff;
+  }
+
+  &__contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  &__contact-card {
+    background: #fff;
+    border: 1px solid $border-color;
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(2, 73, 116, 0.06);
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(2, 73, 116, 0.12);
+      border-color: rgba(2, 73, 116, 0.3);
+    }
+  }
+
+  &__icon-wrapper {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+
+    &--email {
+      background: rgba(33, 150, 243, 0.1);
+      color: #1976d2;
+    }
+
+    &--phone {
+      background: rgba(76, 175, 80, 0.1);
+      color: #388e3c;
+    }
+  }
+
+  &__contact-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: $text-primary;
+    margin: 0 0 0.75rem 0;
+  }
+
+  &__contact-text {
+    font-size: 1rem;
+    color: $primary-color;
+    font-weight: 600;
+    margin: 0.5rem 0;
+    word-break: break-word;
+  }
+
+  &__contact-meta {
+    font-size: 0.875rem;
+    color: $text-secondary;
+    margin: 0.5rem 0 0;
+  }
+
+  // FAQ Section
+  &__faq-section {
+    background: $section-light;
+  }
+
+  &__section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  &__faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  &__faq-category {
+    background: #fff;
+    border-radius: 16px;
+    padding: 2rem;
+    border: 1px solid $border-color;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  }
+
+  &__category-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid rgba(2, 73, 116, 0.1);
+  }
+
+  &__category-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: rgba(2, 73, 116, 0.08);
+    color: $primary-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  &__category-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: $text-primary;
+    margin: 0;
+  }
+
+  &__faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__faq-item {
+    &:not(:last-child) {
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
+  }
+
+  &__faq-question {
+    font-size: 1rem;
+    font-weight: 600;
+    color: $text-primary;
+    margin: 0 0 0.75rem 0;
+    line-height: 1.5;
+  }
+
+  &__faq-answer {
+    font-size: 0.9375rem;
+    color: $text-secondary;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  &__privacy-link,
+  &__website-link {
+    display: inline-block;
+    color: $primary-color;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 1rem;
+    transition: all 0.2s ease;
+
+    &:hover {
+      color: darken($primary-color, 10%);
+      text-decoration: underline;
+    }
+  }
+
+  // CTA Section
+  &__cta-section {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, rgba(2, 73, 116, 0.04) 0%, rgba(2, 73, 116, 0.08) 100%);
+  }
+
+  &__cta-box {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    background: #fff;
+    padding: 3rem 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(2, 73, 116, 0.12);
+  }
+
+  &__cta-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: $text-primary;
+    margin: 0 0 1rem 0;
+  }
+
+  &__cta-text {
+    font-size: 1.0625rem;
+    color: $text-secondary;
+    margin: 0 0 2rem 0;
+    line-height: 1.6;
+  }
+
+  &__cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &__cta-btn {
+    padding: 0.875rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+
+    &--primary {
+      background: $primary-color;
+      color: #fff;
+      border: 2px solid $primary-color;
+
+      &:hover {
+        background: darken($primary-color, 5%);
+        border-color: darken($primary-color, 5%);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(2, 73, 116, 0.3);
+      }
+    }
+
+    &--secondary {
+      background: transparent;
+      color: $primary-color;
+      border: 2px solid $primary-color;
+
+      &:hover {
+        background: $primary-color;
+        color: #fff;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(2, 73, 116, 0.2);
+      }
+    }
+  }
+
+  // Responsive Design
+  @media (max-width: 768px) {
+    &__hero {
+      min-height: 40vh;
+    }
+
+    &__hero-subtitle {
+      font-size: 1rem;
+    }
+
+    &__contact-section {
+      padding: 3rem 0 2rem;
+    }
+
+    &__contact-grid {
+      gap: 1.5rem;
+    }
+
+    &__contact-card {
+      padding: 2rem 1.5rem;
+    }
+
+    &__faq-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    &__faq-category {
+      padding: 1.5rem;
+    }
+
+    &__cta-box {
+      padding: 2.5rem 1.5rem;
+    }
+
+    &__cta-title {
+      font-size: 1.5rem;
+    }
+
+    &__cta-buttons {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    &__cta-btn {
+      width: 100%;
+    }
+  }
+}
