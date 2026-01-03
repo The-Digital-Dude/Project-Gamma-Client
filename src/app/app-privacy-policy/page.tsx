@@ -113,6 +113,19 @@ export default function AppPrivacyPolicyPage() {
                 through your device settings. Denying permissions may limit
                 certain app functionality.
               </p>
+              <p className="app-privacy-policy__text">
+                The App does not request Location, Contacts, Microphone, Push
+                Notifications, or Background Activity permissions.
+              </p>
+            </div>
+
+            <div className="app-privacy-policy__section">
+              <h2 className="app-privacy-policy__section-title">
+                Where We Store Data & International Transfers
+              </h2>
+              <p className="app-privacy-policy__text">
+                Your information is stored in MongoDB Atlas (database) and Cloudinary (images). These providers may process data in multiple regions, which can include locations outside your home country. We protect international transfers through encryption in transit and at rest, strict access controls, and data processing agreements or standard contractual clauses with our service providers.
+              </p>
             </div>
 
             <div className="app-privacy-policy__section">
@@ -141,8 +154,9 @@ export default function AppPrivacyPolicyPage() {
                   records
                 </li>
                 <li>
-                  Payment Processing: To process and record payment information
-                  for completed jobs
+                  Payment Records: To note when manual payments for completed
+                  jobs have been received; no payment card numbers or CVV are
+                  collected in the App
                 </li>
                 <li>
                   App Improvement: To analyze app usage, fix bugs, and improve
@@ -227,6 +241,15 @@ export default function AppPrivacyPolicyPage() {
 
             <div className="app-privacy-policy__section">
               <h2 className="app-privacy-policy__section-title">
+                Payment Processing
+              </h2>
+              <p className="app-privacy-policy__text">
+                Payments to technicians are handled manually by RentalEase. We do not use a third-party payment processor in the App, and we do not collect or store full payment card numbers or CVV. Any payment details exchanged outside the App should be handled through secure, PCI DSS-compliant channels.
+              </p>
+            </div>
+
+            <div className="app-privacy-policy__section">
+              <h2 className="app-privacy-policy__section-title">
                 Data Storage and Security
               </h2>
               <h3 className="app-privacy-policy__sub-title">
@@ -272,8 +295,8 @@ export default function AppPrivacyPolicyPage() {
                 </li>
                 <li>
                   Deleted Accounts: If you request account deletion, we will
-                  delete or anonymize your personal information within 30 days,
-                  except where retention is required by law
+                  delete or anonymize personal data tied to the account within
+                  30 days, except where retention is required by law
                 </li>
               </ul>
             </div>
@@ -296,10 +319,10 @@ export default function AppPrivacyPolicyPage() {
                   in a portable format by contacting us at
                   <span> </span>
                   <a
-                    href="mailto:privacy@rentalease.com.au"
+                    href="mailto:info@rentalease.com.au"
                     className="app-privacy-policy__contact-link"
                   >
-                    privacy@rentalease.com.au
+                    info@rentalease.com.au
                   </a>
                 </li>
                 <li>
@@ -317,6 +340,19 @@ export default function AppPrivacyPolicyPage() {
                   communications through the App's notification settings
                 </li>
               </ul>
+              <p className="app-privacy-policy__text">
+                You can submit access, deletion, or portability requests by
+                emailing{" "}
+                <a
+                  href="mailto:info@rentalease.com.au"
+                  className="app-privacy-policy__contact-link"
+                >
+                  info@rentalease.com.au
+                </a>
+                . We aim to respond within 30 days. Where available in the App,
+                you may also view or update certain information via the profile
+                or settings pages.
+              </p>
             </div>
 
             <div className="app-privacy-policy__section">
@@ -359,10 +395,10 @@ export default function AppPrivacyPolicyPage() {
                 To exercise these rights, contact us at
                 <span> </span>
                 <a
-                  href="mailto:privacy@rentalease.com.au"
+                  href="mailto:info@rentalease.com.au"
                   className="app-privacy-policy__contact-link"
                 >
-                  privacy@rentalease.com.au
+                  info@rentalease.com.au
                 </a>
                 .
               </p>
@@ -389,10 +425,10 @@ export default function AppPrivacyPolicyPage() {
                 To exercise these rights, contact us at
                 <span> </span>
                 <a
-                  href="mailto:privacy@rentalease.com.au"
+                  href="mailto:info@rentalease.com.au"
                   className="app-privacy-policy__contact-link"
                 >
-                  privacy@rentalease.com.au
+                  info@rentalease.com.au
                 </a>
                 .
               </p>
@@ -403,10 +439,8 @@ export default function AppPrivacyPolicyPage() {
                 Analytics and Tracking
               </h2>
               <p className="app-privacy-policy__text">
-                Current Status: The RentalEase Technician app does not currently
-                use any third-party analytics, advertising, or tracking
-                services. We do not track your activity across other apps or
-                websites.
+                No third-party analytics or tracking SDKs are used, and we do
+                not track your activity across other apps or websites.
               </p>
               <p className="app-privacy-policy__text">
                 If we implement analytics in the future, we will update this
@@ -447,10 +481,10 @@ export default function AppPrivacyPolicyPage() {
                   Email:
                   <span> </span>
                   <a
-                    href="mailto:privacy@rentalease.com.au"
+                    href="mailto:info@rentalease.com.au"
                     className="app-privacy-policy__contact-link"
                   >
-                    privacy@rentalease.com.au
+                    info@rentalease.com.au
                   </a>
                 </li>
                 <li>Response Time: Up to 30 days</li>
@@ -475,7 +509,7 @@ export default function AppPrivacyPolicyPage() {
                   Australian Privacy Principles (APPs)
                 </li>
                 <li className="app-privacy-policy__compliance-item">
-                  Apple App Store Review Guidelines
+                  Apple App Store Review Guidelines 5.1
                 </li>
                 <li className="app-privacy-policy__compliance-item">
                   California Consumer Privacy Act (CCPA)

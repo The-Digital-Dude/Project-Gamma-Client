@@ -31,6 +31,15 @@ export default function PrivacyPolicyPage() {
 
             <div className="privacy-policy__section">
               <h3 className="privacy-policy__section-title">
+                Where We Store Data
+              </h3>
+              <p className="privacy-policy__section-content">
+                We store data in MongoDB Atlas (database) and Cloudinary (images). These providers may process data in multiple regions, including outside your home country, and we protect transfers with encryption in transit/at rest, access controls, and data processing agreements or standard contractual clauses.
+              </p>
+            </div>
+
+            <div className="privacy-policy__section">
+              <h3 className="privacy-policy__section-title">
                 Personal identification information
               </h3>
               <p className="privacy-policy__section-content">
@@ -66,12 +75,11 @@ export default function PrivacyPolicyPage() {
                 Web browser cookies
               </h3>
               <p className="privacy-policy__section-content">
-                Our Site may use "cookies" to enhance User experience. User's
-                web browser places cookies on their hard drive for
-                record-keeping purposes and sometimes to track information about
-                them. User may choose to set their web browser to refuse
-                cookies, or to alert you when cookies are being sent. If they do
-                so, note that some parts of the Site may not function properly.
+                Our Site may use essential cookies to enhance User experience.
+                We do not use third-party analytics or tracking cookies. User
+                may choose to set their web browser to refuse cookies, or to
+                alert you when cookies are being sent. If they do so, note that
+                some parts of the Site may not function properly.
               </p>
             </div>
 
@@ -118,13 +126,14 @@ export default function PrivacyPolicyPage() {
 
                 <div className="privacy-policy__sub-section">
                   <h4 className="privacy-policy__sub-title">
-                    To send periodic emails
+                    To send service updates
                   </h4>
                   <p className="privacy-policy__sub-content">
                     We may use the email address to send User information and
-                    updates pertaining to their order. It may also be used to
-                    respond to their inquiries, questions, and/or other
-                    requests.
+                    updates related to service usage and to respond to their
+                    inquiries, questions, and/or other requests. We do not
+                    process online payments through the Site and do not collect
+                    or store payment card numbers or CVV.
                   </p>
                 </div>
               </div>
@@ -189,6 +198,16 @@ export default function PrivacyPolicyPage() {
                   If you have any questions about this Privacy Policy, the
                   practices of this Site, or your dealings with RentalEase,
                   please feel free to contact us:
+                </p>
+                <p>
+                  For access, deletion, or portability requests, email{" "}
+                  <a
+                    href="mailto:info@rentalease.com.au"
+                    className="privacy-policy__contact-email"
+                  >
+                    info@rentalease.com.au
+                  </a>
+                  . We aim to respond within 30 days.
                 </p>
                 <ul
                   style={{
