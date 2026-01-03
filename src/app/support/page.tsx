@@ -31,27 +31,27 @@ export default function SupportPage() {
         <div className="container">
           <div className="support-page__contact-grid">
             <a
-              href="mailto:support@rentalease.com.au"
+              href="mailto:info@rentalease.com.au"
               className="support-page__contact-card"
             >
               <div className="support-page__icon-wrapper support-page__icon-wrapper--email">
                 <MdEmail size={28} />
               </div>
               <h3 className="support-page__contact-title">Email Support</h3>
-              <p className="support-page__contact-text">support@rentalease.com.au</p>
+              <p className="support-page__contact-text">info@rentalease.com.au</p>
               <p className="support-page__contact-meta">Response within 24 hours</p>
             </a>
 
             <a
-              href="tel:1300736853"
+              href="tel:0359067723"
               className="support-page__contact-card"
             >
               <div className="support-page__icon-wrapper support-page__icon-wrapper--phone">
                 <MdPhone size={28} />
               </div>
               <h3 className="support-page__contact-title">Call Us</h3>
-              <p className="support-page__contact-text">1300 RENTLEASE</p>
-              <p className="support-page__contact-meta">1300 736 853</p>
+              <p className="support-page__contact-text">03 5906 7723</p>
+              <p className="support-page__contact-meta">Monday - Friday, 9am - 5pm AEST</p>
             </a>
           </div>
         </div>
@@ -195,7 +195,7 @@ export default function SupportPage() {
               Our support team is available Monday to Friday, 9am - 5pm AEST
             </p>
             <div className="support-page__cta-buttons">
-              <a href="mailto:support@rentalease.com.au" className="support-page__cta-btn support-page__cta-btn--primary">
+              <a href="mailto:info@rentalease.com.au" className="support-page__cta-btn support-page__cta-btn--primary">
                 Contact Support
               </a>
               <Link href="/" className="support-page__cta-btn support-page__cta-btn--secondary">
