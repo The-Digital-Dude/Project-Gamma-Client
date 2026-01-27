@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
 "use client";
+
 
 import LandingHero from "@/components/sections/LandingHero/LandingHero";
 import HowItWorks from "@/components/sections/HowItWorks/HowItWorks";
@@ -21,14 +21,7 @@ import MarqueeCards from "@/components/MarqueeCards";
 import Image from "next/image";
 import Heading from "@/components/ui-elements/Heading/Heading";
 
-export const metadata: Metadata = {
-  title: "RentalEase | Property Management Software for Australian Landlords & Agencies",
-  description: "Streamline your property management with RentalEase. Automated compliance, licensed tradie network, and smart technology for landlords, property managers, and tenants. Free demo available.",
-  keywords: ["property management software", "rental compliance", "landlord tools", "property manager software", "Australian property management", "rental software Australia"],
-  alternates: {
-    canonical: "https://www.rentalease.com.au/"
-  }
-};
+//
 export default function HomePage() {
   return (
     <main className="landing">
@@ -84,3 +77,4 @@ export default function HomePage() {
     </main>
   );
 }
+

@@ -1,6 +1,6 @@
+import type { Metadata } from "next";
 "use client";
 
-import type { Metadata } from "next";
 import ServiceHero from "@/components/ServiceHero/ServiceHero";
 import "@/styles/safety-compliance.scss";
 import AccordionSection from "@/components/AccordionSection";
@@ -27,14 +27,8 @@ import {
 
 type Props = {};
 
-export const metadata: Metadata = {
-  title: "Smoke Alarm Inspections Melbourne | Annual Compliance RentalEase",
-  description: "Annual smoke alarm inspections for Victorian rental properties. Certified technicians, compliance certificates, and legal documentation. Book your smoke alarm check today.",
-  keywords: ["smoke alarm inspection", "annual smoke alarm check", "rental property smoke alarms", "Victoria smoke alarm compliance", "smoke alarm certificate"],
-  alternates: {
-    canonical: "https://www.rentalease.com.au/services/smoke-alarm"
-  }
-};
+// Service pages that use useState hooks cannot have metadata exports
+// This will be restored using generateMetadata pattern later
 
 export default function SmokeAlarm({}: Props) {
   const [activeTab, setActiveTab] = useState<"landlords" | "managers">(

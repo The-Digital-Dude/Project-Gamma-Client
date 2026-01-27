@@ -1,22 +1,26 @@
+import type { Metadata } from "next";
+
 "use client";
 
-import type { Metadata } from "next";
+// Commented out metadata to avoid client/component conflict
+// export const metadata: Metadata = {
+//   title: "Subscription Cancelled | RentalEase Property Management",
+//   description: "Your RentalEase subscription process was cancelled. No payment was processed. Explore our property management platform and 14-day free trial options.",
+//   keywords: ["RentalEase cancelled", "property management software", "rental software trial", "landlord CRM", "property compliance platform"],
+//   robots: {
+//     index: false,
+//     follow: false
+//   },
+//   alternates: {
+//     canonical: "https://www.rentalease.com.au/subscription-cancelled"
+//   }
+// };
+
 import React from "react";
 import Link from "next/link";
 import "./subscriptionCancelled.module.scss";
 
-export const metadata: Metadata = {
-  title: "Subscription Cancelled | RentalEase Property Management",
-  description: "Your RentalEase subscription process was cancelled. No payment was processed. Explore our property management platform and 14-day free trial options.",
-  keywords: ["RentalEase cancelled", "property management software", "rental software trial", "landlord CRM", "property compliance platform"],
-  robots: {
-    index: false,
-    follow: false
-  },
-  alternates: {
-    canonical: "https://www.rentalease.com.au/subscription-cancelled"
-  }
-};
+//
 
 const SubscriptionCancelledPage: React.FC = () => {
   return (
@@ -133,3 +137,4 @@ const SubscriptionCancelledPage: React.FC = () => {
 };
 
 export default SubscriptionCancelledPage;
+

@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useRef } from "react";
 import styles from "./SmartSystemBehind.module.scss";
 import FadeInAnimation from "@/components/Animations/FadeInAnimation";

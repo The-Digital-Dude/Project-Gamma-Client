@@ -1,20 +1,23 @@
 import type { Metadata } from "next";
+
 "use client";
 
+// Commented out metadata to avoid client/component conflict
+// export const metadata: Metadata = {
+//   title: "Support Center | RentalEase Property Management Help & Resources",
+//   description: "Access RentalEase support for property management software, technician app help, and compliance guidance. Get assistance with landlord tools and rental technology solutions.",
+//   keywords: ["RentalEase support", "property management help", "landlord software support", "rental compliance assistance", "property technology support"],
+//   alternates: {
+//     canonical: "https://www.rentalease.com.au/support"
+//   }
+// };
 
 import Link from "next/link";
 import Headline from "@/components/Headline/Headline";
 import { MdEmail, MdPhone, MdQuestionAnswer, MdBuild, MdSecurity, MdInfo } from "react-icons/md";
 import "@/styles/support.scss";
 
-export const metadata: Metadata = {
-  title: "Support Center | RentalEase Property Management Help & Resources",
-  description: "Access RentalEase support for property management software, technician app help, and compliance guidance. Get assistance with landlord tools and rental technology solutions.",
-  keywords: ["RentalEase support", "property management help", "landlord software support", "rental compliance assistance", "property technology support"],
-  alternates: {
-    canonical: "https://www.rentalease.com.au/support"
-  }
-};
+//
 
 export default function SupportCenterPage() {
   return (
@@ -218,3 +221,4 @@ export default function SupportCenterPage() {
     </div>
   );
 }
+

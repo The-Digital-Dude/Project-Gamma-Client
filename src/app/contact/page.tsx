@@ -1,17 +1,21 @@
 import type { Metadata } from "next";
+
 "use client";
+
+// Commented out metadata to avoid client/component conflict
+// export const metadata: Metadata = {
+//   title: "Contact RentalEase | Property Management Support Melbourne",
+//   description: "Get in touch with RentalEase property management experts. Contact our Melbourne-based team for property compliance solutions, rental software demos, and landlord support services.",
+//   keywords: ["contact RentalEase", "property management support", "Melbourne property software", "landlord contact", "rental compliance help"],
+//   alternates: {
+//     canonical: "https://www.rentalease.com.au/contact"
+//   }
+// };
 
 import Contact from "@/components/sections/Contact/Contact";
 import "@/components/sections/Contact/contact.scss";
 
-export const metadata: Metadata = {
-  title: "Contact RentalEase | Property Management Support Melbourne",
-  description: "Get in touch with RentalEase property management experts. Contact our Melbourne-based team for property compliance solutions, rental software demos, and landlord support services.",
-  keywords: ["contact RentalEase", "property management support", "Melbourne property software", "landlord contact", "rental compliance help"],
-  alternates: {
-    canonical: "https://www.rentalease.com.au/contact"
-  }
-};
+//
 
 export default function ContactUsPage() {
   return (
@@ -287,3 +291,4 @@ export default function ContactUsPage() {
     </div>
   );
 }
+

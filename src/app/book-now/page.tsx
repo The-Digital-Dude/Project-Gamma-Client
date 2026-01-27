@@ -2,14 +2,7 @@ import type { Metadata } from "next";
 import BookNow from "@/components/BookNow/BookNow";
 import Script from "next/script";
 
-export const metadata: Metadata = {
-  title: "Book Free Demo | RentalEase Property Management Software",
-  description: "Schedule your free demo with RentalEase. See how our property management platform automates compliance, connects you with licensed tradies, and simplifies rental operations.",
-  keywords: ["book RentalEase demo", "free property management demo", "rental software demonstration", "property compliance demo", "landlord software trial"],
-  alternates: {
-    canonical: "https://www.rentalease.com.au/book-now"
-  }
-};
+//
 
 export default function BookDemoPage() {
   return (
@@ -43,3 +36,4 @@ export default function BookDemoPage() {
     </div>
   );
 }
+

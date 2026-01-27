@@ -7,6 +7,9 @@ import Footer from "@/components/Footer/Footer";
 import AiSupportPopup from "@/components/AiSupportPopup";
 import { Toaster } from "react-hot-toast";
 import { GTM } from "@/components/GTM";
+import { GTMTester } from "@/components/GTM/GTMTester";
+import { GTMDebug } from "@/components/GTM/GTMDebug";
+import { GTMSuspenseWrapper } from "@/components/GTM/GTMSuspenseWrapper";
 
 const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "700"] });
 
@@ -55,6 +58,9 @@ export default function RootLayout({
     <html lang="en">
       <GTM />
       <body className={dmSans.className}>
+        <GTM />
+        <GTMTester />
+        <GTMSuspenseWrapper />
         {/* Google Tag Manager - NoScript (fallback) */}
         <noscript>
           <iframe 

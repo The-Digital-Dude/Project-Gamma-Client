@@ -53,14 +53,7 @@ const blogPosts: BlogPost[] = [
   },
 ];
 
-export const metadata: Metadata = {
-  title: "Property Management Blog | Rental Insights & Industry Trends",
-  description: "Stay updated with RentalEase's property management blog. Expert insights on rental compliance, property technology, landlord tips, and Australian property market trends.",
-  keywords: ["property management blog", "rental compliance articles", "landlord resources", "Australian property trends", "rental technology insights"],
-  alternates: {
-    canonical: "https://www.rentalease.com.au/blog"
-  }
-};
+//
 
 const BlogPage = () => {
   return (
@@ -137,3 +130,4 @@ const BlogPage = () => {
 };
 
 export default BlogPage;
+

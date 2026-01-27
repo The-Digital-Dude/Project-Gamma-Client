@@ -1,3 +1,5 @@
+"use client";
+
 import type { Metadata } from "next";
 "use client";
 
@@ -28,6 +30,7 @@ import {
 
 type Props = {};
 
+/*
 export const metadata: Metadata = {
   title: "Electrical Safety Checks Melbourne | Licensed Electricians RentalEase",
   description: "Get professional electrical safety checks for your rental property in Victoria. Licensed electricians, compliance certificates, and 2-year inspection cycle. Book your electrical safety check today.",
@@ -36,6 +39,8 @@ export const metadata: Metadata = {
     canonical: "https://www.rentalease.com.au/services/electrical-safety"
   }
 };
+
+*/
 
 export default function ElectricalSafetyPage({}: Props) {
   const [activeTab, setActiveTab] = useState<"landlords" | "managers">(

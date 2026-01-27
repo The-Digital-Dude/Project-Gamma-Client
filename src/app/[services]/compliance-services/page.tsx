@@ -1,6 +1,7 @@
 "use client";
 
 import type { Metadata } from "next";
+
 import Headline from "@/components/Headline/Headline";
 import ServicesHero from "@/components/ServicesHero";
 import { TestimonialSlider } from "@/components/Testimonials";
@@ -12,14 +13,8 @@ import { WhyRentalease } from "@/components/sections/WhyRentalease";
 
 type Props = {};
 
-export const metadata: Metadata = {
-  title: "Rental Compliance Services Melbourne | Property Management Solutions",
-  description: "Complete rental compliance services for Victorian landlords and property managers. Automated compliance checks, licensed tradie network, and regulatory adherence solutions.",
-  keywords: ["rental compliance services", "property compliance Melbourne", "landlord compliance solutions", "rental regulation compliance", "property management compliance"],
-  alternates: {
-    canonical: "https://www.rentalease.com.au/services/compliance-services"
-  }
-};
+// Service pages that use useState hooks cannot have metadata exports
+// This will be restored using generateMetadata pattern later
 
 export default function page({}: Props) {
   return (

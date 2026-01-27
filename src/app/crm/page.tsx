@@ -19,14 +19,7 @@ import {
 import Heading from "@/components/ui-elements/Heading/Heading";
 import { Button } from "@/components/ui-elements/Button/Button";
 
-export const metadata: Metadata = {
-  title: "Property Management CRM | RentalEase Compliance Automation",
-  description: "Advanced CRM for Australian property managers. Automate rental compliance, manage tradie networks, and streamline property operations with smart technology solutions.",
-  keywords: ["property management CRM", "rental compliance automation", "property manager software", "Australian property CRM", "rental software Australia"],
-  alternates: {
-    canonical: "https://www.rentalease.com.au/crm"
-  }
-};
+//
 
 const CrmPage: React.FC = () => {
   const faqArray = [
@@ -197,3 +190,4 @@ Neglecting these obligations can lead to government fines, legal issues, broken 
 };
 
 export default CrmPage;
+

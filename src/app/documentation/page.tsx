@@ -2,14 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: "Rental Documentation & Resources | Victorian Property Compliance",
-  description: "Essential rental documentation and compliance resources for Victorian landlords and property managers. Official guides, safety requirements, and regulatory information.",
-  keywords: ["rental documentation", "property compliance resources", "Victorian rental laws", "landlord documentation", "rental safety guidelines"],
-  alternates: {
-    canonical: "https://www.rentalease.com.au/documentation"
-  }
-};
+//
 
 const resources = [
   {
@@ -138,3 +131,4 @@ export default function DocumentationPage() {
     </main>
   );
 }
+

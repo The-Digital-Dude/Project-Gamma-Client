@@ -1,8 +1,11 @@
+"use client";
+
 import Headline from "@/components/Headline/Headline";
 import Stats from "@/components/Stats/Stats";
 import Subtext from "@/components/Subtext/Subtext";
 import { Button } from "@/components/ui-elements/Button/Button";
 import { SecondaryButton } from "@/components/ui-elements/SecondaryButton";
+
 import React, { useState, useEffect } from "react";
 import Carousel from "react-material-ui-carousel";
 
