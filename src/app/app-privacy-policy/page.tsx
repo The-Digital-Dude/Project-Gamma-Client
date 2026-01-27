@@ -1,14 +1,18 @@
 /* eslint-disable react/no-unescaped-entities */
-import type { Metadata } from "next";
+
 import Link from "next/link";
 import "@/styles/app-privacy-policy.scss";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy - RentalEase Technician",
-  description: "Privacy policy for the RentalEase Technician mobile app",
+export const metadata = {
+  title: "Mobile App Privacy Policy | RentalEase Technician",
+  description: "Privacy policy for the RentalEase Technician mobile app. Learn how we protect tradie data and ensure compliance with Australian privacy regulations.",
+  keywords: ["RentalEase app privacy", "technician app privacy policy", "mobile app data protection", "tradie privacy policy", "Australian app compliance"],
+  alternates: {
+    canonical: "https://www.rentalease.com.au/app-privacy-policy"
+  }
 };
 
-export default function AppPrivacyPolicyPage() {
+export default function MobileAppPrivacyPolicyPage() {
   return (
     <section className="app-privacy-policy">
       <section className="app-privacy-policy__hero common-section">

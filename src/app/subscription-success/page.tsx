@@ -1,9 +1,23 @@
 "use client";
 
+import type { Metadata } from "next";
 import React, { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import styles from "./subscriptionSuccess.module.scss";
+
+export const metadata: Metadata = {
+  title: "Subscription Success | Welcome to RentalEase",
+  description: "Your RentalEase subscription has been successfully activated. Get started with our property management platform and 14-day free trial.",
+  keywords: ["RentalEase subscription", "property management software signup", "rental software trial", "landlord CRM activation", "property compliance platform"],
+  robots: {
+    index: false,
+    follow: false
+  },
+  alternates: {
+    canonical: "https://www.rentalease.com.au/subscription-success"
+  }
+};
 
 const SubscriptionSuccessContent: React.FC = () => {
   const searchParams = useSearchParams();

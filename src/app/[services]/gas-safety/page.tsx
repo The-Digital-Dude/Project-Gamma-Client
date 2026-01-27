@@ -1,5 +1,6 @@
 "use client";
 
+import type { Metadata } from "next";
 import ServiceHero from "@/components/ServiceHero/ServiceHero";
 import "@/styles/safety-compliance.scss";
 import AccordionSection from "@/components/AccordionSection";
@@ -25,6 +26,15 @@ import {
 } from "react-icons/md";
 
 type Props = {};
+
+export const metadata: Metadata = {
+  title: "Gas Safety Checks Melbourne | Licensed Gas Fitters RentalEase",
+  description: "Professional gas safety inspections for Victorian rental properties. Licensed gas fitters, compliance certificates, and 2-year inspection cycle. Book your gas safety check today.",
+  keywords: ["gas safety check", "licensed gas fitter Melbourne", "rental property gas inspection", "Victoria gas compliance", "gas safety certificate"],
+  alternates: {
+    canonical: "https://www.rentalease.com.au/services/gas-safety"
+  }
+};
 
 export default function GasSafety({}: Props) {
   const [activeTab, setActiveTab] = useState<"landlords" | "managers">(

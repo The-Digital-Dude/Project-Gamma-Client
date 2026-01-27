@@ -1,6 +1,16 @@
+import type { Metadata } from "next";
 import Headline from "@/components/Headline/Headline";
 import Link from "next/link";
 import "@/styles/privacy-policy.scss";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy | RentalEase Property Management Platform",
+  description: "Read RentalEase's comprehensive privacy policy. Learn how we protect your personal information and ensure data security for Australian property management services.",
+  keywords: ["RentalEase privacy policy", "property management data protection", "Australian privacy law", "landlord data security", "rental software privacy"],
+  alternates: {
+    canonical: "https://www.rentalease.com.au/privacy-policy"
+  }
+};
 
 export default function PrivacyPolicyPage() {
   return (

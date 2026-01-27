@@ -1,6 +1,16 @@
+import type { Metadata } from "next";
 import Headline from "@/components/Headline/Headline";
 import Link from "next/link";
 import "@/styles/terms-of-service.scss";
+
+export const metadata: Metadata = {
+  title: "Terms of Service | RentalEase Property Management Agreement",
+  description: "Review RentalEase's terms of service for property management software. Understand our service agreements, compliance requirements, and user obligations for Australian rental properties.",
+  keywords: ["RentalEase terms of service", "property management agreement", "rental software TOS", "Australian property compliance", "landlord service terms"],
+  alternates: {
+    canonical: "https://www.rentalease.com.au/terms-of-service"
+  }
+};
 
 export default function TermsOfServicePage() {
   return (

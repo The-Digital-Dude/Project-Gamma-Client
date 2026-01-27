@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import React from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
@@ -401,6 +402,34 @@ export async function generateStaticParams() {
   return Object.keys(blogPosts).map((slug) => ({
     slug,
   }));
+}
+
+export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const post = blogPosts[slug];
+
+  if (!post) {
+    return {
+      title: "Blog Post Not Found | RentalEase",
+      description: "The requested blog post could not be found.",
+    };
+  }
+
+  return {
+    title: `${post.title} | RentalEase Property Management Blog`,
+    description: post.excerpt,
+    keywords: ["property management", "rental compliance", post.category.toLowerCase(), "Australian property", "landlord resources"],
+    alternates: {
+      canonical: `https://www.rentalease.com.au/blog/${slug}`
+    },
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      type: "article",
+      publishedTime: new Date(post.date).toISOString(),
+      authors: [post.author],
+    },
+  };
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {

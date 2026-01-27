@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 "use client";
 
 import ServiceHero from "@/components/ServiceHero/ServiceHero";
@@ -27,7 +28,16 @@ import {
 
 type Props = {};
 
-export default function ElectricalSafety({}: Props) {
+export const metadata: Metadata = {
+  title: "Electrical Safety Checks Melbourne | Licensed Electricians RentalEase",
+  description: "Get professional electrical safety checks for your rental property in Victoria. Licensed electricians, compliance certificates, and 2-year inspection cycle. Book your electrical safety check today.",
+  keywords: ["electrical safety check", "licensed electrician Melbourne", "rental property electrical inspection", "Victoria electrical compliance", "electrical safety certificate"],
+  alternates: {
+    canonical: "https://www.rentalease.com.au/services/electrical-safety"
+  }
+};
+
+export default function ElectricalSafetyPage({}: Props) {
   const [activeTab, setActiveTab] = useState<"landlords" | "managers">(
     "landlords"
   );

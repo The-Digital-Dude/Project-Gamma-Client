@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 "use client";
 
 import BrandCarousel from "@/components/BrandCarousel/BrandCarousel";
@@ -22,7 +23,16 @@ import Heading from "@/components/ui-elements/Heading/Heading";
 import FinalCTA from "@/components/sections/FinalCTA";
 import { TestimonialSlider } from "@/components/Testimonials";
 
-export default function AboutPage() {
+export const metadata: Metadata = {
+  title: "About RentalEase | Australian Property Management Platform Since 2022",
+  description: "Discover RentalEase, Australia's trusted property management platform. Learn about our mission to simplify rental compliance with smart technology and licensed tradie networks for landlords and agencies.",
+  keywords: ["about RentalEase", "property management platform", "Australian rental software", "landlord technology", "property compliance solution"],
+  alternates: {
+    canonical: "https://www.rentalease.com.au/about"
+  }
+};
+
+export default function AboutUsPage() {
   return (
     <section className="about about__born">
       <section className="about__hero common-section icons-bg--1">
