@@ -1,6 +1,5 @@
 "use client";
 
-
 import LandingHero from "@/components/sections/LandingHero/LandingHero";
 import HowItWorks from "@/components/sections/HowItWorks/HowItWorks";
 import { WhyRentalease } from "@/components/sections/WhyRentalease";
@@ -21,7 +20,7 @@ import MarqueeCards from "@/components/MarqueeCards";
 import Image from "next/image";
 import Heading from "@/components/ui-elements/Heading/Heading";
 
-//
+// Note: Metadata is handled in the root layout since this is a client component
 export default function HomePage() {
   return (
     <main className="landing">

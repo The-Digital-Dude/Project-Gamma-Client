@@ -1,8 +1,7 @@
 "use client";
 
-import type { Metadata } from "next";
-"use client";
-
+import { Metadata } from "next";
+import { useState } from "react";
 import ServiceHero from "@/components/ServiceHero/ServiceHero";
 import "@/styles/safety-compliance.scss";
 import AccordionSection from "@/components/AccordionSection";
@@ -11,7 +10,6 @@ import Heading from "@/components/ui-elements/Heading/Heading";
 import ServiceOfferings from "@/components/sections/ServiceOfferings/ServiceOfferings";
 import ComparisonTable from "@/components/sections/ComparisonTable/ComparisonTable";
 import CTA from "@/components/CTA/CTA";
-import { useState } from "react";
 import {
   MdElectricBolt,
   MdShield,
@@ -42,6 +40,7 @@ export const metadata: Metadata = {
 
 */
 
+// Note: Metadata is managed via the root layout since this is a client component
 export default function ElectricalSafetyPage({}: Props) {
   const [activeTab, setActiveTab] = useState<"landlords" | "managers">(
     "landlords"

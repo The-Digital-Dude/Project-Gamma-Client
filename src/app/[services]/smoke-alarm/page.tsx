@@ -1,6 +1,6 @@
-import type { Metadata } from "next";
 "use client";
 
+import { Metadata } from "next";
 import ServiceHero from "@/components/ServiceHero/ServiceHero";
 import "@/styles/safety-compliance.scss";
 import AccordionSection from "@/components/AccordionSection";
@@ -27,8 +27,7 @@ import {
 
 type Props = {};
 
-// Service pages that use useState hooks cannot have metadata exports
-// This will be restored using generateMetadata pattern later
+// Note: Metadata is managed via the root layout since this is a client component
 
 export default function SmokeAlarm({}: Props) {
   const [activeTab, setActiveTab] = useState<"landlords" | "managers">(

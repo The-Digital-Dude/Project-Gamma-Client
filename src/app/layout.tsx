@@ -15,30 +15,31 @@ const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "700"] });
 
 export const metadata: Metadata = {
   title: {
-    default: siteConfig.name,
-    template: `%s | ${siteConfig.name}`,
+    default: "RentalEase - Property Compliance & Management Solutions | Melbourne",
+    template: `%s | RentalEase - Property Compliance Solutions`,
   },
-  description: siteConfig.description,
+  description: "Complete rental compliance and property management solutions for Victorian landlords and property managers. Automated compliance checks, licensed tradie network, and CRM automation for electrical, gas, and smoke alarm safety services.",
+  keywords: ["property compliance Melbourne", "rental property management", "electrical safety checks", "gas safety inspections", "smoke alarm compliance", "licensed electricians Melbourne", "property maintenance services", "rental compliance services", "property management software"],
   openGraph: {
     type: "website",
     locale: "en_US",
     url: siteConfig.url,
-    title: siteConfig.name,
-    description: siteConfig.description,
+    title: "RentalEase - Property Compliance & Management Solutions",
+    description: "Complete rental compliance and property management solutions for Victorian landlords and property managers.",
     siteName: siteConfig.name,
     images: [
       {
         url: siteConfig.ogImage,
         width: 1200,
         height: 630,
-        alt: siteConfig.name,
+        alt: "RentalEase - Property Compliance Solutions",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: siteConfig.name,
-    description: siteConfig.description,
+    title: "RentalEase - Property Compliance Solutions",
+    description: "Complete rental compliance and property management solutions for landlords.",
     images: [siteConfig.ogImage],
   },
   icons: {

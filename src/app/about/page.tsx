@@ -1,6 +1,6 @@
-import type { Metadata } from "next";
 "use client";
 
+import { Metadata } from "next";
 import BrandCarousel from "@/components/BrandCarousel/BrandCarousel";
 import CTA from "@/components/CTA/CTA";
 import Headline from "@/components/Headline/Headline";
@@ -24,6 +24,8 @@ import FinalCTA from "@/components/sections/FinalCTA";
 import { TestimonialSlider } from "@/components/Testimonials";
 
 //
+
+// Note: Metadata is managed via the root layout since this is a client component
 
 export default function AboutUsPage() {
   return (

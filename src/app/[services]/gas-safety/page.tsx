@@ -1,6 +1,6 @@
-import type { Metadata } from "next";
 "use client";
 
+import { Metadata } from "next";
 import ServiceHero from "@/components/ServiceHero/ServiceHero";
 import "@/styles/safety-compliance.scss";
 import AccordionSection from "@/components/AccordionSection";
@@ -39,6 +39,7 @@ export const metadata: Metadata = {
 
 */
 
+// Note: Metadata is managed via the root layout since this is a client component
 export default function GasSafety({}: Props) {
   const [activeTab, setActiveTab] = useState<"landlords" | "managers">(
     "landlords"
