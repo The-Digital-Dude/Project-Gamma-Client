@@ -1,0 +1,14 @@
+# *
+User-agent: *
+Allow: /
+
+# *
+User-agent: *
+Disallow: /crm/
+Disallow: /admin/
+
+# Host
+Host: https://www.rentalease.com.au
+
+# Sitemaps
+Sitemap: https://www.rentalease.com.au/sitemap.xml

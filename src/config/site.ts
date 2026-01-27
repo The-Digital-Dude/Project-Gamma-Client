@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "RentalEase",
   description: "Project Gamma Landing Page",
-  url: "https://gamma.example.com", // Update this with your actual domain
+  url: process.env.SITE_URL || "https://www.rentalease.com.au", // Your actual domain
   ogImage: "https://gamma.example.com/og.jpg", // Update this with your actual OG image
   links: {
     twitter: "https://twitter.com/gamma",
