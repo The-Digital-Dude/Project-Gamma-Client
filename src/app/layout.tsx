@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer/Footer";
 import AiSupportPopup from "@/components/AiSupportPopup";
 import { Toaster } from "react-hot-toast";
+import { GTM } from "@/components/GTM";
 
 const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "700"] });
 
@@ -52,7 +53,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <GTM />
       <body className={dmSans.className}>
+        {/* Google Tag Manager - NoScript (fallback) */}
+        <noscript>
+          <iframe 
+            src={`https://www.googletagmanager.com/ns.html?id=${process.env.NEXT_PUBLIC_GTM_ID || 'GTM-KPZ9C622'}`}
+            height="0" 
+            width="0" 
+            style={{ display: 'none', visibility: 'hidden' }}
+            title="gtm"
+          />
+        </noscript>
         <Navbar />
         <main>{children}</main>
         <Footer />
