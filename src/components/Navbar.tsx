@@ -18,6 +18,8 @@ const rentalComplianceLinks = [
   { href: "/services/gas-safety", label: "Gas Safety" },
 ];
 
+const loginUrl = "https://crm.rentalease.com.au/";
+
 const Navbar: React.FC = () => {
   const pathname = usePathname();
   const [isServicesOpen, setIsServicesOpen] = useState(false);
@@ -301,7 +303,7 @@ const Navbar: React.FC = () => {
 
           {/* Action Buttons */}
           <div className="navbar__actions">
-            <Link href="#login" className="navbar__login">
+            <Link href={loginUrl} className="navbar__login">
               Log in
             </Link>
             <Link href="/book-now" className="navbar__join">
@@ -671,7 +673,7 @@ const Navbar: React.FC = () => {
 
           <div className="mobile-menu__actions">
             <Link
-              href="#login"
+              href={loginUrl}
               className="mobile-menu__login"
               onClick={() => setIsMobileMenuOpen(false)}
             >

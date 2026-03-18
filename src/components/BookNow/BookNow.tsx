@@ -6,6 +6,15 @@ import { Button } from "@/components/ui-elements/Button/Button";
 import "./BookNow.scss";
 import { Turnstile } from "@marsidev/react-turnstile";
 
+const splitFullName = (fullName: string) => {
+  const parts = fullName.trim().split(/\s+/).filter(Boolean);
+
+  return {
+    firstName: parts[0] || "",
+    lastName: parts.slice(1).join(" "),
+  };
+};
+
 export default function BookNow() {
   const [formData, setFormData] = useState({
     name: "",
@@ -29,9 +38,9 @@ export default function BookNow() {
     }));
   };
 
-  const turnstileRef = useRef<any>(null);
+  const turnstileRef = useRef<{ reset?: () => void } | null>(null);
 
-  const handleTurnstileSuccess = (token: string) => {
+  const handleTurnstileSuccess = () => {
     setIsTurnstileVerified(true);
   };
 
@@ -46,8 +55,25 @@ export default function BookNow() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!formData.name || !formData.email || !formData.service) {
+    const { firstName, lastName } = splitFullName(formData.name);
+
+    if (!firstName || !lastName) {
+      toast.error("Please enter your first and last name");
+      return;
+    }
+
+    if (!formData.email || !formData.service) {
       toast.error("Please fill in all required fields");
+      return;
+    }
+
+    if (formData.service.trim().length < 10) {
+      toast.error("Please describe the service you need in at least 10 characters");
+      return;
+    }
+
+    if (!isTurnstileVerified) {
+      toast.error("Please complete the security verification");
       return;
     }
 
@@ -61,12 +87,12 @@ export default function BookNow() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          firstName: formData.name.split(" ")[0] || formData.name,
-          lastName: formData.name.split(" ").slice(1).join(" ") || "",
+          firstName,
+          lastName,
           email: formData.email,
           phone: formData.phone,
           profession: formData.profession,
-          message: formData.service,
+          message: formData.service.trim(),
           source: "website_bookNow_form",
         }),
       });
@@ -84,11 +110,21 @@ export default function BookNow() {
           profession: "",
           service: "",
         });
+        setIsTurnstileVerified(false);
+        turnstileRef.current?.reset();
       } else {
         const errorData = await response.json();
         console.error("Form submission error:", errorData);
+        const firstValidationError =
+          errorData?.errors &&
+          typeof errorData.errors === "object" &&
+          Object.values(errorData.errors).find(
+            (value) => typeof value === "string"
+          );
+
         toast.error(
-          errorData.message ||
+          (typeof firstValidationError === "string" && firstValidationError) ||
+            errorData.message ||
             "There was an error submitting your request. Please try again."
         );
       }
@@ -107,7 +143,7 @@ export default function BookNow() {
         <form className="contact-form-fields" onSubmit={handleSubmit}>
           <div className="contact-form-group">
             <label htmlFor="name" className="contact-form-label">
-              Let's personalise your demo
+              Let&apos;s personalise your demo
             </label>
             <input
               type="text"
@@ -175,12 +211,12 @@ export default function BookNow() {
 
           <div className="contact-form-group">
             <label htmlFor="service" className="contact-form-label">
-              What service do you need?
+              What service do you need? Please add a few details.
             </label>
             <textarea
               id="service"
               className="contact-form-input"
-              placeholder="Please describe the service you need"
+              placeholder="Please describe the service you need in at least 10 characters"
               rows={4}
               value={formData.service}
               onChange={handleInputChange}
@@ -202,7 +238,7 @@ export default function BookNow() {
             }}
           />
 
-          <Button type="submit" disabled={isSubmitting}>
+          <Button type="submit" disabled={!isTurnstileVerified || isSubmitting}>
             {isSubmitting ? "Submitting..." : "Submit Now"}
           </Button>
         </form>
