@@ -111,7 +111,9 @@ export default function BookNow() {
           service: "",
         });
         setIsTurnstileVerified(false);
-        turnstileRef.current?.reset();
+        if (turnstileRef.current?.reset) {
+          turnstileRef.current.reset();
+        }
       } else {
         const errorData = await response.json();
         console.error("Form submission error:", errorData);
