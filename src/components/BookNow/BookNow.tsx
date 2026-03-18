@@ -4,7 +4,7 @@ import React, { useRef, useState } from "react";
 import toast from "react-hot-toast";
 import { Button } from "@/components/ui-elements/Button/Button";
 import "./BookNow.scss";
-import { Turnstile } from "@marsidev/react-turnstile";
+import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 
 const splitFullName = (fullName: string) => {
   const parts = fullName.trim().split(/\s+/).filter(Boolean);
@@ -38,7 +38,7 @@ export default function BookNow() {
     }));
   };
 
-  const turnstileRef = useRef<{ reset?: () => void } | null>(null);
+  const turnstileRef = useRef<TurnstileInstance>();
 
   const handleTurnstileSuccess = () => {
     setIsTurnstileVerified(true);
