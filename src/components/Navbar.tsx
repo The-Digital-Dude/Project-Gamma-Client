@@ -18,7 +18,7 @@ const rentalComplianceLinks = [
   { href: "/services/gas-safety", label: "Gas Safety" },
 ];
 
-const loginUrl = "https://crm.rentalease.com.au/";
+const loginUrl = siteConfig.crmUrl;
 
 const Navbar: React.FC = () => {
   const pathname = usePathname();
@@ -303,9 +303,9 @@ const Navbar: React.FC = () => {
 
           {/* Action Buttons */}
           <div className="navbar__actions">
-            <Link href={loginUrl} className="navbar__login">
+            <a href={loginUrl} className="navbar__login">
               Log in
-            </Link>
+            </a>
             <Link href="/book-now" className="navbar__join">
               Request Demo
             </Link>
@@ -672,7 +672,7 @@ const Navbar: React.FC = () => {
           </ul>
 
           <div className="mobile-menu__actions">
-            <Link
+            <a
               href={loginUrl}
               className="mobile-menu__login"
               onClick={() => setIsMobileMenuOpen(false)}
@@ -707,7 +707,7 @@ const Navbar: React.FC = () => {
                 />
               </svg>
               Log in
-            </Link>
+            </a>
             <Link
               href="#join"
               className="mobile-menu__join"

@@ -3,6 +3,7 @@ import styles from "./AdminSection.module.scss";
 import PillText from "@/components/PillText/PillText";
 import { Button } from "@/components/ui-elements/Button/Button";
 import { FaPlay } from "react-icons/fa";
+import { siteConfig } from "@/config/site";
 
 const AdminSection = () => {
   return (
@@ -14,7 +15,7 @@ const AdminSection = () => {
             <p className={styles.description}>
               Free your team from the hassle of managing compliance checks for
               rental properties. The{" "}
-              <a href="/crm" className={styles.inlineLink}>
+              <a href={siteConfig.crmUrl} className={styles.inlineLink}>
                 Admin Portal
               </a>{" "}
               is a user-friendly interface for property managers to streamline

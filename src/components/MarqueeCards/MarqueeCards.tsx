@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styles from "./MarqueeCards.module.scss";
+import { siteConfig } from "@/config/site";
 
 interface MarqueeCard {
   title: string;
@@ -11,7 +12,7 @@ const MarqueeCards = () => {
   const cards: MarqueeCard[] = [
     {
       title: "Custom CRM",
-      href: "/crm",
+      href: siteConfig.crmUrl,
       icon: "📊",
     },
     {
@@ -38,15 +39,27 @@ const MarqueeCards = () => {
     <div className={styles.marqueeContainer}>
       <div className={styles.marqueeTrack}>
         {duplicatedCards.map((card, index) => (
-          <Link
-            key={`${card.title}-${index}`}
-            href={card.href}
-            className={styles.marqueeCard}
-          >
-            <div className={styles.cardIcon}>{card.icon}</div>
-            <h3 className={styles.cardTitle}>{card.title}</h3>
-            <div className={styles.cardArrow}>→</div>
-          </Link>
+          card.href.startsWith("http") ? (
+            <a
+              key={`${card.title}-${index}`}
+              href={card.href}
+              className={styles.marqueeCard}
+            >
+              <div className={styles.cardIcon}>{card.icon}</div>
+              <h3 className={styles.cardTitle}>{card.title}</h3>
+              <div className={styles.cardArrow}>→</div>
+            </a>
+          ) : (
+            <Link
+              key={`${card.title}-${index}`}
+              href={card.href}
+              className={styles.marqueeCard}
+            >
+              <div className={styles.cardIcon}>{card.icon}</div>
+              <h3 className={styles.cardTitle}>{card.title}</h3>
+              <div className={styles.cardArrow}>→</div>
+            </Link>
+          )
         ))}
       </div>
     </div>

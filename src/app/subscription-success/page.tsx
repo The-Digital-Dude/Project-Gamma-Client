@@ -5,6 +5,7 @@ import React, { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import styles from "./subscriptionSuccess.module.scss";
+import { siteConfig } from "@/config/site";
 
 //
 
@@ -92,12 +93,9 @@ const SubscriptionSuccessContent: React.FC = () => {
         </div>
 
         <div className={styles.actionButtons}>
-          <Link
-            href="http://localhost:5173/login"
-            className={styles.primaryButton}
-          >
+          <a href={siteConfig.crmUrl} className={styles.primaryButton}>
             Access Your CRM Dashboard
-          </Link>
+          </a>
           <Link href="/contact" className={styles.secondaryButton}>
             Need Help? Contact Support
           </Link>
