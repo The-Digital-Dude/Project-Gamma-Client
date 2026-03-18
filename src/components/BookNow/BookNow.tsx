@@ -38,7 +38,7 @@ export default function BookNow() {
     }));
   };
 
-  const turnstileRef = useRef<TurnstileInstance>();
+  const turnstileRef = useRef<TurnstileInstance | undefined>(undefined);
 
   const handleTurnstileSuccess = () => {
     setIsTurnstileVerified(true);
