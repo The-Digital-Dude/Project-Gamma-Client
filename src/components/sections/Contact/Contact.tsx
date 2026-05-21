@@ -53,6 +53,11 @@ export default function Contact() {
     }));
   };
 
+  const isRecentDuplicateLeadError = (errorData: any) =>
+    errorData?.status === "error" &&
+    typeof errorData?.message === "string" &&
+    errorData.message.includes("already submitted within the last 24 hours");
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -100,8 +105,17 @@ export default function Contact() {
       } else {
         const errorData = await response.json();
         console.error("Form submission error:", errorData);
-        setSubmitStatus("error");
-        alert("There was an error submitting your message. Please try again.");
+        if (response.status === 409 && isRecentDuplicateLeadError(errorData)) {
+          setSubmitStatus("success");
+          alert(
+            "We already received your enquiry in the last 24 hours. Our team will get back to you soon."
+          );
+        } else {
+          setSubmitStatus("error");
+          alert(
+            "There was an error submitting your message. Please try again."
+          );
+        }
       }
     } catch (error) {
       console.error("Network error:", error);

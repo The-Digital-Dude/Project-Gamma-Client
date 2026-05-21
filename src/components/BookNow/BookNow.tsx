@@ -15,6 +15,11 @@ const splitFullName = (fullName: string) => {
   };
 };
 
+const isRecentDuplicateLeadError = (errorData: any) =>
+  errorData?.status === "error" &&
+  typeof errorData?.message === "string" &&
+  errorData.message.includes("already submitted within the last 24 hours");
+
 export default function BookNow() {
   const [formData, setFormData] = useState({
     name: "",
@@ -117,6 +122,12 @@ export default function BookNow() {
       } else {
         const errorData = await response.json();
         console.error("Form submission error:", errorData);
+        if (response.status === 409 && isRecentDuplicateLeadError(errorData)) {
+          toast.success(
+            "We already received your booking request in the last 24 hours. Our team will get back to you soon."
+          );
+          return;
+        }
         const firstValidationError =
           errorData?.errors &&
           typeof errorData.errors === "object" &&
