@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { siteConfig } from "@/config/site";
 import Navbar from "@/components/Navbar";
@@ -11,7 +11,17 @@ import { GTMTester } from "@/components/GTM/GTMTester";
 import { GTMDebug } from "@/components/GTM/GTMDebug";
 import { GTMSuspenseWrapper } from "@/components/GTM/GTMSuspenseWrapper";
 
-const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "700"] });
+// Self-hosted rather than next/font/google. The Google loader downloads the font
+// at build time, and Google Fonts can answer with extensionless /l/font?kit=... URLs
+// that Next 15.3.3's loader cannot parse ("Cannot read properties of null (reading
+// '1')"), which fails the whole build. This file is the same variable woff2 Google
+// serves for DM Sans (latin subset, weights 100-1000). Licence: src/fonts/OFL.txt.
+const dmSans = localFont({
+  src: "../fonts/DMSans-latin.woff2",
+  weight: "100 1000",
+  style: "normal",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: {
